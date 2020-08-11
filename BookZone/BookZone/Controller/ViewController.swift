@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        AppleTextRecognizer().textRecognize()
-//        GoogleTextRecognizer().googleText()
+        SendGoodreadsAPI().getByISBN(isbn: "0441172717")
+        SendGoodreadsAPI().getByTitle(titleArray: ["Hound","of","the","Baskervilles"], authorArray: ["Arthur","Conan","Doyle"])
+        
     }
 }
 

@@ -6,5 +6,7 @@ target 'BookZone' do
   use_frameworks!
 
   # Pods for BookZone
+   pod "Alamofire"
+   pod 'SWXMLHash', '~> 5.0.0'
 
 end
