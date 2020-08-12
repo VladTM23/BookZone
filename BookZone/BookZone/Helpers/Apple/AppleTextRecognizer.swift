@@ -11,7 +11,7 @@ import Vision
 
 class AppleTextRecognizer {
     
-    private var detectedText:[String] = []
+    private var detectedText: [String] = []
 
      func textRecognize(cgImage: CGImage){
         //guard let cgImage = UIImage(named: "book" )?.cgImage else { return }

@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7161A0DB24E288B300E1A103 /* goodreadsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7161A0DA24E288B300E1A103 /* goodreadsAPI.swift */; };
 		DF68B3E844A40D4C35F2072E /* Pods_BookZone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631142FF12AC485DD45BB5F7 /* Pods_BookZone.framework */; };
+		F5349EB224E44456009C96BD /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5349EB124E44456009C96BD /* K.swift */; };
+		F5349EB624E44BE2009C96BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5349EB524E44BE1009C96BD /* Assets.xcassets */; };
+		F5349EBF24E45169009C96BD /* Sacramento-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */; };
+		F5349EC124E45282009C96BD /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */; };
+		F5349EC324E45300009C96BD /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EC224E452FD009C96BD /* Montserrat-Bold.ttf */; };
 		F57D29DA24E278400001D4C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29D924E278400001D4C4 /* AppDelegate.swift */; };
 		F57D29DC24E278400001D4C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29DB24E278400001D4C4 /* SceneDelegate.swift */; };
 		F57D29DE24E278400001D4C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29DD24E278400001D4C4 /* ViewController.swift */; };
 		F57D29E124E278400001D4C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57D29DF24E278400001D4C4 /* Main.storyboard */; };
-		F57D29E324E278410001D4C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F57D29E224E278410001D4C4 /* Assets.xcassets */; };
 		F57D29E624E278410001D4C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57D29E424E278410001D4C4 /* LaunchScreen.storyboard */; };
 		F57D29F624E279C00001D4C4 /* AppleTextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29F524E279C00001D4C4 /* AppleTextRecognizer.swift */; };
 /* End PBXBuildFile section */
@@ -21,14 +24,17 @@
 /* Begin PBXFileReference section */
 		4809AE4BBDA597008585503A /* Pods-BookZone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookZone.debug.xcconfig"; path = "Target Support Files/Pods-BookZone/Pods-BookZone.debug.xcconfig"; sourceTree = "<group>"; };
 		631142FF12AC485DD45BB5F7 /* Pods_BookZone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookZone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7161A0DA24E288B300E1A103 /* goodreadsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodreadsAPI.swift; sourceTree = "<group>"; };
 		E4466345ABFD86AAD0C0A744 /* Pods-BookZone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookZone.release.xcconfig"; path = "Target Support Files/Pods-BookZone/Pods-BookZone.release.xcconfig"; sourceTree = "<group>"; };
+		F5349EB124E44456009C96BD /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		F5349EB524E44BE1009C96BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sacramento-Regular.ttf"; sourceTree = "<group>"; };
+		F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		F5349EC224E452FD009C96BD /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		F57D29D624E278400001D4C4 /* BookZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookZone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F57D29D924E278400001D4C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F57D29DB24E278400001D4C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F57D29DD24E278400001D4C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F57D29E024E278400001D4C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F57D29E224E278410001D4C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F57D29E524E278410001D4C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F57D29E724E278410001D4C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F57D29F524E279C00001D4C4 /* AppleTextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTextRecognizer.swift; sourceTree = "<group>"; };
@@ -63,12 +69,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7161A0D924E2886200E1A103 /* GoodreadsAPI */ = {
+		F5349EB024E44440009C96BD /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				7161A0DA24E288B300E1A103 /* goodreadsAPI.swift */,
+				F5349EB124E44456009C96BD /* K.swift */,
 			);
-			path = GoodreadsAPI;
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		F5349EBD24E45146009C96BD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */,
+				F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */,
+				F5349EC224E452FD009C96BD /* Montserrat-Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F57D29CD24E278400001D4C4 = {
@@ -98,6 +114,7 @@
 				F57D29EE24E2785B0001D4C4 /* View */,
 				F57D29F024E278690001D4C4 /* Controller */,
 				F57D29F224E278A20001D4C4 /* Helpers */,
+				F5349EB024E44440009C96BD /* Constants */,
 				F57D29F124E278880001D4C4 /* Assets */,
 				F57D29E724E278410001D4C4 /* Info.plist */,
 			);
@@ -130,8 +147,9 @@
 		F57D29F124E278880001D4C4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F5349EBD24E45146009C96BD /* Fonts */,
 				F57D29E424E278410001D4C4 /* LaunchScreen.storyboard */,
-				F57D29E224E278410001D4C4 /* Assets.xcassets */,
+				F5349EB524E44BE1009C96BD /* Assets.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -139,7 +157,6 @@
 		F57D29F224E278A20001D4C4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				7161A0D924E2886200E1A103 /* GoodreadsAPI */,
 				F57D29F424E279AF0001D4C4 /* Apple */,
 			);
 			path = Helpers;
@@ -213,9 +230,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5349EC124E45282009C96BD /* Montserrat-Regular.ttf in Resources */,
 				F57D29E624E278410001D4C4 /* LaunchScreen.storyboard in Resources */,
-				F57D29E324E278410001D4C4 /* Assets.xcassets in Resources */,
+				F5349EB624E44BE2009C96BD /* Assets.xcassets in Resources */,
 				F57D29E124E278400001D4C4 /* Main.storyboard in Resources */,
+				F5349EBF24E45169009C96BD /* Sacramento-Regular.ttf in Resources */,
+				F5349EC324E45300009C96BD /* Montserrat-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,8 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7161A0DB24E288B300E1A103 /* goodreadsAPI.swift in Sources */,
 				F57D29DE24E278400001D4C4 /* ViewController.swift in Sources */,
+				F5349EB224E44456009C96BD /* K.swift in Sources */,
 				F57D29DA24E278400001D4C4 /* AppDelegate.swift in Sources */,
 				F57D29DC24E278400001D4C4 /* SceneDelegate.swift in Sources */,
 				F57D29F624E279C00001D4C4 /* AppleTextRecognizer.swift in Sources */,
@@ -418,13 +438,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P8XW6H7W5B;
+				DEVELOPMENT_TEAM = J9Y5MLR4Q4;
 				INFOPLIST_FILE = BookZone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alelaicu.BookZone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladpaianu.BookZone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -437,13 +457,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P8XW6H7W5B;
+				DEVELOPMENT_TEAM = J9Y5MLR4Q4;
 				INFOPLIST_FILE = BookZone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alelaicu.BookZone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladpaianu.BookZone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
