@@ -1,0 +1,5 @@
+BookZone: Sacramento
+ALEVLA: Montserrat Clasic
+Background: #84a9ac
+source: BookZone_source.png
+inspiration: BookZone_inspiration.png
