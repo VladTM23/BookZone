@@ -12,6 +12,7 @@ import SWXMLHash
 
 let key = "RNsVx8TWoCWvPVwuzzV4A"
 let secret = "rBBSJQtj0PjyIZ4uTi33tESjTvRZ6EKYFkCnbBGiyg"
+//let colorPalet = https://colorhunt.co/palette/202228
 
 class SendGoodreadsAPI {
     
