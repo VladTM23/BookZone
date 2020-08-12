@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+//        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
         
         //SendGoodreadsAPI().getByISBN(isbn: "0441172717")

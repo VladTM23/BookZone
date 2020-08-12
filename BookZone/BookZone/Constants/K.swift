@@ -16,4 +16,8 @@ struct K {
         static let isbnURL = "https://www.goodreads.com/book/isbn/"
         static let titleURL = "https://www.goodreads.com/book/title.xml?"
     }
+
+    struct Colors {
+        static let kaki = "kaki"
+    }
 }
