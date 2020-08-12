@@ -10,12 +10,15 @@ import UIKit
 import Vision
 
 
-struct AppleTextRecognizer {
+class AppleTextRecognizer {
+    
+    private var detectedText:[String] = []
 
-    func textRecognize(){
-        guard let cgImage = UIImage(named: "book" )?.cgImage else { return }
+     func textRecognize( cgImage: CGImage ){
+        //guard let cgImage = UIImage(named: "book" )?.cgImage else { return }
+        
         let requestHandler = VNImageRequestHandler(cgImage: cgImage)
-        let request = VNRecognizeTextRequest(completionHandler: recognizeTextHandler(request:error:))
+        let request = VNRecognizeTextRequest(completionHandler: recognizeTextHandler)
         do {
             // Perform the text-recognition request.
             try requestHandler.perform([request])
@@ -24,6 +27,7 @@ struct AppleTextRecognizer {
         }
     }
 
+    
     func recognizeTextHandler(request: VNRequest, error: Error?) {
         guard let observations =
                 request.results as? [VNRecognizedTextObservation] else {
@@ -36,5 +40,11 @@ struct AppleTextRecognizer {
 
         // Process the recognized strings.
         print(recognizedStrings)
+        detectedText = recognizedStrings
+        
+    }
+    
+    func getStrings () -> [String] {
+        return self.detectedText
     }
 }

@@ -15,8 +15,9 @@ let secret = "rBBSJQtj0PjyIZ4uTi33tESjTvRZ6EKYFkCnbBGiyg"
 
 
 
-struct SendGoodreadsAPI {
+class SendGoodreadsAPI {
     
+    private var labelArray : [String] = []
     
     func getByISBN(  isbn : String ) {
         
@@ -38,8 +39,7 @@ struct SendGoodreadsAPI {
                     
                     let addedBy = responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element!.text
                     
-                    print("This book has \(ratingsCount) ratings and \(reviewsCount) reviews from all \(editionsCount) editions.")
-                    print("The average rating of the book is \(averageRating) and it was added by \(addedBy) people.")
+                    self.labelArray =  ["This book has \(ratingsCount) ratings and \(reviewsCount) reviews from all \(editionsCount) editions." , "The average rating of the book is \(averageRating) and it was added by \(addedBy) people."]
                     
                 }
                 
@@ -48,13 +48,18 @@ struct SendGoodreadsAPI {
         
     }
     
-    func getByTitle (titleArray : Array<String>, authorArray: Array<String> ){
+    func getByTitle (titleArray : Array<String>, authorArray: Array<String> )  {
         
-        let authorString = authorArray.joined(separator: "+")
-        let authorOptionalParameter="author=\(authorString)"
+        var authorOptionalParameter = ""
+        if authorArray.count != 0 {
+            let authorString = authorArray.joined(separator: "+")
+             authorOptionalParameter="author=\(authorString)&"
+        }
+
+        
         let titleString = titleArray.joined(separator: "+")
         
-        AF.request("https://www.goodreads.com/book/title.xml?\(authorOptionalParameter)&key=\(key)&title=\(titleString)").response {
+        AF.request("https://www.goodreads.com/book/title.xml?\(authorOptionalParameter)key=\(key)&title=\(titleString)").response {
             response in
             
             if let data = response.data {
@@ -72,8 +77,9 @@ struct SendGoodreadsAPI {
                 
                 let addedBy = responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element!.text
                 
-                print("This book has \(ratingsCount) ratings and \(reviewsCount) reviews from all \(editionsCount) editions.")
-                print("The average rating of the book is \(averageRating) and it was added by \(addedBy) people.")
+                self.labelArray = ["This book has \(ratingsCount) ratings and \(reviewsCount) reviews from all \(editionsCount) editions." , "The average rating of the book is \(averageRating) and it was added by \(addedBy) people."]
+                
+                
                 
                 
                 
@@ -85,4 +91,9 @@ struct SendGoodreadsAPI {
         
         
 }
+    func getlabelArray () -> [String] {
+        
+        return self.labelArray
+    }
+    
 }
