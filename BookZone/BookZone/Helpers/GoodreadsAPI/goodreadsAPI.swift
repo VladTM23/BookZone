@@ -13,13 +13,11 @@ import SWXMLHash
 let key = "RNsVx8TWoCWvPVwuzzV4A"
 let secret = "rBBSJQtj0PjyIZ4uTi33tESjTvRZ6EKYFkCnbBGiyg"
 
-
-
 class SendGoodreadsAPI {
     
-    private var labelArray : [String] = []
+    private var labelArray: [String] = []
     
-    func getByISBN(  isbn : String ) {
+    func getByISBN(isbn: String) {
         
         AF.request("https://www.goodreads.com/book/isbn/\(isbn)?key=\(key)").response
             { response in
@@ -39,16 +37,14 @@ class SendGoodreadsAPI {
                     
                     let addedBy = responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element!.text
                     
-                    self.labelArray =  ["This book has \(ratingsCount) ratings and \(reviewsCount) reviews from all \(editionsCount) editions." , "The average rating of the book is \(averageRating) and it was added by \(addedBy) people."]
+                    self.labelArray =  ["This book has \(ratingsCount) ratings and \(reviewsCount) reviews from all \(editionsCount) editions." ,
+                        "The average rating of the book is \(averageRating) and it was added by \(addedBy) people."]
                     
                 }
-                
         }
-        
-        
     }
     
-    func getByTitle (titleArray : Array<String>, authorArray: Array<String> )  {
+    func getByTitle(titleArray: Array<String>, authorArray: Array<String>)  {
         
         var authorOptionalParameter = ""
         if authorArray.count != 0 {
@@ -56,7 +52,6 @@ class SendGoodreadsAPI {
              authorOptionalParameter="author=\(authorString)&"
         }
 
-        
         let titleString = titleArray.joined(separator: "+")
         
         AF.request("https://www.goodreads.com/book/title.xml?\(authorOptionalParameter)key=\(key)&title=\(titleString)").response {
@@ -77,23 +72,15 @@ class SendGoodreadsAPI {
                 
                 let addedBy = responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element!.text
                 
-                self.labelArray = ["This book has \(ratingsCount) ratings and \(reviewsCount) reviews from all \(editionsCount) editions." , "The average rating of the book is \(averageRating) and it was added by \(addedBy) people."]
-                
-                
-                
-                
+                self.labelArray = ["This book has \(ratingsCount) ratings and \(reviewsCount) reviews from all \(editionsCount) editions." ,
+                    "The average rating of the book is \(averageRating) and it was added by \(addedBy) people."]
                 
             }
-            
-            
-            
         }
-        
-        
 }
-    func getlabelArray () -> [String] {
+    
+    func getLabelArray() -> [String] {
         
         return self.labelArray
     }
-    
 }

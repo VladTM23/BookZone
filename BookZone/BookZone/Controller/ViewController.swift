@@ -9,14 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
-
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel1: UILabel!
     @IBOutlet weak var infoLabel2: UILabel!
     
     let imagePicker = UIImagePickerController()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +23,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
         
-         
         //SendGoodreadsAPI().getByISBN(isbn: "0441172717")
         //SendGoodreadsAPI().getByTitle(titleArray: ["The","shining"], authorArray: [])
         
@@ -34,7 +31,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let image = info[.originalImage] as? UIImage {
-            
             
             guard let cgImage = image.cgImage else {return}
             
@@ -50,23 +46,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             titleLabel.text = stringFromArray
             
             let goodreads = SendGoodreadsAPI()
-           
-             goodreads.getByTitle(titleArray: textArray, authorArray: [])
+            goodreads.getByTitle(titleArray: textArray, authorArray: [])
                
             let labelArray = goodreads.getlabelArray()
-            
             print(labelArray)
             
-            
-         
-            
-            
-            
-            
-            
         }
-        
-      
         
         imagePicker.dismiss(animated: true, completion: nil)
 
@@ -75,8 +60,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func cameraTapped(_ sender: UIBarButtonItem) {
         
         present(imagePicker, animated: true, completion: nil)
+        
     }
-    
-  
 }
 

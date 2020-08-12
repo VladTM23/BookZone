@@ -9,12 +9,11 @@
 import UIKit
 import Vision
 
-
 class AppleTextRecognizer {
     
     private var detectedText:[String] = []
 
-     func textRecognize( cgImage: CGImage ){
+     func textRecognize(cgImage: CGImage){
         //guard let cgImage = UIImage(named: "book" )?.cgImage else { return }
         
         let requestHandler = VNImageRequestHandler(cgImage: cgImage)
@@ -27,7 +26,6 @@ class AppleTextRecognizer {
         }
     }
 
-    
     func recognizeTextHandler(request: VNRequest, error: Error?) {
         guard let observations =
                 request.results as? [VNRecognizedTextObservation] else {
