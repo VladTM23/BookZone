@@ -26,34 +26,10 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
-        imagePicker.allowsEditing = true
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        if let image = info[.originalImage] as? UIImage {
-            
-            guard let cgImage = image.cgImage else {return}
-            
-            let textReader = AppleTextRecognizer()
-            textReader.textRecognize(cgImage : cgImage)
-            
-            let textArray = textReader.getStrings()
-            var stringFromArray = ""
-            for element in textArray {
-                stringFromArray = stringFromArray + " " + element
-            }
-            
-            print(stringFromArray)
-
-        }
-        
-        imagePicker.dismiss(animated: false, completion: nil)
-        performSegue(withIdentifier: K.Identifiers.resultsVCIdentifier, sender: self)
-        
+        imagePicker.allowsEditing = false
     }
 
-    //MARK: - User Interface
+    // MARK: - User Interface
 
     func configureUI() {
         configureMainButton()
@@ -63,22 +39,45 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         mainButton.layer.borderColor = UIColor(named: K.Colors.kaki)?.cgColor
         mainButton.layer.borderWidth = 10
     }
-    
+
     // MARK: - IBActions
 
     @IBAction func mainCameraTapped(_ sender: Any) {
-        
         present(imagePicker, animated: true, completion: nil)
-       
     }
     
     @IBAction func infoButtonTapped(_ sender: Any) {
-        
         performSegue(withIdentifier: K.Identifiers.infoVCIdentifier, sender: self)
     }
     @IBAction func searchButtonTapped(_ sender: Any) {
-        
         performSegue(withIdentifier: K.Identifiers.searchVCIdentifier, sender: self)
+    }
+}
+
+//MARK: - Link to PickerController
+
+extension HomeViewController {
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        if let image = info[.originalImage] as? UIImage {
+
+            guard let cgImage = image.cgImage else {return}
+
+            let textReader = AppleTextRecognizer()
+            textReader.textRecognize(cgImage : cgImage)
+
+            let textArray = textReader.getStrings()
+            var stringFromArray = ""
+            for element in textArray {
+                stringFromArray = stringFromArray + " " + element
+            }
+            print(stringFromArray)
+        }
+
+        imagePicker.dismiss(animated: false, completion: nil)
+        performSegue(withIdentifier: K.Identifiers.resultsVCIdentifier, sender: self)
+
     }
 }
 
