@@ -19,6 +19,7 @@
 		F57D29E124E278400001D4C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57D29DF24E278400001D4C4 /* Main.storyboard */; };
 		F57D29E624E278410001D4C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57D29E424E278410001D4C4 /* LaunchScreen.storyboard */; };
 		F57D29F624E279C00001D4C4 /* AppleTextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29F524E279C00001D4C4 /* AppleTextRecognizer.swift */; };
+		F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F57D29E524E278410001D4C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F57D29E724E278410001D4C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F57D29F524E279C00001D4C4 /* AppleTextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTextRecognizer.swift; sourceTree = "<group>"; };
+		F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				F57D29DD24E278400001D4C4 /* ViewController.swift */,
+				F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				F57D29DA24E278400001D4C4 /* AppDelegate.swift in Sources */,
 				F57D29DC24E278400001D4C4 /* SceneDelegate.swift in Sources */,
 				F57D29F624E279C00001D4C4 /* AppleTextRecognizer.swift in Sources */,
+				F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +451,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vladpaianu.BookZone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -466,7 +470,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vladpaianu.BookZone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

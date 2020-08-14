@@ -19,5 +19,7 @@ struct K {
 
     struct Colors {
         static let kaki = "kaki"
+        static let pink = "pink"
+        static let lightGreen = "lightGreen"
     }
 }
