@@ -13,16 +13,16 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Results View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BookZone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ResultsViewController" customModule="BookZone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHh-91-tcE">
-                                <rect key="frame" x="152" y="96" width="71" height="36"/>
+                                <rect key="frame" x="152" y="40" width="71" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="78h-Fm-7gs"/>
                                 </constraints>
@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="103.79464285714285"/>
+            <point key="canvasLocation" x="-348" y="-568"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="3f5-yR-fKd">
@@ -151,6 +151,10 @@
                                         <state key="normal" image="bookSearch">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
                                         </state>
+                                        <connections>
+                                            <action selector="searchButtonTapped:" destination="XBj-A1-K52" eventType="touchUpInside" id="MTd-Xp-BRb"/>
+                                            <segue destination="Kin-Q5-hwT" kind="presentation" identifier="goToSearch" id="PqT-0Q-aaz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yb1-lK-rN1" userLabel="InfoButton">
                                         <rect key="frame" x="285" y="25" width="40" height="40"/>
@@ -160,6 +164,10 @@
                                         </constraints>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="faq"/>
+                                        <connections>
+                                            <action selector="infoButtonTapped:" destination="XBj-A1-K52" eventType="touchUpInside" id="3y1-Ud-580"/>
+                                            <segue destination="tkS-0r-w2A" kind="presentation" identifier="goToInfo" id="ZS8-fs-WSc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="pink"/>
@@ -192,6 +200,9 @@
                                         <integer key="value" value="45"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="mainCameraTapped:" destination="XBj-A1-K52" eventType="touchUpInside" id="Hjb-Ps-Sjo"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeGirl" translatesAutoresizingMaskIntoConstraints="NO" id="0DH-Fu-Q56">
                                 <rect key="frame" x="30" y="195" width="315" height="350"/>
@@ -219,33 +230,45 @@
                         <viewLayoutGuide key="safeArea" id="Yr7-KY-Bgs"/>
                     </view>
                     <connections>
-                        <outlet property="infoButton" destination="yb1-lK-rN1" id="3Kz-oW-cKF"/>
+                        <outlet property="infoButton" destination="yb1-lK-rN1" id="Az7-q1-XPV"/>
                         <outlet property="mainButton" destination="OzW-bv-UGz" id="1nl-8m-UXc"/>
                         <outlet property="searchButton" destination="DhK-Kb-mJ8" id="7OG-0A-ADB"/>
-                        <segue destination="7f5-PP-k6M" kind="presentation" identifier="goToNav" id="OQO-2G-irJ"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToResults" id="1cR-wx-sPu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVv-EO-zOq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1576.8" y="-218.7192118226601"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="aAV-Xf-fPk">
+        <!--Info View Controller-->
+        <scene sceneID="K96-Ur-kvU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7f5-PP-k6M" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GjP-vm-bzf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eWH-eJ-0Ea"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LKR-Fr-WDj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="tkS-0r-w2A" customClass="InfoViewController" customModule="BookZone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qer-iK-Hlo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="cAM-SA-IBL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cRj-qj-5DA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
+            <point key="canvasLocation" x="610" y="-219"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="n46-oZ-9B2">
+            <objects>
+                <viewController id="Kin-Q5-hwT" customClass="SearchViewController" customModule="BookZone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l1I-32-gxl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Gbo-Iv-c6o"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rlq-eL-Nev" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-348" y="168"/>
         </scene>
     </scenes>
     <resources>
