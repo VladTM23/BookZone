@@ -11,9 +11,6 @@
         <array key="Montserrat-Bold.ttf">
             <string>Montserrat-Bold</string>
         </array>
-        <array key="Sacramento-Regular.ttf">
-            <string>Sacramento-Regular</string>
-        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -31,27 +28,28 @@
                                     <constraint firstAttribute="width" constant="160" id="ULK-ti-xtN"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BookZone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jk5-U3-SQz" userLabel="TitleLabel">
-                                <rect key="frame" x="68" y="448" width="278" height="70"/>
-                                <fontDescription key="fontDescription" name="Sacramento-Regular" family="Sacramento" pointSize="60"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A L E V L A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOO-no-BbI" userLabel="LogoLabel">
-                                <rect key="frame" x="182" y="538" width="50.5" height="12"/>
+                                <rect key="frame" x="182" y="556" width="50.5" height="12"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Title" translatesAutoresizingMaskIntoConstraints="NO" id="KmG-Ot-foo">
+                                <rect key="frame" x="85" y="448" width="244" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="TSR-rS-TF1"/>
+                                    <constraint firstAttribute="width" constant="244" id="fBv-ki-w67"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" name="kaki"/>
                         <constraints>
                             <constraint firstItem="PBL-7p-onU" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-60" id="Czc-kZ-6BQ"/>
-                            <constraint firstItem="jk5-U3-SQz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Eii-Qe-KMV"/>
-                            <constraint firstItem="jk5-U3-SQz" firstAttribute="top" secondItem="PBL-7p-onU" secondAttribute="bottom" constant="10" id="MbX-d9-C5x"/>
+                            <constraint firstItem="KmG-Ot-foo" firstAttribute="top" secondItem="PBL-7p-onU" secondAttribute="bottom" constant="10" id="MXN-9q-YRl"/>
                             <constraint firstItem="iOO-no-BbI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Y9U-EP-yDh"/>
+                            <constraint firstItem="KmG-Ot-foo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eTq-oj-dD3"/>
                             <constraint firstItem="PBL-7p-onU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iGL-dV-oPo"/>
-                            <constraint firstItem="iOO-no-BbI" firstAttribute="top" secondItem="jk5-U3-SQz" secondAttribute="bottom" constant="20" id="qxM-33-Kec"/>
+                            <constraint firstItem="iOO-no-BbI" firstAttribute="top" secondItem="KmG-Ot-foo" secondAttribute="bottom" constant="20" id="n0T-Hq-p0d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -63,6 +61,7 @@
     </scenes>
     <resources>
         <image name="BookZone" width="1325" height="903"/>
+        <image name="Title" width="732" height="264"/>
         <namedColor name="kaki">
             <color red="0.51800000667572021" green="0.66299998760223389" blue="0.67500001192092896" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
