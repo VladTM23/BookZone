@@ -99,7 +99,7 @@
                                                     <constraint firstAttribute="height" constant="88" id="xNd-28-mrt"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Sacramento-Regular" family="Sacramento" pointSize="60"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -193,15 +193,26 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeGirl" translatesAutoresizingMaskIntoConstraints="NO" id="0DH-Fu-Q56">
+                                <rect key="frame" x="30" y="195" width="315" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="315" id="btE-dF-Fxg"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="350" id="zIi-Vq-5qB"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" name="kaki"/>
                         <constraints>
+                            <constraint firstItem="OzW-bv-UGz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0DH-Fu-Q56" secondAttribute="bottom" constant="90" id="5bU-xJ-ogR"/>
+                            <constraint firstItem="0DH-Fu-Q56" firstAttribute="centerX" secondItem="2hd-aE-5XU" secondAttribute="centerX" id="70R-de-EGd"/>
                             <constraint firstAttribute="trailing" secondItem="Jbd-tF-ax5" secondAttribute="trailing" id="FAn-5C-1iL"/>
                             <constraint firstItem="Jbd-tF-ax5" firstAttribute="top" secondItem="2hd-aE-5XU" secondAttribute="top" constant="-35" id="NoN-pB-jJ1"/>
+                            <constraint firstItem="Yr7-KY-Bgs" firstAttribute="trailing" secondItem="0DH-Fu-Q56" secondAttribute="trailing" constant="30" id="PVB-QT-3mX"/>
                             <constraint firstItem="JiO-ps-Nn5" firstAttribute="trailing" secondItem="Yr7-KY-Bgs" secondAttribute="trailing" id="QGj-pb-dX0"/>
                             <constraint firstItem="Yr7-KY-Bgs" firstAttribute="bottom" secondItem="OzW-bv-UGz" secondAttribute="bottom" constant="50" id="mh4-Nz-FeW"/>
                             <constraint firstItem="OzW-bv-UGz" firstAttribute="centerX" secondItem="2hd-aE-5XU" secondAttribute="centerX" id="pVx-n3-JWj"/>
                             <constraint firstItem="Jbd-tF-ax5" firstAttribute="leading" secondItem="Yr7-KY-Bgs" secondAttribute="leading" id="q6C-BZ-Q9G"/>
+                            <constraint firstItem="0DH-Fu-Q56" firstAttribute="top" secondItem="Jbd-tF-ax5" secondAttribute="bottom" constant="30" id="qVW-a5-RpV"/>
                             <constraint firstItem="Yr7-KY-Bgs" firstAttribute="bottom" secondItem="JiO-ps-Nn5" secondAttribute="bottom" constant="-35" id="uDD-l5-Fro"/>
                             <constraint firstItem="JiO-ps-Nn5" firstAttribute="leading" secondItem="Yr7-KY-Bgs" secondAttribute="leading" id="v2W-IC-Y4q"/>
                         </constraints>
@@ -241,8 +252,9 @@
         <image name="bookSearch" width="40" height="40"/>
         <image name="cameraGreen" width="40" height="40"/>
         <image name="faq" width="40" height="40"/>
+        <image name="homeGirl" width="398" height="442.33334350585938"/>
         <namedColor name="grey">
-            <color red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.86699998378753662" green="0.86699998378753662" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="kaki">
             <color red="0.51800000667572021" green="0.66299998760223389" blue="0.67500001192092896" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
