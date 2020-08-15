@@ -11,8 +11,12 @@ import Alamofire
 import SWXMLHash
 
 class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-     let imagePicker = UIImagePickerController()
+
+    // MARK: - Properties
+
+    var bookTitle: String!
+    var bookTitleArray: [String]!
+    let imagePicker = UIImagePickerController()
 
     // MARK: - IBOutlets
     @IBOutlet weak var searchButton: UIButton!
@@ -25,7 +29,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         configureUI()
         
         imagePicker.delegate = self
-//        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
     }
 
@@ -52,6 +56,14 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func searchButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: K.Identifiers.searchVCIdentifier, sender: self)
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.Identifiers.resultsVCIdentifier {
+            let resultsVC = segue.destination as! ResultsViewController
+            resultsVC.titleLabelVar = bookTitle
+            resultsVC.titleArray = bookTitleArray
+        }
+    }
 }
 
 //MARK: - Link to PickerController
@@ -73,11 +85,13 @@ extension HomeViewController {
                 stringFromArray = stringFromArray + " " + element
             }
             print(stringFromArray)
+            self.bookTitle = stringFromArray
+            self.bookTitleArray = textArray
         }
 
-        imagePicker.dismiss(animated: false, completion: nil)
+        imagePicker.dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: K.Identifiers.resultsVCIdentifier, sender: self)
-
     }
 }
+
 

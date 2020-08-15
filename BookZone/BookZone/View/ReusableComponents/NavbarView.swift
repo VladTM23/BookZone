@@ -17,21 +17,24 @@ class NavbarView: UIView {
         super.init(coder: aDecoder)
         commonInit()
     }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
+
     func commonInit() {
         guard let view = loadViewFromNib() else { return }
         view.frame = self.bounds
         self.addSubview(view)
     }
+    
     func loadViewFromNib() -> UIView? {
         let nib = UINib(nibName: K.Nibs.navbarNibname, bundle: nil)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
-        self.window?.rootViewController?.dismiss(animated: false, completion: nil)
+        self.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
 }
