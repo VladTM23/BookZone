@@ -21,6 +21,8 @@
 		F57D29E124E278400001D4C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57D29DF24E278400001D4C4 /* Main.storyboard */; };
 		F57D29E624E278410001D4C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57D29E424E278410001D4C4 /* LaunchScreen.storyboard */; };
 		F57D29F624E279C00001D4C4 /* AppleTextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29F524E279C00001D4C4 /* AppleTextRecognizer.swift */; };
+		F591010D24E7B2370042EB6F /* Navbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F591010C24E7B2370042EB6F /* Navbar.xib */; };
+		F591010F24E7B25D0042EB6F /* NavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F591010E24E7B25D0042EB6F /* NavbarView.swift */; };
 		F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		F57D29E524E278410001D4C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F57D29E724E278410001D4C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F57D29F524E279C00001D4C4 /* AppleTextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTextRecognizer.swift; sourceTree = "<group>"; };
+		F591010C24E7B2370042EB6F /* Navbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Navbar.xib; sourceTree = "<group>"; };
+		F591010E24E7B25D0042EB6F /* NavbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarView.swift; sourceTree = "<group>"; };
 		F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +141,7 @@
 		F57D29EE24E2785B0001D4C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F591010B24E7B2150042EB6F /* ReusableComponents */,
 				F57D29DF24E278400001D4C4 /* Main.storyboard */,
 			);
 			path = View;
@@ -177,6 +182,15 @@
 				F57D29F524E279C00001D4C4 /* AppleTextRecognizer.swift */,
 			);
 			path = Apple;
+			sourceTree = "<group>";
+		};
+		F591010B24E7B2150042EB6F /* ReusableComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F591010E24E7B25D0042EB6F /* NavbarView.swift */,
+				F591010C24E7B2370042EB6F /* Navbar.xib */,
+			);
+			path = ReusableComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5349EC124E45282009C96BD /* Montserrat-Regular.ttf in Resources */,
+				F591010D24E7B2370042EB6F /* Navbar.xib in Resources */,
 				F57D29E624E278410001D4C4 /* LaunchScreen.storyboard in Resources */,
 				F5349EB624E44BE2009C96BD /* Assets.xcassets in Resources */,
 				F57D29E124E278400001D4C4 /* Main.storyboard in Resources */,
@@ -302,6 +317,7 @@
 				7106C77724E6E9F200D3D29C /* SearchViewController.swift in Sources */,
 				F57D29DA24E278400001D4C4 /* AppDelegate.swift in Sources */,
 				7106C77524E6E9C300D3D29C /* InfoViewController.swift in Sources */,
+				F591010F24E7B25D0042EB6F /* NavbarView.swift in Sources */,
 				F57D29DC24E278400001D4C4 /* SceneDelegate.swift in Sources */,
 				F57D29F624E279C00001D4C4 /* AppleTextRecognizer.swift in Sources */,
 				F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */,

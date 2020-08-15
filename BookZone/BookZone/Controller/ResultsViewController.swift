@@ -15,12 +15,14 @@ class ResultsViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel1: UILabel!
     @IBOutlet weak var infoLabel2: UILabel!
+    @IBOutlet weak var navbarView: NavbarView!
 
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        configureUI()
         imagePicker.delegate = self
 //        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
@@ -28,6 +30,17 @@ class ResultsViewController: UIViewController, UIImagePickerControllerDelegate, 
         //SendGoodreadsAPI().getByISBN(isbn: "0441172717")
         //SendGoodreadsAPI().getByTitle(titleArray: ["The","shining"], authorArray: [])
     }
+
+    // MARK: - User interface
+
+    func configureUI() {
+        configureNavbar()
+    }
+
+    func configureNavbar() {
+        navbarView.titleLabel.text = K.NavbarTitles.resultsTitle
+    }
+
 }
     //MARK: - API Extension
 

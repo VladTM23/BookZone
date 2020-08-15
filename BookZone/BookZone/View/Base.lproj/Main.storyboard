@@ -18,11 +18,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ResultsViewController" customModule="BookZone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeC-pJ-cLC" userLabel="NavBarView" customClass="NavbarView" customModule="BookZone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="-28" width="375" height="165"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="hUF-i7-T9A"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHh-91-tcE">
-                                <rect key="frame" x="152" y="40" width="71" height="36"/>
+                                <rect key="frame" x="152" y="244" width="71" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="78h-Fm-7gs"/>
                                 </constraints>
@@ -31,7 +38,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTE-co-Jjb">
-                                <rect key="frame" x="37.666666666666657" y="369" width="300" height="20.333333333333314"/>
+                                <rect key="frame" x="37.666666666666657" y="396" width="300" height="20.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="gE2-nf-i1J"/>
                                 </constraints>
@@ -40,7 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfA-Km-JLa">
-                                <rect key="frame" x="37.666666666666657" y="443.66666666666669" width="300" height="20.333333333333314"/>
+                                <rect key="frame" x="37.666666666666657" y="497.66666666666669" width="300" height="20.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="gXQ-4Q-oKL"/>
                                 </constraints>
@@ -52,12 +59,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="wHh-91-tcE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0zd-gQ-cgL"/>
-                            <constraint firstItem="jTE-co-Jjb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Vb-fL-w3x"/>
                             <constraint firstItem="jTE-co-Jjb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8Qz-bm-zoS"/>
                             <constraint firstItem="xfA-Km-JLa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XDO-3q-MAf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xfA-Km-JLa" secondAttribute="bottom" constant="260" id="cjO-Y8-OLK"/>
-                            <constraint firstItem="wHh-91-tcE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="eLv-yY-7vn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zeC-pJ-cLC" secondAttribute="trailing" id="dJn-dm-Sqt"/>
+                            <constraint firstItem="wHh-91-tcE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="eLv-yY-7vn"/>
+                            <constraint firstItem="zeC-pJ-cLC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hbX-ld-jm9"/>
                             <constraint firstItem="jTE-co-Jjb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mkb-EQ-xpW"/>
+                            <constraint firstItem="zeC-pJ-cLC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-28" id="qrE-CT-kRs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -71,6 +80,7 @@
                     <connections>
                         <outlet property="infoLabel1" destination="jTE-co-Jjb" id="hZY-1a-Yf8"/>
                         <outlet property="infoLabel2" destination="xfA-Km-JLa" id="eDu-5q-aP6"/>
+                        <outlet property="navbarView" destination="zeC-pJ-cLC" id="lo9-pS-W1B"/>
                         <outlet property="titleLabel" destination="wHh-91-tcE" id="AE4-Jh-slV"/>
                     </connections>
                 </viewController>
@@ -153,7 +163,7 @@
                                         </state>
                                         <connections>
                                             <action selector="searchButtonTapped:" destination="XBj-A1-K52" eventType="touchUpInside" id="MTd-Xp-BRb"/>
-                                            <segue destination="Kin-Q5-hwT" kind="presentation" identifier="goToSearch" id="PqT-0Q-aaz"/>
+                                            <segue destination="Kin-Q5-hwT" kind="presentation" identifier="goToSearch" modalPresentationStyle="fullScreen" id="PqT-0Q-aaz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yb1-lK-rN1" userLabel="InfoButton">
@@ -166,7 +176,7 @@
                                         <state key="normal" image="faq"/>
                                         <connections>
                                             <action selector="infoButtonTapped:" destination="XBj-A1-K52" eventType="touchUpInside" id="3y1-Ud-580"/>
-                                            <segue destination="tkS-0r-w2A" kind="presentation" identifier="goToInfo" id="ZS8-fs-WSc"/>
+                                            <segue destination="tkS-0r-w2A" kind="presentation" identifier="goToInfo" modalPresentationStyle="fullScreen" id="ZS8-fs-WSc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -233,7 +243,7 @@
                         <outlet property="infoButton" destination="yb1-lK-rN1" id="Az7-q1-XPV"/>
                         <outlet property="mainButton" destination="OzW-bv-UGz" id="1nl-8m-UXc"/>
                         <outlet property="searchButton" destination="DhK-Kb-mJ8" id="7OG-0A-ADB"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToResults" id="1cR-wx-sPu"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToResults" modalPresentationStyle="fullScreen" id="1cR-wx-sPu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVv-EO-zOq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -245,11 +255,28 @@
             <objects>
                 <viewController id="tkS-0r-w2A" customClass="InfoViewController" customModule="BookZone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qer-iK-Hlo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZV-57-9Xa" customClass="NavbarView" customModule="BookZone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="-28" width="375" height="165"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="17b-kD-4mw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nZV-57-9Xa" firstAttribute="top" secondItem="Qer-iK-Hlo" secondAttribute="top" constant="-28" id="EoE-Gm-qbu"/>
+                            <constraint firstItem="nZV-57-9Xa" firstAttribute="leading" secondItem="cAM-SA-IBL" secondAttribute="leading" id="fJN-vi-8wb"/>
+                            <constraint firstItem="cAM-SA-IBL" firstAttribute="trailing" secondItem="nZV-57-9Xa" secondAttribute="trailing" id="s77-ej-XS0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cAM-SA-IBL"/>
                     </view>
+                    <connections>
+                        <outlet property="navBarView" destination="nZV-57-9Xa" id="8pc-Lk-An4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRj-qj-5DA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -260,11 +287,28 @@
             <objects>
                 <viewController id="Kin-Q5-hwT" customClass="SearchViewController" customModule="BookZone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l1I-32-gxl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTE-yA-QNT" userLabel="NavBarView" customClass="NavbarView" customModule="BookZone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="-28" width="375" height="165"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="WP9-nk-g0U"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Gbo-Iv-c6o" firstAttribute="trailing" secondItem="NTE-yA-QNT" secondAttribute="trailing" id="Qf8-Q0-zed"/>
+                            <constraint firstItem="NTE-yA-QNT" firstAttribute="leading" secondItem="Gbo-Iv-c6o" secondAttribute="leading" id="dfN-Xj-Zmf"/>
+                            <constraint firstItem="NTE-yA-QNT" firstAttribute="top" secondItem="l1I-32-gxl" secondAttribute="top" constant="-28" id="iwY-vA-vcu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Gbo-Iv-c6o"/>
                     </view>
+                    <connections>
+                        <outlet property="navBarView" destination="NTE-yA-QNT" id="sL6-2l-13r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rlq-eL-Nev" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
