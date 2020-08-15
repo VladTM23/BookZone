@@ -16,7 +16,9 @@ class ResultsViewController: UIViewController  {
     @IBOutlet weak var infoLabel1: UILabel!
     @IBOutlet weak var infoLabel2: UILabel!
     @IBOutlet weak var navbarView: NavbarView!
-
+    @IBOutlet weak var averageRating: UILabel!
+    
+    
     //MARK: - Properties
     var titleLabelVar: String?
     var titleArray: [String]?
@@ -25,7 +27,7 @@ class ResultsViewController: UIViewController  {
         super.viewDidLoad()
 
         configureUI()
-        getByTitle(titleArray: ["The","Shining"], authorArray: [])
+        getByTitle(titleArray: titleArray!, authorArray: [])
         //SendGoodreadsAPI().getByISBN(isbn: "0441172717")
     }
 
@@ -78,9 +80,10 @@ extension ResultsViewController {
 
                 let addedBy = responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element!.text
 
-                let labelArray = ["This book has \(ratingsCount) ratings and \(reviewsCount) reviews from all \(editionsCount) editions.",
-                    "The average rating of the book is \(averageRating) and it was added by \(addedBy) people."]
+                let labelArray = ["⭐️: \(ratingsCount)\n📝: \(reviewsCount)",
+                    "📚: \(editionsCount)\n👦🏼👩🏾: \(addedBy)"]
                 print(labelArray)
+                self.averageRating.text = averageRating
                 self.infoLabel1.text = labelArray[0]
                 self.infoLabel2.text = labelArray[1]
             }
