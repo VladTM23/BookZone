@@ -27,7 +27,7 @@ class ResultsViewController: UIViewController  {
         super.viewDidLoad()
 
         configureUI()
-        getByTitle(titleArray: titleArray!, authorArray: [])
+        getByTitle(titleArray: ["The","Shining"], authorArray: [])
         //SendGoodreadsAPI().getByISBN(isbn: "0441172717")
     }
 
@@ -43,7 +43,8 @@ class ResultsViewController: UIViewController  {
     }
 
     func configureLabels() {
-        titleLabel.text = titleLabelVar
+//        titleLabel.text = titleLabelVar
+        titleLabel.text = "Test"
         infoLabel1.text = "Getting results..."
     }
 }

@@ -29,7 +29,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         configureUI()
         
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+//        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
     }
 
