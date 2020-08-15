@@ -10,58 +10,47 @@ import UIKit
 import Alamofire
 import SWXMLHash
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+class ResultsViewController: UIViewController  {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel1: UILabel!
     @IBOutlet weak var infoLabel2: UILabel!
+    @IBOutlet weak var navbarView: NavbarView!
 
-    let imagePicker = UIImagePickerController()
+    //MARK: - Properties
+    var titleLabelVar: String?
+    var titleArray: [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        imagePicker.delegate = self
-//        imagePicker.sourceType = .camera
-        imagePicker.allowsEditing = false
-        
-        //SendGoodreadsAPI().getByISBN(isbn: "0441172717")
-        //SendGoodreadsAPI().getByTitle(titleArray: ["The","shining"], authorArray: [])
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        if let image = info[.originalImage] as? UIImage {
-            
-            guard let cgImage = image.cgImage else {return}
-            
-            let textReader = AppleTextRecognizer()
-            textReader.textRecognize(cgImage : cgImage)
-            
-            let textArray = textReader.getStrings()
-            var stringFromArray = ""
-            for element in textArray {
-                stringFromArray = stringFromArray + " " + element
-            }
 
-            titleLabel.text = stringFromArray
-            getByTitle(titleArray: textArray, authorArray: [])
-        }
-        
-        imagePicker.dismiss(animated: true, completion: nil)
+        configureUI()
+        getByTitle(titleArray: ["The","Shining"], authorArray: [])
+        //SendGoodreadsAPI().getByISBN(isbn: "0441172717")
     }
-    
-    @IBAction func cameraTapped(_ sender: UIBarButtonItem) {
-        
-        present(imagePicker, animated: true, completion: nil)
+
+    // MARK: - User interface
+
+    func configureUI() {
+        configureNavbar()
+        configureLabels()
+    }
+
+    func configureNavbar() {
+        navbarView.titleLabel.text = K.NavbarTitles.resultsTitle
+    }
+
+    func configureLabels() {
+        titleLabel.text = titleLabelVar
+        infoLabel1.text = "Getting results..."
     }
 }
 
 //MARK: - API Extension
 
-extension ViewController {
+extension ResultsViewController {
 
-    func getByTitle(titleArray: Array<String>, authorArray: Array<String>) {
+    func getByTitle(titleArray: [String], authorArray: [String]) {
 
         var authorOptionalParameter = ""
         if authorArray.count != 0 {
@@ -91,6 +80,7 @@ extension ViewController {
 
                 let labelArray = ["This book has \(ratingsCount) ratings and \(reviewsCount) reviews from all \(editionsCount) editions.",
                     "The average rating of the book is \(averageRating) and it was added by \(addedBy) people."]
+                print(labelArray)
                 self.infoLabel1.text = labelArray[0]
                 self.infoLabel2.text = labelArray[1]
             }
@@ -101,7 +91,6 @@ extension ViewController {
 
         AF.request("\(K.Endpoints.isbnURL)\(isbn)?key=\(K.key)").response
             { response in
-                //debugPrint(response)
 
                 if let data = response.data {
                     let responseBody = SWXMLHash.parse(data)
@@ -125,6 +114,9 @@ extension ViewController {
         }
     }
 }
+
+
+
 
 
 

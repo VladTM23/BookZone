@@ -22,4 +22,20 @@ struct K {
         static let pink = "pink"
         static let lightGreen = "lightGreen"
     }
+    
+    struct Identifiers {
+        static let resultsVCIdentifier = "goToResults"
+        static let infoVCIdentifier = "goToInfo"
+        static let searchVCIdentifier = "goToSearch"
+    }
+
+    struct Nibs {
+        static let navbarNibname = "Navbar"
+    }
+
+    struct NavbarTitles {
+        static let searchTitle = "Search your next book"
+        static let infoTitle = "Info Page"
+        static let resultsTitle = "Results Page"
+    }
 }
