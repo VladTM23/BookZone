@@ -1,20 +1,21 @@
 //
-//  NavbarView.swift
+//  ResultCardView.swift
 //  BookZone
 //
-//  Created by Paianu Vlad-Valentin on 15/08/2020.
+//  Created by Alexandra-Gabriela Laicu-Hausberger on 17/08/2020.
 //  Copyright © 2020 Paianu Vlad-Valentin. All rights reserved.
 //
 
 import UIKit
 
-class NavbarView: UIView {
-
-    // MARK: - IBOutlets
+class ResultCardView: UIView {
 
 
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var categoryImageView: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
-    @IBOutlet weak var titleLabelNavbar: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -33,11 +34,8 @@ class NavbarView: UIView {
     }
     
     func loadViewFromNib() -> UIView? {
-        let nib = UINib(nibName: K.Nibs.navbarNibname, bundle: nil)
+        let nib = UINib(nibName: K.Nibs.resultCardNibname, bundle: nil)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
 
-    @IBAction func backButtonPressed(_ sender: UIButton) {
-        self.window?.rootViewController?.dismiss(animated: true, completion: nil)
-    }
 }

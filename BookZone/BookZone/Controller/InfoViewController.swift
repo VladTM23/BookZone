@@ -12,7 +12,10 @@ class InfoViewController: UIViewController {
 
     //MARK: - IBOutlets
     @IBOutlet weak var navBarView: NavbarView!
-
+    @IBOutlet weak var resultCardView: ResultCardView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -22,10 +25,14 @@ class InfoViewController: UIViewController {
 
     func configureUI() {
         configureNavBar()
+       
+        
+//        let image = UIImage(systemName: "multiply.circle.fill")
+    
     }
 
     func configureNavBar() {
-        navBarView.titleLabel.text = K.NavbarTitles.infoTitle
+        navBarView.titleLabelNavbar.text = K.NavbarTitles.infoTitle
     }
     
 }

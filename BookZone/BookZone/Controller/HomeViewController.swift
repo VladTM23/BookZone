@@ -22,7 +22,9 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var mainButton: UIButton!
     @IBOutlet weak var infoButton: UIButton!
-
+    @IBOutlet weak var quoteLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +39,21 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     func configureUI() {
         configureMainButton()
+        configureQuote()
     }
 
     func configureMainButton() {
         mainButton.layer.borderColor = UIColor(named: K.Colors.kaki)?.cgColor
         mainButton.layer.borderWidth = 10
+    }
+    
+    func configureQuote() {
+        
+        let randomId = Int.random(in: 0..<K.Quotes.quotes.count)
+        quoteLabel.text = K.Quotes.quotes[randomId]
+        authorLabel.text = K.Quotes.authors[randomId]
+        
+        
     }
 
     // MARK: - IBActions
