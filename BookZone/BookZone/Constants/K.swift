@@ -27,6 +27,7 @@ struct K {
         static let resultsVCIdentifier = "goToResults"
         static let infoVCIdentifier = "goToInfo"
         static let searchVCIdentifier = "goToSearch"
+        static let resultVCIdentifierFromSearch = "goToResultFromSearch"
     }
 
     struct Nibs {
@@ -39,6 +40,7 @@ struct K {
         static let searchTitle = "Your next book"
         static let infoTitle = "Info Page"
         static let resultsTitle = "Results Page"
+        
     }
     
     struct Quotes {
