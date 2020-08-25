@@ -21,6 +21,8 @@ class ResultsViewController: UIViewController  {
     //MARK: - Properties
     var titleLabelVar: String?
     var titleArray: [String]?
+    var flag : Bool?
+    var ISBN : String?
     let reuseIdentifier = "resultCard"
     
     var apiResults: [String]?
@@ -41,26 +43,28 @@ class ResultsViewController: UIViewController  {
         collectionView.collectionViewLayout = layout
         
         configureUI()
-        getByTitle(titleArray: ["The","Shining"], authorArray: [])
-        //SendGoodreadsAPI().getByISBN(isbn: "0441172717")
+        if flag == false {
+            getByTitle(titleArray: ["The","Shining"], authorArray: [])
+        }
+        else {
+            getByISBN(isbn: "0441172717")
+        }
+        
+        
     }
 
     // MARK: - User interface
 
     func configureUI() {
         configureNavbar()
-        configureLabels()
+
     }
 
     func configureNavbar() {
         navbarView.titleLabelNavbar.text = K.NavbarTitles.resultsTitle
     }
 
-    func configureLabels() {
-//        titleLabel.text = titleLabelVar
-        titleLabel.text = "Test"
-     
-    }
+
 }
 
 //MARK: - API Extension
@@ -96,6 +100,8 @@ extension ResultsViewController {
                 let addedBy = responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element!.text
 
                 let labelArray =  [ratingsCount, reviewsCount, editionsCount,addedBy]
+                
+                self.titleLabel.text = title
                 self.apiResults = labelArray
                 self.averageRating.text = averageRating
                 
@@ -123,6 +129,7 @@ extension ResultsViewController {
                     let addedBy = responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element!.text
 
                     let labelArray =  [ratingsCount, reviewsCount, editionsCount,addedBy]
+                    self.titleLabel.text = title
                     self.apiResults = labelArray
                     self.averageRating.text = averageRating
                  
@@ -135,8 +142,7 @@ extension ResultsViewController {
 
 extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
@@ -157,7 +163,7 @@ extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDel
             cell.resultCardCellView.numberLabel.text = self.apiResults?[indexPath.item]
         }
         
-         cell.resultCardCellView.categoryLabel.text = self.resultExp[indexPath.item]
+        cell.resultCardCellView.categoryLabel.text = self.resultExp[indexPath.item]
         cell.resultCardCellView.categoryImageView.image = UIImage(systemName: self.systemImageName[indexPath.item])
         
                
@@ -185,13 +191,6 @@ extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDel
         return UIEdgeInsets( top:10, left: 50,  bottom:10, right: 50)
     }
     
-
-    
-    
-    
-    
-
-
 }
 
 

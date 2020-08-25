@@ -14,11 +14,43 @@ class SearchViewController: UIViewController {
 
        var bookTitle: String!
        var bookTitleArray: [String]!
+       var flag:Bool!
+       var ISBN:String!
 
      // MARK: - IBOutlest
     
     @IBOutlet weak var navBarView: NavbarView!
     @IBOutlet weak var searchBar: SearchBar!
+    @IBOutlet weak var titleSwitchLabel: UILabel!
+    @IBOutlet weak var isbnSwitchLabel: UILabel!
+    @IBOutlet weak var searchSwitch: UISwitch!
+    
+    @IBAction func switchToggled(_ sender: UISwitch) {
+        
+        if(sender.isOn){
+            titleSwitchLabel.alpha = CGFloat(0.5)
+            isbnSwitchLabel.alpha = CGFloat(1)
+            searchBar.searchTextField.placeholder = "Search by ISBN..."
+            searchBar.buttonImageView.image = UIImage(named: "pinkCardBackground")
+            searchBar.searchImageView.image = UIImage(named: "pinkCardBackground")
+            flag = true
+        }
+        
+        else {
+            titleSwitchLabel.alpha = CGFloat(1)
+            isbnSwitchLabel.alpha = CGFloat(0.5)
+            sender.tintColor = #colorLiteral(red: 0.5370000005, green: 0.7879999876, blue: 0.7220000029, alpha: 1)
+            sender.layer.cornerRadius = sender.frame.height / 2
+            sender.backgroundColor = #colorLiteral(red: 0.5370000005, green: 0.7879999876, blue: 0.7220000029, alpha: 1)
+            
+            searchBar.searchTextField.placeholder = "Search by Title..."
+            searchBar.searchImageView.image = UIImage(named: "yellowCardBackground")
+            searchBar.buttonImageView.image = UIImage(named: "yellowCardBackground")
+            flag = false
+        }
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +69,14 @@ class SearchViewController: UIViewController {
     func configureUI() {
         configureNavBar()
         configureSearchBar()
+        configureSwitchAndLabels()
+    }
+    
+    func configureSwitchAndLabels() {
+        
+        isbnSwitchLabel.alpha = CGFloat(0.5)
+        searchSwitch.setOn(false, animated: true)
+        switchToggled(searchSwitch)
     }
 
     func configureNavBar() {
@@ -73,24 +113,45 @@ extension SearchViewController: UITextFieldDelegate {
     
     @objc func searchButtonPressed () {
         //searchBar.searchTextField.endEditing(true)
+        
+        if (searchBar.buttonImageView.image == UIImage(named: "yellowCardBackground") ){
+            
         searchBar.buttonImageView.image = UIImage(named: "pinkCardBackground")
+            
+        }
+        else {
+
+            searchBar.buttonImageView.image = UIImage(named: "yellowCardBackground")
+        }
+        
         print("pressed")
     }
     
     @objc func searchButtonReleased () {
         searchBar.searchTextField.endEditing(true)
-        searchBar.buttonImageView.image = UIImage(named: "yellowCardBackground")
         
-        self.bookTitle = searchBar.searchTextField.text
-        self.bookTitleArray = bookTitle.components(separatedBy: " ")
+        if (searchBar.buttonImageView.image == UIImage(named: "yellowCardBackground") ){
+            searchBar.buttonImageView.image = UIImage(named: "pinkCardBackground")
+        }
+        else {
+            searchBar.buttonImageView.image = UIImage(named: "yellowCardBackground")
+        }
+    
+        if flag == true {
+            self.ISBN = searchBar.searchTextField.text
+        }
+        else {
+            self.bookTitle = searchBar.searchTextField.text
+            self.bookTitleArray = bookTitle.components(separatedBy: " ")
+        }
+       
         
         if searchBar.searchTextField.text != "" {
             performSegue(withIdentifier: K.Identifiers.resultVCIdentifierFromSearch, sender: self)
         } else {
-           searchBar.searchTextField.placeholder = "Please write a title"
+           searchBar.searchTextField.placeholder = "Please write something"
         }
         
-        print(bookTitleArray)
     
         print("pressed")
     }
@@ -138,6 +199,8 @@ extension SearchViewController {
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.Identifiers.resultVCIdentifierFromSearch {
             let resultsVC = segue.destination as! ResultsViewController
+            resultsVC.ISBN = ISBN
+            resultsVC.flag = flag
             resultsVC.titleLabelVar = bookTitle
             resultsVC.titleArray = bookTitleArray
         }
