@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7106C77524E6E9C300D3D29C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7106C77424E6E9C300D3D29C /* InfoViewController.swift */; };
 		7106C77724E6E9F200D3D29C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7106C77624E6E9F200D3D29C /* SearchViewController.swift */; };
+		71B7836724F5384300E47CE2 /* RadioButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7836624F5384300E47CE2 /* RadioButtonCollectionViewCell.swift */; };
+		71B7836924F538D300E47CE2 /* RadioButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7836824F538D300E47CE2 /* RadioButtonsViewController.swift */; };
 		71E4320624EABDA20099312F /* ResultCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E4320524EABDA20099312F /* ResultCard.xib */; };
 		71E4320824EABE060099312F /* ResultCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4320724EABE060099312F /* ResultCardView.swift */; };
 		71E4320C24ED6A060099312F /* ResultCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4320B24ED6A060099312F /* ResultCardCollectionViewCell.swift */; };
@@ -36,6 +38,8 @@
 		631142FF12AC485DD45BB5F7 /* Pods_BookZone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookZone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7106C77424E6E9C300D3D29C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		7106C77624E6E9F200D3D29C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		71B7836624F5384300E47CE2 /* RadioButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		71B7836824F538D300E47CE2 /* RadioButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonsViewController.swift; sourceTree = "<group>"; };
 		71E4320524EABDA20099312F /* ResultCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCard.xib; sourceTree = "<group>"; };
 		71E4320724EABE060099312F /* ResultCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCardView.swift; sourceTree = "<group>"; };
 		71E4320B24ED6A060099312F /* ResultCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCardCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */,
 				7106C77424E6E9C300D3D29C /* InfoViewController.swift */,
 				7106C77624E6E9F200D3D29C /* SearchViewController.swift */,
+				71B7836824F538D300E47CE2 /* RadioButtonsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 				71E4320B24ED6A060099312F /* ResultCardCollectionViewCell.swift */,
 				71E4320D24EFBE1A0099312F /* SearchBar.xib */,
 				71E4320F24EFC3840099312F /* SearchBar.swift */,
+				71B7836624F5384300E47CE2 /* RadioButtonCollectionViewCell.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -337,7 +343,9 @@
 				71E4321024EFC3840099312F /* SearchBar.swift in Sources */,
 				F591010F24E7B25D0042EB6F /* NavbarView.swift in Sources */,
 				F57D29DC24E278400001D4C4 /* SceneDelegate.swift in Sources */,
+				71B7836924F538D300E47CE2 /* RadioButtonsViewController.swift in Sources */,
 				71E4320824EABE060099312F /* ResultCardView.swift in Sources */,
+				71B7836724F5384300E47CE2 /* RadioButtonCollectionViewCell.swift in Sources */,
 				71E4320C24ED6A060099312F /* ResultCardCollectionViewCell.swift in Sources */,
 				F57D29F624E279C00001D4C4 /* AppleTextRecognizer.swift in Sources */,
 				F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */,

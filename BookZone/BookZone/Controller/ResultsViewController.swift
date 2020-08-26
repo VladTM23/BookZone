@@ -21,7 +21,7 @@ class ResultsViewController: UIViewController  {
     //MARK: - Properties
     var titleLabelVar: String?
     var titleArray: [String]?
-    var flag : Bool?
+    var flag : Bool = false
     var ISBN : String?
     let reuseIdentifier = "resultCard"
     
@@ -101,7 +101,7 @@ extension ResultsViewController {
 
                 let labelArray =  [ratingsCount, reviewsCount, editionsCount,addedBy]
                 
-                self.titleLabel.text = title
+                self.titleLabel.text = self.titleLabelVar
                 self.apiResults = labelArray
                 self.averageRating.text = averageRating
                 

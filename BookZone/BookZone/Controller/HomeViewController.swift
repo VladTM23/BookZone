@@ -70,10 +70,18 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == K.Identifiers.resultsVCIdentifier {
             let resultsVC = segue.destination as! ResultsViewController
             resultsVC.titleLabelVar = bookTitle
             resultsVC.titleArray = bookTitleArray
+        }
+        
+        else if segue.identifier == K.Identifiers.radioButtonsIdentifier {
+            
+            let radioVC = segue.destination as! RadioButtonsViewController
+            radioVC.titleArray = ["Ale","Vlad","AA"]
+            radioVC.titleString = "Ale Vlad AA" //bookTitle
         }
     }
 }
@@ -99,10 +107,11 @@ extension HomeViewController {
             print(stringFromArray)
             self.bookTitle = stringFromArray
             self.bookTitleArray = textArray
+            
         }
 
         imagePicker.dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: K.Identifiers.resultsVCIdentifier, sender: self)
+        performSegue(withIdentifier: K.Identifiers.radioButtonsIdentifier, sender: self)
     }
 }
 
