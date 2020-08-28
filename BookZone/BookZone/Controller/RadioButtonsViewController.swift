@@ -10,7 +10,7 @@ import UIKit
 
 class RadioButtonsViewController: UIViewController {
     
-    let reuseIdentifier = "radioButton"
+    let reuseIdentifier = K.ReuseIdentifiers.radioButton
     
     var titleArray: [String]?
     var titleString: String?
@@ -103,11 +103,11 @@ extension RadioButtonsViewController: UICollectionViewDataSource, UICollectionVi
     
         let cell = collectionView.cellForItem(at: indexPath) as! RadioButtonCollectionViewCell
         
-        if cell.radioButton.image == UIImage(named: "ticked") {
-             cell.radioButton.image = UIImage(named: "unticked")
+        if cell.radioButton.image == UIImage(named: K.ImageNames.ticked) {
+            cell.radioButton.image = UIImage(named: K.ImageNames.unticked)
         }
             else{
-             cell.radioButton.image = UIImage(named: "ticked")
+            cell.radioButton.image = UIImage(named: K.ImageNames.ticked)
         }
         
         let selectedWord = cell.radioLabel.text!
@@ -135,7 +135,7 @@ extension RadioButtonsViewController {
     func configureCell( cell : RadioButtonCollectionViewCell, index: Int) {
         
         cell.radioLabel.text = titleArray?[index]
-        cell.radioButton.image = UIImage(named: "ticked")
+        cell.radioButton.image = UIImage(named: K.ImageNames.ticked)
         cell.layer.borderWidth = 1
         cell.layer.borderColor = CGColor(srgbRed: 1, green: 1, blue: 1, alpha: 1)
         cell.layer.cornerRadius = 15

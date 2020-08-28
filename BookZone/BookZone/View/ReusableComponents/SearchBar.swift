@@ -38,6 +38,4 @@ class SearchBar: UIView {
         let nib = UINib(nibName: K.Nibs.searchBarNibname, bundle: nil)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
-
-    
 }

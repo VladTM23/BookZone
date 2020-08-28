@@ -10,12 +10,6 @@ import UIKit
 
 class RadioButtonCollectionViewCell: UICollectionViewCell {
 
-
     @IBOutlet weak var radioLabel: UILabel!
-    
     @IBOutlet weak var radioButton: UIImageView!
-    
-      
-    
-    
 }

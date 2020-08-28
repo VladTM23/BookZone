@@ -23,14 +23,18 @@ class ResultsViewController: UIViewController  {
     var titleArray: [String]?
     var flag : Bool = false
     var ISBN : String?
-    let reuseIdentifier = "resultCard"
+    let reuseIdentifier = K.ReuseIdentifiers.resultCard
     
     var apiResults: [String]?
-    let resultExp = ["Ratings","Reviews","Editions","People"]
-    let systemImageName = ["star","pencil","book","person"]
-    
+    let resultExp = [K.LabelTexts.ratings,
+                     K.LabelTexts.reviews,
+                     K.LabelTexts.editions,
+                     K.LabelTexts.people]
+    let systemImageName = [K.LabelTexts.star,
+                           K.LabelTexts.pencil,
+                           K.LabelTexts.book,
+                           K.LabelTexts.person]
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -132,7 +136,7 @@ extension ResultsViewController {
                     self.titleLabel.text = title
                     self.apiResults = labelArray
                     self.averageRating.text = averageRating
-                 
+
                 }
         }
     }
@@ -151,12 +155,12 @@ extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDel
 
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! ResultCardCollectionViewCell
-               
+
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
         
         if self.apiResults?.count ?? 0 < 4 {
             
-            cell.resultCardCellView.numberLabel.text = "Loading..."
+            cell.resultCardCellView.numberLabel.text = K.LabelTexts.loading
         }
         else {
             
@@ -166,21 +170,21 @@ extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDel
         cell.resultCardCellView.categoryLabel.text = self.resultExp[indexPath.item]
         cell.resultCardCellView.categoryImageView.image = UIImage(systemName: self.systemImageName[indexPath.item])
         
-               
+
         return cell
         
     }
     
-     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! ResultCardCollectionViewCell
-        cell.resultCardCellView.backgroundImage.image = UIImage(named: "yellowCardBackground")
+        cell.resultCardCellView.backgroundImage.image = UIImage(named: K.ImageNames.yellowBackground)
     }
 
 
     // change background color back when user releases touch
-     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! ResultCardCollectionViewCell
-        cell.resultCardCellView.backgroundImage.image = UIImage(named: "pinkCardBackground")
+        cell.resultCardCellView.backgroundImage.image = UIImage(named: K.ImageNames.pinkBackground)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

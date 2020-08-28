@@ -44,6 +44,30 @@ struct K {
         static let resultsTitle = "Results Page"
         
     }
+
+    struct LabelTexts {
+        static let ratings = "Ratings"
+        static let reviews = "Reviews"
+        static let editions = "Editions"
+        static let people = "People"
+        static let star = "star"
+        static let pencil = "pencil"
+        static let book = "book"
+        static let person = "person"
+        static let loading = "Loading..."
+    }
+
+    struct ImageNames {
+        static let yellowBackground = "yellowCardBackground"
+        static let pinkBackground = "pinkCardBackground"
+        static let ticked = "ticked"
+        static let unticked = "unticked"
+    }
+
+    struct ReuseIdentifiers {
+        static let resultCard = "resultCard"
+        static let radioButton = "radioButton"
+    }
     
     struct Quotes {
         static let quotes = [

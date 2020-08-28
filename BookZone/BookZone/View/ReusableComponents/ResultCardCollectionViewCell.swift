@@ -9,9 +9,6 @@
 import UIKit
 
 class ResultCardCollectionViewCell: UICollectionViewCell {
-    
 
     @IBOutlet weak var resultCardCellView: ResultCardView!
-    
- 
 }
