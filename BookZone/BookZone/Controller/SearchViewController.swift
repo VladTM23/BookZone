@@ -30,9 +30,9 @@ class SearchViewController: UIViewController {
         if(sender.isOn){
             titleSwitchLabel.alpha = CGFloat(0.5)
             isbnSwitchLabel.alpha = CGFloat(1)
-            searchBar.searchTextField.placeholder = "Search by ISBN..."
-            searchBar.buttonImageView.image = UIImage(named: "pinkCardBackground")
-            searchBar.searchImageView.image = UIImage(named: "pinkCardBackground")
+            searchBar.searchTextField.placeholder = K.LabelTexts.searchByISBN
+            searchBar.buttonImageView.image = UIImage(named: K.ImageNames.pinkBackground)
+            searchBar.searchImageView.image = UIImage(named: K.ImageNames.pinkBackground)
             flag = true
         }
         
@@ -43,9 +43,9 @@ class SearchViewController: UIViewController {
             sender.layer.cornerRadius = sender.frame.height / 2
             sender.backgroundColor = #colorLiteral(red: 0.5370000005, green: 0.7879999876, blue: 0.7220000029, alpha: 1)
             
-            searchBar.searchTextField.placeholder = "Search by Title..."
-            searchBar.searchImageView.image = UIImage(named: "yellowCardBackground")
-            searchBar.buttonImageView.image = UIImage(named: "yellowCardBackground")
+            searchBar.searchTextField.placeholder = K.LabelTexts.searchByTitle
+            searchBar.searchImageView.image = UIImage(named: K.ImageNames.yellowBackground)
+            searchBar.buttonImageView.image = UIImage(named: K.ImageNames.yellowBackground)
             flag = false
         }
         
@@ -114,14 +114,14 @@ extension SearchViewController: UITextFieldDelegate {
     @objc func searchButtonPressed () {
         //searchBar.searchTextField.endEditing(true)
         
-        if (searchBar.buttonImageView.image == UIImage(named: "yellowCardBackground") ){
+        if (searchBar.buttonImageView.image == UIImage(named: K.ImageNames.yellowBackground) ){
             
-        searchBar.buttonImageView.image = UIImage(named: "pinkCardBackground")
+        searchBar.buttonImageView.image = UIImage(named: K.ImageNames.pinkBackground)
             
         }
         else {
 
-            searchBar.buttonImageView.image = UIImage(named: "yellowCardBackground")
+            searchBar.buttonImageView.image = UIImage(named: K.ImageNames.yellowBackground)
         }
         
         print("pressed")
@@ -130,11 +130,11 @@ extension SearchViewController: UITextFieldDelegate {
     @objc func searchButtonReleased () {
         searchBar.searchTextField.endEditing(true)
         
-        if (searchBar.buttonImageView.image == UIImage(named: "yellowCardBackground") ){
-            searchBar.buttonImageView.image = UIImage(named: "pinkCardBackground")
+        if (searchBar.buttonImageView.image == UIImage(named: K.ImageNames.yellowBackground) ){
+            searchBar.buttonImageView.image = UIImage(named: K.ImageNames.pinkBackground)
         }
         else {
-            searchBar.buttonImageView.image = UIImage(named: "yellowCardBackground")
+            searchBar.buttonImageView.image = UIImage(named: K.ImageNames.yellowBackground)
         }
     
         if flag == true {
@@ -149,7 +149,7 @@ extension SearchViewController: UITextFieldDelegate {
         if searchBar.searchTextField.text != "" {
             performSegue(withIdentifier: K.Identifiers.resultVCIdentifierFromSearch, sender: self)
         } else {
-           searchBar.searchTextField.placeholder = "Please write something"
+            searchBar.searchTextField.placeholder = K.LabelTexts.emptyStringPlaceholder
         }
         
     

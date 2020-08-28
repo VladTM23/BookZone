@@ -56,6 +56,9 @@ struct K {
         static let book = "book"
         static let person = "person"
         static let loading = "Loading..."
+        static let searchByISBN = "Search by ISBN..."
+        static let searchByTitle = "Search by Title..."
+        static let emptyStringPlaceholder = "Please write something"
     }
 
     struct ImageNames {
