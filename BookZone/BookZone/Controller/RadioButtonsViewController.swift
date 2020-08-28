@@ -8,9 +8,10 @@
 
 import UIKit
 
-class RadioButtonsViewController: UIViewController {
+class RadioButtonsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let reuseIdentifier = K.ReuseIdentifiers.radioButton
+    let imagePicker = UIImagePickerController()
     
     var titleArray: [String]?
     var titleString: String?
@@ -30,6 +31,9 @@ class RadioButtonsViewController: UIViewController {
 
         collectionView.delegate = self
         collectionView.dataSource = self
+        imagePicker.delegate = self
+//        imagePicker.sourceType = .camera
+        imagePicker.allowsEditing = false
 
         configureUI()
     }
@@ -42,13 +46,13 @@ class RadioButtonsViewController: UIViewController {
         
     }
     
-    func configureButtons(){
+    func configureButtons() {
         configureButton(button: searchButton)
         configureButton(button: normalSearchButton)
         configureButton(button: retakePictureButton)
     }
     
-    func cofigureCellView(){
+    func cofigureCellView() {
 
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
@@ -58,7 +62,10 @@ class RadioButtonsViewController: UIViewController {
         layout.scrollDirection = .vertical
         collectionView.collectionViewLayout = layout
     }
-    
+
+    @IBAction func retakePictureButtonPressed(_ sender: UIButton) {
+         present(imagePicker, animated: true, completion: nil)
+    }
 }
 
 //MARK: - UICollectionView
@@ -162,6 +169,34 @@ extension RadioButtonsViewController {
             resultsVC.titleLabelVar = titleString
             resultsVC.titleArray = titleArray
         }
+    }
+}
+
+// MARK: - ImagePicker
+
+extension RadioButtonsViewController {
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        if let image = info[.originalImage] as? UIImage {
+
+            guard let cgImage = image.cgImage else {return}
+
+            let textReader = AppleTextRecognizer()
+            textReader.textRecognize(cgImage : cgImage)
+
+            let textArray = textReader.getStrings()
+            var stringFromArray = ""
+            for element in textArray {
+                stringFromArray = stringFromArray + " " + element
+            }
+            print(stringFromArray)
+            self.titleString = stringFromArray
+            self.titleArray = textArray
+
+        }
+
+        imagePicker.dismiss(animated: true, completion: nil)
     }
 }
 

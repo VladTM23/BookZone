@@ -595,6 +595,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
+                                                            <action selector="retakePictureButtonPressed:" destination="Twj-g2-9Bf" eventType="touchUpInside" id="TmD-kC-F5M"/>
                                                             <action selector="searchButtonPressed:" destination="Twj-g2-9Bf" eventType="touchUpInside" id="wvj-Iw-jlI"/>
                                                         </connections>
                                                     </button>
