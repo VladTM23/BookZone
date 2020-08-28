@@ -30,6 +30,7 @@ struct K {
         static let resultVCIdentifierFromSearch = "goToResultFromSearch"
         static let resultVCIdentifierFromRadio = "goToResultFromRadio"
         static let radioButtonsIdentifier = "goToRadioButtons"
+        static let goToNormalSearch = "goToNormalSearch"
     }
 
     struct Nibs {
