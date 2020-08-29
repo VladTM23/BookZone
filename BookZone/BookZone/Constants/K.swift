@@ -38,6 +38,8 @@ struct K {
         static let navbarNibname = "Navbar"
         static let resultCardNibname = "ResultCard"
         static let searchBarNibname = "SearchBar"
+        static let firstPageScrollNibname = "FirstPageScroll"
+        static let secondPageScrollNibname = "SecondPageScroll"
     }
 
     struct NavbarTitles {

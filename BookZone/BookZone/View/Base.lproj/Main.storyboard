@@ -353,20 +353,20 @@
                                 </constraints>
                             </view>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wfg-Nh-c6G">
-                                <rect key="frame" x="15" y="157" width="345" height="621"/>
+                                <rect key="frame" x="15" y="157" width="345" height="635"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hut-s8-9gF">
-                                        <rect key="frame" x="-5" y="0.0" width="1045" height="621"/>
+                                        <rect key="frame" x="-5" y="0.0" width="1045" height="635"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJa-nG-TpD">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="621"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="635"/>
                                                 <color key="backgroundColor" name="kaki"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" id="Jac-ZX-Frs"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8R-13-15L">
-                                                <rect key="frame" x="10" y="0.0" width="335" height="621"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8R-13-15L" customClass="FirstPageScroll" customModule="BookZone" customModuleProvider="target">
+                                                <rect key="frame" x="10" y="0.0" width="335" height="635"/>
                                                 <color key="backgroundColor" name="grey"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -374,8 +374,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ued-AC-7xg">
-                                                <rect key="frame" x="355" y="0.0" width="335" height="621"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ued-AC-7xg" customClass="SecondPageScroll" customModule="BookZone" customModuleProvider="target">
+                                                <rect key="frame" x="355" y="0.0" width="335" height="635"/>
                                                 <color key="backgroundColor" name="grey"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -384,16 +384,16 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QxH-IR-VPL">
-                                                <rect key="frame" x="700" y="0.0" width="335" height="621"/>
+                                                <rect key="frame" x="700" y="0.0" width="335" height="635"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Cd-0t-lCM" customClass="AnimationView" customModule="Lottie">
-                                                        <rect key="frame" x="167.66666666666663" y="109.33333333333334" width="0.0" height="372.33333333333326"/>
+                                                        <rect key="frame" x="167.66666666666663" y="112" width="0.0" height="381"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="books-stack"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5v-kh-q76">
-                                                        <rect key="frame" x="67.666666666666629" y="461.66666666666663" width="200" height="48"/>
+                                                        <rect key="frame" x="67.666666666666629" y="473" width="200" height="48"/>
                                                         <color key="backgroundColor" name="pink"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="424-UM-IwV"/>
@@ -414,9 +414,9 @@
                                                             <action selector="searchButtonPressed:" destination="Twj-g2-9Bf" eventType="touchUpInside" id="x2h-NG-yMJ"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BookZone tutorial completed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJv-TV-Dp4">
-                                                        <rect key="frame" x="63.333333333333357" y="70.666666666666657" width="208.66666666666663" height="18.666666666666671"/>
-                                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BookZone tutorial completed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJv-TV-Dp4">
+                                                        <rect key="frame" x="16.666666666666629" y="56" width="301.66666666666669" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -424,6 +424,7 @@
                                                 <color key="backgroundColor" name="grey"/>
                                                 <constraints>
                                                     <constraint firstItem="8Cd-0t-lCM" firstAttribute="centerX" secondItem="QxH-IR-VPL" secondAttribute="centerX" id="5IL-bg-FIe"/>
+                                                    <constraint firstItem="fJv-TV-Dp4" firstAttribute="width" secondItem="QxH-IR-VPL" secondAttribute="width" multiplier="0.9" id="AiJ-u5-ANH"/>
                                                     <constraint firstItem="8Cd-0t-lCM" firstAttribute="height" secondItem="QxH-IR-VPL" secondAttribute="height" multiplier="0.6" id="IR5-U9-ZLG"/>
                                                     <constraint firstItem="fJv-TV-Dp4" firstAttribute="bottom" secondItem="8Cd-0t-lCM" secondAttribute="top" constant="-20" id="Y5v-cm-K4l"/>
                                                     <constraint firstItem="fJv-TV-Dp4" firstAttribute="centerX" secondItem="QxH-IR-VPL" secondAttribute="centerX" id="cPr-1S-go6"/>
@@ -438,7 +439,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vsl-pY-zEc">
-                                                <rect key="frame" x="1045" y="0.0" width="0.0" height="621"/>
+                                                <rect key="frame" x="1045" y="0.0" width="0.0" height="635"/>
                                                 <color key="backgroundColor" name="kaki"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" id="wnN-EH-VLC"/>
@@ -464,7 +465,7 @@
                         <color key="backgroundColor" name="kaki"/>
                         <constraints>
                             <constraint firstItem="Wfg-Nh-c6G" firstAttribute="leading" secondItem="Qer-iK-Hlo" secondAttribute="leading" constant="15" id="1Si-xl-xuX"/>
-                            <constraint firstItem="cAM-SA-IBL" firstAttribute="bottom" secondItem="Wfg-Nh-c6G" secondAttribute="bottom" id="DGu-gy-PiH"/>
+                            <constraint firstAttribute="bottom" secondItem="Wfg-Nh-c6G" secondAttribute="bottom" constant="20" id="DGu-gy-PiH"/>
                             <constraint firstItem="nZV-57-9Xa" firstAttribute="top" secondItem="Qer-iK-Hlo" secondAttribute="top" constant="-28" id="EoE-Gm-qbu"/>
                             <constraint firstItem="Wfg-Nh-c6G" firstAttribute="top" secondItem="nZV-57-9Xa" secondAttribute="bottom" constant="20" id="TiF-v5-kaZ"/>
                             <constraint firstItem="Wfg-Nh-c6G" firstAttribute="trailing" secondItem="Qer-iK-Hlo" secondAttribute="trailing" constant="-15" id="XI3-Bg-22M"/>
