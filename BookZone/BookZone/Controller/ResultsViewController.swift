@@ -48,10 +48,10 @@ class ResultsViewController: UIViewController  {
         
         configureUI()
         if flag == false {
-            getByTitle(titleArray: ["The","Shining"], authorArray: [])
+            getByTitle(titleArray: titleArray!, authorArray: [])
         }
         else {
-            getByISBN(isbn: "0441172717")
+            getByISBN(isbn: ISBN!)
         }
         
         
@@ -90,12 +90,11 @@ extension ResultsViewController {
 
             if let data = response.data {
                 let responseBody = SWXMLHash.parse(data)
-
-                let title = titleArray.joined(separator: " ")
-                let author = authorArray.joined(separator: " ")
-
-                print("DEBUG:    " + title + "    " + author )
-
+                
+                _ = titleArray.joined(separator: " ")
+                _ = authorArray.joined(separator: " ")
+                
+                let title = responseBody["GoodreadsResponse"]["book"]["work"]["original_title"].element!.text
                 let ratingsCount = responseBody["GoodreadsResponse"]["book"]["work"]["ratings_count"].element!.text
                 let reviewsCount = responseBody["GoodreadsResponse"]["book"]["work"]["text_reviews_count"].element!.text
                 let editionsCount = responseBody["GoodreadsResponse"]["book"]["work"]["books_count"].element!.text
@@ -104,8 +103,7 @@ extension ResultsViewController {
                 let addedBy = responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element!.text
 
                 let labelArray =  [ratingsCount, reviewsCount, editionsCount,addedBy]
-                
-                self.titleLabel.text = self.titleLabelVar
+                self.titleLabel.text = title
                 self.apiResults = labelArray
                 self.averageRating.text = averageRating
                 
@@ -122,9 +120,9 @@ extension ResultsViewController {
                     let responseBody = SWXMLHash.parse(data)
 
                     let title = responseBody["GoodreadsResponse"]["book"]["work"]["original_title"].element!.text
-                    let author = responseBody["GoodreadsResponse"]["book"]["authors"]["author"]["name"].element!.text
+                    //let author = responseBody["GoodreadsResponse"]["book"]["authors"]["author"]["name"].element!.text
 
-                    print(title + "    " + author )
+                    //print(title + "    " + author )
                     let ratingsCount = responseBody["GoodreadsResponse"]["book"]["work"]["ratings_count"].element!.text
                     let reviewsCount = responseBody["GoodreadsResponse"]["book"]["work"]["text_reviews_count"].element!.text
                     let editionsCount = responseBody["GoodreadsResponse"]["book"]["work"]["books_count"].element!.text

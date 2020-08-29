@@ -62,6 +62,7 @@ struct K {
         static let searchByISBN = "Search by ISBN..."
         static let searchByTitle = "Search by Title..."
         static let emptyStringPlaceholder = "Please write something"
+        static let invalidISBNStringPlaceholder = "Invalid ISBN"
     }
 
     struct ImageNames {

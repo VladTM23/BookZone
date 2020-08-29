@@ -147,7 +147,14 @@ extension SearchViewController: UITextFieldDelegate {
        
         
         if searchBar.searchTextField.text != "" {
-            performSegue(withIdentifier: K.Identifiers.resultVCIdentifierFromSearch, sender: self)
+            if flag == true && ( searchBar.searchTextField.text?.count == 13 || searchBar.searchTextField.text?.count == 10 ){
+                performSegue(withIdentifier: K.Identifiers.resultVCIdentifierFromSearch, sender: self)
+            }
+            else{
+                searchBar.searchTextField.text = ""
+                searchBar.searchTextField.placeholder = K.LabelTexts.invalidISBNStringPlaceholder
+            }
+            
         } else {
             searchBar.searchTextField.placeholder = K.LabelTexts.emptyStringPlaceholder
         }
