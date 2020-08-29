@@ -352,16 +352,78 @@
                                     <constraint firstAttribute="height" constant="165" id="17b-kD-4mw"/>
                                 </constraints>
                             </view>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pzo-xi-mMU">
-                                <rect key="frame" x="168" y="710" width="39" height="37"/>
-                            </pageControl>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wfg-Nh-c6G">
+                                <rect key="frame" x="15" y="157" width="345" height="621"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hut-s8-9gF">
+                                        <rect key="frame" x="-5" y="0.0" width="1045" height="621"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJa-nG-TpD">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="621"/>
+                                                <color key="backgroundColor" name="kaki"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" id="Jac-ZX-Frs"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8R-13-15L">
+                                                <rect key="frame" x="10" y="0.0" width="335" height="621"/>
+                                                <color key="backgroundColor" name="grey"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ued-AC-7xg">
+                                                <rect key="frame" x="355" y="0.0" width="335" height="621"/>
+                                                <color key="backgroundColor" name="grey"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QxH-IR-VPL">
+                                                <rect key="frame" x="700" y="0.0" width="335" height="621"/>
+                                                <color key="backgroundColor" name="grey"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vsl-pY-zEc">
+                                                <rect key="frame" x="1045" y="0.0" width="0.0" height="621"/>
+                                                <color key="backgroundColor" name="kaki"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" id="wnN-EH-VLC"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hut-s8-9gF" firstAttribute="top" secondItem="n8n-pJ-LfT" secondAttribute="top" id="0Ao-0G-wLp"/>
+                                    <constraint firstItem="hut-s8-9gF" firstAttribute="height" secondItem="Ou0-bS-Unx" secondAttribute="height" id="2Uc-Vg-ifD"/>
+                                    <constraint firstItem="E8R-13-15L" firstAttribute="width" secondItem="Ou0-bS-Unx" secondAttribute="width" constant="-10" id="IMM-eS-N89"/>
+                                    <constraint firstItem="QxH-IR-VPL" firstAttribute="width" secondItem="Ou0-bS-Unx" secondAttribute="width" constant="-10" id="J7w-o2-e5r"/>
+                                    <constraint firstItem="Ued-AC-7xg" firstAttribute="width" secondItem="Ou0-bS-Unx" secondAttribute="width" constant="-10" id="Kvv-rt-PNe"/>
+                                    <constraint firstItem="hut-s8-9gF" firstAttribute="bottom" secondItem="n8n-pJ-LfT" secondAttribute="bottom" id="RAN-s2-pQF"/>
+                                    <constraint firstItem="hut-s8-9gF" firstAttribute="trailing" secondItem="n8n-pJ-LfT" secondAttribute="trailing" constant="5" id="gPC-CW-zbC"/>
+                                    <constraint firstItem="hut-s8-9gF" firstAttribute="leading" secondItem="n8n-pJ-LfT" secondAttribute="leading" constant="-5" id="kj4-yK-3vY"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="n8n-pJ-LfT"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Ou0-bS-Unx"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" name="kaki"/>
                         <constraints>
+                            <constraint firstItem="Wfg-Nh-c6G" firstAttribute="leading" secondItem="Qer-iK-Hlo" secondAttribute="leading" constant="15" id="1Si-xl-xuX"/>
+                            <constraint firstItem="cAM-SA-IBL" firstAttribute="bottom" secondItem="Wfg-Nh-c6G" secondAttribute="bottom" id="DGu-gy-PiH"/>
                             <constraint firstItem="nZV-57-9Xa" firstAttribute="top" secondItem="Qer-iK-Hlo" secondAttribute="top" constant="-28" id="EoE-Gm-qbu"/>
-                            <constraint firstItem="cAM-SA-IBL" firstAttribute="bottom" secondItem="pzo-xi-mMU" secondAttribute="bottom" constant="31" id="SMI-eS-XrN"/>
+                            <constraint firstItem="Wfg-Nh-c6G" firstAttribute="top" secondItem="nZV-57-9Xa" secondAttribute="bottom" constant="20" id="TiF-v5-kaZ"/>
+                            <constraint firstItem="Wfg-Nh-c6G" firstAttribute="trailing" secondItem="Qer-iK-Hlo" secondAttribute="trailing" constant="-15" id="XI3-Bg-22M"/>
                             <constraint firstItem="nZV-57-9Xa" firstAttribute="leading" secondItem="cAM-SA-IBL" secondAttribute="leading" id="fJN-vi-8wb"/>
-                            <constraint firstItem="pzo-xi-mMU" firstAttribute="centerX" secondItem="Qer-iK-Hlo" secondAttribute="centerX" id="h9U-n3-FwM"/>
                             <constraint firstItem="cAM-SA-IBL" firstAttribute="trailing" secondItem="nZV-57-9Xa" secondAttribute="trailing" id="s77-ej-XS0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cAM-SA-IBL"/>
@@ -685,7 +747,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="LYh-jv-fnc"/>
-        <segue reference="KPs-6B-ipx"/>
+        <segue reference="12h-vl-f4q"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bookBadge" width="419.66665649414062" height="466.33334350585938"/>

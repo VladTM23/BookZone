@@ -31,7 +31,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         configureUI()
         
         imagePicker.delegate = self
-//        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
     }
 
@@ -80,8 +80,8 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         else if segue.identifier == K.Identifiers.radioButtonsIdentifier {
             
             let radioVC = segue.destination as! RadioButtonsViewController
-            radioVC.titleArray = ["Ale","Vlad","AA"]
-            radioVC.titleString = "Ale Vlad AA" //bookTitle
+            radioVC.titleArray = bookTitleArray
+            radioVC.titleString = bookTitle
         }
     }
 }

@@ -32,7 +32,7 @@ class RadioButtonsViewController: UIViewController, UIImagePickerControllerDeleg
         collectionView.delegate = self
         collectionView.dataSource = self
         imagePicker.delegate = self
-//        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
 
         configureUI()
@@ -195,8 +195,11 @@ extension RadioButtonsViewController {
             self.titleArray = textArray
 
         }
-
+        collectionView.reloadData()
+        titleLabel.text = titleString
         imagePicker.dismiss(animated: true, completion: nil)
+        
+        
     }
 }
 
