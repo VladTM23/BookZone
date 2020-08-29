@@ -7,15 +7,15 @@
 //
 
 import UIKit
+import Lottie
 
 class InfoViewController: UIViewController {
 
     //MARK: - IBOutlets
     @IBOutlet weak var navBarView: NavbarView!
     @IBOutlet weak var resultCardView: ResultCardView!
-    
-    
-    
+    @IBOutlet weak var animationView: AnimationView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -25,8 +25,7 @@ class InfoViewController: UIViewController {
 
     func configureUI() {
         configureNavBar()
-       
-        
+        configureAnimation()
 //        let image = UIImage(systemName: "multiply.circle.fill")
     
     }
@@ -34,5 +33,15 @@ class InfoViewController: UIViewController {
     func configureNavBar() {
         navBarView.titleLabelNavbar.text = K.NavbarTitles.infoTitle
     }
-    
+
+    func configureAnimation() {
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 1.0
+        animationView.play()
+    }
+
+    @IBAction func getStartedButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: K.Identifiers.getStarted, sender: self)
+    }
 }

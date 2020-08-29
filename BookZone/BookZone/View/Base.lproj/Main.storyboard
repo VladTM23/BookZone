@@ -385,7 +385,52 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QxH-IR-VPL">
                                                 <rect key="frame" x="700" y="0.0" width="335" height="621"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Cd-0t-lCM" customClass="AnimationView" customModule="Lottie">
+                                                        <rect key="frame" x="167.66666666666663" y="109.33333333333334" width="0.0" height="372.33333333333326"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="books-stack"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5v-kh-q76">
+                                                        <rect key="frame" x="67.666666666666629" y="461.66666666666663" width="200" height="48"/>
+                                                        <color key="backgroundColor" name="pink"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="424-UM-IwV"/>
+                                                            <constraint firstAttribute="height" constant="48" id="Qoo-cc-FgU"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <state key="normal" title="Get started">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleShadowColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="getStartedButtonPressed:" destination="tkS-0r-w2A" eventType="touchUpInside" id="c51-MD-iaD"/>
+                                                            <action selector="searchButtonPressed:" destination="Twj-g2-9Bf" eventType="touchUpInside" id="x2h-NG-yMJ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BookZone tutorial completed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJv-TV-Dp4">
+                                                        <rect key="frame" x="63.333333333333357" y="70.666666666666657" width="208.66666666666663" height="18.666666666666671"/>
+                                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" name="grey"/>
+                                                <constraints>
+                                                    <constraint firstItem="8Cd-0t-lCM" firstAttribute="centerX" secondItem="QxH-IR-VPL" secondAttribute="centerX" id="5IL-bg-FIe"/>
+                                                    <constraint firstItem="8Cd-0t-lCM" firstAttribute="height" secondItem="QxH-IR-VPL" secondAttribute="height" multiplier="0.6" id="IR5-U9-ZLG"/>
+                                                    <constraint firstItem="fJv-TV-Dp4" firstAttribute="bottom" secondItem="8Cd-0t-lCM" secondAttribute="top" constant="-20" id="Y5v-cm-K4l"/>
+                                                    <constraint firstItem="fJv-TV-Dp4" firstAttribute="centerX" secondItem="QxH-IR-VPL" secondAttribute="centerX" id="cPr-1S-go6"/>
+                                                    <constraint firstItem="f5v-kh-q76" firstAttribute="centerX" secondItem="QxH-IR-VPL" secondAttribute="centerX" id="dII-hk-0kA"/>
+                                                    <constraint firstItem="f5v-kh-q76" firstAttribute="top" secondItem="8Cd-0t-lCM" secondAttribute="bottom" constant="-20" id="qJk-RR-ZUq"/>
+                                                    <constraint firstItem="8Cd-0t-lCM" firstAttribute="centerY" secondItem="QxH-IR-VPL" secondAttribute="centerY" constant="-15" id="sgB-F8-lMM"/>
+                                                </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="15"/>
@@ -429,7 +474,9 @@
                         <viewLayoutGuide key="safeArea" id="cAM-SA-IBL"/>
                     </view>
                     <connections>
+                        <outlet property="animationView" destination="8Cd-0t-lCM" id="uYL-Ir-epM"/>
                         <outlet property="navBarView" destination="nZV-57-9Xa" id="8pc-Lk-An4"/>
+                        <segue destination="XBj-A1-K52" kind="presentation" identifier="getStarted" modalPresentationStyle="fullScreen" id="Yi5-6r-pSd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRj-qj-5DA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -747,7 +794,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="LYh-jv-fnc"/>
-        <segue reference="12h-vl-f4q"/>
+        <segue reference="KPs-6B-ipx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bookBadge" width="419.66665649414062" height="466.33334350585938"/>

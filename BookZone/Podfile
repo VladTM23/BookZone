@@ -8,5 +8,6 @@ target 'BookZone' do
   # Pods for BookZone
    pod "Alamofire"
    pod 'SWXMLHash', '~> 5.0.0'
+   pod 'lottie-ios'
 
 end
