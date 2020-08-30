@@ -387,7 +387,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Cd-0t-lCM" customClass="AnimationView" customModule="Lottie">
                                                         <rect key="frame" x="167.66666666666663" y="112" width="0.0" height="381"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="books-stack"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="11793-books-stack"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5v-kh-q76">
@@ -614,7 +614,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="Ps1-h5-3WU"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="n6w-Xf-bzk">
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="n6w-Xf-bzk">
                                                     <size key="itemSize" width="155" height="97"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -779,6 +779,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="wrL-rp-srF" id="EAp-gl-Kui"/>
+                        <outlet property="collectionViewHeight" destination="Ps1-h5-3WU" id="hbS-aC-Qhb"/>
                         <outlet property="normalSearchButton" destination="d7d-Fu-S9J" id="tlk-FZ-9hC"/>
                         <outlet property="retakePictureButton" destination="X2M-MH-A8J" id="Dtj-rj-7zd"/>
                         <outlet property="searchButton" destination="uZp-v5-hPk" id="hCU-Am-fUx"/>

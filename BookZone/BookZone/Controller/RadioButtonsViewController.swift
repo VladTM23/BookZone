@@ -21,6 +21,7 @@ class RadioButtonsViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var retakePictureButton: UIButton!
     @IBOutlet weak var normalSearchButton: UIButton!
+    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
 
     @IBAction func searchButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: K.Identifiers.resultVCIdentifierFromRadio, sender: self)
@@ -32,7 +33,7 @@ class RadioButtonsViewController: UIViewController, UIImagePickerControllerDeleg
         collectionView.delegate = self
         collectionView.dataSource = self
         imagePicker.delegate = self
-//        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
 
         configureUI()
@@ -198,8 +199,6 @@ extension RadioButtonsViewController {
         collectionView.reloadData()
         titleLabel.text = titleString
         imagePicker.dismiss(animated: true, completion: nil)
-        
-        
     }
 }
 

@@ -12,8 +12,6 @@ class NavbarView: UIView {
 
     // MARK: - IBOutlets
 
-
-    
     @IBOutlet weak var titleLabelNavbar: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
