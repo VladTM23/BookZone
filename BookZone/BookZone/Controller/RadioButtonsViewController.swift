@@ -21,7 +21,6 @@ class RadioButtonsViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var retakePictureButton: UIButton!
     @IBOutlet weak var normalSearchButton: UIButton!
-    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
 
     @IBAction func searchButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: K.Identifiers.resultVCIdentifierFromRadio, sender: self)
