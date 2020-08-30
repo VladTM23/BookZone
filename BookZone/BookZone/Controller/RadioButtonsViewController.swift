@@ -13,6 +13,8 @@ class RadioButtonsViewController: UIViewController, UIImagePickerControllerDeleg
     let reuseIdentifier = K.ReuseIdentifiers.radioButton
     let imagePicker = UIImagePickerController()
     
+    var auxiliary: [String] = []
+    
     var titleArray: [String]?
     var titleString: String?
     var titleArrayAux: [String]?
@@ -33,10 +35,13 @@ class RadioButtonsViewController: UIViewController, UIImagePickerControllerDeleg
         collectionView.delegate = self
         collectionView.dataSource = self
         imagePicker.delegate = self
-//        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
 
+        titleArrayAux = titleArray
+        configureArrays()
         configureUI()
+       
     }
     
     func configureUI(){
@@ -60,8 +65,6 @@ class RadioButtonsViewController: UIViewController, UIImagePickerControllerDeleg
             searchButton.isEnabled = true
             searchButton.backgroundColor = #colorLiteral(red: 0.851000011, green: 0.6779999733, blue: 0.6779999733, alpha: 1)
         }
-        
-        titleArrayAux = titleArray
         
     }
     
@@ -168,6 +171,19 @@ extension RadioButtonsViewController: UICollectionViewDataSource, UICollectionVi
 
 extension RadioButtonsViewController {
     
+    
+    func configureArrays() {
+        auxiliary = []
+        
+        for element in titleArray! {
+            let innerArray = element.components(separatedBy: " ")
+            auxiliary = auxiliary + innerArray
+        }
+        
+        titleArray = auxiliary
+        titleArrayAux = titleArray
+    }
+    
     func configureCell( cell : RadioButtonCollectionViewCell, index: Int) {
         
         cell.radioLabel.text = titleArrayAux?[index]
@@ -195,6 +211,7 @@ extension RadioButtonsViewController {
 
             resultsVC.titleLabelVar = titleString
             resultsVC.titleArray = titleArray
+            resultsVC.flag = false
         }
     }
 }
@@ -218,8 +235,12 @@ extension RadioButtonsViewController {
                 stringFromArray = stringFromArray + " " + element
             }
             print(stringFromArray)
+            
             self.titleString = stringFromArray
             self.titleArray = textArray
+            self.titleArrayAux = textArray
+            
+            configureArrays()
 
         }
         collectionView.reloadData()

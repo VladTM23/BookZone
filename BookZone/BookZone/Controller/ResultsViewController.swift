@@ -47,8 +47,12 @@ class ResultsViewController: UIViewController  {
         collectionView.collectionViewLayout = layout
         
         configureUI()
+        print(flag)
+        print(titleArray)
+        
         if flag == false {
             getByTitle(titleArray: titleArray!, authorArray: [])
+            print("in if")
         }
         else {
             getByISBN(isbn: ISBN!)
@@ -82,7 +86,7 @@ extension ResultsViewController {
             let authorString = authorArray.joined(separator: "+")
             authorOptionalParameter="author=\(authorString)&"
         }
-
+        
         let titleString = titleArray.joined(separator: "+")
 
         AF.request("\(K.Endpoints.titleURL)\(authorOptionalParameter)key=\(K.key)&title=\(titleString)").response {

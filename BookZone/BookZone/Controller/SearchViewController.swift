@@ -76,6 +76,7 @@ class SearchViewController: UIViewController {
         
         isbnSwitchLabel.alpha = CGFloat(0.5)
         searchSwitch.setOn(false, animated: true)
+        searchSwitch.isOn = false
         switchToggled(searchSwitch)
     }
 
@@ -115,15 +116,11 @@ extension SearchViewController: UITextFieldDelegate {
         //searchBar.searchTextField.endEditing(true)
         
         if (searchBar.buttonImageView.image == UIImage(named: K.ImageNames.yellowBackground) ){
-            
         searchBar.buttonImageView.image = UIImage(named: K.ImageNames.pinkBackground)
-            
         }
         else {
-
             searchBar.buttonImageView.image = UIImage(named: K.ImageNames.yellowBackground)
         }
-        
         print("pressed")
     }
     
@@ -147,15 +144,20 @@ extension SearchViewController: UITextFieldDelegate {
        
         
         if searchBar.searchTextField.text != "" {
-            if flag == true && ( searchBar.searchTextField.text?.count == 13 || searchBar.searchTextField.text?.count == 10 ){
-                performSegue(withIdentifier: K.Identifiers.resultVCIdentifierFromSearch, sender: self)
+            if flag == true {
+                if searchBar.searchTextField.text?.count == 13 || searchBar.searchTextField.text?.count == 10 {
+                    performSegue(withIdentifier: K.Identifiers.resultVCIdentifierFromSearch, sender: self)
+                }
+                else {
+                    searchBar.searchTextField.text = ""
+                    searchBar.searchTextField.placeholder = K.LabelTexts.invalidISBNStringPlaceholder
+                    }
             }
-            else{
-                searchBar.searchTextField.text = ""
-                searchBar.searchTextField.placeholder = K.LabelTexts.invalidISBNStringPlaceholder
+          else {
+                  performSegue(withIdentifier: K.Identifiers.resultVCIdentifierFromSearch, sender: self)
             }
-            
-        } else {
+        }
+        else {
             searchBar.searchTextField.placeholder = K.LabelTexts.emptyStringPlaceholder
         }
         
