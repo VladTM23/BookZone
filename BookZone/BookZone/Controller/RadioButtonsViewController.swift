@@ -15,6 +15,7 @@ class RadioButtonsViewController: UIViewController, UIImagePickerControllerDeleg
     
     var titleArray: [String]?
     var titleString: String?
+    var titleArrayAux: [String]?
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -32,7 +33,7 @@ class RadioButtonsViewController: UIViewController, UIImagePickerControllerDeleg
         collectionView.delegate = self
         collectionView.dataSource = self
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+//        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
 
         configureUI()
@@ -42,7 +43,25 @@ class RadioButtonsViewController: UIViewController, UIImagePickerControllerDeleg
         
         cofigureCellView()
         configureButtons()
-        titleLabel.text = titleString
+        configureLabelAndButton()
+        
+    }
+    
+    func configureLabelAndButton(){
+        
+        if titleString?.count == 0 {
+            titleLabel.text = "No text detected"
+            searchButton.isEnabled = false
+            searchButton.backgroundColor = #colorLiteral(red: 0.8669999838, green: 0.8669999838, blue: 0.8669999838, alpha: 1)
+            
+        }
+        else {
+            titleLabel.text = titleString
+            searchButton.isEnabled = true
+            searchButton.backgroundColor = #colorLiteral(red: 0.851000011, green: 0.6779999733, blue: 0.6779999733, alpha: 1)
+        }
+        
+        titleArrayAux = titleArray
         
     }
     
@@ -122,7 +141,6 @@ extension RadioButtonsViewController: UICollectionViewDataSource, UICollectionVi
         let selectedWord = cell.radioLabel.text!
         
         if (titleArray?.contains(selectedWord))!{
-            
             let index = (titleArray?.firstIndex(of: selectedWord))!
             titleArray?.remove(at: index)
         }
@@ -132,6 +150,15 @@ extension RadioButtonsViewController: UICollectionViewDataSource, UICollectionVi
         }
         titleString = titleArray?.joined(separator: " ")
         titleLabel.text = titleString
+        
+        if titleLabel.text!.count == 0 {
+            searchButton.isEnabled = false
+            searchButton.backgroundColor = #colorLiteral(red: 0.8669999838, green: 0.8669999838, blue: 0.8669999838, alpha: 1)
+        }
+        else {
+            searchButton.isEnabled = true
+            searchButton.backgroundColor = #colorLiteral(red: 0.851000011, green: 0.6779999733, blue: 0.6779999733, alpha: 1)
+        }
         
     }
     
@@ -143,7 +170,7 @@ extension RadioButtonsViewController {
     
     func configureCell( cell : RadioButtonCollectionViewCell, index: Int) {
         
-        cell.radioLabel.text = titleArray?[index]
+        cell.radioLabel.text = titleArrayAux?[index]
         cell.radioButton.image = UIImage(named: K.ImageNames.ticked)
         cell.layer.borderWidth = 1
         cell.layer.borderColor = CGColor(srgbRed: 1, green: 1, blue: 1, alpha: 1)
