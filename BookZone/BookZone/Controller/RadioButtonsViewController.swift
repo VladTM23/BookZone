@@ -187,7 +187,15 @@ extension RadioButtonsViewController {
     func configureCell( cell : RadioButtonCollectionViewCell, index: Int) {
         
         cell.radioLabel.text = titleArrayAux?[index]
-        cell.radioButton.image = UIImage(named: K.ImageNames.ticked)
+        
+        if (titleArray?.contains((titleArrayAux?[index])!))! {
+             cell.radioButton.image = UIImage(named: K.ImageNames.ticked)
+            }
+        else {
+            cell.radioButton.image = UIImage(named: K.ImageNames.unticked)
+        }
+        
+       
         cell.layer.borderWidth = 1
         cell.layer.borderColor = CGColor(srgbRed: 1, green: 1, blue: 1, alpha: 1)
         cell.layer.cornerRadius = 15
