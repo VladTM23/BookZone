@@ -32,6 +32,7 @@ struct K {
         static let radioButtonsIdentifier = "goToRadioButtons"
         static let goToNormalSearch = "goToNormalSearch"
         static let getStarted = "getStarted"
+        static let loginSuccess = "loginToHome"
     }
 
     struct Nibs {

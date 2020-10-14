@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XBj-A1-K52">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C5Y-gX-WDS">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +32,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeC-pJ-cLC" userLabel="NavBarView" customClass="NavbarView" customModule="BookZone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="-28" width="375" height="165"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="165" id="hUF-i7-T9A"/>
                                 </constraints>
@@ -121,6 +123,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="0CH-RN-MK8"/>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="kaki"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yrI-kO-53s" secondAttribute="trailing" id="5Ra-3A-jC1"/>
@@ -131,7 +134,6 @@
                             <constraint firstItem="zeC-pJ-cLC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-28" id="qrE-CT-kRs"/>
                             <constraint firstAttribute="bottom" secondItem="yrI-kO-53s" secondAttribute="bottom" id="rct-If-5DX"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="PDK-hu-HJ8">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="rzP-3R-d2o">
@@ -189,7 +191,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="lHz-ew-aRs" firstAttribute="leading" secondItem="Jbd-tF-ax5" secondAttribute="leading" id="TOS-Bl-adZ"/>
                                     <constraint firstItem="lHz-ew-aRs" firstAttribute="top" secondItem="Jbd-tF-ax5" secondAttribute="top" id="UlY-39-rvq"/>
@@ -297,6 +299,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Yr7-KY-Bgs"/>
                         <color key="backgroundColor" name="kaki"/>
                         <constraints>
                             <constraint firstItem="OzW-bv-UGz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0DH-Fu-Q56" secondAttribute="bottom" constant="90" id="5bU-xJ-ogR"/>
@@ -319,7 +322,6 @@
                             <constraint firstItem="Yr7-KY-Bgs" firstAttribute="bottom" secondItem="JiO-ps-Nn5" secondAttribute="bottom" constant="-35" id="uDD-l5-Fro"/>
                             <constraint firstItem="JiO-ps-Nn5" firstAttribute="leading" secondItem="Yr7-KY-Bgs" secondAttribute="leading" id="v2W-IC-Y4q"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Yr7-KY-Bgs"/>
                     </view>
                     <connections>
                         <outlet property="authorLabel" destination="sr0-NE-BRE" id="C6Q-h7-Akh"/>
@@ -345,7 +347,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZV-57-9Xa" customClass="NavbarView" customModule="BookZone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="-28" width="375" height="165"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="165" id="17b-kD-4mw"/>
                                 </constraints>
@@ -390,7 +392,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="11793-books-stack"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5v-kh-q76">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5v-kh-q76">
                                                         <rect key="frame" x="67.666666666666629" y="473" width="200" height="48"/>
                                                         <color key="backgroundColor" name="pink"/>
                                                         <constraints>
@@ -460,6 +462,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="Ou0-bS-Unx"/>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="cAM-SA-IBL"/>
                         <color key="backgroundColor" name="kaki"/>
                         <constraints>
                             <constraint firstItem="Wfg-Nh-c6G" firstAttribute="leading" secondItem="Qer-iK-Hlo" secondAttribute="leading" constant="15" id="1Si-xl-xuX"/>
@@ -470,7 +473,6 @@
                             <constraint firstItem="nZV-57-9Xa" firstAttribute="leading" secondItem="cAM-SA-IBL" secondAttribute="leading" id="fJN-vi-8wb"/>
                             <constraint firstItem="cAM-SA-IBL" firstAttribute="trailing" secondItem="nZV-57-9Xa" secondAttribute="trailing" id="s77-ej-XS0"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="cAM-SA-IBL"/>
                     </view>
                     <connections>
                         <outlet property="animationView" destination="8Cd-0t-lCM" id="uYL-Ir-epM"/>
@@ -492,7 +494,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTE-yA-QNT" userLabel="NavBarView" customClass="NavbarView" customModule="BookZone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="-28" width="375" height="165"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="165" id="WP9-nk-g0U"/>
                                 </constraints>
@@ -506,7 +508,7 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9NC-Tw-DMR" customClass="SearchBar" customModule="BookZone" customModuleProvider="target">
                                 <rect key="frame" x="30" y="573.66666666666663" width="315" height="40"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="315" id="1hP-Ro-TAf"/>
                                     <constraint firstAttribute="height" constant="40" id="6oN-E0-0n0"/>
@@ -536,6 +538,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gbo-Iv-c6o"/>
                         <color key="backgroundColor" name="kaki"/>
                         <constraints>
                             <constraint firstItem="46Q-pb-KDN" firstAttribute="centerY" secondItem="l1I-32-gxl" secondAttribute="centerY" constant="-40" id="1NQ-7i-92g"/>
@@ -556,7 +559,6 @@
                             <constraint firstItem="9NC-Tw-DMR" firstAttribute="top" secondItem="46Q-pb-KDN" secondAttribute="bottom" constant="50" id="tkV-en-Q0L"/>
                             <constraint firstItem="jHp-BY-DsR" firstAttribute="centerX" secondItem="l1I-32-gxl" secondAttribute="centerX" id="wPU-Du-PlF"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Gbo-Iv-c6o"/>
                     </view>
                     <connections>
                         <outlet property="isbnSwitchLabel" destination="I2x-Bl-TKL" id="ZVO-wG-4Wg"/>
@@ -581,7 +583,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXY-6n-x1A" customClass="NavbarView" customModule="BookZone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="-28" width="375" height="165"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="165" id="EfF-2Q-UOy"/>
                                 </constraints>
@@ -663,7 +665,7 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZp-v5-hPk">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZp-v5-hPk">
                                                 <rect key="frame" x="87.666666666666686" y="526" width="200" height="30"/>
                                                 <color key="backgroundColor" name="pink"/>
                                                 <constraints>
@@ -687,7 +689,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2Z9-YT-dEv">
                                                 <rect key="frame" x="10" y="576" width="355" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2M-MH-A8J">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2M-MH-A8J">
                                                         <rect key="frame" x="0.0" y="0.0" width="167.66666666666666" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="XpL-JS-Qf2"/>
@@ -707,7 +709,7 @@
                                                             <action selector="searchButtonPressed:" destination="Twj-g2-9Bf" eventType="touchUpInside" id="wvj-Iw-jlI"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7d-Fu-S9J">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7d-Fu-S9J">
                                                         <rect key="frame" x="187.66666666666663" y="0.0" width="167.33333333333337" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="uJd-Vn-Lpp"/>
@@ -765,6 +767,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="rhm-oP-1Ql"/>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="pW2-FB-nCj"/>
                         <color key="backgroundColor" name="kaki"/>
                         <constraints>
                             <constraint firstItem="xs6-kl-atm" firstAttribute="top" secondItem="cXY-6n-x1A" secondAttribute="bottom" id="5Cs-pd-3kR"/>
@@ -775,7 +778,6 @@
                             <constraint firstItem="xs6-kl-atm" firstAttribute="trailing" secondItem="pW2-FB-nCj" secondAttribute="trailing" id="ug4-Ff-0B7"/>
                             <constraint firstItem="cXY-6n-x1A" firstAttribute="leading" secondItem="pW2-FB-nCj" secondAttribute="leading" id="wOl-oa-8Gx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="pW2-FB-nCj"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="wrL-rp-srF" id="EAp-gl-Kui"/>
@@ -790,12 +792,80 @@
             </objects>
             <point key="canvasLocation" x="448.80000000000001" y="-1143.1034482758621"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="LKS-SE-iPU">
+            <objects>
+                <viewController id="C5Y-gX-WDS" customClass="LoginViewController" customModule="BookZone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WOK-pY-juk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BookZone" translatesAutoresizingMaskIntoConstraints="NO" id="DNT-Rz-cce">
+                                <rect key="frame" x="107.66666666666669" y="296" width="160" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="481-Oi-H4u"/>
+                                    <constraint firstAttribute="width" constant="160" id="heo-Oq-gGX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A L E V L A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pd2-19-lI5" userLabel="LogoLabel">
+                                <rect key="frame" x="162.33333333333334" y="514" width="50.333333333333343" height="12"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Title" translatesAutoresizingMaskIntoConstraints="NO" id="M5K-Iw-SPB">
+                                <rect key="frame" x="65.666666666666686" y="406" width="244" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="244" id="OOM-ep-frN"/>
+                                    <constraint firstAttribute="height" constant="88" id="dBh-QE-mLx"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FfV-32-3ao" customClass="GIDSignInButton">
+                                <rect key="frame" x="67.666666666666686" y="586" width="240" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Jrc-XA-NBL"/>
+                                    <constraint firstAttribute="height" constant="60" id="zPL-q6-Jy4"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="login:" destination="C5Y-gX-WDS" eventType="touchUpInside" id="slF-Xf-kTC"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yNX-bi-oUs"/>
+                        <color key="backgroundColor" name="kaki"/>
+                        <constraints>
+                            <constraint firstItem="FfV-32-3ao" firstAttribute="top" secondItem="Pd2-19-lI5" secondAttribute="bottom" constant="60" id="0er-9p-d1b"/>
+                            <constraint firstItem="M5K-Iw-SPB" firstAttribute="top" secondItem="DNT-Rz-cce" secondAttribute="bottom" constant="10" id="3vg-Dn-rRl"/>
+                            <constraint firstItem="DNT-Rz-cce" firstAttribute="centerY" secondItem="WOK-pY-juk" secondAttribute="centerY" constant="-60" id="6nD-Jd-KVl"/>
+                            <constraint firstItem="Pd2-19-lI5" firstAttribute="top" secondItem="M5K-Iw-SPB" secondAttribute="bottom" constant="20" id="8S3-8F-gMo"/>
+                            <constraint firstItem="FfV-32-3ao" firstAttribute="centerX" secondItem="WOK-pY-juk" secondAttribute="centerX" id="9OD-sQ-DEo"/>
+                            <constraint firstItem="Pd2-19-lI5" firstAttribute="centerX" secondItem="WOK-pY-juk" secondAttribute="centerX" id="FuZ-jE-9Dq"/>
+                            <constraint firstItem="DNT-Rz-cce" firstAttribute="centerX" secondItem="WOK-pY-juk" secondAttribute="centerX" id="YWa-2T-wsc"/>
+                            <constraint firstItem="M5K-Iw-SPB" firstAttribute="centerX" secondItem="WOK-pY-juk" secondAttribute="centerX" id="oC8-IT-qR5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="signInButton" destination="FfV-32-3ao" id="cRI-l4-TuH"/>
+                        <segue destination="XBj-A1-K52" kind="presentation" identifier="loginToHome" modalPresentationStyle="fullScreen" id="ld5-tK-L1Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERi-F7-5yo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3260" y="-219"/>
+        </scene>
     </scenes>
+    <designables>
+        <designable name="8Cd-0t-lCM"/>
+    </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="LYh-jv-fnc"/>
-        <segue reference="KPs-6B-ipx"/>
+        <segue reference="PqT-0Q-aaz"/>
+        <segue reference="ld5-tK-L1Q"/>
+        <segue reference="1cR-wx-sPu"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="BookZone" width="1325" height="903"/>
+        <image name="Title" width="732" height="264"/>
         <image name="bookBadge" width="419.66665649414062" height="466.33334350585938"/>
         <image name="bookSearch" width="40" height="40"/>
         <image name="cameraGreen" width="40" height="40"/>
@@ -816,5 +886,8 @@
         <namedColor name="pink">
             <color red="0.85100001096725464" green="0.67799997329711914" blue="0.67799997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
