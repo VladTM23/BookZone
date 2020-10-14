@@ -9,5 +9,8 @@ target 'BookZone' do
    pod "Alamofire"
    pod 'SWXMLHash', '~> 5.0.0'
    pod 'lottie-ios'
+   pod 'Firebase/Analytics'
+   pod 'Firebase/Auth'
+   pod 'GoogleSignIn'
 
 end

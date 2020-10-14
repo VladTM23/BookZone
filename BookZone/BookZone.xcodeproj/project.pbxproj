@@ -26,6 +26,7 @@
 		F5349EBF24E45169009C96BD /* Sacramento-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */; };
 		F5349EC124E45282009C96BD /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */; };
 		F5349EC324E45300009C96BD /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EC224E452FD009C96BD /* Montserrat-Bold.ttf */; };
+		F547E4142536DA91002E6E21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F547E4132536DA91002E6E21 /* GoogleService-Info.plist */; };
 		F57D29DA24E278400001D4C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29D924E278400001D4C4 /* AppDelegate.swift */; };
 		F57D29DC24E278400001D4C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29DB24E278400001D4C4 /* SceneDelegate.swift */; };
 		F57D29DE24E278400001D4C4 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29DD24E278400001D4C4 /* ResultsViewController.swift */; };
@@ -60,6 +61,7 @@
 		F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sacramento-Regular.ttf"; sourceTree = "<group>"; };
 		F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		F5349EC224E452FD009C96BD /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		F547E4132536DA91002E6E21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F57D29D624E278400001D4C4 /* BookZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookZone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F57D29D924E278400001D4C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F57D29DB24E278400001D4C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				F5349EB024E44440009C96BD /* Constants */,
 				F57D29F124E278880001D4C4 /* Assets */,
 				F57D29E724E278410001D4C4 /* Info.plist */,
+				F547E4132536DA91002E6E21 /* GoogleService-Info.plist */,
 			);
 			path = BookZone;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				F57D29D324E278400001D4C4 /* Frameworks */,
 				F57D29D424E278400001D4C4 /* Resources */,
 				2CFC1368FF0F603359A5D942 /* [CP] Embed Pods Frameworks */,
+				65EA88D2E99396E055088238 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -289,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F547E4142536DA91002E6E21 /* GoogleService-Info.plist in Resources */,
 				71E4320624EABDA20099312F /* ResultCard.xib in Resources */,
 				71614A4F24FA5C710038A8B7 /* Assets.xcassets in Resources */,
 				F5349EC124E45282009C96BD /* Montserrat-Regular.ttf in Resources */,
@@ -322,6 +327,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookZone/Pods-BookZone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65EA88D2E99396E055088238 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookZone/Pods-BookZone-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookZone/Pods-BookZone-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookZone/Pods-BookZone-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C17C5895ECAA0D4DC57167D8 /* [CP] Check Pods Manifest.lock */ = {
@@ -520,7 +542,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alelaicu.BookZone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alevla.BookZone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -539,7 +561,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alelaicu.BookZone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alevla.BookZone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
