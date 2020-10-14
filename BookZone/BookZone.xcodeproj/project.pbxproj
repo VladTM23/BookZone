@@ -27,7 +27,9 @@
 		F5349EC124E45282009C96BD /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */; };
 		F5349EC324E45300009C96BD /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EC224E452FD009C96BD /* Montserrat-Bold.ttf */; };
 		F547E4142536DA91002E6E21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F547E4132536DA91002E6E21 /* GoogleService-Info.plist */; };
-		F547E42C2536E188002E6E21 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547E42B2536E188002E6E21 /* LoginViewController.swift */; };
+		F547E42C2536E188002E6E21 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547E42B2536E188002E6E21 /* WelcomeViewController.swift */; };
+		F547E44B25370AD1002E6E21 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547E44A25370AD1002E6E21 /* RegisterViewController.swift */; };
+		F547E44E25370AED002E6E21 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547E44D25370AED002E6E21 /* LoginViewController.swift */; };
 		F57D29DA24E278400001D4C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29D924E278400001D4C4 /* AppDelegate.swift */; };
 		F57D29DC24E278400001D4C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29DB24E278400001D4C4 /* SceneDelegate.swift */; };
 		F57D29DE24E278400001D4C4 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29DD24E278400001D4C4 /* ResultsViewController.swift */; };
@@ -63,7 +65,9 @@
 		F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		F5349EC224E452FD009C96BD /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		F547E4132536DA91002E6E21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F547E42B2536E188002E6E21 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F547E42B2536E188002E6E21 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		F547E44A25370AD1002E6E21 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		F547E44D25370AED002E6E21 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F57D29D624E278400001D4C4 /* BookZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookZone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F57D29D924E278400001D4C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F57D29DB24E278400001D4C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,7 +188,9 @@
 				7106C77424E6E9C300D3D29C /* InfoViewController.swift */,
 				7106C77624E6E9F200D3D29C /* SearchViewController.swift */,
 				71B7836824F538D300E47CE2 /* RadioButtonsViewController.swift */,
-				F547E42B2536E188002E6E21 /* LoginViewController.swift */,
+				F547E42B2536E188002E6E21 /* WelcomeViewController.swift */,
+				F547E44A25370AD1002E6E21 /* RegisterViewController.swift */,
+				F547E44D25370AED002E6E21 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -382,16 +388,18 @@
 				F57D29DE24E278400001D4C4 /* ResultsViewController.swift in Sources */,
 				F5349EB224E44456009C96BD /* K.swift in Sources */,
 				7106C77724E6E9F200D3D29C /* SearchViewController.swift in Sources */,
+				F547E44E25370AED002E6E21 /* LoginViewController.swift in Sources */,
 				F57D29DA24E278400001D4C4 /* AppDelegate.swift in Sources */,
 				7106C77524E6E9C300D3D29C /* InfoViewController.swift in Sources */,
 				71E4321024EFC3840099312F /* SearchBar.swift in Sources */,
 				F591010F24E7B25D0042EB6F /* NavbarView.swift in Sources */,
 				F57D29DC24E278400001D4C4 /* SceneDelegate.swift in Sources */,
+				F547E44B25370AD1002E6E21 /* RegisterViewController.swift in Sources */,
 				71614A5324FA5CEA0038A8B7 /* SecondPageScroll.swift in Sources */,
 				71B7836924F538D300E47CE2 /* RadioButtonsViewController.swift in Sources */,
 				71E4320824EABE060099312F /* ResultCardView.swift in Sources */,
 				71B7836724F5384300E47CE2 /* RadioButtonCollectionViewCell.swift in Sources */,
-				F547E42C2536E188002E6E21 /* LoginViewController.swift in Sources */,
+				F547E42C2536E188002E6E21 /* WelcomeViewController.swift in Sources */,
 				71E4320C24ED6A060099312F /* ResultCardCollectionViewCell.swift in Sources */,
 				F57D29F624E279C00001D4C4 /* AppleTextRecognizer.swift in Sources */,
 				F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */,

@@ -33,6 +33,10 @@ struct K {
         static let goToNormalSearch = "goToNormalSearch"
         static let getStarted = "getStarted"
         static let loginSuccess = "loginToHome"
+        static let registerSuccess = "registerToHome"
+        static let skipToHome = "skipToHome"
+        static let toLogin = "toLoginScreen"
+        static let toRegister = "toRegisterScreen"
     }
 
     struct Nibs {
@@ -47,6 +51,8 @@ struct K {
         static let searchTitle = "Your next book"
         static let infoTitle = "Info Page"
         static let resultsTitle = "Results Page"
+        static let registerTitle = "Register"
+        static let loginTitle = "Login"
         
     }
 
