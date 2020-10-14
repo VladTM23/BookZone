@@ -9,9 +9,20 @@
 /* Begin PBXBuildFile section */
 		7106C77524E6E9C300D3D29C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7106C77424E6E9C300D3D29C /* InfoViewController.swift */; };
 		7106C77724E6E9F200D3D29C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7106C77624E6E9F200D3D29C /* SearchViewController.swift */; };
+		71614A4B24FA43D20038A8B7 /* FirstPageScroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71614A4A24FA43D20038A8B7 /* FirstPageScroll.xib */; };
+		71614A4D24FA4A4B0038A8B7 /* FirstPageScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71614A4C24FA4A4B0038A8B7 /* FirstPageScroll.swift */; };
+		71614A4F24FA5C710038A8B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71614A4E24FA5C710038A8B7 /* Assets.xcassets */; };
+		71614A5124FA5CCE0038A8B7 /* SecondPageScroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71614A5024FA5CCE0038A8B7 /* SecondPageScroll.xib */; };
+		71614A5324FA5CEA0038A8B7 /* SecondPageScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71614A5224FA5CEA0038A8B7 /* SecondPageScroll.swift */; };
+		71B7836724F5384300E47CE2 /* RadioButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7836624F5384300E47CE2 /* RadioButtonCollectionViewCell.swift */; };
+		71B7836924F538D300E47CE2 /* RadioButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7836824F538D300E47CE2 /* RadioButtonsViewController.swift */; };
+		71E4320624EABDA20099312F /* ResultCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E4320524EABDA20099312F /* ResultCard.xib */; };
+		71E4320824EABE060099312F /* ResultCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4320724EABE060099312F /* ResultCardView.swift */; };
+		71E4320C24ED6A060099312F /* ResultCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4320B24ED6A060099312F /* ResultCardCollectionViewCell.swift */; };
+		71E4320E24EFBE1A0099312F /* SearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E4320D24EFBE1A0099312F /* SearchBar.xib */; };
+		71E4321024EFC3840099312F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4320F24EFC3840099312F /* SearchBar.swift */; };
 		DF68B3E844A40D4C35F2072E /* Pods_BookZone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631142FF12AC485DD45BB5F7 /* Pods_BookZone.framework */; };
 		F5349EB224E44456009C96BD /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5349EB124E44456009C96BD /* K.swift */; };
-		F5349EB624E44BE2009C96BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5349EB524E44BE1009C96BD /* Assets.xcassets */; };
 		F5349EBF24E45169009C96BD /* Sacramento-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */; };
 		F5349EC124E45282009C96BD /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */; };
 		F5349EC324E45300009C96BD /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EC224E452FD009C96BD /* Montserrat-Bold.ttf */; };
@@ -24,6 +35,7 @@
 		F591010D24E7B2370042EB6F /* Navbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F591010C24E7B2370042EB6F /* Navbar.xib */; };
 		F591010F24E7B25D0042EB6F /* NavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F591010E24E7B25D0042EB6F /* NavbarView.swift */; };
 		F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */; };
+		F5F9D2A124FB99B8002F4C1D /* 11793-books-stack.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F9D2A024FB99B8002F4C1D /* 11793-books-stack.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +43,20 @@
 		631142FF12AC485DD45BB5F7 /* Pods_BookZone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookZone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7106C77424E6E9C300D3D29C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		7106C77624E6E9F200D3D29C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		71614A4A24FA43D20038A8B7 /* FirstPageScroll.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstPageScroll.xib; sourceTree = "<group>"; };
+		71614A4C24FA4A4B0038A8B7 /* FirstPageScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageScroll.swift; sourceTree = "<group>"; };
+		71614A4E24FA5C710038A8B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		71614A5024FA5CCE0038A8B7 /* SecondPageScroll.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondPageScroll.xib; sourceTree = "<group>"; };
+		71614A5224FA5CEA0038A8B7 /* SecondPageScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageScroll.swift; sourceTree = "<group>"; };
+		71B7836624F5384300E47CE2 /* RadioButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		71B7836824F538D300E47CE2 /* RadioButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonsViewController.swift; sourceTree = "<group>"; };
+		71E4320524EABDA20099312F /* ResultCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCard.xib; sourceTree = "<group>"; };
+		71E4320724EABE060099312F /* ResultCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCardView.swift; sourceTree = "<group>"; };
+		71E4320B24ED6A060099312F /* ResultCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		71E4320D24EFBE1A0099312F /* SearchBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBar.xib; sourceTree = "<group>"; };
+		71E4320F24EFC3840099312F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		E4466345ABFD86AAD0C0A744 /* Pods-BookZone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookZone.release.xcconfig"; path = "Target Support Files/Pods-BookZone/Pods-BookZone.release.xcconfig"; sourceTree = "<group>"; };
 		F5349EB124E44456009C96BD /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
-		F5349EB524E44BE1009C96BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sacramento-Regular.ttf"; sourceTree = "<group>"; };
 		F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		F5349EC224E452FD009C96BD /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -48,6 +71,7 @@
 		F591010C24E7B2370042EB6F /* Navbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Navbar.xib; sourceTree = "<group>"; };
 		F591010E24E7B25D0042EB6F /* NavbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarView.swift; sourceTree = "<group>"; };
 		F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F5F9D2A024FB99B8002F4C1D /* 11793-books-stack.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "11793-books-stack.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +178,7 @@
 				F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */,
 				7106C77424E6E9C300D3D29C /* InfoViewController.swift */,
 				7106C77624E6E9F200D3D29C /* SearchViewController.swift */,
+				71B7836824F538D300E47CE2 /* RadioButtonsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -161,9 +186,10 @@
 		F57D29F124E278880001D4C4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				71614A4E24FA5C710038A8B7 /* Assets.xcassets */,
+				F5F9D2A024FB99B8002F4C1D /* 11793-books-stack.json */,
 				F5349EBD24E45146009C96BD /* Fonts */,
 				F57D29E424E278410001D4C4 /* LaunchScreen.storyboard */,
-				F5349EB524E44BE1009C96BD /* Assets.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -189,6 +215,16 @@
 			children = (
 				F591010E24E7B25D0042EB6F /* NavbarView.swift */,
 				F591010C24E7B2370042EB6F /* Navbar.xib */,
+				71E4320524EABDA20099312F /* ResultCard.xib */,
+				71E4320724EABE060099312F /* ResultCardView.swift */,
+				71E4320B24ED6A060099312F /* ResultCardCollectionViewCell.swift */,
+				71E4320D24EFBE1A0099312F /* SearchBar.xib */,
+				71E4320F24EFC3840099312F /* SearchBar.swift */,
+				71B7836624F5384300E47CE2 /* RadioButtonCollectionViewCell.swift */,
+				71614A4A24FA43D20038A8B7 /* FirstPageScroll.xib */,
+				71614A4C24FA4A4B0038A8B7 /* FirstPageScroll.swift */,
+				71614A5024FA5CCE0038A8B7 /* SecondPageScroll.xib */,
+				71614A5224FA5CEA0038A8B7 /* SecondPageScroll.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -253,11 +289,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71E4320624EABDA20099312F /* ResultCard.xib in Resources */,
+				71614A4F24FA5C710038A8B7 /* Assets.xcassets in Resources */,
 				F5349EC124E45282009C96BD /* Montserrat-Regular.ttf in Resources */,
+				71E4320E24EFBE1A0099312F /* SearchBar.xib in Resources */,
 				F591010D24E7B2370042EB6F /* Navbar.xib in Resources */,
 				F57D29E624E278410001D4C4 /* LaunchScreen.storyboard in Resources */,
-				F5349EB624E44BE2009C96BD /* Assets.xcassets in Resources */,
+				71614A4B24FA43D20038A8B7 /* FirstPageScroll.xib in Resources */,
 				F57D29E124E278400001D4C4 /* Main.storyboard in Resources */,
+				71614A5124FA5CCE0038A8B7 /* SecondPageScroll.xib in Resources */,
+				F5F9D2A124FB99B8002F4C1D /* 11793-books-stack.json in Resources */,
 				F5349EBF24E45169009C96BD /* Sacramento-Regular.ttf in Resources */,
 				F5349EC324E45300009C96BD /* Montserrat-Bold.ttf in Resources */,
 			);
@@ -312,13 +353,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71614A4D24FA4A4B0038A8B7 /* FirstPageScroll.swift in Sources */,
 				F57D29DE24E278400001D4C4 /* ResultsViewController.swift in Sources */,
 				F5349EB224E44456009C96BD /* K.swift in Sources */,
 				7106C77724E6E9F200D3D29C /* SearchViewController.swift in Sources */,
 				F57D29DA24E278400001D4C4 /* AppDelegate.swift in Sources */,
 				7106C77524E6E9C300D3D29C /* InfoViewController.swift in Sources */,
+				71E4321024EFC3840099312F /* SearchBar.swift in Sources */,
 				F591010F24E7B25D0042EB6F /* NavbarView.swift in Sources */,
 				F57D29DC24E278400001D4C4 /* SceneDelegate.swift in Sources */,
+				71614A5324FA5CEA0038A8B7 /* SecondPageScroll.swift in Sources */,
+				71B7836924F538D300E47CE2 /* RadioButtonsViewController.swift in Sources */,
+				71E4320824EABE060099312F /* ResultCardView.swift in Sources */,
+				71B7836724F5384300E47CE2 /* RadioButtonCollectionViewCell.swift in Sources */,
+				71E4320C24ED6A060099312F /* ResultCardCollectionViewCell.swift in Sources */,
 				F57D29F624E279C00001D4C4 /* AppleTextRecognizer.swift in Sources */,
 				F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */,
 			);

@@ -22,7 +22,9 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var mainButton: UIButton!
     @IBOutlet weak var infoButton: UIButton!
-
+    @IBOutlet weak var quoteLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +39,21 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     func configureUI() {
         configureMainButton()
+        configureQuote()
     }
 
     func configureMainButton() {
         mainButton.layer.borderColor = UIColor(named: K.Colors.kaki)?.cgColor
         mainButton.layer.borderWidth = 10
+    }
+    
+    func configureQuote() {
+        
+        let randomId = Int.random(in: 0..<K.Quotes.quotes.count)
+        quoteLabel.text = K.Quotes.quotes[randomId]
+        authorLabel.text = K.Quotes.authors[randomId]
+        
+        
     }
 
     // MARK: - IBActions
@@ -58,10 +70,18 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == K.Identifiers.resultsVCIdentifier {
             let resultsVC = segue.destination as! ResultsViewController
             resultsVC.titleLabelVar = bookTitle
             resultsVC.titleArray = bookTitleArray
+        }
+        
+        else if segue.identifier == K.Identifiers.radioButtonsIdentifier {
+            
+            let radioVC = segue.destination as! RadioButtonsViewController
+            radioVC.titleArray = bookTitleArray
+            radioVC.titleString = bookTitle
         }
     }
 }
@@ -87,10 +107,11 @@ extension HomeViewController {
             print(stringFromArray)
             self.bookTitle = stringFromArray
             self.bookTitleArray = textArray
+            
         }
 
         imagePicker.dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: K.Identifiers.resultsVCIdentifier, sender: self)
+        performSegue(withIdentifier: K.Identifiers.radioButtonsIdentifier, sender: self)
     }
 }
 

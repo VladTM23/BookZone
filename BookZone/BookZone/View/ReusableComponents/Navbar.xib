@@ -15,7 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavbarView" customModule="BookZone" customModuleProvider="target">
             <connections>
-                <outlet property="titleLabel" destination="pIf-2Y-mbQ" id="W5A-jd-Kb9"/>
+                <outlet property="titleLabelNavbar" destination="pIf-2Y-mbQ" id="pg5-MM-Psl"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
