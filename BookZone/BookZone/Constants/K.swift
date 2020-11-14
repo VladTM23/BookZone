@@ -49,6 +49,7 @@ struct K {
         static let registerToLogin = "registerToLogin"
         static let registerToTutorial = "registerToTutorial"
         static let loginToTutorial = "loginToTutorial"
+        static let goToProfileSettings = "goToProfileSettings"
     }
 
     struct Nibs {
@@ -65,6 +66,7 @@ struct K {
         static let resultsTitle = "Results Page"
         static let registerTitle = "Register"
         static let loginTitle = "Login"
+        static let profileSettings = "Profile settings"
         
     }
 
@@ -94,6 +96,7 @@ struct K {
     struct ReuseIdentifiers {
         static let resultCard = "resultCard"
         static let radioButton = "radioButton"
+        static let settingsCell = "SettingsCell"
     }
     
     struct Quotes {
