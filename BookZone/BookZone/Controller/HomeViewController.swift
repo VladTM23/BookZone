@@ -21,11 +21,11 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     // MARK: - IBOutlets
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var mainButton: UIButton!
-    @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-    
-    
+    @IBOutlet weak var bookShelfButton: UIButton!
+    @IBOutlet weak var profileButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -61,12 +61,17 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func mainCameraTapped(_ sender: Any) {
         present(imagePicker, animated: true, completion: nil)
     }
-    
-    @IBAction func infoButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: K.Identifiers.infoVCIdentifier, sender: self)
-    }
+
     @IBAction func searchButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: K.Identifiers.searchVCIdentifier, sender: self)
+    }
+
+    @IBAction func profileButtonTapped(_ sender: Any) {
+        print("Profile")
+    }
+
+    @IBAction func bookShelfButtonTapped(_ sender: Any) {
+        print("Books incoming")
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

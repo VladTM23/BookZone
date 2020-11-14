@@ -21,7 +21,7 @@ class WelcomeViewController: UIViewController {
     }
 
     private func checkIfUserIsLoggedIn() {
-        if Auth.auth().currentUser == nil {
+        if Auth.auth().currentUser != nil {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
              self?.performSegue(withIdentifier: K.Identifiers.skipToHome, sender: nil)
               }
