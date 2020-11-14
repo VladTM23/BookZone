@@ -50,6 +50,7 @@
 		F59C592925602B6E00D6D708 /* SettingsFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C592825602B6E00D6D708 /* SettingsFooter.swift */; };
 		F59C592C25602BCB00D6D708 /* SettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C592B25602BCB00D6D708 /* SettingsHeader.swift */; };
 		F59C592F25602C5D00D6D708 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C592E25602C5C00D6D708 /* SettingsViewController.swift */; };
+		F59C59DA2560466200D6D708 /* UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C59D92560466200D6D708 /* UIResponder.swift */; };
 		F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */; };
 		F5F9D2A124FB99B8002F4C1D /* 11793-books-stack.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F9D2A024FB99B8002F4C1D /* 11793-books-stack.json */; };
 /* End PBXBuildFile section */
@@ -103,6 +104,7 @@
 		F59C592825602B6E00D6D708 /* SettingsFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFooter.swift; sourceTree = "<group>"; };
 		F59C592B25602BCB00D6D708 /* SettingsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeader.swift; sourceTree = "<group>"; };
 		F59C592E25602C5C00D6D708 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F59C59D92560466200D6D708 /* UIResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponder.swift; sourceTree = "<group>"; };
 		F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F5F9D2A024FB99B8002F4C1D /* 11793-books-stack.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "11793-books-stack.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -292,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				F59C5828255FCE8700D6D708 /* Constraints.swift */,
+				F59C59D92560466200D6D708 /* UIResponder.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				71B7836724F5384300E47CE2 /* RadioButtonCollectionViewCell.swift in Sources */,
 				F547E42C2536E188002E6E21 /* WelcomeViewController.swift in Sources */,
 				71E4320C24ED6A060099312F /* ResultCardCollectionViewCell.swift in Sources */,
+				F59C59DA2560466200D6D708 /* UIResponder.swift in Sources */,
 				F57D29F624E279C00001D4C4 /* AppleTextRecognizer.swift in Sources */,
 				F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */,
 				F59C592225602A6E00D6D708 /* SettingsViewModel.swift in Sources */,

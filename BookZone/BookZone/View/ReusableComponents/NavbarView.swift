@@ -13,6 +13,7 @@ class NavbarView: UIView {
     // MARK: - IBOutlets
 
     @IBOutlet weak var titleLabelNavbar: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -36,6 +37,7 @@ class NavbarView: UIView {
     }
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
-        self.window?.rootViewController?.dismiss(animated: true, completion: nil)
+        guard let parentVC = self.getOwningViewController() else { return }
+        parentVC.dismiss(animated: true, completion: nil)
     }
 }
