@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C5Y-gX-WDS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C5Y-gX-WDS">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -151,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="295" y="-219"/>
+            <point key="canvasLocation" x="1183" y="-219"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="5DX-d3-o3c">
@@ -180,11 +180,13 @@
                     <connections>
                         <outlet property="navbarView" destination="0KT-dn-Fr4" id="iIY-vh-zu3"/>
                         <segue destination="XBj-A1-K52" kind="presentation" identifier="loginToHome" modalPresentationStyle="fullScreen" id="vTQ-5G-ykn"/>
+                        <segue destination="xVV-Wh-w5f" kind="presentation" identifier="loginToRegister" modalPresentationStyle="fullScreen" id="7vF-hs-PSW"/>
+                        <segue destination="tkS-0r-w2A" kind="presentation" identifier="loginToTutorial" modalPresentationStyle="fullScreen" id="Jdr-OT-0Zz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XHc-gi-jH9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2684" y="-672"/>
+            <point key="canvasLocation" x="-2498" y="-673"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="3f5-yR-fKd">
@@ -368,7 +370,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVv-EO-zOq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1782" y="-219"/>
+            <point key="canvasLocation" x="-175" y="-219"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="K96-Ur-kvU">
@@ -515,7 +517,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRj-qj-5DA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-818.39999999999998" y="-1143.1034482758621"/>
+            <point key="canvasLocation" x="-1481" y="-219"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="n46-oZ-9B2">
@@ -604,7 +606,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rlq-eL-Nev" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-684" y="522"/>
+            <point key="canvasLocation" x="-1482" y="695"/>
         </scene>
         <!--Radio Buttons View Controller-->
         <scene sceneID="Ym6-KM-hsw">
@@ -823,7 +825,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFJ-mu-vcL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448.80000000000001" y="-1143.1034482758621"/>
+            <point key="canvasLocation" x="-175" y="695"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="LKS-SE-iPU">
@@ -915,7 +917,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERi-F7-5yo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3591" y="-219"/>
+            <point key="canvasLocation" x="-3588" y="-219"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Nrq-ij-G8P">
@@ -944,17 +946,22 @@
                     <connections>
                         <outlet property="navbarView" destination="GQU-vC-gYY" id="Mee-YH-dHQ"/>
                         <segue destination="XBj-A1-K52" kind="presentation" identifier="registerToHome" modalPresentationStyle="fullScreen" id="5vV-uf-Stz"/>
+                        <segue destination="Pdt-1n-vUq" kind="presentation" identifier="registerToLogin" modalPresentationStyle="fullScreen" id="13l-71-1Fs"/>
+                        <segue destination="tkS-0r-w2A" kind="presentation" identifier="registerToTutorial" modalPresentationStyle="fullScreen" id="AJP-OM-3xw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72m-SR-nC7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2684" y="193"/>
+            <point key="canvasLocation" x="-2498" y="215"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PqT-0Q-aaz"/>
+        <segue reference="7vF-hs-PSW"/>
+        <segue reference="LYh-jv-fnc"/>
+        <segue reference="AJP-OM-3xw"/>
         <segue reference="5vV-uf-Stz"/>
-        <segue reference="12h-vl-f4q"/>
+        <segue reference="13l-71-1Fs"/>
+        <segue reference="1cR-wx-sPu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BookZone" width="1325" height="903"/>
@@ -977,7 +984,7 @@
             <color red="0.53700000047683716" green="0.78799998760223389" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="pink">
-            <color red="0.85100001096725464" green="0.67799997329711914" blue="0.67799997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.85098039215686272" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -42,6 +42,7 @@ class InfoViewController: UIViewController {
     }
 
     @IBAction func getStartedButtonPressed(_ sender: UIButton) {
+        UserDefaults.standard.set(true, forKey: K.UserKeys.tutorialCompleted)
         performSegue(withIdentifier: K.Identifiers.getStarted, sender: self)
     }
 }

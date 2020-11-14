@@ -38,6 +38,13 @@
 		F57D29F624E279C00001D4C4 /* AppleTextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29F524E279C00001D4C4 /* AppleTextRecognizer.swift */; };
 		F591010D24E7B2370042EB6F /* Navbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F591010C24E7B2370042EB6F /* Navbar.xib */; };
 		F591010F24E7B25D0042EB6F /* NavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F591010E24E7B25D0042EB6F /* NavbarView.swift */; };
+		F59C581D255FCD6300D6D708 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C581C255FCD6300D6D708 /* User.swift */; };
+		F59C5821255FCD9900D6D708 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C5820255FCD9900D6D708 /* AuthenticationViewModel.swift */; };
+		F59C5825255FCE5200D6D708 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C5824255FCE5200D6D708 /* CustomTextField.swift */; };
+		F59C5829255FCE8700D6D708 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C5828255FCE8700D6D708 /* Constraints.swift */; };
+		F59C582E255FCF0D00D6D708 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C582D255FCF0D00D6D708 /* AuthButton.swift */; };
+		F59C584F255FD38400D6D708 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C584E255FD38400D6D708 /* AuthService.swift */; };
+		F59C5852255FD3E700D6D708 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C5851255FD3E700D6D708 /* Service.swift */; };
 		F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */; };
 		F5F9D2A124FB99B8002F4C1D /* 11793-books-stack.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F9D2A024FB99B8002F4C1D /* 11793-books-stack.json */; };
 /* End PBXBuildFile section */
@@ -78,6 +85,14 @@
 		F57D29F524E279C00001D4C4 /* AppleTextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTextRecognizer.swift; sourceTree = "<group>"; };
 		F591010C24E7B2370042EB6F /* Navbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Navbar.xib; sourceTree = "<group>"; };
 		F591010E24E7B25D0042EB6F /* NavbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarView.swift; sourceTree = "<group>"; };
+		F59C581C255FCD6300D6D708 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F59C5820255FCD9900D6D708 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		F59C5824255FCE5200D6D708 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		F59C5828255FCE8700D6D708 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		F59C582D255FCF0D00D6D708 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		F59C584E255FD38400D6D708 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		F59C5851255FD3E700D6D708 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		F59C58AB255FE47800D6D708 /* BookZoneDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookZoneDebug.entitlements; sourceTree = "<group>"; };
 		F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F5F9D2A024FB99B8002F4C1D /* 11793-books-stack.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "11793-books-stack.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,25 +165,22 @@
 		F57D29D824E278400001D4C4 /* BookZone */ = {
 			isa = PBXGroup;
 			children = (
+				F59C58AB255FE47800D6D708 /* BookZoneDebug.entitlements */,
 				F57D29D924E278400001D4C4 /* AppDelegate.swift */,
 				F57D29DB24E278400001D4C4 /* SceneDelegate.swift */,
-				F57D29ED24E278540001D4C4 /* Model */,
+				F59C581B255FCD5700D6D708 /* Model */,
+				F59C581F255FCD8300D6D708 /* ViewModel */,
 				F57D29EE24E2785B0001D4C4 /* View */,
 				F57D29F024E278690001D4C4 /* Controller */,
+				F59C5830255FCF4700D6D708 /* API */,
 				F57D29F224E278A20001D4C4 /* Helpers */,
+				F59C5827255FCE7400D6D708 /* Extensions */,
 				F5349EB024E44440009C96BD /* Constants */,
 				F57D29F124E278880001D4C4 /* Assets */,
 				F57D29E724E278410001D4C4 /* Info.plist */,
 				F547E4132536DA91002E6E21 /* GoogleService-Info.plist */,
 			);
 			path = BookZone;
-			sourceTree = "<group>";
-		};
-		F57D29ED24E278540001D4C4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		F57D29EE24E2785B0001D4C4 /* View */ = {
@@ -183,14 +195,13 @@
 		F57D29F024E278690001D4C4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F59C5823255FCE0600D6D708 /* Authentication */,
 				F57D29DD24E278400001D4C4 /* ResultsViewController.swift */,
 				F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */,
 				7106C77424E6E9C300D3D29C /* InfoViewController.swift */,
 				7106C77624E6E9F200D3D29C /* SearchViewController.swift */,
 				71B7836824F538D300E47CE2 /* RadioButtonsViewController.swift */,
 				F547E42B2536E188002E6E21 /* WelcomeViewController.swift */,
-				F547E44A25370AD1002E6E21 /* RegisterViewController.swift */,
-				F547E44D25370AED002E6E21 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -225,20 +236,72 @@
 		F591010B24E7B2150042EB6F /* ReusableComponents */ = {
 			isa = PBXGroup;
 			children = (
+				F59C582B255FCE9C00D6D708 /* Xibs */,
 				F591010E24E7B25D0042EB6F /* NavbarView.swift */,
-				F591010C24E7B2370042EB6F /* Navbar.xib */,
-				71E4320524EABDA20099312F /* ResultCard.xib */,
 				71E4320724EABE060099312F /* ResultCardView.swift */,
 				71E4320B24ED6A060099312F /* ResultCardCollectionViewCell.swift */,
-				71E4320D24EFBE1A0099312F /* SearchBar.xib */,
 				71E4320F24EFC3840099312F /* SearchBar.swift */,
 				71B7836624F5384300E47CE2 /* RadioButtonCollectionViewCell.swift */,
-				71614A4A24FA43D20038A8B7 /* FirstPageScroll.xib */,
 				71614A4C24FA4A4B0038A8B7 /* FirstPageScroll.swift */,
-				71614A5024FA5CCE0038A8B7 /* SecondPageScroll.xib */,
 				71614A5224FA5CEA0038A8B7 /* SecondPageScroll.swift */,
+				F59C5824255FCE5200D6D708 /* CustomTextField.swift */,
+				F59C582D255FCF0D00D6D708 /* AuthButton.swift */,
 			);
 			path = ReusableComponents;
+			sourceTree = "<group>";
+		};
+		F59C581B255FCD5700D6D708 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F59C581C255FCD6300D6D708 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F59C581F255FCD8300D6D708 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F59C5820255FCD9900D6D708 /* AuthenticationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F59C5823255FCE0600D6D708 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				F547E44A25370AD1002E6E21 /* RegisterViewController.swift */,
+				F547E44D25370AED002E6E21 /* LoginViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		F59C5827255FCE7400D6D708 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F59C5828255FCE8700D6D708 /* Constraints.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F59C582B255FCE9C00D6D708 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				F591010C24E7B2370042EB6F /* Navbar.xib */,
+				71E4320524EABDA20099312F /* ResultCard.xib */,
+				71E4320D24EFBE1A0099312F /* SearchBar.xib */,
+				71614A4A24FA43D20038A8B7 /* FirstPageScroll.xib */,
+				71614A5024FA5CCE0038A8B7 /* SecondPageScroll.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		F59C5830255FCF4700D6D708 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F59C584E255FD38400D6D708 /* AuthService.swift */,
+				F59C5851255FD3E700D6D708 /* Service.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +316,6 @@
 				F57D29D324E278400001D4C4 /* Frameworks */,
 				F57D29D424E278400001D4C4 /* Resources */,
 				2CFC1368FF0F603359A5D942 /* [CP] Embed Pods Frameworks */,
-				65EA88D2E99396E055088238 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -338,23 +400,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookZone/Pods-BookZone-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		65EA88D2E99396E055088238 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BookZone/Pods-BookZone-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BookZone/Pods-BookZone-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookZone/Pods-BookZone-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C17C5895ECAA0D4DC57167D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,17 +430,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				71614A4D24FA4A4B0038A8B7 /* FirstPageScroll.swift in Sources */,
+				F59C5852255FD3E700D6D708 /* Service.swift in Sources */,
+				F59C582E255FCF0D00D6D708 /* AuthButton.swift in Sources */,
 				F57D29DE24E278400001D4C4 /* ResultsViewController.swift in Sources */,
 				F5349EB224E44456009C96BD /* K.swift in Sources */,
 				7106C77724E6E9F200D3D29C /* SearchViewController.swift in Sources */,
 				F547E44E25370AED002E6E21 /* LoginViewController.swift in Sources */,
 				F57D29DA24E278400001D4C4 /* AppDelegate.swift in Sources */,
+				F59C584F255FD38400D6D708 /* AuthService.swift in Sources */,
 				7106C77524E6E9C300D3D29C /* InfoViewController.swift in Sources */,
 				71E4321024EFC3840099312F /* SearchBar.swift in Sources */,
+				F59C581D255FCD6300D6D708 /* User.swift in Sources */,
+				F59C5821255FCD9900D6D708 /* AuthenticationViewModel.swift in Sources */,
 				F591010F24E7B25D0042EB6F /* NavbarView.swift in Sources */,
 				F57D29DC24E278400001D4C4 /* SceneDelegate.swift in Sources */,
+				F59C5825255FCE5200D6D708 /* CustomTextField.swift in Sources */,
 				F547E44B25370AD1002E6E21 /* RegisterViewController.swift in Sources */,
 				71614A5324FA5CEA0038A8B7 /* SecondPageScroll.swift in Sources */,
+				F59C5829255FCE8700D6D708 /* Constraints.swift in Sources */,
 				71B7836924F538D300E47CE2 /* RadioButtonsViewController.swift in Sources */,
 				71E4320824EABE060099312F /* ResultCardView.swift in Sources */,
 				71B7836724F5384300E47CE2 /* RadioButtonCollectionViewCell.swift in Sources */,
@@ -547,8 +599,9 @@
 			baseConfigurationReference = 4809AE4BBDA597008585503A /* Pods-BookZone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BookZone/BookZoneDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P8XW6H7W5B;
+				DEVELOPMENT_TEAM = J9Y5MLR4Q4;
 				INFOPLIST_FILE = BookZone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -567,7 +620,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P8XW6H7W5B;
+				DEVELOPMENT_TEAM = J9Y5MLR4Q4;
 				INFOPLIST_FILE = BookZone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

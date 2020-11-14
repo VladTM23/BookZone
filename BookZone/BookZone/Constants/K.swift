@@ -7,10 +7,18 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseFirestore
+
+let COLLECTION_USERS = Firestore.firestore().collection("users")
 
 struct K {
     static let key = "RNsVx8TWoCWvPVwuzzV4A"
     static let secret = "rBBSJQtj0PjyIZ4uTi33tESjTvRZ6EKYFkCnbBGiyg"
+
+    struct UserKeys {
+        static let tutorialCompleted = "tutorialCompleted"
+    }
 
     struct Endpoints {
         static let isbnURL = "https://www.goodreads.com/book/isbn/"
@@ -37,6 +45,10 @@ struct K {
         static let skipToHome = "skipToHome"
         static let toLogin = "toLoginScreen"
         static let toRegister = "toRegisterScreen"
+        static let loginToRegister = "loginToRegister"
+        static let registerToLogin = "registerToLogin"
+        static let registerToTutorial = "registerToTutorial"
+        static let loginToTutorial = "loginToTutorial"
     }
 
     struct Nibs {
@@ -147,7 +159,6 @@ struct K {
             "Little Women by Louisa May Alcott",
             "The Phantom Tollbooth by Norton Juster",
             "The Lathe of Heaven by Ursula K. Le Guin"
-            
         ]
     }
 
