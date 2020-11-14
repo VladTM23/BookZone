@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7106C77524E6E9C300D3D29C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7106C77424E6E9C300D3D29C /* InfoViewController.swift */; };
 		7106C77724E6E9F200D3D29C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7106C77624E6E9F200D3D29C /* SearchViewController.swift */; };
+		7143BC5325602AFB0018CFAB /* BookShelfCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7143BC5225602AFB0018CFAB /* BookShelfCell.xib */; };
+		7143BC5525602B1E0018CFAB /* BookShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143BC5425602B1E0018CFAB /* BookShelfCell.swift */; };
 		71614A4B24FA43D20038A8B7 /* FirstPageScroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71614A4A24FA43D20038A8B7 /* FirstPageScroll.xib */; };
 		71614A4D24FA4A4B0038A8B7 /* FirstPageScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71614A4C24FA4A4B0038A8B7 /* FirstPageScroll.swift */; };
 		71614A4F24FA5C710038A8B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71614A4E24FA5C710038A8B7 /* Assets.xcassets */; };
@@ -54,6 +56,8 @@
 		631142FF12AC485DD45BB5F7 /* Pods_BookZone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookZone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7106C77424E6E9C300D3D29C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		7106C77624E6E9F200D3D29C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7143BC5225602AFB0018CFAB /* BookShelfCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookShelfCell.xib; sourceTree = "<group>"; };
+		7143BC5425602B1E0018CFAB /* BookShelfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfCell.swift; sourceTree = "<group>"; };
 		71614A4A24FA43D20038A8B7 /* FirstPageScroll.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstPageScroll.xib; sourceTree = "<group>"; };
 		71614A4C24FA4A4B0038A8B7 /* FirstPageScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageScroll.swift; sourceTree = "<group>"; };
 		71614A4E24FA5C710038A8B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 				71614A5224FA5CEA0038A8B7 /* SecondPageScroll.swift */,
 				F59C5824255FCE5200D6D708 /* CustomTextField.swift */,
 				F59C582D255FCF0D00D6D708 /* AuthButton.swift */,
+				7143BC5425602B1E0018CFAB /* BookShelfCell.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 				71E4320D24EFBE1A0099312F /* SearchBar.xib */,
 				71614A4A24FA43D20038A8B7 /* FirstPageScroll.xib */,
 				71614A5024FA5CCE0038A8B7 /* SecondPageScroll.xib */,
+				7143BC5225602AFB0018CFAB /* BookShelfCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 				F57D29E624E278410001D4C4 /* LaunchScreen.storyboard in Resources */,
 				71614A4B24FA43D20038A8B7 /* FirstPageScroll.xib in Resources */,
 				F57D29E124E278400001D4C4 /* Main.storyboard in Resources */,
+				7143BC5325602AFB0018CFAB /* BookShelfCell.xib in Resources */,
 				71614A5124FA5CCE0038A8B7 /* SecondPageScroll.xib in Resources */,
 				F5F9D2A124FB99B8002F4C1D /* 11793-books-stack.json in Resources */,
 				F5349EBF24E45169009C96BD /* Sacramento-Regular.ttf in Resources */,
@@ -453,6 +460,7 @@
 				71B7836724F5384300E47CE2 /* RadioButtonCollectionViewCell.swift in Sources */,
 				F547E42C2536E188002E6E21 /* WelcomeViewController.swift in Sources */,
 				71E4320C24ED6A060099312F /* ResultCardCollectionViewCell.swift in Sources */,
+				7143BC5525602B1E0018CFAB /* BookShelfCell.swift in Sources */,
 				F57D29F624E279C00001D4C4 /* AppleTextRecognizer.swift in Sources */,
 				F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */,
 			);
