@@ -213,10 +213,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVW-mz-1lR" userLabel="InfoButton">
-                                                <rect key="frame" x="314.66666666666669" y="79" width="40" height="40"/>
+                                                <rect key="frame" x="10" y="112" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="L8M-CB-Vpu"/>
-                                                    <constraint firstAttribute="width" constant="40" id="e7D-Ad-5dU"/>
+                                                    <constraint firstAttribute="height" constant="50" id="L8M-CB-Vpu"/>
+                                                    <constraint firstAttribute="width" constant="50" id="e7D-Ad-5dU"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="Female"/>
@@ -228,9 +228,9 @@
                                         <color key="backgroundColor" name="pink"/>
                                         <constraints>
                                             <constraint firstItem="dHv-Xn-J4r" firstAttribute="top" secondItem="lHz-ew-aRs" secondAttribute="top" constant="100" id="19j-PU-De5"/>
-                                            <constraint firstItem="LVW-mz-1lR" firstAttribute="centerY" secondItem="dHv-Xn-J4r" secondAttribute="centerY" constant="-45" id="6UH-eo-rjW"/>
-                                            <constraint firstItem="LVW-mz-1lR" firstAttribute="leading" secondItem="dHv-Xn-J4r" secondAttribute="trailing" constant="5" id="PFO-Td-OWR"/>
+                                            <constraint firstItem="LVW-mz-1lR" firstAttribute="centerY" secondItem="dHv-Xn-J4r" secondAttribute="centerY" constant="-7" id="6UH-eo-rjW"/>
                                             <constraint firstAttribute="height" constant="200" id="VCl-wb-ivz"/>
+                                            <constraint firstItem="LVW-mz-1lR" firstAttribute="leading" secondItem="lHz-ew-aRs" secondAttribute="leading" constant="10" id="XqO-HP-18e"/>
                                             <constraint firstItem="dHv-Xn-J4r" firstAttribute="centerX" secondItem="lHz-ew-aRs" secondAttribute="centerX" id="h4G-Mj-oMo"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -380,6 +380,7 @@
                         <outlet property="searchButton" destination="DhK-Kb-mJ8" id="7OG-0A-ADB"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToResults" modalPresentationStyle="fullScreen" id="1cR-wx-sPu"/>
                         <segue destination="Twj-g2-9Bf" kind="presentation" identifier="goToRadioButtons" modalPresentationStyle="fullScreen" id="UG6-Zf-KGg"/>
+                        <segue destination="8ok-vt-h26" kind="presentation" identifier="goToProfileSettings" modalPresentationStyle="fullScreen" id="rZF-43-G1t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVv-EO-zOq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -968,13 +969,54 @@
             </objects>
             <point key="canvasLocation" x="-2498" y="215"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="34P-Uc-bfE">
+            <objects>
+                <viewController id="8ok-vt-h26" customClass="SettingsViewController" customModule="BookZone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z5g-27-w1v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BgL-tN-u7i">
+                                <rect key="frame" x="0.0" y="137" width="375" height="675"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qr9-Qf-grm" customClass="NavbarView" customModule="BookZone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="-28" width="375" height="165"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="htV-Ta-uzT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="18U-Jr-TK0"/>
+                        <color key="backgroundColor" name="kaki"/>
+                        <constraints>
+                            <constraint firstItem="BgL-tN-u7i" firstAttribute="top" secondItem="qr9-Qf-grm" secondAttribute="bottom" id="2Ci-q8-GiK"/>
+                            <constraint firstItem="18U-Jr-TK0" firstAttribute="trailing" secondItem="BgL-tN-u7i" secondAttribute="trailing" id="4rZ-yE-zvd"/>
+                            <constraint firstItem="BgL-tN-u7i" firstAttribute="leading" secondItem="18U-Jr-TK0" secondAttribute="leading" id="6OB-sY-hKf"/>
+                            <constraint firstItem="qr9-Qf-grm" firstAttribute="leading" secondItem="18U-Jr-TK0" secondAttribute="leading" id="PAE-BE-LoB"/>
+                            <constraint firstItem="18U-Jr-TK0" firstAttribute="trailing" secondItem="qr9-Qf-grm" secondAttribute="trailing" id="SgN-Fi-bfU"/>
+                            <constraint firstItem="qr9-Qf-grm" firstAttribute="top" secondItem="z5g-27-w1v" secondAttribute="top" constant="-28" id="TL1-27-WBC"/>
+                            <constraint firstAttribute="bottom" secondItem="BgL-tN-u7i" secondAttribute="bottom" id="yri-Yf-3Hz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navbarView" destination="qr9-Qf-grm" id="BVZ-3x-dhH"/>
+                        <outlet property="tableView" destination="BgL-tN-u7i" id="POA-IT-rdy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5La-1h-czp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175" y="-1015"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="h9L-BW-cDN"/>
         <segue reference="PqT-0Q-aaz"/>
-        <segue reference="AJP-OM-3xw"/>
-        <segue reference="Yi5-6r-pSd"/>
-        <segue reference="13l-71-1Fs"/>
+        <segue reference="Jdr-OT-0Zz"/>
+        <segue reference="ld5-tK-L1Q"/>
+        <segue reference="pYW-uq-oCP"/>
         <segue reference="1cR-wx-sPu"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -999,7 +1041,7 @@
             <color red="0.53700000047683716" green="0.78799998760223389" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="pink">
-            <color red="0.85098039215686272" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.85100001096725464" green="0.67799997329711914" blue="0.67799997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -9,10 +9,12 @@
 import UIKit
 import Alamofire
 import SWXMLHash
+import Firebase
 
 class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: - Properties
+    private var user: User?
 
     var bookTitle: String!
     var bookTitleArray: [String]!
@@ -29,10 +31,16 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        fetchUser()
         
         imagePicker.delegate = self
 //        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
+    }
+
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        fetchUser()
     }
 
     // MARK: - User Interface
@@ -52,8 +60,15 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let randomId = Int.random(in: 0..<K.Quotes.quotes.count)
         quoteLabel.text = K.Quotes.quotes[randomId]
         authorLabel.text = K.Quotes.authors[randomId]
-        
-        
+    }
+
+    // MARK: - API
+
+    private func fetchUser() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Service.fetchUser(withUid: uid) { (user) in
+            self.user = user
+        }
     }
 
     // MARK: - IBActions
@@ -67,7 +82,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
 
     @IBAction func profileButtonTapped(_ sender: Any) {
-        print("Profile")
+        performSegue(withIdentifier: K.Identifiers.goToProfileSettings, sender: self)
     }
 
     @IBAction func bookShelfButtonTapped(_ sender: Any) {
@@ -87,6 +102,13 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             let radioVC = segue.destination as! RadioButtonsViewController
             radioVC.titleArray = bookTitleArray
             radioVC.titleString = bookTitle
+        }
+
+        else if segue.identifier == K.Identifiers.goToProfileSettings {
+            guard let user = user else { return }
+            let profileSettingsVC = segue.destination as! SettingsViewController
+            profileSettingsVC.delegate = self
+            profileSettingsVC.commonInit(user: user)
         }
     }
 }
@@ -117,6 +139,16 @@ extension HomeViewController {
 
         imagePicker.dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: K.Identifiers.radioButtonsIdentifier, sender: self)
+    }
+}
+
+//MARK: - SettingsControllerDelegate
+
+extension HomeViewController: SettingsViewControllerDelegate {
+
+    func settingsController(_ controller: SettingsViewController, wantsToUpdate user: User) {
+        controller.dismiss(animated: true, completion: nil)
+        self.user = user
     }
 }
 

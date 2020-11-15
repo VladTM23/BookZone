@@ -32,6 +32,7 @@ class InfoViewController: UIViewController {
 
     func configureNavBar() {
         navBarView.titleLabelNavbar.text = K.NavbarTitles.infoTitle
+        navBarView.backButton.isHidden = true
     }
 
     func configureAnimation() {
