@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -41,14 +43,14 @@
                         <constraint firstAttribute="height" constant="30" id="fZt-WD-pfi"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" systemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ThM-fa-bbR">
                     <rect key="frame" x="10" y="100" width="60" height="60"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BB3-k1-WbV">
-                            <rect key="frame" x="5" y="5" width="50" height="50"/>
+                            <rect key="frame" x="5" y="4" width="50" height="50"/>
                             <color key="backgroundColor" name="pink"/>
                             <color key="tintColor" name="grey"/>
                             <constraints>
@@ -82,10 +84,11 @@
                         <constraint firstAttribute="width" constant="80" id="cbd-H0-6Jb"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
-                    <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" name="kaki"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="EHO-ws-PCa" secondAttribute="trailing" id="8tc-4p-eQh"/>
@@ -100,7 +103,6 @@
                 <constraint firstItem="yL0-1y-kN0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uv0-Fe-BDe"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="-386" y="288"/>
         </view>
     </objects>
@@ -116,5 +118,11 @@
         <namedColor name="pink">
             <color red="0.85100001096725464" green="0.67799997329711914" blue="0.67799997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

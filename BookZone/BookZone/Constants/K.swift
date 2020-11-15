@@ -50,6 +50,7 @@ struct K {
         static let registerToTutorial = "registerToTutorial"
         static let loginToTutorial = "loginToTutorial"
         static let goToProfileSettings = "goToProfileSettings"
+        static let goToBookshelf = "goToBookshelf"
     }
 
     struct Nibs {
@@ -68,6 +69,7 @@ struct K {
         static let registerTitle = "Register"
         static let loginTitle = "Login"
         static let profileSettings = "Profile settings"
+        static let bookshelfTitle = "My bookshelf"
         
     }
 
@@ -98,6 +100,7 @@ struct K {
         static let resultCard = "resultCard"
         static let radioButton = "radioButton"
         static let settingsCell = "SettingsCell"
+        static let bookshelf = "bookshelf"
     }
     
     struct Quotes {

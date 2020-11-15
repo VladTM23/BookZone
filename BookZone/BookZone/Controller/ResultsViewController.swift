@@ -127,12 +127,12 @@ extension ResultsViewController {
                     //let author = responseBody["GoodreadsResponse"]["book"]["authors"]["author"]["name"].element!.text
 
                     //print(title + "    " + author )
-                    let ratingsCount = responseBody["GoodreadsResponse"]["book"]["work"]["ratings_count"].element!.text
-                    let reviewsCount = responseBody["GoodreadsResponse"]["book"]["work"]["text_reviews_count"].element!.text
-                    let editionsCount = responseBody["GoodreadsResponse"]["book"]["work"]["books_count"].element!.text
+                    let ratingsCount = formatNumber(responseBody["GoodreadsResponse"]["book"]["work"]["ratings_count"].element!.text)
+                    let reviewsCount = formatNumber(responseBody["GoodreadsResponse"]["book"]["work"]["text_reviews_count"].element!.text)
+                    let editionsCount = formatNumber(responseBody["GoodreadsResponse"]["book"]["work"]["books_count"].element!.text)
                     let averageRating = responseBody["GoodreadsResponse"]["book"]["average_rating"].element!.text
 
-                    let addedBy = responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element!.text
+                    let addedBy = formatNumber(responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element!.text)
 
                     let labelArray =  [ratingsCount, reviewsCount, editionsCount,addedBy]
                     self.titleLabel.text = title
@@ -143,6 +143,8 @@ extension ResultsViewController {
         }
     }
 }
+
+
 
 //MARK: - UICollectionView
 
@@ -197,6 +199,16 @@ extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDel
         return UIEdgeInsets( top:10, left: 50,  bottom:10, right: 50)
     }
     
+}
+
+//MARK:- Helper functions
+
+func formatNumber(_ number: String) -> String {
+    let largeNumber = Int(number)!
+    let numberFormatter = NumberFormatter()
+    numberFormatter.numberStyle = .decimal
+    let formattedNumber = numberFormatter.string(from: NSNumber(value:largeNumber))!
+    return(formattedNumber)
 }
 
 

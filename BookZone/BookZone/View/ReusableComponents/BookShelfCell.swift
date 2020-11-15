@@ -10,6 +10,12 @@ import UIKit
 
 class BookShelfCell: UIView {
 
+    @IBOutlet weak var bookCover: UIImageView!
+    @IBOutlet weak var bookTitle: UILabel!
+    @IBOutlet weak var bookAuthor: UILabel!
+    @IBOutlet weak var bookRating: UILabel!
+    @IBOutlet weak var bookRead: UIImageView!
+    
     required init?(coder aDecoder: NSCoder) {
           super.init(coder: aDecoder)
           commonInit()

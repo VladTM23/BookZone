@@ -86,7 +86,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
 
     @IBAction func bookShelfButtonTapped(_ sender: Any) {
-        print("Books incoming")
+        performSegue(withIdentifier: K.Identifiers.goToBookshelf, sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

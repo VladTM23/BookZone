@@ -16,6 +16,8 @@
 		71614A4F24FA5C710038A8B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71614A4E24FA5C710038A8B7 /* Assets.xcassets */; };
 		71614A5124FA5CCE0038A8B7 /* SecondPageScroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71614A5024FA5CCE0038A8B7 /* SecondPageScroll.xib */; };
 		71614A5324FA5CEA0038A8B7 /* SecondPageScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71614A5224FA5CEA0038A8B7 /* SecondPageScroll.swift */; };
+		718356B7256121BB000CC0DF /* BookShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718356B6256121BB000CC0DF /* BookShelfViewController.swift */; };
+		718356BF25613228000CC0DF /* BookShelfCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718356BE25613228000CC0DF /* BookShelfCollectionViewCell.swift */; };
 		71B7836724F5384300E47CE2 /* RadioButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7836624F5384300E47CE2 /* RadioButtonCollectionViewCell.swift */; };
 		71B7836924F538D300E47CE2 /* RadioButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7836824F538D300E47CE2 /* RadioButtonsViewController.swift */; };
 		71E4320624EABDA20099312F /* ResultCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E4320524EABDA20099312F /* ResultCard.xib */; };
@@ -69,6 +71,8 @@
 		71614A4E24FA5C710038A8B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71614A5024FA5CCE0038A8B7 /* SecondPageScroll.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondPageScroll.xib; sourceTree = "<group>"; };
 		71614A5224FA5CEA0038A8B7 /* SecondPageScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageScroll.swift; sourceTree = "<group>"; };
+		718356B6256121BB000CC0DF /* BookShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfViewController.swift; sourceTree = "<group>"; };
+		718356BE25613228000CC0DF /* BookShelfCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfCollectionViewCell.swift; sourceTree = "<group>"; };
 		71B7836624F5384300E47CE2 /* RadioButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		71B7836824F538D300E47CE2 /* RadioButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonsViewController.swift; sourceTree = "<group>"; };
 		71E4320524EABDA20099312F /* ResultCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCard.xib; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 				71B7836824F538D300E47CE2 /* RadioButtonsViewController.swift */,
 				F547E42B2536E188002E6E21 /* WelcomeViewController.swift */,
 				F59C592E25602C5C00D6D708 /* SettingsViewController.swift */,
+				718356B6256121BB000CC0DF /* BookShelfViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				F59C5824255FCE5200D6D708 /* CustomTextField.swift */,
 				F59C582D255FCF0D00D6D708 /* AuthButton.swift */,
 				7143BC5425602B1E0018CFAB /* BookShelfCell.swift */,
+				718356BE25613228000CC0DF /* BookShelfCollectionViewCell.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -464,6 +470,7 @@
 			files = (
 				71614A4D24FA4A4B0038A8B7 /* FirstPageScroll.swift in Sources */,
 				F59C5852255FD3E700D6D708 /* Service.swift in Sources */,
+				718356B7256121BB000CC0DF /* BookShelfViewController.swift in Sources */,
 				F59C592925602B6E00D6D708 /* SettingsFooter.swift in Sources */,
 				F59C582E255FCF0D00D6D708 /* AuthButton.swift in Sources */,
 				F57D29DE24E278400001D4C4 /* ResultsViewController.swift in Sources */,
@@ -478,6 +485,7 @@
 				F59C581D255FCD6300D6D708 /* User.swift in Sources */,
 				F59C5821255FCD9900D6D708 /* AuthenticationViewModel.swift in Sources */,
 				F591010F24E7B25D0042EB6F /* NavbarView.swift in Sources */,
+				718356BF25613228000CC0DF /* BookShelfCollectionViewCell.swift in Sources */,
 				F59C592625602B0B00D6D708 /* SettingsCell.swift in Sources */,
 				F57D29DC24E278400001D4C4 /* SceneDelegate.swift in Sources */,
 				F59C5825255FCE5200D6D708 /* CustomTextField.swift in Sources */,
