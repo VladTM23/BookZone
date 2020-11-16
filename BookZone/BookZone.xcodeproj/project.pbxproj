@@ -18,6 +18,7 @@
 		71614A5324FA5CEA0038A8B7 /* SecondPageScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71614A5224FA5CEA0038A8B7 /* SecondPageScroll.swift */; };
 		718356B7256121BB000CC0DF /* BookShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718356B6256121BB000CC0DF /* BookShelfViewController.swift */; };
 		718356BF25613228000CC0DF /* BookShelfCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718356BE25613228000CC0DF /* BookShelfCollectionViewCell.swift */; };
+		7191442D25627BED005EF4F1 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191442C25627BED005EF4F1 /* Book.swift */; };
 		71B7836724F5384300E47CE2 /* RadioButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7836624F5384300E47CE2 /* RadioButtonCollectionViewCell.swift */; };
 		71B7836924F538D300E47CE2 /* RadioButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7836824F538D300E47CE2 /* RadioButtonsViewController.swift */; };
 		71E4320624EABDA20099312F /* ResultCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E4320524EABDA20099312F /* ResultCard.xib */; };
@@ -73,6 +74,7 @@
 		71614A5224FA5CEA0038A8B7 /* SecondPageScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageScroll.swift; sourceTree = "<group>"; };
 		718356B6256121BB000CC0DF /* BookShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfViewController.swift; sourceTree = "<group>"; };
 		718356BE25613228000CC0DF /* BookShelfCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfCollectionViewCell.swift; sourceTree = "<group>"; };
+		7191442C25627BED005EF4F1 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		71B7836624F5384300E47CE2 /* RadioButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		71B7836824F538D300E47CE2 /* RadioButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonsViewController.swift; sourceTree = "<group>"; };
 		71E4320524EABDA20099312F /* ResultCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCard.xib; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				F59C581C255FCD6300D6D708 /* User.swift */,
+				7191442C25627BED005EF4F1 /* Book.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				71E4320C24ED6A060099312F /* ResultCardCollectionViewCell.swift in Sources */,
 				7143BC5525602B1E0018CFAB /* BookShelfCell.swift in Sources */,
 				F59C59DA2560466200D6D708 /* UIResponder.swift in Sources */,
+				7191442D25627BED005EF4F1 /* Book.swift in Sources */,
 				F57D29F624E279C00001D4C4 /* AppleTextRecognizer.swift in Sources */,
 				F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */,
 				F59C592225602A6E00D6D708 /* SettingsViewModel.swift in Sources */,

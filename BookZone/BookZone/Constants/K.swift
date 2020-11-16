@@ -11,6 +11,7 @@ import Firebase
 import FirebaseFirestore
 
 let COLLECTION_USERS = Firestore.firestore().collection("users")
+let COLLECTION_BOOKS = Firestore.firestore().collection("books")
 
 struct K {
     static let key = "RNsVx8TWoCWvPVwuzzV4A"
@@ -139,15 +140,15 @@ struct K {
         static let authors = [
             "The Minpins by Roald Dahl",
             "Diary of a Wimpy Kid by Jeff Kinney",
-           "Autumn Leaves by André Gide",
+            "Autumn Leaves by André Gide",
             "Shatter Me by Tahereh Mafi",
-          "Peter Pan by J.M. Barrie",
-           "Phrynette Married by Marthe Troly-Curtin",
-          "Bad Feminist by Roxane Gay",
-           "Furthermore by Tahereh Mafi",
-          "The Little Prince by Antoine de Saint-Exupéry",
-           "The Unabridged Journals of Sylvia Plath by Sylvia Plath",
-           "I Know Why the Caged Bird Sings by Maya Angelou",
+            "Peter Pan by J.M. Barrie",
+            "Phrynette Married by Marthe Troly-Curtin",
+            "Bad Feminist by Roxane Gay",
+            "Furthermore by Tahereh Mafi",
+            "The Little Prince by Antoine de Saint-Exupéry",
+            "The Unabridged Journals of Sylvia Plath by Sylvia Plath",
+            "I Know Why the Caged Bird Sings by Maya Angelou",
             "An Autobiography by Agatha Christie",
             "East of Eden by John Steinbeck",
             "Letter to My Daughter by Maya Angelou",
@@ -158,7 +159,7 @@ struct K {
             "Ballet Shoes by Noel Streatfeild",
             "The Terrible Thing That Happened to Barnaby Brocket by John Boyne",
             "Beloved by Toni Morrison",
-           "The Two Towers by J.R.R. Tolkien",
+            "The Two Towers by J.R.R. Tolkien",
             "The Tale of Despereaux by Kate DiCamillo",
             "A Wrinkle in Time by Madeleine L’Engle",
             "Anne of Green Gables by L.M. Montgomery",

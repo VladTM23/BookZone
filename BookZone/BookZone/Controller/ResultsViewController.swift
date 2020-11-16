@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 import SWXMLHash
+import FaveButton
+import Firebase
 
 class ResultsViewController: UIViewController  {
     
@@ -16,40 +18,51 @@ class ResultsViewController: UIViewController  {
     @IBOutlet weak var navbarView: NavbarView!
     @IBOutlet weak var averageRating: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var faveButton: FaveButton!
+    @IBOutlet weak var addToBookshelfLabel: UILabel!
     
+
     
     //MARK: - Properties
+    
     var titleLabelVar: String?
     var titleArray: [String]?
+   
     var flag : Bool = false
     var ISBN : String?
     let reuseIdentifier = K.ReuseIdentifiers.resultCard
     
     var apiResults: [String]?
-    let resultExp = [K.LabelTexts.ratings,
-                     K.LabelTexts.reviews,
-                     K.LabelTexts.editions,
-                     K.LabelTexts.people]
+    let resultExp       = [K.LabelTexts.ratings,
+                           K.LabelTexts.reviews,
+                           K.LabelTexts.editions,
+                           K.LabelTexts.people]
     let systemImageName = [K.LabelTexts.star,
                            K.LabelTexts.pencil,
                            K.LabelTexts.book,
                            K.LabelTexts.person]
+    
+    private var user: User?
+    private var book: Book?
+    private var author: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchUser()
+        
+        if (Auth.auth().currentUser == nil){
+            faveButton.isHidden = true;
+            addToBookshelfLabel.isHidden=true;
+            
+        }
+        
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 285, height: 255)
-        layout.scrollDirection = .horizontal
-        collectionView.collectionViewLayout = layout
+        faveButton.delegate = self
         
         configureUI()
-        print(flag)
-        print(titleArray)
-        
+
         if flag == false {
             getByTitle(titleArray: titleArray!, authorArray: [])
             print("in if")
@@ -64,18 +77,71 @@ class ResultsViewController: UIViewController  {
     // MARK: - User interface
 
     func configureUI() {
+        
+        faveButton.setSelected(selected: false, animated: true)
+        
+        faveButton.isEnabled = false
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 285, height: 255)
+        layout.scrollDirection = .horizontal
+        collectionView.collectionViewLayout = layout
+        
         configureNavbar()
-
+        
     }
 
     func configureNavbar() {
         navbarView.titleLabelNavbar.text = K.NavbarTitles.resultsTitle
     }
+    
+    
+    //MARK: - actions
 
+
+    @IBAction func heartButtonPressed(_ sender: UIButton) {
+        
+        if (sender.isSelected == true) {
+            
+            self.user!.selectedBooks.append(self.apiResults![4])
+            
+            let book = Book(dictionary: [ "bid" : self.apiResults![4],
+                                          "title": self.titleLabel.text!,
+                                          "author": "Nina",
+                                         "imageURL": self.apiResults![5],
+                                         "rating": self.averageRating.text!] )
+            
+            Service.saveBookData(book: book) { (error) in
+                if error != nil {
+                    print("Error when adding a book to Books collection, \(error?.localizedDescription)")
+                }
+            }
+        }
+        else{
+            self.user!.selectedBooks.removeLast()
+            Service.deleteBookData(bookID : self.apiResults![4]) { (error) in
+                if error != nil {
+                    print("Error when deleting a book to Books collection, \(error?.localizedDescription)")
+                }
+            }
+        }
+        
+        Service.saveUserData(user: user!) { (error) in
+            if error != nil {
+                print("Error when adding bookId to user, \(error?.localizedDescription)")
+            }
+        }
+        
+       
+        
+    }
 
 }
 
-//MARK: - API Extension
+
+
+
+//MARK: - API Extension GoodReads
 
 extension ResultsViewController {
 
@@ -95,21 +161,38 @@ extension ResultsViewController {
             if let data = response.data {
                 let responseBody = SWXMLHash.parse(data)
                 
-                _ = titleArray.joined(separator: " ")
-                _ = authorArray.joined(separator: " ")
+                let bookId = responseBody["GoodreadsResponse"]["book"]["id"].element!.text
+                
+                self.faveButton.isSelected = false
+                
+                
+                if (Auth.auth().currentUser != nil){
+                    if (self.user?.selectedBooks.contains(bookId)==true){
+                        self.faveButton.setSelected(selected: true, animated: true)
+                    }
+                    
+                }
+                self.faveButton.isEnabled = true
+                
+                let bookPicture = responseBody["GoodreadsResponse"]["book"]["image_url"].element!.text
                 
                 let title = responseBody["GoodreadsResponse"]["book"]["work"]["original_title"].element!.text
                 let ratingsCount = responseBody["GoodreadsResponse"]["book"]["work"]["ratings_count"].element!.text
                 let reviewsCount = responseBody["GoodreadsResponse"]["book"]["work"]["text_reviews_count"].element!.text
                 let editionsCount = responseBody["GoodreadsResponse"]["book"]["work"]["books_count"].element!.text
                 let averageRating = responseBody["GoodreadsResponse"]["book"]["average_rating"].element!.text
-
                 let addedBy = responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element!.text
+                
+                
+                //self.author = responseBody["GoodreadsResponse"]["book"]["authors"]["author"].element!.text
 
-                let labelArray =  [ratingsCount, reviewsCount, editionsCount,addedBy]
+                let labelArray =  [ratingsCount, reviewsCount, editionsCount, addedBy, bookId, bookPicture]
+                
+                
                 self.titleLabel.text = title
                 self.apiResults = labelArray
                 self.averageRating.text = averageRating
+                self.collectionView.reloadData()
                 
             }
         }
@@ -122,24 +205,49 @@ extension ResultsViewController {
 
                 if let data = response.data {
                     let responseBody = SWXMLHash.parse(data)
-
+                    
+                    let bookId = responseBody["GoodreadsResponse"]["book"]["id"].element!.text
+                    
+                    self.faveButton.isSelected = false
+                    
+                    if (Auth.auth().currentUser != nil){
+                        if (self.user?.selectedBooks.contains(bookId)==true){
+                            self.faveButton.setSelected(selected: true, animated: true)
+                        }
+                        
+                    }
+                    self.faveButton.isEnabled = true
+                    let bookPicture = responseBody["GoodreadsResponse"]["book"]["image_url"].element!.text
+                    
                     let title = responseBody["GoodreadsResponse"]["book"]["work"]["original_title"].element!.text
                     //let author = responseBody["GoodreadsResponse"]["book"]["authors"]["author"]["name"].element!.text
 
                     //print(title + "    " + author )
-                    let ratingsCount = formatNumber(responseBody["GoodreadsResponse"]["book"]["work"]["ratings_count"].element!.text)
-                    let reviewsCount = formatNumber(responseBody["GoodreadsResponse"]["book"]["work"]["text_reviews_count"].element!.text)
-                    let editionsCount = formatNumber(responseBody["GoodreadsResponse"]["book"]["work"]["books_count"].element!.text)
+                    let ratingsCount = responseBody["GoodreadsResponse"]["book"]["work"]["ratings_count"].element!.text
+                    let reviewsCount = responseBody["GoodreadsResponse"]["book"]["work"]["text_reviews_count"].element!.text
+                    let editionsCount = responseBody["GoodreadsResponse"]["book"]["work"]["books_count"].element!.text
                     let averageRating = responseBody["GoodreadsResponse"]["book"]["average_rating"].element!.text
 
-                    let addedBy = formatNumber(responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element!.text)
+                    let addedBy = responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element!.text
 
-                    let labelArray =  [ratingsCount, reviewsCount, editionsCount,addedBy]
+                    let labelArray =  [ratingsCount, reviewsCount, editionsCount, addedBy, bookId, bookPicture]
                     self.titleLabel.text = title
                     self.apiResults = labelArray
                     self.averageRating.text = averageRating
+                    self.collectionView.reloadData()
 
                 }
+        }
+    }
+    
+    
+    // MARK: - API Firebase
+
+    private func fetchUser() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Service.fetchUser(withUid: uid) { (user) in
+            self.user = user
+            
         }
     }
 }
@@ -168,7 +276,7 @@ extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDel
         }
         else {
             
-            cell.resultCardCellView.numberLabel.text = self.apiResults?[indexPath.item]
+            cell.resultCardCellView.numberLabel.text = formatNumber((self.apiResults?[indexPath.item])!)
         }
         
         cell.resultCardCellView.categoryLabel.text = self.resultExp[indexPath.item]
@@ -199,7 +307,11 @@ extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDel
         return UIEdgeInsets( top:10, left: 50,  bottom:10, right: 50)
     }
     
+    
+    
 }
+
+
 
 //MARK:- Helper functions
 

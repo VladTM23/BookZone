@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import SDWebImage
 
 class BookShelfViewController: UIViewController {
 
@@ -15,17 +17,21 @@ class BookShelfViewController: UIViewController {
     
     let reuseIdentifier = K.ReuseIdentifiers.bookshelf
     
+    var user: User?
+    private var books: [Book]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        
+        fetchUserBooks()
         configureUi()
         
-
     }
+    
+
     
     func configureUi(){
         configureNavBar()
@@ -35,14 +41,21 @@ class BookShelfViewController: UIViewController {
         navbarView.titleLabelNavbar.text = K.NavbarTitles.bookshelfTitle
     }
     
-
+    
+    private func fetchUserBooks() {
+        guard let user = user else {return}
+        Service.fetchUserBooks(withArray: user.selectedBooks) { (books) in
+            self.books=books
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 //MARK: - UICollectionView
 
 extension BookShelfViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return books?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -51,17 +64,17 @@ extension BookShelfViewController: UICollectionViewDataSource, UICollectionViewD
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! BookShelfCollectionViewCell
         
         cell.bookshelfCell.bookAuthor.text = "Ale"
-        cell.bookshelfCell.bookCover.image = UIImage(named: "homeGirl")
-        cell.bookshelfCell.bookTitle.text = "Love"
-        cell.bookshelfCell.bookRating.text = "5.5"
+        cell.bookshelfCell.bookCover.sd_setImage(with: URL(string: (books?[indexPath.item].imageURL)!))
+        cell.bookshelfCell.bookTitle.text = books?[indexPath.item].title
+        cell.bookshelfCell.bookRating.text = books?[indexPath.item].rating
         
         
         
         if (indexPath.item % 2 == 0 ) {
-            cell.bookshelfCell.backgroundColor = UIColor(patternImage: UIImage (named:"yellowCardBackground")!)
+            cell.bookshelfCell.backgroundColor = UIColor(patternImage: UIImage (named:"yellowBookshelf")!)
         }
         else {
-            cell.bookshelfCell.backgroundColor = UIColor(patternImage: UIImage (named:"pinkCardBackground")!)
+            cell.bookshelfCell.backgroundColor = UIColor(patternImage: UIImage (named:"pinkBookshelf")!)
         }
         
         return cell

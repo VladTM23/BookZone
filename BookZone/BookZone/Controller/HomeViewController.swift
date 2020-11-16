@@ -110,6 +110,10 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             profileSettingsVC.delegate = self
             profileSettingsVC.commonInit(user: user)
         }
+        else if segue.identifier == K.Identifiers.goToBookshelf {
+            let bookshelfVC = segue.destination as! BookShelfViewController
+            bookshelfVC.user = user
+        }
     }
 }
 

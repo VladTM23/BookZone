@@ -36,6 +36,25 @@ struct Service {
             })
         }
     }
+    
+    static func fetchUserBooks(withArray arr : [String], completion: @escaping([Book]) -> Void) {
+        var books = [Book]()
+       
+            for id in arr {
+                Firestore.firestore().collection("books").document(id).getDocument { (snapshot, error) in
+                    guard let dictionary = snapshot?.data() else { return }
+                    let book = Book(dictionary: dictionary)
+                   
+                    books.append(book)
+                    
+                    if (arr.count == books.count) {
+                    completion(books)
+                    }
+            }
+        }
+    }
+    
+
 
     static func saveUserData(user: User, completion: @escaping(Error?) -> Void) {
         let data = ["uid": user.uid,
@@ -43,8 +62,25 @@ struct Service {
                     "imageURLs": user.imageURLs,
                     "age": user.age,
                     "bio": user.bio,
-                    "favBook": user.favBook] as [String : Any]
+                    "favBook": user.favBook,
+                    "selectedBooks": user.selectedBooks] as [String : Any]
         COLLECTION_USERS.document(user.uid).setData(data,completion: completion)
+    }
+    
+    static func saveBookData(book: Book, completion: @escaping(Error?) -> Void) {
+        
+        let data = ["bid": book.bid,
+                    "title": book.title,
+                    "author": book.author,
+                    "imageURL": book.imageURL,
+                    "rating": book.rating] as [String : Any]
+        
+        COLLECTION_BOOKS.document(book.bid).setData(data,completion: completion)
+    }
+    
+    static func deleteBookData(bookID: String, completion: @escaping(Error?) -> Void) {
+        
+        COLLECTION_BOOKS.document(bookID).delete()
     }
 
     static func uploadImage(image: UIImage, completion: @escaping(String) -> Void) {

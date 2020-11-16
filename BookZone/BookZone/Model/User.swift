@@ -16,6 +16,7 @@ struct User {
     var imageURLs: [String]
     var bio: String
     var favBook: String
+    var selectedBooks: [String]
 
     init(dictionary: [String: Any]) {
         self.name = dictionary["fullName"] as? String ?? ""
@@ -25,5 +26,6 @@ struct User {
         self.uid = dictionary["uid"] as? String ?? ""
         self.bio = dictionary["bio"] as? String ?? ""
         self.favBook = dictionary["favBook"] as? String ?? ""
+        self.selectedBooks = dictionary["selectedBooks"] as? [String] ?? [String]()
     }
 }
