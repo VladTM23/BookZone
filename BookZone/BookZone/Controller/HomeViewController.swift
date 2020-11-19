@@ -30,18 +30,19 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
+        
         fetchUser()
+        configureUI()
         
         imagePicker.delegate = self
 //        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
     }
 
-    override func viewWillAppear(_ animated: Bool){
-        super.viewWillAppear(animated)
-        fetchUser()
-    }
+//    override func viewWillAppear(_ animated: Bool){
+//        super.viewWillAppear(animated)
+//        fetchUser()
+//    }
 
     // MARK: - User Interface
 
@@ -61,6 +62,19 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         quoteLabel.text = K.Quotes.quotes[randomId]
         authorLabel.text = K.Quotes.authors[randomId]
     }
+    
+    func setUserDefaults(with user : User) {
+
+        UserDefaults.standard.set(user.achievementsArray[0], forKey: "achievement1" )
+        UserDefaults.standard.set(user.achievementsArray[1], forKey: "achievement2" )
+        UserDefaults.standard.set(user.achievementsArray[2], forKey: "achievement3" )
+        UserDefaults.standard.set(user.achievementsArray[3], forKey: "achievement4" )
+        UserDefaults.standard.set(user.achievementsArray[4], forKey: "achievement5" )
+        UserDefaults.standard.set(user.selectedBooks, forKey: "books" )
+        UserDefaults.standard.set(user.readBooks, forKey: "readBooks" )
+    }
+    
+
 
     // MARK: - API
 
@@ -68,6 +82,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         guard let uid = Auth.auth().currentUser?.uid else { return }
         Service.fetchUser(withUid: uid) { (user) in
             self.user = user
+            self.setUserDefaults(with: self.user!)
         }
     }
 

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class BookShelfCollectionViewCell: UICollectionViewCell {
+class BookShelfCollectionViewCell: SwipeCollectionViewCell {
     
     @IBOutlet weak var bookshelfCell: BookShelfCell!
 }

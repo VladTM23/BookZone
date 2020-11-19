@@ -20,6 +20,7 @@
             <connections>
                 <outlet property="bookAuthor" destination="aRU-dt-Uug" id="bp7-Pm-35n"/>
                 <outlet property="bookCover" destination="100-qb-wIK" id="xCA-Kf-BoO"/>
+                <outlet property="bookID" destination="JMz-5N-SnI" id="YF9-B9-kUj"/>
                 <outlet property="bookRating" destination="vk0-xH-n2l" id="MHA-LN-bbc"/>
                 <outlet property="bookTitle" destination="zZO-gq-mkh" id="XL2-x1-VxL"/>
             </connections>
@@ -38,7 +39,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zZO-gq-mkh">
                     <rect key="frame" x="115" y="10" width="135.5" height="30.5"/>
                     <constraints>
-                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="221" id="wDZ-iP-4Q2"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="wDZ-iP-4Q2"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="25"/>
                     <nil key="textColor"/>
@@ -62,17 +63,29 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="JMz-5N-SnI">
+                    <rect key="frame" x="115" y="100.5" width="31" height="14.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="111" id="YMW-Ei-lYQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
                 <constraint firstItem="100-qb-wIK" firstAttribute="top" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="4ex-vO-UaS"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vk0-xH-n2l" secondAttribute="trailing" constant="15" id="7a1-0Q-mXs"/>
                 <constraint firstItem="aRU-dt-Uug" firstAttribute="top" secondItem="zZO-gq-mkh" secondAttribute="bottom" constant="5" id="HEK-70-yUz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="JMz-5N-SnI" secondAttribute="bottom" constant="15" id="NgH-j5-hbB"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="100-qb-wIK" secondAttribute="bottom" constant="10" id="SKx-cQ-900"/>
                 <constraint firstItem="aRU-dt-Uug" firstAttribute="leading" secondItem="100-qb-wIK" secondAttribute="trailing" constant="15" id="aXz-8T-S1g"/>
                 <constraint firstItem="zZO-gq-mkh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="gcK-4Q-5Cm"/>
                 <constraint firstItem="100-qb-wIK" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jOZ-4J-kA5"/>
+                <constraint firstItem="JMz-5N-SnI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aRU-dt-Uug" secondAttribute="bottom" constant="5" id="jhC-yT-zrP"/>
                 <constraint firstItem="zZO-gq-mkh" firstAttribute="leading" secondItem="100-qb-wIK" secondAttribute="trailing" constant="15" id="mAO-bW-zLf"/>
+                <constraint firstItem="JMz-5N-SnI" firstAttribute="leading" secondItem="100-qb-wIK" secondAttribute="trailing" constant="15" id="p5d-Ld-I4j"/>
                 <constraint firstItem="100-qb-wIK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="poe-53-vJ2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vk0-xH-n2l" secondAttribute="bottom" constant="10" id="xxY-ZB-0JI"/>
             </constraints>

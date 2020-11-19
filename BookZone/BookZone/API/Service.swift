@@ -39,19 +39,20 @@ struct Service {
     
     static func fetchUserBooks(withArray arr : [String], completion: @escaping([Book]) -> Void) {
         var books = [Book]()
-       
+        print(arr.count)
             for id in arr {
-                Firestore.firestore().collection("books").document(id).getDocument { (snapshot, error) in
+                COLLECTION_BOOKS.document(id).getDocument { (snapshot, error) in
                     guard let dictionary = snapshot?.data() else { return }
                     let book = Book(dictionary: dictionary)
                    
                     books.append(book)
                     
-                    if (arr.count == books.count) {
+                    
                     completion(books)
-                    }
+                    
             }
         }
+        
     }
     
 
@@ -63,7 +64,9 @@ struct Service {
                     "age": user.age,
                     "bio": user.bio,
                     "favBook": user.favBook,
-                    "selectedBooks": user.selectedBooks] as [String : Any]
+                    "selectedBooks": user.selectedBooks,
+                    "readBooks": user.readBooks,
+                    "achievementsArray": user.achievementsArray] as [String : Any]
         COLLECTION_USERS.document(user.uid).setData(data,completion: completion)
     }
     
@@ -75,7 +78,18 @@ struct Service {
                     "imageURL": book.imageURL,
                     "rating": book.rating] as [String : Any]
         
-        COLLECTION_BOOKS.document(book.bid).setData(data,completion: completion)
+        let doc = COLLECTION_BOOKS.document(book.bid)
+        
+        doc.getDocument { (document,error) in
+            
+            if document!.exists {
+                print("Document Book exists in book db!")
+            }
+            else {
+                doc.setData(data,completion: completion)
+            }
+            
+        }
     }
     
     static func deleteBookData(bookID: String, completion: @escaping(Error?) -> Void) {

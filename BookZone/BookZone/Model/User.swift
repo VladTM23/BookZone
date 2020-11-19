@@ -17,6 +17,8 @@ struct User {
     var bio: String
     var favBook: String
     var selectedBooks: [String]
+    var readBooks: [String]
+    var achievementsArray: [Bool] = [false,false,false,false,false]
 
     init(dictionary: [String: Any]) {
         self.name = dictionary["fullName"] as? String ?? ""
@@ -27,5 +29,7 @@ struct User {
         self.bio = dictionary["bio"] as? String ?? ""
         self.favBook = dictionary["favBook"] as? String ?? ""
         self.selectedBooks = dictionary["selectedBooks"] as? [String] ?? [String]()
+        self.readBooks = dictionary["readBooks"] as? [String] ?? [String]()
+        self.achievementsArray = dictionary["achievementsArray"] as? [Bool] ?? [Bool]()
     }
 }

@@ -17,5 +17,7 @@ target 'BookZone' do
    pod 'SDWebImage','~>4.4.2'
    pod 'JGProgressHUD','~>2.0.3'
    pod 'FaveButton'
+   pod 'EasyTipView', '~> 2.0.4'
+   pod 'SwipeCellKit'
 
 end

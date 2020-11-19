@@ -75,12 +75,13 @@ class SettingsViewController: UIViewController {
         tableView.tableHeaderView = headerView
         tableView.backgroundColor = UIColor(named: K.Colors.kaki)
         tableView.register(SettingsCell.self, forCellReuseIdentifier: reuseIdentifier)
-        headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 300)
+        headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 350)
 
         tableView.tableFooterView = settingsFooter
         settingsFooter.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 150)
         settingsFooter.delegate = self
     }
+    
 
     func setHeaderImage(_ image: UIImage?) {
         headerView.buttons[imageIndex].setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwipeCellKit
 
 class BookShelfCell: UIView {
 
@@ -14,7 +15,8 @@ class BookShelfCell: UIView {
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var bookAuthor: UILabel!
     @IBOutlet weak var bookRating: UILabel!
-    @IBOutlet weak var bookRead: UIImageView!
+    @IBOutlet weak var bookID: UILabel!
+    
     
     required init?(coder aDecoder: NSCoder) {
           super.init(coder: aDecoder)

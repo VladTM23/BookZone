@@ -11,11 +11,13 @@
 		7106C77724E6E9F200D3D29C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7106C77624E6E9F200D3D29C /* SearchViewController.swift */; };
 		7143BC5325602AFB0018CFAB /* BookShelfCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7143BC5225602AFB0018CFAB /* BookShelfCell.xib */; };
 		7143BC5525602B1E0018CFAB /* BookShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143BC5425602B1E0018CFAB /* BookShelfCell.swift */; };
+		7146F8F52563EF260086A52F /* G.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7146F8F42563EF260086A52F /* G.swift */; };
 		71614A4B24FA43D20038A8B7 /* FirstPageScroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71614A4A24FA43D20038A8B7 /* FirstPageScroll.xib */; };
 		71614A4D24FA4A4B0038A8B7 /* FirstPageScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71614A4C24FA4A4B0038A8B7 /* FirstPageScroll.swift */; };
 		71614A4F24FA5C710038A8B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71614A4E24FA5C710038A8B7 /* Assets.xcassets */; };
 		71614A5124FA5CCE0038A8B7 /* SecondPageScroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71614A5024FA5CCE0038A8B7 /* SecondPageScroll.xib */; };
 		71614A5324FA5CEA0038A8B7 /* SecondPageScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71614A5224FA5CEA0038A8B7 /* SecondPageScroll.swift */; };
+		7165F0F22565786600E21DDD /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165F0F12565786600E21DDD /* Shared.swift */; };
 		718356B7256121BB000CC0DF /* BookShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718356B6256121BB000CC0DF /* BookShelfViewController.swift */; };
 		718356BF25613228000CC0DF /* BookShelfCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718356BE25613228000CC0DF /* BookShelfCollectionViewCell.swift */; };
 		7191442D25627BED005EF4F1 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7191442C25627BED005EF4F1 /* Book.swift */; };
@@ -67,11 +69,13 @@
 		7106C77624E6E9F200D3D29C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7143BC5225602AFB0018CFAB /* BookShelfCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookShelfCell.xib; sourceTree = "<group>"; };
 		7143BC5425602B1E0018CFAB /* BookShelfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfCell.swift; sourceTree = "<group>"; };
+		7146F8F42563EF260086A52F /* G.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G.swift; sourceTree = "<group>"; };
 		71614A4A24FA43D20038A8B7 /* FirstPageScroll.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstPageScroll.xib; sourceTree = "<group>"; };
 		71614A4C24FA4A4B0038A8B7 /* FirstPageScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageScroll.swift; sourceTree = "<group>"; };
 		71614A4E24FA5C710038A8B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71614A5024FA5CCE0038A8B7 /* SecondPageScroll.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondPageScroll.xib; sourceTree = "<group>"; };
 		71614A5224FA5CEA0038A8B7 /* SecondPageScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageScroll.swift; sourceTree = "<group>"; };
+		7165F0F12565786600E21DDD /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		718356B6256121BB000CC0DF /* BookShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfViewController.swift; sourceTree = "<group>"; };
 		718356BE25613228000CC0DF /* BookShelfCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfCollectionViewCell.swift; sourceTree = "<group>"; };
 		7191442C25627BED005EF4F1 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -148,6 +152,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7146F8F32563EF0E0086A52F /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				7146F8F42563EF260086A52F /* G.swift */,
+			);
+			path = Globals;
+			sourceTree = "<group>";
+		};
 		F5349EB024E44440009C96BD /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +199,7 @@
 		F57D29D824E278400001D4C4 /* BookZone */ = {
 			isa = PBXGroup;
 			children = (
+				7146F8F32563EF0E0086A52F /* Globals */,
 				F59C58AB255FE47800D6D708 /* BookZoneDebug.entitlements */,
 				F57D29D924E278400001D4C4 /* AppDelegate.swift */,
 				F57D29DB24E278400001D4C4 /* SceneDelegate.swift */,
@@ -245,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				F57D29F424E279AF0001D4C4 /* Apple */,
+				7165F0F12565786600E21DDD /* Shared.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -495,12 +509,14 @@
 				F547E44B25370AD1002E6E21 /* RegisterViewController.swift in Sources */,
 				F59C592F25602C5D00D6D708 /* SettingsViewController.swift in Sources */,
 				71614A5324FA5CEA0038A8B7 /* SecondPageScroll.swift in Sources */,
+				7165F0F22565786600E21DDD /* Shared.swift in Sources */,
 				F59C5829255FCE8700D6D708 /* Constraints.swift in Sources */,
 				71B7836924F538D300E47CE2 /* RadioButtonsViewController.swift in Sources */,
 				71E4320824EABE060099312F /* ResultCardView.swift in Sources */,
 				71B7836724F5384300E47CE2 /* RadioButtonCollectionViewCell.swift in Sources */,
 				F547E42C2536E188002E6E21 /* WelcomeViewController.swift in Sources */,
 				71E4320C24ED6A060099312F /* ResultCardCollectionViewCell.swift in Sources */,
+				7146F8F52563EF260086A52F /* G.swift in Sources */,
 				7143BC5525602B1E0018CFAB /* BookShelfCell.swift in Sources */,
 				F59C59DA2560466200D6D708 /* UIResponder.swift in Sources */,
 				7191442D25627BED005EF4F1 /* Book.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Book {
+struct Book: Equatable{
     let bid: String
     let title: String
     let author: String
@@ -23,5 +23,9 @@ struct Book {
         self.imageURL = dictionary["imageURL"] as? String ?? ""
         self.rating = dictionary["rating"] as? String ?? ""
 
+    }
+    
+    static func ==(lhs: Book, rhs: Book) -> Bool {
+        return lhs.bid == rhs.bid 
     }
 }

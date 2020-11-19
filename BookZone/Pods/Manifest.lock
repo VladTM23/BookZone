@@ -219,6 +219,7 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.7):
     - BoringSSL-GRPC/Interface (= 0.0.7)
   - BoringSSL-GRPC/Interface (0.0.7)
+  - EasyTipView (2.0.4)
   - FaveButton (3.2.1)
   - Firebase/Analytics (6.34.0):
     - Firebase/Core
@@ -343,10 +344,12 @@ PODS:
   - SDWebImage (4.4.8):
     - SDWebImage/Core (= 4.4.8)
   - SDWebImage/Core (4.4.8)
+  - SwipeCellKit (2.7.1)
   - SWXMLHash (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
+  - EasyTipView (~> 2.0.4)
   - FaveButton
   - Firebase/Analytics
   - Firebase/Auth
@@ -356,6 +359,7 @@ DEPENDENCIES:
   - JGProgressHUD (~> 2.0.3)
   - lottie-ios
   - SDWebImage (~> 4.4.2)
+  - SwipeCellKit
   - SWXMLHash (~> 5.0.0)
 
 SPEC REPOS:
@@ -363,6 +367,7 @@ SPEC REPOS:
     - abseil
     - Alamofire
     - BoringSSL-GRPC
+    - EasyTipView
     - FaveButton
     - Firebase
     - FirebaseAnalytics
@@ -384,12 +389,14 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SDWebImage
+    - SwipeCellKit
     - SWXMLHash
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
+  EasyTipView: 4f8beae0a82db2ca4a9b5fd658785fc5f61d296b
   FaveButton: 93cfebf6030336fa7653fad2068c3152ed668b39
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
@@ -411,8 +418,9 @@ SPEC CHECKSUMS:
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
+  SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
   SWXMLHash: 9cc0c2e4807926c74377724aa8722ee5707a0485
 
-PODFILE CHECKSUM: 18a86f2bbaeb30f01e86de256822b1798a2cb9a6
+PODFILE CHECKSUM: 249c93b1b5f2099d5b5409fab0accecef551a031
 
 COCOAPODS: 1.10.0

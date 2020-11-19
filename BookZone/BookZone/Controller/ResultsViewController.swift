@@ -104,12 +104,13 @@ class ResultsViewController: UIViewController  {
         if (sender.isSelected == true) {
             
             self.user!.selectedBooks.append(self.apiResults![4])
+            UserDefaults.standard.set(self.user!.selectedBooks, forKey: "books" )
             
             let book = Book(dictionary: [ "bid" : self.apiResults![4],
                                           "title": self.titleLabel.text!,
                                           "author": "Nina",
-                                         "imageURL": self.apiResults![5],
-                                         "rating": self.averageRating.text!] )
+                                          "imageURL": self.apiResults![5],
+                                          "rating": self.averageRating.text!] )
             
             Service.saveBookData(book: book) { (error) in
                 if error != nil {
@@ -118,12 +119,27 @@ class ResultsViewController: UIViewController  {
             }
         }
         else{
-            self.user!.selectedBooks.removeLast()
-            Service.deleteBookData(bookID : self.apiResults![4]) { (error) in
-                if error != nil {
-                    print("Error when deleting a book to Books collection, \(error?.localizedDescription)")
-                }
+            
+            if let index = self.user!.selectedBooks.firstIndex(of: apiResults![4]) {
+                self.user!.selectedBooks.remove(at: index)
             }
+//            Service.deleteBookData(bookID : self.apiResults![4]) { (error) in
+//                if error != nil {
+//                    print("Error when deleting a book to Books collection, \(error?.localizedDescription)")
+//                }
+//            }
+        }
+        
+        UserDefaults.standard.set(self.user!.selectedBooks, forKey: "books" )
+        
+        if (user?.selectedBooks.count)! >= 5 {
+            user?.achievementsArray[1] = true
+            UserDefaults.standard.set(true, forKey: "achievement2" )
+        }
+        
+        else {
+            user?.achievementsArray[1] = false
+            UserDefaults.standard.set(false, forKey: "achievement2" )
         }
         
         Service.saveUserData(user: user!) { (error) in
