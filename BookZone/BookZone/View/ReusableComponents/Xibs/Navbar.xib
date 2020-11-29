@@ -17,6 +17,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavbarView" customModule="BookZone" customModuleProvider="target">
             <connections>
                 <outlet property="backButton" destination="reu-LG-EwW" id="X3G-Ls-dWi"/>
+                <outlet property="countLabel" destination="CoI-Yw-S88" id="Hrl-Gh-qPp"/>
                 <outlet property="titleLabelNavbar" destination="pIf-2Y-mbQ" id="pg5-MM-Psl"/>
             </connections>
         </placeholder>
@@ -53,12 +54,20 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoI-Yw-S88">
+                                    <rect key="frame" x="186" y="136" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" name="pink"/>
                             <constraints>
                                 <constraint firstItem="pIf-2Y-mbQ" firstAttribute="centerY" secondItem="reu-LG-EwW" secondAttribute="centerY" id="Pcm-ou-NZq"/>
                                 <constraint firstAttribute="bottom" secondItem="reu-LG-EwW" secondAttribute="bottom" constant="42" id="UmV-ix-TeS"/>
+                                <constraint firstAttribute="bottom" secondItem="CoI-Yw-S88" secondAttribute="bottom" constant="8" id="htS-6T-CZw"/>
                                 <constraint firstItem="pIf-2Y-mbQ" firstAttribute="centerX" secondItem="30K-Go-KC2" secondAttribute="centerX" id="i73-Bc-jsO"/>
+                                <constraint firstItem="CoI-Yw-S88" firstAttribute="centerX" secondItem="30K-Go-KC2" secondAttribute="centerX" id="oOi-He-QH8"/>
                                 <constraint firstItem="reu-LG-EwW" firstAttribute="leading" secondItem="30K-Go-KC2" secondAttribute="leading" constant="27" id="oeI-89-Vdo"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>

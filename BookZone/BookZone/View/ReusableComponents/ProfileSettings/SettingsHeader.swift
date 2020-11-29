@@ -26,6 +26,9 @@ class SettingsHeader: UIView {
     lazy var preferences = createTipPreferences()
     var tipView : EasyTipView!
     var medalButton = 0
+    var shieldButton = 0
+    var findButton = 0
+    var oneIsOpen = 0
     
     
     init(user: User) {
@@ -148,9 +151,6 @@ class SettingsHeader: UIView {
     
     @objc func handleStarTouch(sender: UIButton) {
         
-        
-        
-        
         let title = sender.title(for: .normal)
         var text: String
         
@@ -159,10 +159,11 @@ class SettingsHeader: UIView {
         case "medal.png" :
             text = UserDefaults.standard.bool(forKey : "achievement2") ? "Congrats, you have 5 books on your bookshelf!" :"Collect 5 books on your bookshelf to unlock this achievement!"
            
-            if medalButton == 0 {
+            if medalButton == 0 && oneIsOpen == 0 {
                 tipView = EasyTipView(text: text, preferences: preferences)
                 tipView.show(animated: true, forView: sender, withinSuperview: self)
                 medalButton = 1
+                oneIsOpen = 1
             }
             
             else {
@@ -176,9 +177,54 @@ class SettingsHeader: UIView {
                     sender.isUserInteractionEnabled = true
                 }
                 medalButton = 0
+                oneIsOpen = 0
             }
-        case "shield.png": text = "Shield"
-        case "find.png"  : text = "Find"
+        case "shield.png":
+            text = UserDefaults.standard.bool(forKey : "achievement3") ? "Congrats, you have 25 books on your bookshelf!" :"Collect 25 books on your bookshelf to unlock this achievement!"
+           
+            if shieldButton == 0 && oneIsOpen == 0 {
+                tipView = EasyTipView(text: text, preferences: preferences)
+                tipView.show(animated: true, forView: sender, withinSuperview: self)
+                shieldButton = 1
+                oneIsOpen = 1
+            }
+            
+            else {
+                sender.isUserInteractionEnabled = false
+                tipView.dismiss()
+                // when spamming the info button, the info view would open and take up the whole screen
+                // as a fix, the button is disabled after the second tap (the one which should close the view)
+                // the button is enabled after 700ms
+                let delayTime = DispatchTime.now() + Double(Int64(0.7 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+                DispatchQueue.main.asyncAfter(deadline: delayTime) {
+                    sender.isUserInteractionEnabled = true
+                }
+                shieldButton = 0
+                oneIsOpen = 0
+            }
+        case "find.png"  :
+            text = UserDefaults.standard.bool(forKey : "achievement4") ? "Congrats, you have 100 books on your bookshelf!" :"Collect 100 books on your bookshelf to unlock this achievement!"
+           
+            if findButton == 0 && oneIsOpen == 0 {
+                tipView = EasyTipView(text: text, preferences: preferences)
+                tipView.show(animated: true, forView: sender, withinSuperview: self)
+                findButton = 1
+                oneIsOpen = 1
+            }
+            
+            else {
+                sender.isUserInteractionEnabled = false
+                tipView.dismiss()
+                // when spamming the info button, the info view would open and take up the whole screen
+                // as a fix, the button is disabled after the second tap (the one which should close the view)
+                // the button is enabled after 700ms
+                let delayTime = DispatchTime.now() + Double(Int64(0.7 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+                DispatchQueue.main.asyncAfter(deadline: delayTime) {
+                    sender.isUserInteractionEnabled = true
+                }
+                findButton = 0
+                oneIsOpen = 0
+            }
         case "chat.png"  : text = "Chat"
         default:
             text = "No achievement found"

@@ -44,6 +44,7 @@ class BookShelfViewController: UIViewController {
     
     func configureUi(){
         configureNavBar()
+        
     }
     
     func configureNavBar() {
@@ -56,10 +57,20 @@ class BookShelfViewController: UIViewController {
             
             if initial {
                 self.collectionView.reloadData()
+                self.configureCountLabel()
             }
         }
         
     }
+    
+    func configureCountLabel() {
+        let read = user?.readBooks.count
+        let total = user?.selectedBooks.count
+        
+        navbarView.countLabel.text = "\(read ??  0) / \(total ??  0)"
+        navbarView.countLabel.isHidden = false
+    }
+    
 }
 
 //MARK: - UICollectionView
@@ -100,6 +111,16 @@ extension BookShelfViewController: UICollectionViewDataSource, UICollectionViewD
 //                            }
 //                        }
                         
+                        if ((self.user?.selectedBooks.count)! < 100) {
+                            self.user?.achievementsArray[3] = false
+                            UserDefaults.standard.set(false, forKey: "achievement4" )
+                        }
+                    
+                        if ((self.user?.selectedBooks.count)! < 25) {
+                            self.user?.achievementsArray[2] = false
+                            UserDefaults.standard.set(false, forKey: "achievement3" )
+                        }
+                    
                         if ((self.user?.selectedBooks.count)! < 5) {
                             self.user?.achievementsArray[1] = false
                             UserDefaults.standard.set(false, forKey: "achievement2" )

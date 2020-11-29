@@ -14,6 +14,7 @@ class NavbarView: UIView {
 
     @IBOutlet weak var titleLabelNavbar: UILabel!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var countLabel: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

@@ -132,14 +132,38 @@ class ResultsViewController: UIViewController  {
         
         UserDefaults.standard.set(self.user!.selectedBooks, forKey: "books" )
         
-        if (user?.selectedBooks.count)! >= 5 {
+        if (user?.selectedBooks.count)! >= 100 {
             user?.achievementsArray[1] = true
+            user?.achievementsArray[2] = true
+            user?.achievementsArray[3] = true
             UserDefaults.standard.set(true, forKey: "achievement2" )
+            UserDefaults.standard.set(true, forKey: "achievement3" )
+            UserDefaults.standard.set(true, forKey: "achievement4" )
         }
         
-        else {
+        else if (user?.selectedBooks.count)! >= 25 {
+            user?.achievementsArray[1] = true
+            user?.achievementsArray[2] = true
+            user?.achievementsArray[3] = false
+            UserDefaults.standard.set(true, forKey: "achievement2" )
+            UserDefaults.standard.set(true, forKey: "achievement3" )
+            UserDefaults.standard.set(false, forKey: "achievement4" )
+        }
+        else if (user?.selectedBooks.count)! >= 5 {
+            user?.achievementsArray[1] = true
+            user?.achievementsArray[2] = false
+            user?.achievementsArray[3] = false
+            UserDefaults.standard.set(true, forKey: "achievement2" )
+            UserDefaults.standard.set(false, forKey: "achievement3" )
+            UserDefaults.standard.set(false, forKey: "achievement4" )
+        }
+        else  {
             user?.achievementsArray[1] = false
+            user?.achievementsArray[2] = false
+            user?.achievementsArray[3] = false
             UserDefaults.standard.set(false, forKey: "achievement2" )
+            UserDefaults.standard.set(false, forKey: "achievement3" )
+            UserDefaults.standard.set(false, forKey: "achievement4" )
         }
         
         Service.saveUserData(user: user!) { (error) in
