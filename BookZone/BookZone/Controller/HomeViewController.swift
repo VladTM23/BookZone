@@ -27,6 +27,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var bookShelfButton: UIButton!
     @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,6 +103,10 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     @IBAction func bookShelfButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: K.Identifiers.goToBookshelf, sender: self)
+    }
+
+    @IBAction func settingsButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: K.Identifiers.goToSettings, sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  BookZone
+
+  Created by Paianu Vlad-Valentin on 30.11.2020.
+  Copyright © 2020 Paianu Vlad-Valentin. All rights reserved.
+*/
+
+//Navbar titles
+
+"settings" = "Settings";
+
+//Labels
+
+"language" = "Language";
+"prefLanguage" = "Chose preffered application language";
+"credits" = "Credits";
+"versions" = "Version";
+
+//Buttons
+
+"goToTutorial" = "Go to tutorial";

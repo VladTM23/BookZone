@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  BookZone
+
+  Created by Paianu Vlad-Valentin on 30.11.2020.
+  Copyright © 2020 Paianu Vlad-Valentin. All rights reserved.
+*/
+
+//Navbar titles
+
+"settings" = "Setări";
+
+// Labels
+
+"language" = "Limbă";
+"prefLanguage" = "Alegeți limba dorită";
+"credits" = "Credite";
+"versions" = "Versiunea";
+
+// Buttons
+
+"goToTutorial" = "Mergeți la tutorial";

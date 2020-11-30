@@ -29,6 +29,13 @@
 		71E4320E24EFBE1A0099312F /* SearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E4320D24EFBE1A0099312F /* SearchBar.xib */; };
 		71E4321024EFC3840099312F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4320F24EFC3840099312F /* SearchBar.swift */; };
 		DF68B3E844A40D4C35F2072E /* Pods_BookZone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631142FF12AC485DD45BB5F7 /* Pods_BookZone.framework */; };
+		F524A0392575321C0024E985 /* AppSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524A0382575321C0024E985 /* AppSettingsViewController.swift */; };
+		F524A03C257537D30024E985 /* Dropdown.xib in Resources */ = {isa = PBXBuildFile; fileRef = F524A03B257537D30024E985 /* Dropdown.xib */; };
+		F524A03F257537EF0024E985 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524A03E257537EF0024E985 /* Dropdown.swift */; };
+		F524A0442575395D0024E985 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524A0432575395D0024E985 /* Localization.swift */; };
+		F524A08525754CC00024E985 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524A08425754CC00024E985 /* ScrollView.swift */; };
+		F524A123257552310024E985 /* PickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524A122257552310024E985 /* PickerData.swift */; };
+		F524A14A257558C70024E985 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F524A14C257558C70024E985 /* Localizable.strings */; };
 		F5349EB224E44456009C96BD /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5349EB124E44456009C96BD /* K.swift */; };
 		F5349EBF24E45169009C96BD /* Sacramento-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */; };
 		F5349EC124E45282009C96BD /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */; };
@@ -87,6 +94,17 @@
 		71E4320D24EFBE1A0099312F /* SearchBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBar.xib; sourceTree = "<group>"; };
 		71E4320F24EFC3840099312F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		E4466345ABFD86AAD0C0A744 /* Pods-BookZone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookZone.release.xcconfig"; path = "Target Support Files/Pods-BookZone/Pods-BookZone.release.xcconfig"; sourceTree = "<group>"; };
+		F524A0382575321C0024E985 /* AppSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsViewController.swift; sourceTree = "<group>"; };
+		F524A03B257537D30024E985 /* Dropdown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Dropdown.xib; sourceTree = "<group>"; };
+		F524A03E257537EF0024E985 /* Dropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
+		F524A0432575395D0024E985 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		F524A08425754CC00024E985 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		F524A122257552310024E985 /* PickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerData.swift; sourceTree = "<group>"; };
+		F524A1442575584E0024E985 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Main.strings; sourceTree = "<group>"; };
+		F524A1452575584F0024E985 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F524A14B257558C70024E985 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F524A14E257558CC0024E985 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F524A15125755D460024E985 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		F5349EB124E44456009C96BD /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sacramento-Regular.ttf"; sourceTree = "<group>"; };
 		F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -214,6 +232,7 @@
 				F57D29F124E278880001D4C4 /* Assets */,
 				F57D29E724E278410001D4C4 /* Info.plist */,
 				F547E4132536DA91002E6E21 /* GoogleService-Info.plist */,
+				F524A14C257558C70024E985 /* Localizable.strings */,
 			);
 			path = BookZone;
 			sourceTree = "<group>";
@@ -239,6 +258,7 @@
 				F547E42B2536E188002E6E21 /* WelcomeViewController.swift */,
 				F59C592E25602C5C00D6D708 /* SettingsViewController.swift */,
 				718356B6256121BB000CC0DF /* BookShelfViewController.swift */,
+				F524A0382575321C0024E985 /* AppSettingsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -287,6 +307,7 @@
 				F59C582D255FCF0D00D6D708 /* AuthButton.swift */,
 				7143BC5425602B1E0018CFAB /* BookShelfCell.swift */,
 				718356BE25613228000CC0DF /* BookShelfCollectionViewCell.swift */,
+				F524A03E257537EF0024E985 /* Dropdown.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -296,6 +317,7 @@
 			children = (
 				F59C581C255FCD6300D6D708 /* User.swift */,
 				7191442C25627BED005EF4F1 /* Book.swift */,
+				F524A122257552310024E985 /* PickerData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -323,6 +345,8 @@
 			children = (
 				F59C5828255FCE8700D6D708 /* Constraints.swift */,
 				F59C59D92560466200D6D708 /* UIResponder.swift */,
+				F524A0432575395D0024E985 /* Localization.swift */,
+				F524A08425754CC00024E985 /* ScrollView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -330,6 +354,7 @@
 		F59C582B255FCE9C00D6D708 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				F524A03B257537D30024E985 /* Dropdown.xib */,
 				F591010C24E7B2370042EB6F /* Navbar.xib */,
 				71E4320524EABDA20099312F /* ResultCard.xib */,
 				71E4320D24EFBE1A0099312F /* SearchBar.xib */,
@@ -403,6 +428,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ro,
 			);
 			mainGroup = F57D29CD24E278400001D4C4;
 			productRefGroup = F57D29D724E278400001D4C4 /* Products */;
@@ -432,6 +458,8 @@
 				71614A5124FA5CCE0038A8B7 /* SecondPageScroll.xib in Resources */,
 				F5F9D2A124FB99B8002F4C1D /* 11793-books-stack.json in Resources */,
 				F5349EBF24E45169009C96BD /* Sacramento-Regular.ttf in Resources */,
+				F524A14A257558C70024E985 /* Localizable.strings in Resources */,
+				F524A03C257537D30024E985 /* Dropdown.xib in Resources */,
 				F5349EC324E45300009C96BD /* Montserrat-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F524A123257552310024E985 /* PickerData.swift in Sources */,
 				71614A4D24FA4A4B0038A8B7 /* FirstPageScroll.swift in Sources */,
 				F59C5852255FD3E700D6D708 /* Service.swift in Sources */,
 				718356B7256121BB000CC0DF /* BookShelfViewController.swift in Sources */,
@@ -498,6 +527,7 @@
 				F57D29DA24E278400001D4C4 /* AppDelegate.swift in Sources */,
 				F59C584F255FD38400D6D708 /* AuthService.swift in Sources */,
 				7106C77524E6E9C300D3D29C /* InfoViewController.swift in Sources */,
+				F524A0442575395D0024E985 /* Localization.swift in Sources */,
 				71E4321024EFC3840099312F /* SearchBar.swift in Sources */,
 				F59C581D255FCD6300D6D708 /* User.swift in Sources */,
 				F59C5821255FCD9900D6D708 /* AuthenticationViewModel.swift in Sources */,
@@ -513,15 +543,18 @@
 				F59C5829255FCE8700D6D708 /* Constraints.swift in Sources */,
 				71B7836924F538D300E47CE2 /* RadioButtonsViewController.swift in Sources */,
 				71E4320824EABE060099312F /* ResultCardView.swift in Sources */,
+				F524A08525754CC00024E985 /* ScrollView.swift in Sources */,
 				71B7836724F5384300E47CE2 /* RadioButtonCollectionViewCell.swift in Sources */,
 				F547E42C2536E188002E6E21 /* WelcomeViewController.swift in Sources */,
 				71E4320C24ED6A060099312F /* ResultCardCollectionViewCell.swift in Sources */,
 				7146F8F52563EF260086A52F /* G.swift in Sources */,
 				7143BC5525602B1E0018CFAB /* BookShelfCell.swift in Sources */,
 				F59C59DA2560466200D6D708 /* UIResponder.swift in Sources */,
+				F524A0392575321C0024E985 /* AppSettingsViewController.swift in Sources */,
 				7191442D25627BED005EF4F1 /* Book.swift in Sources */,
 				F57D29F624E279C00001D4C4 /* AppleTextRecognizer.swift in Sources */,
 				F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */,
+				F524A03F257537EF0024E985 /* Dropdown.swift in Sources */,
 				F59C592225602A6E00D6D708 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,10 +562,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		F524A14C257558C70024E985 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F524A14B257558C70024E985 /* en */,
+				F524A14E257558CC0024E985 /* ro */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		F57D29DF24E278400001D4C4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F57D29E024E278400001D4C4 /* Base */,
+				F524A1442575584E0024E985 /* ro */,
+				F524A15125755D460024E985 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -541,6 +585,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F57D29E524E278410001D4C4 /* Base */,
+				F524A1452575584F0024E985 /* ro */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -552,6 +597,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -612,6 +658,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

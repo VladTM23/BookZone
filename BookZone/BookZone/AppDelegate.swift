@@ -13,9 +13,20 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        initWithUserDefaultLanguage()
         FirebaseApp.configure()
 
         return true
+    }
+
+    private func initWithUserDefaultLanguage() {
+        let phoneLanguage = Bundle.main.preferredLocalizations.first! as String
+        let userSelectedLanguage = UserDefaults.standard.string(forKey:
+                                                                    K.UserKeys.userShortLanguage) ?? K.Languages.en
+        let selectionMade = UserDefaults.standard.bool(forKey: K.UserKeys.languageSelectionMade)
+        let language = selectionMade ? userSelectedLanguage : phoneLanguage
+        UserDefaults.standard.set(language, forKey: K.UserKeys.userShortLanguage)
+        Bundle.setLanguage(language)
     }
 
     // MARK: UISceneSession Lifecycle

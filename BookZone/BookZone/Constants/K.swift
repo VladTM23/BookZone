@@ -19,6 +19,10 @@ struct K {
 
     struct UserKeys {
         static let tutorialCompleted = "tutorialCompleted"
+        static let userLanguage = "userLanguage"
+        static let languageSelectionMade = "languageSelectionMade"
+        static let userLanguageRow = "userLanguageRow"
+        static let userShortLanguage = "userShortLanguage"
     }
 
     struct Endpoints {
@@ -52,6 +56,10 @@ struct K {
         static let loginToTutorial = "loginToTutorial"
         static let goToProfileSettings = "goToProfileSettings"
         static let goToBookshelf = "goToBookshelf"
+        static let goToSettings = "goToSettings"
+        static let redoTutorial = "redoTutorial"
+        static let reloadSettings = "reloadSettings"
+        static let homeVC = "homeVC"
     }
 
     struct Nibs {
@@ -61,6 +69,7 @@ struct K {
         static let firstPageScrollNibname = "FirstPageScroll"
         static let secondPageScrollNibname = "SecondPageScroll"
         static let bookshelfNibname = "BookShelfCell"
+        static let dropdown = "Dropdown"
     }
 
     struct NavbarTitles {
@@ -71,7 +80,7 @@ struct K {
         static let loginTitle = "Login"
         static let profileSettings = "Profile settings"
         static let bookshelfTitle = "My bookshelf"
-        
+        static let appSettingsTitle = "settings"
     }
 
     struct LabelTexts {
@@ -102,6 +111,13 @@ struct K {
         static let radioButton = "radioButton"
         static let settingsCell = "SettingsCell"
         static let bookshelf = "bookshelf"
+    }
+
+    struct Languages {
+        static let en = "en"
+        static let ro = "ro"
+        static let english = "English"
+        static let romana = "Romanian"
     }
     
     struct Quotes {
