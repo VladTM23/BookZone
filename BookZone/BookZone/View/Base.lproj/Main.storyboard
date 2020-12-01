@@ -611,13 +611,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKV-1I-Zzz">
-                                        <rect key="frame" x="41" y="71" width="53.333333333333343" height="20"/>
+                                        <rect key="frame" x="43.333333333333329" y="71" width="53.333333333333329" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bookshelf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMq-hY-W1e">
-                                        <rect key="frame" x="272" y="71" width="76" height="20"/>
+                                        <rect key="frame" x="267" y="71" width="76" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -633,15 +633,15 @@
                                 <constraints>
                                     <constraint firstItem="bWn-d3-WFo" firstAttribute="centerX" secondItem="JiO-ps-Nn5" secondAttribute="centerX" id="2pv-ih-Ebv"/>
                                     <constraint firstItem="yb1-lK-rN1" firstAttribute="top" secondItem="JiO-ps-Nn5" secondAttribute="top" constant="20" id="6Ur-j7-KQg"/>
-                                    <constraint firstItem="XKV-1I-Zzz" firstAttribute="leading" secondItem="JiO-ps-Nn5" secondAttribute="leading" constant="41" id="Ago-RX-I9E"/>
                                     <constraint firstItem="XKV-1I-Zzz" firstAttribute="top" secondItem="DhK-Kb-mJ8" secondAttribute="bottom" constant="8" symbolic="YES" id="D4A-Ir-Lia"/>
                                     <constraint firstItem="DhK-Kb-mJ8" firstAttribute="leading" secondItem="JiO-ps-Nn5" secondAttribute="leading" constant="50" id="Irm-yI-0sd"/>
                                     <constraint firstAttribute="trailing" secondItem="yb1-lK-rN1" secondAttribute="trailing" constant="50" id="J1O-gT-X7J"/>
                                     <constraint firstItem="bWn-d3-WFo" firstAttribute="top" secondItem="JiO-ps-Nn5" secondAttribute="top" constant="57" id="NV4-eb-jVw"/>
                                     <constraint firstAttribute="height" constant="135" id="UvQ-Zk-1hQ"/>
+                                    <constraint firstItem="xMq-hY-W1e" firstAttribute="centerX" secondItem="yb1-lK-rN1" secondAttribute="centerX" id="dYo-ea-QeP"/>
+                                    <constraint firstItem="XKV-1I-Zzz" firstAttribute="centerX" secondItem="DhK-Kb-mJ8" secondAttribute="centerX" id="fdq-7E-M3s"/>
                                     <constraint firstItem="DhK-Kb-mJ8" firstAttribute="top" secondItem="JiO-ps-Nn5" secondAttribute="top" constant="23" id="h1I-oo-JOV"/>
                                     <constraint firstItem="xMq-hY-W1e" firstAttribute="top" secondItem="yb1-lK-rN1" secondAttribute="bottom" constant="11" id="mPp-FR-jZw"/>
-                                    <constraint firstAttribute="trailing" secondItem="xMq-hY-W1e" secondAttribute="trailing" constant="27" id="rwg-LE-phV"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1176,6 +1176,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="wrL-rp-srF" id="EAp-gl-Kui"/>
+                        <outlet property="navbarView" destination="cXY-6n-x1A" id="3FD-UF-Huu"/>
                         <outlet property="normalSearchButton" destination="d7d-Fu-S9J" id="tlk-FZ-9hC"/>
                         <outlet property="retakePictureButton" destination="X2M-MH-A8J" id="Dtj-rj-7zd"/>
                         <outlet property="searchButton" destination="uZp-v5-hPk" id="hCU-Am-fUx"/>
@@ -1358,11 +1359,11 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="h9L-BW-cDN"/>
-        <segue reference="PqT-0Q-aaz"/>
+        <segue reference="LYh-jv-fnc"/>
         <segue reference="Lmt-Lf-LQ8"/>
         <segue reference="ld5-tK-L1Q"/>
         <segue reference="pYW-uq-oCP"/>
-        <segue reference="1cR-wx-sPu"/>
+        <segue reference="KPs-6B-ipx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BookZone" width="1325" height="903"/>

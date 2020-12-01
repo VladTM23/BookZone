@@ -141,8 +141,6 @@ class AppSettingsViewController: UIViewController {
 
             differentLanguageFlag = currentLanguage! != pickerSelectedData.pickerLanguage ? true : false
             if differentLanguageFlag {
-                print("*********",UserDefaults.standard.string(forKey:
-                                                    K.UserKeys.userShortLanguage)!)
                 switchLanguageInApp(language:
                                         UserDefaults.standard.string(forKey:
                                                                         K.UserKeys.userShortLanguage)!,

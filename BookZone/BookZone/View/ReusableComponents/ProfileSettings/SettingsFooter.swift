@@ -21,7 +21,7 @@ class SettingsFooter: UIView {
 
     private lazy var logoutButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Logout", for: .normal)
+        button.setTitle(NSLocalizedString("logout", comment: ""), for: .normal)
         button.setTitleColor(UIColor(named: K.Colors.pink), for: .normal)
         button.backgroundColor = .white
         button.addTarget(self, action: #selector(handleLogout), for: .touchUpInside)
@@ -30,7 +30,7 @@ class SettingsFooter: UIView {
 
     private lazy var doneButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Save changes", for: .normal)
+        button.setTitle(NSLocalizedString("saveChanges", comment: ""), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(named: K.Colors.pink)
         button.addTarget(self, action: #selector(handleDonePressed), for: .touchUpInside)

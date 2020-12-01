@@ -30,7 +30,7 @@ class SearchViewController: UIViewController {
         if(sender.isOn){
             titleSwitchLabel.alpha = CGFloat(0.5)
             isbnSwitchLabel.alpha = CGFloat(1)
-            searchBar.searchTextField.placeholder = K.LabelTexts.searchByISBN
+            searchBar.searchTextField.placeholder = NSLocalizedString(K.LabelTexts.searchByISBN, comment: "")
             searchBar.buttonImageView.image = UIImage(named: K.ImageNames.pinkBackground)
             searchBar.searchImageView.image = UIImage(named: K.ImageNames.pinkBackground)
             flag = true
@@ -43,7 +43,7 @@ class SearchViewController: UIViewController {
             sender.layer.cornerRadius = sender.frame.height / 2
             sender.backgroundColor = #colorLiteral(red: 0.5370000005, green: 0.7879999876, blue: 0.7220000029, alpha: 1)
             
-            searchBar.searchTextField.placeholder = K.LabelTexts.searchByTitle
+            searchBar.searchTextField.placeholder = NSLocalizedString(K.LabelTexts.searchByTitle, comment: "")
             searchBar.searchImageView.image = UIImage(named: K.ImageNames.yellowBackground)
             searchBar.buttonImageView.image = UIImage(named: K.ImageNames.yellowBackground)
             flag = false
@@ -81,7 +81,7 @@ class SearchViewController: UIViewController {
     }
 
     func configureNavBar() {
-        navBarView.titleLabelNavbar.text = K.NavbarTitles.searchTitle
+        navBarView.titleLabelNavbar.text = NSLocalizedString(K.NavbarTitles.searchTitle, comment: "")
     }
     
     func configureSearchBar(){
@@ -121,7 +121,6 @@ extension SearchViewController: UITextFieldDelegate {
         else {
             searchBar.buttonImageView.image = UIImage(named: K.ImageNames.yellowBackground)
         }
-        print("pressed")
     }
     
     @objc func searchButtonReleased () {
@@ -150,7 +149,7 @@ extension SearchViewController: UITextFieldDelegate {
                 }
                 else {
                     searchBar.searchTextField.text = ""
-                    searchBar.searchTextField.placeholder = K.LabelTexts.invalidISBNStringPlaceholder
+                    searchBar.searchTextField.placeholder = NSLocalizedString(K.LabelTexts.invalidISBNStringPlaceholder, comment: "")
                     }
             }
           else {
@@ -158,7 +157,7 @@ extension SearchViewController: UITextFieldDelegate {
             }
         }
         else {
-            searchBar.searchTextField.placeholder = K.LabelTexts.emptyStringPlaceholder
+            searchBar.searchTextField.placeholder = NSLocalizedString(K.LabelTexts.emptyStringPlaceholder, comment: "")
         }
         
     

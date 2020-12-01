@@ -24,6 +24,7 @@ class RadioButtonsViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var retakePictureButton: UIButton!
     @IBOutlet weak var normalSearchButton: UIButton!
+    @IBOutlet weak var navbarView: NavbarView!
 
     @IBAction func searchButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: K.Identifiers.resultVCIdentifierFromRadio, sender: self)
@@ -49,13 +50,18 @@ class RadioButtonsViewController: UIViewController, UIImagePickerControllerDeleg
         cofigureCellView()
         configureButtons()
         configureLabelAndButton()
+        configureNavbar()
         
+    }
+
+    private func configureNavbar() {
+        navbarView.titleLabelNavbar.text = NSLocalizedString(K.NavbarTitles.radioButtonsTitle, comment: "")
     }
     
     func configureLabelAndButton(){
         
         if titleString?.count == 0 {
-            titleLabel.text = "No text detected"
+            titleLabel.text = NSLocalizedString("noText", comment: "")
             searchButton.isEnabled = false
             searchButton.backgroundColor = #colorLiteral(red: 0.8669999838, green: 0.8669999838, blue: 0.8669999838, alpha: 1)
             

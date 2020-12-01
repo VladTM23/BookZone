@@ -16,10 +16,10 @@ enum SettingsSection: Int, CaseIterable {
 
     var description: String {
         switch self {
-        case .name: return "Name"
-        case .age: return "Age"
+        case .name: return NSLocalizedString("name", comment: "")
+        case .age: return NSLocalizedString("age", comment: "")
         case .bio: return "Bio"
-        case .favBook: return "Favorite Book"
+        case .favBook: return NSLocalizedString("favBook", comment: "")
         }
     }
 }
@@ -36,7 +36,7 @@ struct SettingsViewModel {
         self.user = user
         self.section = section
 
-        placeholderText = "Enter \(section.description.lowercased())"
+        placeholderText = "\(NSLocalizedString("enter", comment: "")) \(section.description.lowercased())"
 
         switch section {
         case .name:

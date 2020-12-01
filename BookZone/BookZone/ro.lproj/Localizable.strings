@@ -9,6 +9,14 @@
 //Navbar titles
 
 "settings" = "Setări";
+"searchTitle" = "Următoarea ta carte";
+"infoPage" = "Pagina de informații";
+"resultsPage" = "Rezultate";
+"register" = "Înregistrare";
+"login" = "Autentificare";
+"profileSettings" = "Setările profilului";
+"bookshelfTitle" = "Raftul meu de cărți";
+"radioButtons" = "Confirmați titlul cărții";
 
 // Labels
 
@@ -16,7 +24,37 @@
 "prefLanguage" = "Alegeți limba dorită";
 "credits" = "Credite";
 "versions" = "Versiunea";
+"noText" = "Nu s-a detectat niciun text";
+"savingImage" = "Se salvează imaginea";
+"savingData" = "Se salvează datele dumneavoastră";
+"ratings" = "Notă";
+"reviews" = "Recenzii";
+"editions" = "Ediții";
+"people" = "Cititori";
+"loading" = "Se încarcă...";
+"isbnSearch" = "Caută după ISBN...";
+"titleSearch" = "Caută după titlu...";
+"emptyPlaceholder" = "Scrie ceva";
+"invalidISBN" = "ISBN invalid";
+"name" = "Nume";
+"age" = "Vârstă";
+"favBook" = "Cartea favorită";
+"enter" = "Introduceți";
 
 // Buttons
 
 "goToTutorial" = "Mergeți la tutorial";
+"signUp" = "Înregistrează-te";
+"signIn" = "Loghează-te";
+"logIn" = "Loghează-te";
+"haveAnAccount" = "Aveți deja un cont?";
+"noAccount" = "Nu ai un cont?  ";
+"logout" = "Deconectare";
+"saveChanges" = "Salvați modificările";
+"selectPhoto" = "Selectați poza";
+
+//Placeholders
+
+"email" = "Email";
+"fullname" = "Nume complet";
+"password" = "Parolă";

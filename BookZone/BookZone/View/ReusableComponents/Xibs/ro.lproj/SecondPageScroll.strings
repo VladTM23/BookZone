@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "When taking a picture of a book, remeber to capture, if possible, only the book title."; ObjectID = "OkJ-Wp-k3C"; */
+"OkJ-Wp-k3C.text" = "Când realizați poza cărții, incercați, pe cât posibil, să pozați doar titlul acesteia";
+
+/* Class = "UILabel"; text = "If the predicted title is not correct, you can either retake the photo, or search for the book by title or ISBN manually."; ObjectID = "TUO-7Z-HXq"; */
+"TUO-7Z-HXq.text" = "Dacă titlul detectat este incorect, puteți fie reface poza sau să căutați manual după titlul sau ISBN-ul cărții.";
+
+/* Class = "UILabel"; text = "If the application detects the author title as well, you have to select only the words that the title is made of."; ObjectID = "qL1-gb-sLl"; */
+"qL1-gb-sLl.text" = "Dacă aplicația detectează și autorul cărții, va trebui să selectați doar cuvintele din care este compus titlul.";

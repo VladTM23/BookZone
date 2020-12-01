@@ -12,7 +12,7 @@
 "F4a-cq-bj6.text" = "Credits";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "He7-j9-Cye"; */
-"He7-j9-Cye.text" = "Title";
+"He7-j9-Cye.text" = "Titlu";
 
 /* Class = "UILabel"; text = "ISBN"; ObjectID = "I2x-Bl-TKL"; */
 "I2x-Bl-TKL.text" = "ISBN";
@@ -27,55 +27,55 @@
 "WCn-9M-7oM.text" = "Version";
 
 /* Class = "UIButton"; normalTitle = "Retake picture"; ObjectID = "X2M-MH-A8J"; */
-"X2M-MH-A8J.normalTitle" = "Retake picture";
+"X2M-MH-A8J.normalTitle" = "Refă poza";
 
 /* Class = "UILabel"; text = "Search"; ObjectID = "XKV-1I-Zzz"; */
-"XKV-1I-Zzz.text" = "Search";
+"XKV-1I-Zzz.text" = "Caută";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "YT6-XM-lWC"; */
 "YT6-XM-lWC.text" = "Label";
 
 /* Class = "UILabel"; text = "add to bookshelf"; ObjectID = "Zey-ZT-pPx"; */
-"Zey-ZT-pPx.text" = "add to bookshelf";
+"Zey-ZT-pPx.text" = "adaugă in raftul de cărți";
 
 /* Class = "UIButton"; normalTitle = "LOG IN"; ObjectID = "b4w-G3-z6g"; */
-"b4w-G3-z6g.normalTitle" = "LOG IN";
+"b4w-G3-z6g.normalTitle" = "Loghează-te";
 
 /* Class = "UILabel"; text = "Take photo"; ObjectID = "bWn-d3-WFo"; */
-"bWn-d3-WFo.text" = "Take photo";
+"bWn-d3-WFo.text" = "Fă o poză";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "bWx-zg-fHh"; */
 "bWx-zg-fHh.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Normal search"; ObjectID = "d7d-Fu-S9J"; */
-"d7d-Fu-S9J.normalTitle" = "Normal search";
+"d7d-Fu-S9J.normalTitle" = "Căutare normală";
 
 /* Class = "UILabel"; text = "BookZone"; ObjectID = "dHv-Xn-J4r"; */
 "dHv-Xn-J4r.text" = "BookZone";
 
 /* Class = "UIButton"; normalTitle = "Get started"; ObjectID = "f5v-kh-q76"; */
-"f5v-kh-q76.normalTitle" = "Get started";
+"f5v-kh-q76.normalTitle" = "Începeți";
 
 /* Class = "UILabel"; text = "BookZone tutorial completed"; ObjectID = "fJv-TV-Dp4"; */
-"fJv-TV-Dp4.text" = "BookZone tutorial completed";
+"fJv-TV-Dp4.text" = "Tutorialul BookZone este completat";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "iz2-6H-jci"; */
 "iz2-6H-jci.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "REGISTER"; ObjectID = "mSg-aE-6vz"; */
-"mSg-aE-6vz.normalTitle" = "REGISTER";
+"mSg-aE-6vz.normalTitle" = "Înregistrează-te";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "sr0-NE-BRE"; */
 "sr0-NE-BRE.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Check book results"; ObjectID = "uZp-v5-hPk"; */
-"uZp-v5-hPk.normalTitle" = "Check book results";
+"uZp-v5-hPk.normalTitle" = "Verifică rezultatele";
 
 /* Class = "UIBarButtonItem"; title = "Done"; ObjectID = "vjn-m4-Syd"; */
-"vjn-m4-Syd.title" = "Done";
+"vjn-m4-Syd.title" = "Finalizează";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "wHh-91-tcE"; */
 "wHh-91-tcE.text" = "Label";
 
 /* Class = "UILabel"; text = "Bookshelf"; ObjectID = "xMq-hY-W1e"; */
-"xMq-hY-W1e.text" = "Bookshelf";
+"xMq-hY-W1e.text" = "Raftul de cărți";

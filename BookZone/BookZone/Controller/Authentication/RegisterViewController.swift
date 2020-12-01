@@ -25,14 +25,14 @@ class RegisterViewController: UIViewController {
         return button
     }()
 
-    private let emailTextField = CustomTextField(placeholder: "Email", contentType: .emailAddress)
-    private let fullNameTextField = CustomTextField(placeholder: "Full Name", contentType: .name)
-    private let passwordTextField = CustomTextField(placeholder: "Password", isSecureField: true, contentType: .oneTimeCode)
+    private let emailTextField = CustomTextField(placeholder: NSLocalizedString("email", comment: ""), contentType: .emailAddress)
+    private let fullNameTextField = CustomTextField(placeholder: NSLocalizedString("fullname", comment: ""), contentType: .name)
+    private let passwordTextField = CustomTextField(placeholder: NSLocalizedString("password", comment: ""), isSecureField: true, contentType: .oneTimeCode)
 
     private var profileImage: UIImage?
 
     private let authButton: AuthButton = {
-        let button = AuthButton(title: "Sign Up", type: .system)
+        let button = AuthButton(title: NSLocalizedString("signUp", comment: ""), type: .system)
         button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
         return button
     }()
@@ -40,8 +40,8 @@ class RegisterViewController: UIViewController {
     private let goToLoginButton: UIButton = {
         let button = UIButton(type: .system)
 
-        let attributedTitle = NSMutableAttributedString(string: "Already have an account?  ", attributes: [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 16)])
-        attributedTitle.append(NSAttributedString(string: "Sign In", attributes: [.foregroundColor: UIColor.white, .font: UIFont.boldSystemFont(ofSize: 16)]))
+        let attributedTitle = NSMutableAttributedString(string: NSLocalizedString("haveAnAccount", comment: ""), attributes: [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 16)])
+        attributedTitle.append(NSAttributedString(string: NSLocalizedString("signIn", comment: ""), attributes: [.foregroundColor: UIColor.white, .font: UIFont.boldSystemFont(ofSize: 16)]))
         button.setAttributedTitle(attributedTitle, for: .normal)
         button.addTarget(self, action: #selector(handleShowLogin), for: .touchUpInside)
 
@@ -80,7 +80,7 @@ class RegisterViewController: UIViewController {
     }
 
     func configureNavbar() {
-        navbarView.titleLabelNavbar.text = K.NavbarTitles.registerTitle
+        navbarView.titleLabelNavbar.text = NSLocalizedString(K.NavbarTitles.registerTitle, comment: "")
     }
 
     // MARK: - Helpers

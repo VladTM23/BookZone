@@ -31,7 +31,7 @@ class InfoViewController: UIViewController {
     }
 
     func configureNavBar() {
-        navBarView.titleLabelNavbar.text = K.NavbarTitles.infoTitle
+        navBarView.titleLabelNavbar.text = NSLocalizedString(K.NavbarTitles.infoTitle, comment: "")
         navBarView.backButton.isHidden = true
     }
 

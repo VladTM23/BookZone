@@ -48,7 +48,7 @@ class BookShelfViewController: UIViewController {
     }
     
     func configureNavBar() {
-        navbarView.titleLabelNavbar.text = K.NavbarTitles.bookshelfTitle
+        navbarView.titleLabelNavbar.text = NSLocalizedString(K.NavbarTitles.bookshelfTitle, comment: "")
     }
     
     private func fetchUserBooks( isInitial initial : Bool) {

@@ -27,16 +27,18 @@ class ResultsViewController: UIViewController  {
     
     var titleLabelVar: String?
     var titleArray: [String]?
-   
+
     var flag : Bool = false
     var ISBN : String?
     let reuseIdentifier = K.ReuseIdentifiers.resultCard
     
     var apiResults: [String]?
-    let resultExp       = [K.LabelTexts.ratings,
-                           K.LabelTexts.reviews,
-                           K.LabelTexts.editions,
-                           K.LabelTexts.people]
+    let resultExp       = [NSLocalizedString(K.LabelTexts.ratings, comment: ""),
+                           NSLocalizedString(K.LabelTexts.reviews, comment: ""),
+                           NSLocalizedString(K.LabelTexts.editions, comment: ""),
+                           NSLocalizedString(K.LabelTexts.people, comment: "")
+
+    ]
     let systemImageName = [K.LabelTexts.star,
                            K.LabelTexts.pencil,
                            K.LabelTexts.book,
@@ -92,7 +94,7 @@ class ResultsViewController: UIViewController  {
     }
 
     func configureNavbar() {
-        navbarView.titleLabelNavbar.text = K.NavbarTitles.resultsTitle
+        navbarView.titleLabelNavbar.text = NSLocalizedString(K.NavbarTitles.resultsTitle, comment: "")
     }
     
     
@@ -123,11 +125,11 @@ class ResultsViewController: UIViewController  {
             if let index = self.user!.selectedBooks.firstIndex(of: apiResults![4]) {
                 self.user!.selectedBooks.remove(at: index)
             }
-//            Service.deleteBookData(bookID : self.apiResults![4]) { (error) in
-//                if error != nil {
-//                    print("Error when deleting a book to Books collection, \(error?.localizedDescription)")
-//                }
-//            }
+            //            Service.deleteBookData(bookID : self.apiResults![4]) { (error) in
+            //                if error != nil {
+            //                    print("Error when deleting a book to Books collection, \(error?.localizedDescription)")
+            //                }
+            //            }
         }
         
         UserDefaults.standard.set(self.user!.selectedBooks, forKey: "books" )
@@ -172,7 +174,7 @@ class ResultsViewController: UIViewController  {
             }
         }
         
-       
+
         
     }
 
@@ -241,42 +243,42 @@ extension ResultsViewController {
     func getByISBN(isbn: String) {
 
         AF.request("\(K.Endpoints.isbnURL)\(isbn)?key=\(K.key)").response
-            { response in
+        { response in
 
-                if let data = response.data {
-                    let responseBody = SWXMLHash.parse(data)
-                    
-                    let bookId = responseBody["GoodreadsResponse"]["book"]["id"].element!.text
-                    
-                    self.faveButton.isSelected = false
-                    
-                    if (Auth.auth().currentUser != nil){
-                        if (self.user?.selectedBooks.contains(bookId)==true){
-                            self.faveButton.setSelected(selected: true, animated: true)
-                        }
-                        
+            if let data = response.data {
+                let responseBody = SWXMLHash.parse(data)
+
+                let bookId = responseBody["GoodreadsResponse"]["book"]["id"].element!.text
+
+                self.faveButton.isSelected = false
+
+                if (Auth.auth().currentUser != nil){
+                    if (self.user?.selectedBooks.contains(bookId)==true){
+                        self.faveButton.setSelected(selected: true, animated: true)
                     }
-                    self.faveButton.isEnabled = true
-                    let bookPicture = responseBody["GoodreadsResponse"]["book"]["image_url"].element!.text
-                    
-                    let title = responseBody["GoodreadsResponse"]["book"]["work"]["original_title"].element!.text
-                    //let author = responseBody["GoodreadsResponse"]["book"]["authors"]["author"]["name"].element!.text
-
-                    //print(title + "    " + author )
-                    let ratingsCount = responseBody["GoodreadsResponse"]["book"]["work"]["ratings_count"].element!.text
-                    let reviewsCount = responseBody["GoodreadsResponse"]["book"]["work"]["text_reviews_count"].element!.text
-                    let editionsCount = responseBody["GoodreadsResponse"]["book"]["work"]["books_count"].element!.text
-                    let averageRating = responseBody["GoodreadsResponse"]["book"]["average_rating"].element!.text
-
-                    let addedBy = responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element!.text
-
-                    let labelArray =  [ratingsCount, reviewsCount, editionsCount, addedBy, bookId, bookPicture]
-                    self.titleLabel.text = title
-                    self.apiResults = labelArray
-                    self.averageRating.text = averageRating
-                    self.collectionView.reloadData()
 
                 }
+                self.faveButton.isEnabled = true
+                let bookPicture = responseBody["GoodreadsResponse"]["book"]["image_url"].element!.text
+
+                let title = responseBody["GoodreadsResponse"]["book"]["work"]["original_title"].element!.text
+                //let author = responseBody["GoodreadsResponse"]["book"]["authors"]["author"]["name"].element!.text
+
+                //print(title + "    " + author )
+                let ratingsCount = responseBody["GoodreadsResponse"]["book"]["work"]["ratings_count"].element!.text
+                let reviewsCount = responseBody["GoodreadsResponse"]["book"]["work"]["text_reviews_count"].element!.text
+                let editionsCount = responseBody["GoodreadsResponse"]["book"]["work"]["books_count"].element!.text
+                let averageRating = responseBody["GoodreadsResponse"]["book"]["average_rating"].element!.text
+
+                let addedBy = responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element!.text
+
+                let labelArray =  [ratingsCount, reviewsCount, editionsCount, addedBy, bookId, bookPicture]
+                self.titleLabel.text = title
+                self.apiResults = labelArray
+                self.averageRating.text = averageRating
+                self.collectionView.reloadData()
+
+            }
         }
     }
     
@@ -312,7 +314,7 @@ extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDel
         
         if self.apiResults?.count ?? 0 < 4 {
             
-            cell.resultCardCellView.numberLabel.text = K.LabelTexts.loading
+            cell.resultCardCellView.numberLabel.text = NSLocalizedString(K.LabelTexts.loading,comment: "")
         }
         else {
             

@@ -12,10 +12,8 @@
 		7143BC5325602AFB0018CFAB /* BookShelfCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7143BC5225602AFB0018CFAB /* BookShelfCell.xib */; };
 		7143BC5525602B1E0018CFAB /* BookShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143BC5425602B1E0018CFAB /* BookShelfCell.swift */; };
 		7146F8F52563EF260086A52F /* G.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7146F8F42563EF260086A52F /* G.swift */; };
-		71614A4B24FA43D20038A8B7 /* FirstPageScroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71614A4A24FA43D20038A8B7 /* FirstPageScroll.xib */; };
 		71614A4D24FA4A4B0038A8B7 /* FirstPageScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71614A4C24FA4A4B0038A8B7 /* FirstPageScroll.swift */; };
 		71614A4F24FA5C710038A8B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71614A4E24FA5C710038A8B7 /* Assets.xcassets */; };
-		71614A5124FA5CCE0038A8B7 /* SecondPageScroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71614A5024FA5CCE0038A8B7 /* SecondPageScroll.xib */; };
 		71614A5324FA5CEA0038A8B7 /* SecondPageScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71614A5224FA5CEA0038A8B7 /* SecondPageScroll.swift */; };
 		7165F0F22565786600E21DDD /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165F0F12565786600E21DDD /* Shared.swift */; };
 		718356B7256121BB000CC0DF /* BookShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718356B6256121BB000CC0DF /* BookShelfViewController.swift */; };
@@ -36,6 +34,8 @@
 		F524A08525754CC00024E985 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524A08425754CC00024E985 /* ScrollView.swift */; };
 		F524A123257552310024E985 /* PickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524A122257552310024E985 /* PickerData.swift */; };
 		F524A14A257558C70024E985 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F524A14C257558C70024E985 /* Localizable.strings */; };
+		F524A172257681D50024E985 /* FirstPageScroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = F524A174257681D50024E985 /* FirstPageScroll.xib */; };
+		F524A17C257681EF0024E985 /* SecondPageScroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = F524A17E257681EF0024E985 /* SecondPageScroll.xib */; };
 		F5349EB224E44456009C96BD /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5349EB124E44456009C96BD /* K.swift */; };
 		F5349EBF24E45169009C96BD /* Sacramento-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */; };
 		F5349EC124E45282009C96BD /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */; };
@@ -77,10 +77,8 @@
 		7143BC5225602AFB0018CFAB /* BookShelfCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookShelfCell.xib; sourceTree = "<group>"; };
 		7143BC5425602B1E0018CFAB /* BookShelfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfCell.swift; sourceTree = "<group>"; };
 		7146F8F42563EF260086A52F /* G.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G.swift; sourceTree = "<group>"; };
-		71614A4A24FA43D20038A8B7 /* FirstPageScroll.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstPageScroll.xib; sourceTree = "<group>"; };
 		71614A4C24FA4A4B0038A8B7 /* FirstPageScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageScroll.swift; sourceTree = "<group>"; };
 		71614A4E24FA5C710038A8B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		71614A5024FA5CCE0038A8B7 /* SecondPageScroll.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondPageScroll.xib; sourceTree = "<group>"; };
 		71614A5224FA5CEA0038A8B7 /* SecondPageScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageScroll.swift; sourceTree = "<group>"; };
 		7165F0F12565786600E21DDD /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		718356B6256121BB000CC0DF /* BookShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +103,12 @@
 		F524A14B257558C70024E985 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F524A14E257558CC0024E985 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F524A15125755D460024E985 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		F524A173257681D50024E985 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FirstPageScroll.xib; sourceTree = "<group>"; };
+		F524A178257681D80024E985 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FirstPageScroll.strings; sourceTree = "<group>"; };
+		F524A17A257681DB0024E985 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/FirstPageScroll.strings; sourceTree = "<group>"; };
+		F524A17D257681EF0024E985 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SecondPageScroll.xib; sourceTree = "<group>"; };
+		F524A181257681F30024E985 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SecondPageScroll.strings; sourceTree = "<group>"; };
+		F524A183257681F50024E985 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/SecondPageScroll.strings; sourceTree = "<group>"; };
 		F5349EB124E44456009C96BD /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sacramento-Regular.ttf"; sourceTree = "<group>"; };
 		F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -358,8 +362,8 @@
 				F591010C24E7B2370042EB6F /* Navbar.xib */,
 				71E4320524EABDA20099312F /* ResultCard.xib */,
 				71E4320D24EFBE1A0099312F /* SearchBar.xib */,
-				71614A4A24FA43D20038A8B7 /* FirstPageScroll.xib */,
-				71614A5024FA5CCE0038A8B7 /* SecondPageScroll.xib */,
+				F524A174257681D50024E985 /* FirstPageScroll.xib */,
+				F524A17E257681EF0024E985 /* SecondPageScroll.xib */,
 				7143BC5225602AFB0018CFAB /* BookShelfCell.xib */,
 			);
 			path = Xibs;
@@ -452,10 +456,10 @@
 				71E4320E24EFBE1A0099312F /* SearchBar.xib in Resources */,
 				F591010D24E7B2370042EB6F /* Navbar.xib in Resources */,
 				F57D29E624E278410001D4C4 /* LaunchScreen.storyboard in Resources */,
-				71614A4B24FA43D20038A8B7 /* FirstPageScroll.xib in Resources */,
+				F524A172257681D50024E985 /* FirstPageScroll.xib in Resources */,
 				F57D29E124E278400001D4C4 /* Main.storyboard in Resources */,
 				7143BC5325602AFB0018CFAB /* BookShelfCell.xib in Resources */,
-				71614A5124FA5CCE0038A8B7 /* SecondPageScroll.xib in Resources */,
+				F524A17C257681EF0024E985 /* SecondPageScroll.xib in Resources */,
 				F5F9D2A124FB99B8002F4C1D /* 11793-books-stack.json in Resources */,
 				F5349EBF24E45169009C96BD /* Sacramento-Regular.ttf in Resources */,
 				F524A14A257558C70024E985 /* Localizable.strings in Resources */,
@@ -569,6 +573,26 @@
 				F524A14E257558CC0024E985 /* ro */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		F524A174257681D50024E985 /* FirstPageScroll.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F524A173257681D50024E985 /* Base */,
+				F524A178257681D80024E985 /* en */,
+				F524A17A257681DB0024E985 /* ro */,
+			);
+			name = FirstPageScroll.xib;
+			sourceTree = "<group>";
+		};
+		F524A17E257681EF0024E985 /* SecondPageScroll.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F524A17D257681EF0024E985 /* Base */,
+				F524A181257681F30024E985 /* en */,
+				F524A183257681F50024E985 /* ro */,
+			);
+			name = SecondPageScroll.xib;
 			sourceTree = "<group>";
 		};
 		F57D29DF24E278400001D4C4 /* Main.storyboard */ = {

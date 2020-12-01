@@ -73,30 +73,31 @@ struct K {
     }
 
     struct NavbarTitles {
-        static let searchTitle = "Your next book"
-        static let infoTitle = "Info Page"
-        static let resultsTitle = "Results Page"
-        static let registerTitle = "Register"
-        static let loginTitle = "Login"
-        static let profileSettings = "Profile settings"
-        static let bookshelfTitle = "My bookshelf"
+        static let searchTitle = "searchTitle"
+        static let infoTitle = "infoPage"
+        static let resultsTitle = "resultsPage"
+        static let registerTitle = "register"
+        static let loginTitle = "login"
+        static let profileSettings = "profileSettings"
+        static let bookshelfTitle = "bookshelfTitle"
         static let appSettingsTitle = "settings"
+        static let radioButtonsTitle = "radioButtons"
     }
 
     struct LabelTexts {
-        static let ratings = "Ratings"
-        static let reviews = "Reviews"
-        static let editions = "Editions"
-        static let people = "People"
+        static let ratings = "ratings"
+        static let reviews = "reviews"
+        static let editions = "editions"
+        static let people = "people"
         static let star = "star"
         static let pencil = "pencil"
         static let book = "book"
         static let person = "person"
-        static let loading = "Loading..."
-        static let searchByISBN = "Search by ISBN..."
-        static let searchByTitle = "Search by Title..."
-        static let emptyStringPlaceholder = "Please write something"
-        static let invalidISBNStringPlaceholder = "Invalid ISBN"
+        static let loading = "loading"
+        static let searchByISBN = "isbnSearch"
+        static let searchByTitle = "titleSearch"
+        static let emptyStringPlaceholder = "emptyPlaceholder"
+        static let invalidISBNStringPlaceholder = "invalidISBN"
     }
 
     struct ImageNames {

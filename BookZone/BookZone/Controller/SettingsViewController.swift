@@ -55,7 +55,7 @@ class SettingsViewController: UIViewController {
 
     func uploadImage(image: UIImage) {
         let hud = JGProgressHUD(style: .dark)
-        hud.textLabel.text = "Saving image"
+        hud.textLabel.text = NSLocalizedString("savingImage", comment: "")
         hud.show(in: view)
 
         Service.uploadImage(image: image) { (imageUrl) in
@@ -88,7 +88,7 @@ class SettingsViewController: UIViewController {
     }
 
     func configureNavbar() {
-        navbarView.titleLabelNavbar.text = K.NavbarTitles.profileSettings
+        navbarView.titleLabelNavbar.text = NSLocalizedString(K.NavbarTitles.profileSettings, comment: "")
     }
 }
 
@@ -181,7 +181,7 @@ extension SettingsViewController: SettingsFooterDelegate {
     func handleDone() {
         view.endEditing(true)
         let hud = JGProgressHUD(style: .dark)
-        hud.textLabel.text = "Saving Your Data"
+        hud.textLabel.text = NSLocalizedString("savingData", comment: "")
         hud.show(in: view)
 
         Service.saveUserData(user: user!) { (error) in
