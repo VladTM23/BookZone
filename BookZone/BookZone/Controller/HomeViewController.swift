@@ -65,7 +65,6 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func setUserDefaults(with user : User) {
-
         UserDefaults.standard.set(user.achievementsArray[0], forKey: "achievement1" )
         UserDefaults.standard.set(user.achievementsArray[1], forKey: "achievement2" )
         UserDefaults.standard.set(user.achievementsArray[2], forKey: "achievement3" )
@@ -74,8 +73,6 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         UserDefaults.standard.set(user.selectedBooks, forKey: "books" )
         UserDefaults.standard.set(user.readBooks, forKey: "readBooks" )
     }
-    
-
 
     // MARK: - API
 

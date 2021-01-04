@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C5Y-gX-WDS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C5Y-gX-WDS">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -27,7 +27,7 @@
             <objects>
                 <viewController storyboardIdentifier="resultsVC" id="BYZ-38-t0r" customClass="ResultsViewController" customModule="BookZone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeC-pJ-cLC" userLabel="NavBarView" customClass="NavbarView" customModule="BookZone" customModuleProvider="target">
@@ -38,7 +38,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrI-kO-53s">
-                                <rect key="frame" x="0.0" y="137" width="375" height="675"/>
+                                <rect key="frame" x="0.0" y="137" width="375" height="621"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRc-uN-94X" userLabel="ContainerScrollView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
@@ -251,6 +251,7 @@
                     <connections>
                         <outlet property="collectionView" destination="zmh-tc-HCu" id="TZw-GT-oUM"/>
                         <outlet property="navbarView" destination="fdj-ZL-hnz" id="t8U-Us-9Nn"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="bookToResults" id="gp2-u7-Y27"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1eq-X9-OMN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1363,7 +1364,7 @@
         <segue reference="Lmt-Lf-LQ8"/>
         <segue reference="ld5-tK-L1Q"/>
         <segue reference="pYW-uq-oCP"/>
-        <segue reference="KPs-6B-ipx"/>
+        <segue reference="gp2-u7-Y27"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BookZone" width="1325" height="903"/>

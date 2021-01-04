@@ -24,6 +24,7 @@ class BookShelfViewController: UIViewController {
     var isRead : Bool?
     var buttonStyle: ButtonStyle = .circular
     var buttonDisplayMode: ButtonDisplayMode = .titleAndImage
+    var bookTitle: String = ""
 
     
     override func viewDidLoad() {
@@ -37,11 +38,8 @@ class BookShelfViewController: UIViewController {
         
         fetchUserBooks(isInitial: true)
         configureUi()
-        
     }
-    
 
-    
     func configureUi(){
         configureNavBar()
         
@@ -60,7 +58,6 @@ class BookShelfViewController: UIViewController {
                 self.configureCountLabel()
             }
         }
-        
     }
     
     func configureCountLabel() {
@@ -99,49 +96,45 @@ extension BookShelfViewController: UICollectionViewDataSource, UICollectionViewD
                                 self.collectionView.deleteItems(at: [IndexPath(row: ind, section: 0)])
                                 collectionView.reloadData()
 
+                            }
                         }
-                    }
                     }
                     
                     UserDefaults.standard.set(self.user!.selectedBooks, forKey : "books")
-                        
-//                    Service.deleteBookData(bookID : bookID) { (error) in
-//                        if error != nil {
-//                            print("Error when deleting a book to Books collection, \(error?.localizedDescription)")
-//                            }
-//                        }
-                        
-                        if ((self.user?.selectedBooks.count)! < 100) {
-                            self.user?.achievementsArray[3] = false
-                            UserDefaults.standard.set(false, forKey: "achievement4" )
+
+                    //                    Service.deleteBookData(bookID : bookID) { (error) in
+                    //                        if error != nil {
+                    //                            print("Error when deleting a book to Books collection, \(error?.localizedDescription)")
+                    //                            }
+                    //                        }
+
+                    if ((self.user?.selectedBooks.count)! < 100) {
+                        self.user?.achievementsArray[3] = false
+                        UserDefaults.standard.set(false, forKey: "achievement4" )
+                    }
+                    
+                    if ((self.user?.selectedBooks.count)! < 25) {
+                        self.user?.achievementsArray[2] = false
+                        UserDefaults.standard.set(false, forKey: "achievement3" )
+                    }
+                    
+                    if ((self.user?.selectedBooks.count)! < 5) {
+                        self.user?.achievementsArray[1] = false
+                        UserDefaults.standard.set(false, forKey: "achievement2" )
+                    }
+
+                    
+                    Service.saveUserData(user: self.user!) { (error) in
+                        if error != nil {
+                            print("Error when adding bookId to user, \(error?.localizedDescription)")
+
                         }
-                    
-                        if ((self.user?.selectedBooks.count)! < 25) {
-                            self.user?.achievementsArray[2] = false
-                            UserDefaults.standard.set(false, forKey: "achievement3" )
-                        }
-                    
-                        if ((self.user?.selectedBooks.count)! < 5) {
-                            self.user?.achievementsArray[1] = false
-                            UserDefaults.standard.set(false, forKey: "achievement2" )
-                        }
-                
-                    
-                        Service.saveUserData(user: self.user!) { (error) in
-                            if error != nil {
-                                print("Error when adding bookId to user, \(error?.localizedDescription)")
-                                
-                            }
-                        }
-                    
-                    
+                    }
                 }
             }
-            
             configure(action: deleteAction, with: .trash)
             return [deleteAction]
-            
-            }
+        }
         else {
             
             if (self.user?.readBooks.contains(cell.bookshelfCell.bookID.text!) == true){
@@ -161,7 +154,6 @@ extension BookShelfViewController: UICollectionViewDataSource, UICollectionViewD
                     
                     collectionView.reloadData()
                 }
-                
                 else {
                     
                     var auxReadList = UserDefaults.standard.stringArray(forKey : "readBooks")!
@@ -174,32 +166,26 @@ extension BookShelfViewController: UICollectionViewDataSource, UICollectionViewD
                         
                     }
                 }
-               
+
                 self.user?.readBooks = UserDefaults.standard.stringArray(forKey : "readBooks")!
                 Service.saveUserData(user: self.user!) { (error) in
                     if error != nil {
                         print("Error when adding bookId to user, \(error?.localizedDescription)")
-                            
+
                     }
                 }
-                
-                
-        }
+            }
             let descriptor: ActionDescriptor = isRead ?? false ? .read : .unread
             configure(action: readAction, with: descriptor)
             return [readAction]
         }
         
     }
-    
-    
-    
-
-     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return books?.count ?? 0
     }
     
-     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! BookShelfCollectionViewCell
@@ -225,6 +211,14 @@ extension BookShelfViewController: UICollectionViewDataSource, UICollectionViewD
         
         return cell
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // get a reference to our storyboard cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! BookShelfCollectionViewCell
+
+        bookTitle = (books?[indexPath.item].title)!
+        performSegue(withIdentifier: K.Identifiers.bookToResults, sender: self)
+    }
     
     func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
         var options = SwipeOptions()
@@ -244,18 +238,28 @@ extension BookShelfViewController: UICollectionViewDataSource, UICollectionViewD
     func configure(action: SwipeAction, with descriptor: ActionDescriptor) {
         action.title = descriptor.title(forDisplayMode: buttonDisplayMode)
         action.image = descriptor.image(forStyle: buttonStyle, displayMode: buttonDisplayMode)
-            
-            switch buttonStyle {
-            case .backgroundColor:
-                action.backgroundColor = descriptor.color(forStyle: buttonStyle)
-            case .circular:
-                action.backgroundColor = UIColor(named: K.Colors.kaki)
-                action.textColor = .white
-                action.font = .systemFont(ofSize: 13)
-                action.transitionDelegate = ScaleTransition.default
-            }
+
+        switch buttonStyle {
+        case .backgroundColor:
+            action.backgroundColor = descriptor.color(forStyle: buttonStyle)
+        case .circular:
+            action.backgroundColor = UIColor(named: K.Colors.kaki)
+            action.textColor = .white
+            action.font = .systemFont(ofSize: 13)
+            action.transitionDelegate = ScaleTransition.default
         }
+    }
     
 }
 
+extension BookShelfViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     if segue.identifier == K.Identifiers.bookToResults {
+         let resultsVC = segue.destination as! ResultsViewController
+         resultsVC.flag = false
+         resultsVC.titleLabelVar = bookTitle
+         resultsVC.titleArray = bookTitle.components(separatedBy: " ")
+     }
+ }
+}
 

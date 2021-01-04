@@ -41,6 +41,9 @@ struct AuthService {
                 let data = ["email": credentials.email,
                             "fullName": credentials.fullName,
                             "imageURLs": [imageUrl],
+                            "readBooks": [],
+                            "selectedBooks": [],
+                            "achievementsArray": [false,false,false,false,false],
                             "uid": uid,
                             "age": 18] as [String:Any]
 

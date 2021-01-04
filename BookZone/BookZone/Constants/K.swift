@@ -60,6 +60,7 @@ struct K {
         static let redoTutorial = "redoTutorial"
         static let reloadSettings = "reloadSettings"
         static let homeVC = "homeVC"
+        static let bookToResults = "bookToResults"
     }
 
     struct Nibs {
