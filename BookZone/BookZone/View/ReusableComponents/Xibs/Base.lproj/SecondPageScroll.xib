@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondPageScroll" customModule="BookZone" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="635"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When taking a picture of a book, remeber to capture, if possible, only the book title." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OkJ-Wp-k3C">
+                    <rect key="frame" x="17" y="64" width="301.5" height="108"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infoBook" translatesAutoresizingMaskIntoConstraints="NO" id="CzC-1C-l71">
+                    <rect key="frame" x="84" y="197" width="167.5" height="190.5"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.turn.up.left" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QgE-S6-PTF">
+                    <rect key="frame" x="235.5" y="207.5" width="83.5" height="93"/>
+                    <color key="tintColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If the application detects the author title as well, you have to select only the words that the title is made of." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qL1-gb-sLl">
+                    <rect key="frame" x="17" y="420.5" width="301.5" height="61"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If the predicted title is not correct, you can either retake the photo, or search for the book by title or ISBN manually." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TUO-7Z-HXq">
+                    <rect key="frame" x="17" y="491" width="301.5" height="61"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="grey"/>
+            <constraints>
+                <constraint firstItem="qL1-gb-sLl" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1ht-ie-oy4"/>
+                <constraint firstItem="TUO-7Z-HXq" firstAttribute="width" secondItem="qL1-gb-sLl" secondAttribute="width" id="1wh-CL-m5Z"/>
+                <constraint firstItem="QgE-S6-PTF" firstAttribute="centerY" secondItem="CzC-1C-l71" secondAttribute="centerY" multiplier="0.87" id="5lf-pO-buF"/>
+                <constraint firstItem="TUO-7Z-HXq" firstAttribute="top" secondItem="qL1-gb-sLl" secondAttribute="bottom" multiplier="1.02" id="JDi-ii-nN7"/>
+                <constraint firstItem="CzC-1C-l71" firstAttribute="top" secondItem="OkJ-Wp-k3C" secondAttribute="bottom" constant="25" id="NDQ-Ad-hB8"/>
+                <constraint firstItem="qL1-gb-sLl" firstAttribute="width" secondItem="OkJ-Wp-k3C" secondAttribute="width" id="S9j-SI-TP7"/>
+                <constraint firstItem="OkJ-Wp-k3C" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="X0W-0a-cvU"/>
+                <constraint firstItem="CzC-1C-l71" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aST-DI-pqU"/>
+                <constraint firstItem="CzC-1C-l71" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="apf-lu-3qe"/>
+                <constraint firstItem="OkJ-Wp-k3C" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cqi-7J-bNn"/>
+                <constraint firstItem="QgE-S6-PTF" firstAttribute="width" secondItem="CzC-1C-l71" secondAttribute="width" multiplier="0.5" id="dOv-hf-7dO"/>
+                <constraint firstItem="CzC-1C-l71" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.92" id="fqt-b7-kL3"/>
+                <constraint firstItem="qL1-gb-sLl" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.42" id="hW7-dK-5e8"/>
+                <constraint firstItem="TUO-7Z-HXq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oxe-Nh-aBp"/>
+                <constraint firstItem="CzC-1C-l71" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.3" id="oyq-CG-6nM"/>
+                <constraint firstItem="QgE-S6-PTF" firstAttribute="height" secondItem="CzC-1C-l71" secondAttribute="height" multiplier="0.5" id="qBJ-91-q82"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QgE-S6-PTF" secondAttribute="trailing" constant="16" id="ruR-J7-Thz"/>
+                <constraint firstItem="OkJ-Wp-k3C" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.9" id="y89-6e-kA3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="15"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="83.333333333333343" y="298.32589285714283"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrowshape.turn.up.left" catalog="system" width="128" height="106"/>
+        <image name="infoBook" width="462" height="513"/>
+        <namedColor name="grey">
+            <color red="0.86699998378753662" green="0.86699998378753662" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

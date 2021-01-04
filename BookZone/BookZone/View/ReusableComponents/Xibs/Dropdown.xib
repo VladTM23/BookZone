@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Dropdown" customModule="BookZone" customModuleProvider="target">
+            <connections>
+                <outlet property="dropDownButton" destination="Itf-Uj-BTU" id="0jZ-UV-cMB"/>
+                <outlet property="dropDownLabel" destination="iP9-1U-yZR" id="TJs-yl-Ugw"/>
+                <outlet property="dropDownView" destination="iN0-l3-epB" id="W0d-X4-YFa"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="312" height="48"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iP9-1U-yZR">
+                    <rect key="frame" x="23" y="14.5" width="42" height="19"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Itf-Uj-BTU">
+                    <rect key="frame" x="272" y="18" width="20" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="IRU-UC-mKJ"/>
+                        <constraint firstAttribute="width" constant="20" id="cc4-F7-Zji"/>
+                    </constraints>
+                    <state key="normal" image="Triangle"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="pink"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Itf-Uj-BTU" secondAttribute="trailing" constant="20" id="ITA-PJ-3bW"/>
+                <constraint firstItem="iP9-1U-yZR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="edb-4j-enA"/>
+                <constraint firstItem="Itf-Uj-BTU" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="iIo-Bk-V72"/>
+                <constraint firstItem="iP9-1U-yZR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="23" id="qn4-kr-l35"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="25"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="170" y="86"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Triangle" width="20" height="12"/>
+        <namedColor name="pink">
+            <color red="0.85100001096725464" green="0.67799997329711914" blue="0.67799997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

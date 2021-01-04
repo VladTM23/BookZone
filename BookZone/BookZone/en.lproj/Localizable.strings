@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  BookZone
+
+  Created by Paianu Vlad-Valentin on 30.11.2020.
+  Copyright © 2020 Paianu Vlad-Valentin. All rights reserved.
+*/
+
+//Navbar titles
+
+"settings" = "Settings";
+"searchTitle" = "Your next book";
+"infoPage" = "Info Page";
+"resultsPage" = "Results Page";
+"register" = "Register";
+"login" = "Login";
+"profileSettings" = "Profile settings";
+"bookshelfTitle" = "My bookshelf";
+"radioButtons" = "Confirm book title";
+
+//Labels
+
+"language" = "Language";
+"prefLanguage" = "Chose preffered application language";
+"credits" = "Credits";
+"versions" = "Version";
+"noText" = "No text detected";
+"savingImage" = "Saving image";
+"savingData" = "Saving Your Data";
+"ratings" = "Ratings";
+"reviews" = "Reviews";
+"editions" = "Editions";
+"people" = "People";
+"loading" = "Loading...";
+"isbnSearch" = "Search by ISBN...";
+"titleSearch" = "Search by Title...";
+"emptyPlaceholder" = "Please write something";
+"invalidISBN" = "Invalid ISBN";
+"name" = "Name";
+"age" = "Age";
+"favBook" = "Favorite Book";
+"enter" = "Enter";
+
+//Buttons
+
+"goToTutorial" = "Go to tutorial";
+"signUp" = "Sign Up";
+"signIn" = "Sign In";
+"logIn" = "Log In";
+"haveAnAccount" = "Already have an account?  ";
+"noAccount" = "Don't have an account?  ";
+"logout" = "Logout";
+"saveChanges" = "Save changes";
+"selectPhoto" = "Select Photo";
+
+//Placeholders
+
+"email" = "Email";
+"fullname" = "Full Name";
+"password" = "Password";

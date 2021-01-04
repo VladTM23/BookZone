@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "search relevant information about the quality of a book wherever you are"; ObjectID = "1dq-lw-xRC"; */
+"1dq-lw-xRC.text" = "search relevant information about the quality of a book wherever you are";
+
+/* Class = "UILabel"; text = "Now you can:"; ObjectID = "8hg-xE-Xf6"; */
+"8hg-xE-Xf6.text" = "Now you can:";
+
+/* Class = "UILabel"; text = "look up a book by taking a photo of its title"; ObjectID = "OVV-ps-hCR"; */
+"OVV-ps-hCR.text" = "look up a book by taking a photo of its title";
+
+/* Class = "UILabel"; text = "Welcome to BookZone"; ObjectID = "RJy-UL-vws"; */
+"RJy-UL-vws.text" = "Welcome to BookZone";
+
+/* Class = "UILabel"; text = "directly get the information you need by typing the book title or its ISBN"; ObjectID = "jzf-oV-hdj"; */
+"jzf-oV-hdj.text" = "directly get the information you need by typing the book title or its ISBN";

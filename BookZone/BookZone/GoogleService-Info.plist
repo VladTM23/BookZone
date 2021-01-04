@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>652851084210-qi6u51v3rh8uc57urrvcnao8kevo4an0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.652851084210-qi6u51v3rh8uc57urrvcnao8kevo4an0</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA_AYTkCE6n9gKDUTYCD6EJicp9KWPCuf8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>652851084210</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.alevla.BookZone</string>
+	<key>PROJECT_ID</key>
+	<string>bookzone-94950</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bookzone-94950.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:652851084210:ios:3455ab9e478e3fdb2302ab</string>
+	<key>DATABASE_URL</key>
+	<string>https://bookzone-94950.firebaseio.com</string>
+</dict>
+</plist>
