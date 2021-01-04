@@ -85,6 +85,9 @@ extension BookShelfViewController: UICollectionViewDataSource, UICollectionViewD
                 
                 
                 let bookID = cell.bookshelfCell.bookID.text!
+                let index1 = UserDefaults.standard.stringArray(forKey : "readBooks")!.firstIndex(of: bookID)
+                
+                if index1 == nil{
                 if let index = UserDefaults.standard.stringArray(forKey : "books")!.firstIndex(of: bookID) {
                     self.user!.selectedBooks.remove(at: index)
                     
@@ -131,7 +134,30 @@ extension BookShelfViewController: UICollectionViewDataSource, UICollectionViewD
                         }
                     }
                 }
+                
+                
+                DispatchQueue.global().async(execute: {
+                      DispatchQueue.main.async {
+
+                        let read = self.user?.readBooks.count
+                        let total = self.user?.selectedBooks.count
+                        
+                        self.navbarView.countLabel.text = "\(read ??  0) / \(total ??  0)"
+                        self.navbarView.countLabel.isHidden = false
+
+                      }
+                   })
+                }
+                else {
+                    let alert = UIAlertController(title: "You cannot delete a read book!", message: "In order to delete a read book from your bookshelf you have to mark it as unread first.", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Got it!", style: UIAlertAction.Style.default, handler: {action in
+                        collectionView.reloadData()
+                    }
+                    ))
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
+            
             configure(action: deleteAction, with: .trash)
             return [deleteAction]
         }
@@ -174,11 +200,31 @@ extension BookShelfViewController: UICollectionViewDataSource, UICollectionViewD
 
                     }
                 }
+                
+                
+                DispatchQueue.global().async(execute: {
+                      DispatchQueue.main.async {
+
+                        let read = self.user?.readBooks.count
+                        let total = self.user?.selectedBooks.count
+                        
+                        self.navbarView.countLabel.text = "\(read ??  0) / \(total ??  0)"
+                        self.navbarView.countLabel.isHidden = false
+
+                      }
+                   })
+                
             }
+            
             let descriptor: ActionDescriptor = isRead ?? false ? .read : .unread
             configure(action: readAction, with: descriptor)
+            
+            
             return [readAction]
         }
+        
+
+
         
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
