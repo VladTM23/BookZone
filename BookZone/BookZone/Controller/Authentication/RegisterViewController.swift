@@ -53,6 +53,9 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        emailTextField.delegate = self
+        fullNameTextField.delegate = self
+        passwordTextField.delegate = self
         configureTextFieldObservers()
     }
 
@@ -165,5 +168,16 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
         selectPhotoButton.imageView?.contentMode = .scaleAspectFill
 
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension RegisterViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        view.endEditing(true)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
 }
