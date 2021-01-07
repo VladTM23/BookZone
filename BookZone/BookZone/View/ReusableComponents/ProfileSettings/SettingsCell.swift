@@ -42,7 +42,7 @@ class SettingsCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
 //        selectionStyle = .none
-
+        inputField.delegate = self
         contentView.addSubview(inputField)
         inputField.fillSuperview()
     }
@@ -63,6 +63,17 @@ class SettingsCell: UITableViewCell {
     @objc func handleUpdateUserInfo(sender: UITextField) {
         guard let value = sender.text else { return }
         delegate?.settingsCell(self, wantsToUpdateUserWith: value, for: viewModel.section)
+    }
+}
+
+extension SettingsCell: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.endEditing(true)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.endEditing(true)
+        return true
     }
 }
 
