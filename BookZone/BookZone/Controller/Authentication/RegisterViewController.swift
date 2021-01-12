@@ -34,6 +34,8 @@ class RegisterViewController: UIViewController {
     private let authButton: AuthButton = {
         let button = AuthButton(title: NSLocalizedString("signUp", comment: ""), type: .system)
         button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
+        button.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        button.alpha = 0.5
         return button
     }()
 
@@ -94,7 +96,7 @@ class RegisterViewController: UIViewController {
             authButton.backgroundColor = #colorLiteral(red: 0.8980392157, green: 0, blue: 0.4470588235, alpha: 1)
         } else {
             authButton.isEnabled = false
-            authButton.backgroundColor = UIColor(named: K.Colors.pink)
+            authButton.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         }
     }
 
@@ -131,17 +133,55 @@ class RegisterViewController: UIViewController {
     }
 
     @objc func handleRegister() {
-        guard let email = emailTextField.text else { return }
-        guard let fullName = fullNameTextField.text else { return }
-        guard let password = passwordTextField.text else { return }
-        guard let profileImage = self.profileImage else { return }
+        
+        let alert = UIAlertController(title: "Missing information!", message: "You must complete all the fields in order to register.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        
+        guard let email = emailTextField.text else { self.present(alert, animated: true, completion: nil);return }
+        guard let fullName = fullNameTextField.text else { self.present(alert, animated: true, completion: nil)
+            return }
+        guard let password = passwordTextField.text else { self.present(alert, animated: true, completion: nil)
+            return }
+        
+        
+        guard let profileImage = self.profileImage else {
+            
+            let alert = UIAlertController(title: "Your profile photo!", message: "You must upload a profile photo to proceed.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+            return
+        }
 
         let credentials = AuthCredentials(email: email, password: password,
                                           fullName: fullName, profileImage: profileImage)
 
         AuthService.registerUser(withCredentials: credentials) { error in
             if let error = error {
-                print("DEBUG: Signing up user failed \(error.localizedDescription)")
+                
+                let e = error.localizedDescription
+                var message = ""
+                
+                if e == "The email address is badly formatted."{
+                    message = "Your email seems to be badly formatted. Try using a valid one."
+                    let alert = UIAlertController(title: "Problem registering you!", message: message, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }
+                else if e == "The password must be 6 characters long or more." {
+                    message = "Your password must be at least 6 characters long."
+                    let alert = UIAlertController(title: "Problem registering you!", message: message, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                else if e == "No photo." {
+                    message = "You must upload a profile photo to proceed."
+                    let alert = UIAlertController(title: "Problem registering you!", message: message, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
                 return
             }
 

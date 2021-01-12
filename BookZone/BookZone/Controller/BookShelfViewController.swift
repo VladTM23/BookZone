@@ -246,7 +246,7 @@ extension BookShelfViewController: UICollectionViewDataSource, UICollectionViewD
         
         
         if UserDefaults.standard.stringArray(forKey : "readBooks")?.contains((books?[indexPath.item].bid)!) == true {
-            cell.bookshelfCell.backgroundColor = .green
+            cell.bookshelfCell.backgroundColor = UIColor(patternImage: UIImage (named:"greenBookshelf")!)
         }
         else if (indexPath.item % 2 == 0 ) {
             cell.bookshelfCell.backgroundColor = UIColor(patternImage: UIImage (named:"yellowBookshelf")!)

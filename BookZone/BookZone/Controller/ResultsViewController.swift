@@ -201,12 +201,30 @@ extension ResultsViewController {
             response in
 
             if let data = response.data {
+                
                 let responseBody = SWXMLHash.parse(data)
+                var bookId = ""
+                var bookPicture = ""
+                var title = ""
+                var reviewsCount = ""
+                var editionsCount = ""
+                var averageRating = ""
+                var addedBy = ""
+                var ratingsCount = ""
                 
-                let bookId = responseBody["GoodreadsResponse"]["book"]["id"].element!.text
+                guard let x = responseBody["GoodreadsResponse"]["book"]["id"].element else {
+                    let alert = UIAlertController(title: "Book not found!", message: "The book you are trying to look for could not be found.", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {_ in
+                        self.dismiss(animated: true, completion: nil)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                   return
+                }
+            
+                bookId = x.text
                 
+                if bookId != "" {
                 self.faveButton.isSelected = false
-                
                 
                 if (Auth.auth().currentUser != nil){
                     if (self.user?.selectedBooks.contains(bookId)==true){
@@ -215,15 +233,41 @@ extension ResultsViewController {
                     
                 }
                 self.faveButton.isEnabled = true
+                    
+                }
                 
-                let bookPicture = responseBody["GoodreadsResponse"]["book"]["image_url"].element!.text
+                guard let bookPicture1 = responseBody["GoodreadsResponse"]["book"]["image_url"].element else {
+                        return
+            }
                 
-                let title = responseBody["GoodreadsResponse"]["book"]["work"]["original_title"].element!.text
-                let ratingsCount = responseBody["GoodreadsResponse"]["book"]["work"]["ratings_count"].element!.text
-                let reviewsCount = responseBody["GoodreadsResponse"]["book"]["work"]["text_reviews_count"].element!.text
-                let editionsCount = responseBody["GoodreadsResponse"]["book"]["work"]["books_count"].element!.text
-                let averageRating = responseBody["GoodreadsResponse"]["book"]["average_rating"].element!.text
-                let addedBy = responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element!.text
+                guard let title1 = responseBody["GoodreadsResponse"]["book"]["work"]["original_title"].element else {
+                    title = "BOOK NOT FOUND"
+                    return
+            }
+                guard let ratingsCount1 = responseBody["GoodreadsResponse"]["book"]["work"]["ratings_count"].element else {
+                    return
+            }
+                guard let reviewsCount1 = responseBody["GoodreadsResponse"]["book"]["work"]["text_reviews_count"].element else {
+                    return
+            }
+                guard let editionsCount1 = responseBody["GoodreadsResponse"]["book"]["work"]["books_count"].element else {
+                    return
+            }
+                guard let averageRating1 = responseBody["GoodreadsResponse"]["book"]["average_rating"].element else {
+                    return
+            }
+                guard let addedBy1 = responseBody["GoodreadsResponse"]["book"]["work"]["reviews_count"].element else {
+                    return
+            }
+                
+
+                bookPicture = bookPicture1.text
+                title = title1.text
+                reviewsCount = reviewsCount1.text
+                editionsCount = editionsCount1.text
+                averageRating = averageRating1.text
+                addedBy = addedBy1.text
+                ratingsCount = ratingsCount1.text
                 
                 
                 //self.author = responseBody["GoodreadsResponse"]["book"]["authors"]["author"].element!.text
@@ -235,6 +279,7 @@ extension ResultsViewController {
                 self.apiResults = labelArray
                 self.averageRating.text = averageRating
                 self.collectionView.reloadData()
+                    
                 
             }
         }

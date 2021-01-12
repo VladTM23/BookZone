@@ -27,6 +27,8 @@ class LoginViewController: UIViewController {
     private let authButton: AuthButton = {
         let button = AuthButton(title: NSLocalizedString("logIn", comment: ""), type: .system)
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        button.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        button.alpha = 0.5
         return button
     }()
 
@@ -83,7 +85,7 @@ class LoginViewController: UIViewController {
             authButton.backgroundColor = #colorLiteral(red: 0.8980392157, green: 0, blue: 0.4470588235, alpha: 1)
         } else {
             authButton.isEnabled = false
-            authButton.backgroundColor = UIColor(named: K.Colors.pink)
+            authButton.backgroundColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
         }
     }
 
@@ -116,13 +118,42 @@ class LoginViewController: UIViewController {
 
         AuthService.logUserIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
-                print("DEBUG: Error logging user in \(error.localizedDescription)")
-                return
+                let e = error.localizedDescription
+                var message = ""
+                
+                if e == "The email address is badly formatted."{
+                    message = "Your email seems to be badly formatted. Try using a valid one."
+                    let alert = UIAlertController(title: "Problem signing you in!", message: message, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }
+                else if e == "There is no user record corresponding to this identifier. The user may have been deleted."{
+                     message = "It seems that you do not have an account. Create one now!"
+                    let alert = UIAlertController(title: "Problem signing you in!", message: message, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {_ in
+                                                    self.performSegue(withIdentifier: K.Identifiers.loginToRegister, sender: self)}))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                else if e == "The password is invalid or the user does not have a password."{
+                    message = "Your password is incorect. Try harder remembering it. "
+                    let alert = UIAlertController(title: "Problem signing you in!", message: message, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+               
+                print("DEBUG: Error logging user in \(message)")
+               return
+            }
+                
+            self.performNavigation()
+                
             }
 
-            self.performNavigation()
+          
         }
-    }
+    
 
     @objc func handleShowRegistration() {
         performSegue(withIdentifier: K.Identifiers.loginToRegister, sender: self)
