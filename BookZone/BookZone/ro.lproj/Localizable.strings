@@ -58,3 +58,7 @@
 "email" = "Email";
 "fullname" = "Nume complet";
 "password" = "Parolă";
+
+//Errors
+
+"internetError" = "Te rugăm să verifici conexiunea la internet.";

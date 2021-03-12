@@ -11,18 +11,21 @@ import Alamofire
 import SWXMLHash
 import FaveButton
 import Firebase
+import Lottie
 
 class ResultsViewController: UIViewController  {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var navbarView: NavbarView!
     @IBOutlet weak var averageRating: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var faveButton: FaveButton!
     @IBOutlet weak var addToBookshelfLabel: UILabel!
-    
 
-    
+    @IBOutlet weak var generalErrorView: AnimationView!
+    @IBOutlet weak var errorLabel: UILabel!
+
     //MARK: - Properties
     
     var titleLabelVar: String?
@@ -64,16 +67,6 @@ class ResultsViewController: UIViewController  {
         faveButton.delegate = self
         
         configureUI()
-
-        if flag == false {
-            getByTitle(titleArray: titleArray!, authorArray: [])
-            print("in if")
-        }
-        else {
-            getByISBN(isbn: ISBN!)
-        }
-        
-        
     }
 
     // MARK: - User interface
@@ -81,7 +74,6 @@ class ResultsViewController: UIViewController  {
     func configureUI() {
         
         faveButton.setSelected(selected: false, animated: true)
-        
         faveButton.isEnabled = false
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -90,17 +82,46 @@ class ResultsViewController: UIViewController  {
         collectionView.collectionViewLayout = layout
         
         configureNavbar()
-        
+        configureErrorAnimation()
+        if !ReachabilityManager.shared.hasConnectivity() {
+            showErrorView(errorMessage: K.Errors.internetError)
+        } else {
+            errorLabel.isHidden = true
+            generalErrorView.isHidden = true
+            scrollView.isHidden = false
+            fetchData()
+        }
     }
 
     func configureNavbar() {
         navbarView.titleLabelNavbar.text = NSLocalizedString(K.NavbarTitles.resultsTitle, comment: "")
     }
-    
-    
+
+    func configureErrorAnimation() {
+        generalErrorView.contentMode = .scaleAspectFit
+        generalErrorView.loopMode = .loop
+        generalErrorView.animationSpeed = 0.5
+        generalErrorView.play()
+    }
+
+    func showErrorView(errorMessage: String) {
+        scrollView.isHidden = true
+        generalErrorView.isHidden = false
+        errorLabel.isHidden = false
+        errorLabel.text = NSLocalizedString(errorMessage, comment: "")
+    }
+
+    func fetchData() {
+        if flag == false {
+            getByTitle(titleArray: titleArray!, authorArray: [])
+            print("in if")
+        }
+        else {
+            getByISBN(isbn: ISBN!)
+        }
+    }
+
     //MARK: - actions
-
-
     @IBAction func heartButtonPressed(_ sender: UIButton) {
         
         if (sender.isSelected == true) {
@@ -173,11 +194,7 @@ class ResultsViewController: UIViewController  {
                 print("Error when adding bookId to user, \(error?.localizedDescription)")
             }
         }
-        
-
-        
     }
-
 }
 
 
@@ -186,9 +203,7 @@ class ResultsViewController: UIViewController  {
 //MARK: - API Extension GoodReads
 
 extension ResultsViewController {
-
     func getByTitle(titleArray: [String], authorArray: [String]) {
-
         var authorOptionalParameter = ""
         if authorArray.count != 0 {
             let authorString = authorArray.joined(separator: "+")
@@ -199,6 +214,12 @@ extension ResultsViewController {
 
         AF.request("\(K.Endpoints.titleURL)\(authorOptionalParameter)key=\(K.key)&title=\(titleString)").response {
             response in
+
+            if let error = response.error {
+                self.showErrorView(errorMessage: "API is currently down, please try again later.")
+                print("Error fetching book by title, \(error.localizedDescription)")
+                return
+            }
 
             if let data = response.data {
                 
@@ -286,9 +307,14 @@ extension ResultsViewController {
     }
 
     func getByISBN(isbn: String) {
-
         AF.request("\(K.Endpoints.isbnURL)\(isbn)?key=\(K.key)").response
         { response in
+
+            if let error = response.error {
+                self.showErrorView(errorMessage: "API is currently down, please try again later.")
+                print("Error fetching book by ISBN, \(error.localizedDescription)")
+                return
+            }
 
             if let data = response.data {
                 let responseBody = SWXMLHash.parse(data)

@@ -97,7 +97,7 @@ class LoginViewController: UIViewController {
     func performNavigation() {
         let didDoTutorial = UserDefaults.standard.bool(forKey: K.UserKeys.tutorialCompleted)
         didDoTutorial ? performSegue(withIdentifier: K.Identifiers.loginSuccess, sender: self) :
-                    performSegue(withIdentifier: K.Identifiers.loginToTutorial, sender: self)
+            performSegue(withIdentifier: K.Identifiers.loginToTutorial, sender: self)
     }
 
     // MARK: - Actions
@@ -116,6 +116,14 @@ class LoginViewController: UIViewController {
         guard let email = emailTextField.text,
               let password = passwordTextField.text else { return }
 
+        if !ReachabilityManager.shared.hasConnectivity() {
+            let alert = UIAlertController(title: "No internet connection", message: NSLocalizedString(K.Errors.internetError, comment: "") , preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+
+            return
+        }
+
         AuthService.logUserIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 let e = error.localizedDescription
@@ -129,7 +137,7 @@ class LoginViewController: UIViewController {
                     
                 }
                 else if e == "There is no user record corresponding to this identifier. The user may have been deleted."{
-                     message = "It seems that you do not have an account. Create one now!"
+                    message = "It seems that you do not have an account. Create one now!"
                     let alert = UIAlertController(title: "Problem signing you in!", message: message, preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {_ in
                                                     self.performSegue(withIdentifier: K.Identifiers.loginToRegister, sender: self)}))
@@ -141,18 +149,12 @@ class LoginViewController: UIViewController {
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
-                
-               
                 print("DEBUG: Error logging user in \(message)")
-               return
+                return
             }
-                
             self.performNavigation()
-                
-            }
-
-          
         }
+    }
     
 
     @objc func handleShowRegistration() {

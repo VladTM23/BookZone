@@ -12,12 +12,12 @@ class SearchViewController: UIViewController {
     
     // MARK: - Properties
 
-       var bookTitle: String!
-       var bookTitleArray: [String]!
-       var flag:Bool!
-       var ISBN:String!
+    var bookTitle: String!
+    var bookTitleArray: [String]!
+    var flag:Bool!
+    var ISBN:String!
 
-     // MARK: - IBOutlest
+    // MARK: - IBOutlest
     
     @IBOutlet weak var navBarView: NavbarView!
     @IBOutlet weak var searchBar: SearchBar!
@@ -96,7 +96,7 @@ class SearchViewController: UIViewController {
         searchBar.searchImageView.layer.cornerRadius = 15
     }
 }
-    // MARK: - SearchBar
+// MARK: - SearchBar
 
 extension SearchViewController: UITextFieldDelegate {
 
@@ -116,7 +116,7 @@ extension SearchViewController: UITextFieldDelegate {
         //searchBar.searchTextField.endEditing(true)
         
         if (searchBar.buttonImageView.image == UIImage(named: K.ImageNames.yellowBackground) ){
-        searchBar.buttonImageView.image = UIImage(named: K.ImageNames.pinkBackground)
+            searchBar.buttonImageView.image = UIImage(named: K.ImageNames.pinkBackground)
         }
         else {
             searchBar.buttonImageView.image = UIImage(named: K.ImageNames.yellowBackground)
@@ -132,7 +132,7 @@ extension SearchViewController: UITextFieldDelegate {
         else {
             searchBar.buttonImageView.image = UIImage(named: K.ImageNames.yellowBackground)
         }
-    
+
         if flag == true {
             self.ISBN = searchBar.searchTextField.text
         }
@@ -140,7 +140,7 @@ extension SearchViewController: UITextFieldDelegate {
             self.bookTitle = searchBar.searchTextField.text
             self.bookTitleArray = bookTitle.components(separatedBy: " ")
         }
-       
+
         
         if searchBar.searchTextField.text != "" {
             if flag == true {
@@ -150,17 +150,17 @@ extension SearchViewController: UITextFieldDelegate {
                 else {
                     searchBar.searchTextField.text = ""
                     searchBar.searchTextField.placeholder = NSLocalizedString(K.LabelTexts.invalidISBNStringPlaceholder, comment: "")
-                    }
+                }
             }
-          else {
-                  performSegue(withIdentifier: K.Identifiers.resultVCIdentifierFromSearch, sender: self)
+            else {
+                performSegue(withIdentifier: K.Identifiers.resultVCIdentifierFromSearch, sender: self)
             }
         }
         else {
             searchBar.searchTextField.placeholder = NSLocalizedString(K.LabelTexts.emptyStringPlaceholder, comment: "")
         }
         
-    
+
         print("pressed")
     }
 
@@ -195,16 +195,11 @@ extension SearchViewController: UITextFieldDelegate {
             self.view.frame.origin.y += keyboardFrame.height/2
         }
     }
-    
-    
 }
 
-
-    //MARK: - Perform segue
-
+// MARK: - Perform segue
 extension SearchViewController {
-    
-       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.Identifiers.resultVCIdentifierFromSearch {
             let resultsVC = segue.destination as! ResultsViewController
             resultsVC.ISBN = ISBN
@@ -213,5 +208,4 @@ extension SearchViewController {
             resultsVC.titleArray = bookTitleArray
         }
     }
-    
 }

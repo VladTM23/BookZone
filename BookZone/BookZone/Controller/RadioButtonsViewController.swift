@@ -42,7 +42,7 @@ class RadioButtonsViewController: UIViewController, UIImagePickerControllerDeleg
         titleArrayAux = titleArray
         configureArrays()
         configureUI()
-       
+
     }
     
     func configureUI(){
@@ -59,19 +59,15 @@ class RadioButtonsViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     func configureLabelAndButton(){
-        
         if titleString?.count == 0 {
             titleLabel.text = NSLocalizedString("noText", comment: "")
             searchButton.isEnabled = false
             searchButton.backgroundColor = #colorLiteral(red: 0.8669999838, green: 0.8669999838, blue: 0.8669999838, alpha: 1)
-            
-        }
-        else {
+        } else {
             titleLabel.text = titleString
             searchButton.isEnabled = true
             searchButton.backgroundColor = #colorLiteral(red: 0.851000011, green: 0.6779999733, blue: 0.6779999733, alpha: 1)
         }
-        
     }
     
     func configureButtons() {
@@ -92,7 +88,7 @@ class RadioButtonsViewController: UIViewController, UIImagePickerControllerDeleg
     }
 
     @IBAction func retakePictureButtonPressed(_ sender: UIButton) {
-         present(imagePicker, animated: true, completion: nil)
+        present(imagePicker, animated: true, completion: nil)
     }
 }
 
@@ -195,13 +191,13 @@ extension RadioButtonsViewController {
         cell.radioLabel.text = titleArrayAux?[index]
         
         if (titleArray?.contains((titleArrayAux?[index])!))! {
-             cell.radioButton.image = UIImage(named: K.ImageNames.ticked)
-            }
+            cell.radioButton.image = UIImage(named: K.ImageNames.ticked)
+        }
         else {
             cell.radioButton.image = UIImage(named: K.ImageNames.unticked)
         }
         
-       
+
         cell.layer.borderWidth = 1
         cell.layer.borderColor = CGColor(srgbRed: 1, green: 1, blue: 1, alpha: 1)
         cell.layer.cornerRadius = 15
@@ -218,11 +214,9 @@ extension RadioButtonsViewController {
 //MARK:- PREPARE FOR SEGUE
 
 extension RadioButtonsViewController {
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.Identifiers.resultVCIdentifierFromRadio {
             let resultsVC = segue.destination as! ResultsViewController
-
             resultsVC.titleLabelVar = titleString
             resultsVC.titleArray = titleArray
             resultsVC.flag = false

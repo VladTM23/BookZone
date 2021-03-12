@@ -44,6 +44,9 @@
 		F547E42C2536E188002E6E21 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547E42B2536E188002E6E21 /* WelcomeViewController.swift */; };
 		F547E44B25370AD1002E6E21 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547E44A25370AD1002E6E21 /* RegisterViewController.swift */; };
 		F547E44E25370AED002E6E21 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547E44D25370AED002E6E21 /* LoginViewController.swift */; };
+		F55CAABD25FB5E9200287FB9 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55CAABC25FB5E9200287FB9 /* ReachabilityManager.swift */; };
+		F55CAAC125FB5FBD00287FB9 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55CAAC025FB5FBD00287FB9 /* Reachability.swift */; };
+		F55CAAC725FB75AE00287FB9 /* 38463-error.json in Resources */ = {isa = PBXBuildFile; fileRef = F55CAAC325FB6C7F00287FB9 /* 38463-error.json */; };
 		F57D29DA24E278400001D4C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29D924E278400001D4C4 /* AppDelegate.swift */; };
 		F57D29DC24E278400001D4C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29DB24E278400001D4C4 /* SceneDelegate.swift */; };
 		F57D29DE24E278400001D4C4 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29DD24E278400001D4C4 /* ResultsViewController.swift */; };
@@ -117,6 +120,9 @@
 		F547E42B2536E188002E6E21 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F547E44A25370AD1002E6E21 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F547E44D25370AED002E6E21 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F55CAABC25FB5E9200287FB9 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		F55CAAC025FB5FBD00287FB9 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		F55CAAC325FB6C7F00287FB9 /* 38463-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "38463-error.json"; sourceTree = "<group>"; };
 		F57D29D624E278400001D4C4 /* BookZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookZone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F57D29D924E278400001D4C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F57D29DB24E278400001D4C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +206,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		F55CAABB25FB5E6F00287FB9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F55CAABC25FB5E9200287FB9 /* ReachabilityManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		F57D29CD24E278400001D4C4 = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +243,7 @@
 				F57D29EE24E2785B0001D4C4 /* View */,
 				F59C581F255FCD8300D6D708 /* ViewModel */,
 				F57D29F024E278690001D4C4 /* Controller */,
+				F55CAABB25FB5E6F00287FB9 /* Managers */,
 				F59C5830255FCF4700D6D708 /* API */,
 				F57D29F224E278A20001D4C4 /* Helpers */,
 				F59C5827255FCE7400D6D708 /* Extensions */,
@@ -271,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				71614A4E24FA5C710038A8B7 /* Assets.xcassets */,
+				F55CAAC325FB6C7F00287FB9 /* 38463-error.json */,
 				F5F9D2A024FB99B8002F4C1D /* 11793-books-stack.json */,
 				F5349EBD24E45146009C96BD /* Fonts */,
 				F57D29E424E278410001D4C4 /* LaunchScreen.storyboard */,
@@ -283,6 +299,7 @@
 			children = (
 				F57D29F424E279AF0001D4C4 /* Apple */,
 				7165F0F12565786600E21DDD /* Shared.swift */,
+				F55CAAC025FB5FBD00287FB9 /* Reachability.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -450,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F547E4142536DA91002E6E21 /* GoogleService-Info.plist in Resources */,
+				F55CAAC725FB75AE00287FB9 /* 38463-error.json in Resources */,
 				71E4320624EABDA20099312F /* ResultCard.xib in Resources */,
 				71614A4F24FA5C710038A8B7 /* Assets.xcassets in Resources */,
 				F5349EC124E45282009C96BD /* Montserrat-Regular.ttf in Resources */,
@@ -529,6 +547,7 @@
 				7106C77724E6E9F200D3D29C /* SearchViewController.swift in Sources */,
 				F547E44E25370AED002E6E21 /* LoginViewController.swift in Sources */,
 				F57D29DA24E278400001D4C4 /* AppDelegate.swift in Sources */,
+				F55CAABD25FB5E9200287FB9 /* ReachabilityManager.swift in Sources */,
 				F59C584F255FD38400D6D708 /* AuthService.swift in Sources */,
 				7106C77524E6E9C300D3D29C /* InfoViewController.swift in Sources */,
 				F524A0442575395D0024E985 /* Localization.swift in Sources */,
@@ -539,6 +558,7 @@
 				718356BF25613228000CC0DF /* BookShelfCollectionViewCell.swift in Sources */,
 				F59C592625602B0B00D6D708 /* SettingsCell.swift in Sources */,
 				F57D29DC24E278400001D4C4 /* SceneDelegate.swift in Sources */,
+				F55CAAC125FB5FBD00287FB9 /* Reachability.swift in Sources */,
 				F59C5825255FCE5200D6D708 /* CustomTextField.swift in Sources */,
 				F547E44B25370AD1002E6E21 /* RegisterViewController.swift in Sources */,
 				F59C592F25602C5D00D6D708 /* SettingsViewController.swift in Sources */,

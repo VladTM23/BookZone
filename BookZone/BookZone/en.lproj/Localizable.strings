@@ -58,3 +58,7 @@
 "email" = "Email";
 "fullname" = "Full Name";
 "password" = "Password";
+
+//Errors
+
+"internetError" = "Please check your internet connection.";

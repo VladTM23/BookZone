@@ -153,6 +153,14 @@ class RegisterViewController: UIViewController {
             return
         }
 
+        if !ReachabilityManager.shared.hasConnectivity() {
+            let alert = UIAlertController(title: "No internet connection", message: NSLocalizedString(K.Errors.internetError, comment: "") , preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+
+            return
+        }
+
         let credentials = AuthCredentials(email: email, password: password,
                                           fullName: fullName, profileImage: profileImage)
 
@@ -206,7 +214,6 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
         selectPhotoButton.layer.borderWidth = 3
         selectPhotoButton.layer.cornerRadius = 10
         selectPhotoButton.imageView?.contentMode = .scaleAspectFill
-
         dismiss(animated: true, completion: nil)
     }
 }

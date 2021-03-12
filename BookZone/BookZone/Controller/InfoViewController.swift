@@ -26,8 +26,6 @@ class InfoViewController: UIViewController {
     func configureUI() {
         configureNavBar()
         configureAnimation()
-//        let image = UIImage(systemName: "multiply.circle.fill")
-    
     }
 
     func configureNavBar() {

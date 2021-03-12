@@ -40,11 +40,6 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         imagePicker.allowsEditing = false
     }
 
-//    override func viewWillAppear(_ animated: Bool){
-//        super.viewWillAppear(animated)
-//        fetchUser()
-//    }
-
     // MARK: - User Interface
 
     func configureUI() {
@@ -88,7 +83,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     @IBAction func mainCameraTapped(_ sender: Any) {
         present(imagePicker, animated: true, completion: nil)
-    }
+             }
 
     @IBAction func searchButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: K.Identifiers.searchVCIdentifier, sender: self)
@@ -166,7 +161,6 @@ extension HomeViewController {
 //MARK: - SettingsControllerDelegate
 
 extension HomeViewController: SettingsViewControllerDelegate {
-
     func settingsController(_ controller: SettingsViewController, wantsToUpdate user: User) {
         controller.dismiss(animated: true, completion: nil)
         self.user = user

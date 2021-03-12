@@ -115,6 +115,10 @@ struct K {
         static let bookshelf = "bookshelf"
     }
 
+    struct Errors {
+        static let internetError = "internetError"
+    }
+
     struct Languages {
         static let en = "en"
         static let ro = "ro"
