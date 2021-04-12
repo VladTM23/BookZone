@@ -69,6 +69,7 @@
 		F59C592F25602C5D00D6D708 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C592E25602C5C00D6D708 /* SettingsViewController.swift */; };
 		F59C59DA2560466200D6D708 /* UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C59D92560466200D6D708 /* UIResponder.swift */; };
 		F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */; };
+		F5DEC1B32624A31E006A2C44 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEC1B22624A31E006A2C44 /* CreditsViewController.swift */; };
 		F5F9D2A124FB99B8002F4C1D /* 11793-books-stack.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F9D2A024FB99B8002F4C1D /* 11793-books-stack.json */; };
 /* End PBXBuildFile section */
 
@@ -148,6 +149,7 @@
 		F59C592E25602C5C00D6D708 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F59C59D92560466200D6D708 /* UIResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponder.swift; sourceTree = "<group>"; };
 		F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F5DEC1B22624A31E006A2C44 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		F5F9D2A024FB99B8002F4C1D /* 11793-books-stack.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "11793-books-stack.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -278,6 +280,7 @@
 				F59C592E25602C5C00D6D708 /* SettingsViewController.swift */,
 				718356B6256121BB000CC0DF /* BookShelfViewController.swift */,
 				F524A0382575321C0024E985 /* AppSettingsViewController.swift */,
+				F5DEC1B22624A31E006A2C44 /* CreditsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				F59C592925602B6E00D6D708 /* SettingsFooter.swift in Sources */,
 				F59C582E255FCF0D00D6D708 /* AuthButton.swift in Sources */,
 				F57D29DE24E278400001D4C4 /* ResultsViewController.swift in Sources */,
+				F5DEC1B32624A31E006A2C44 /* CreditsViewController.swift in Sources */,
 				F59C592C25602BCB00D6D708 /* SettingsHeader.swift in Sources */,
 				F5349EB224E44456009C96BD /* K.swift in Sources */,
 				7106C77724E6E9F200D3D29C /* SearchViewController.swift in Sources */,

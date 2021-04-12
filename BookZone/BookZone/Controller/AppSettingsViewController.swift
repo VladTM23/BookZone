@@ -99,7 +99,7 @@ class AppSettingsViewController: UIViewController {
     //MARK: - Actions
 
     @objc func creditsTapped() {
-        performSegue(withIdentifier: K.Identifiers.redoTutorial, sender: self)
+        performSegue(withIdentifier: K.Identifiers.credits, sender: self)
     }
 
     @objc func userLanguageDropdownPressed() {

@@ -32,6 +32,19 @@ struct K {
         static let googleURL = "https://www.googleapis.com/books/v1/volumes?q="
     }
 
+    struct Documentation {
+        static let alamofireURL = "https://github.com/Alamofire/Alamofire/blob/master/LICENSE"
+        static let hashURL = "https://github.com/drmohundro/SWXMLHash/blob/main/LICENSE"
+        static let lottieURL = "https://github.com/airbnb/lottie-ios/blob/master/LICENSE"
+        static let firebaseDocURL = "https://github.com/firebase/firebase-ios-sdk/blob/master/LICENSE"
+        static let sdWebURL = "https://github.com/SDWebImage/SDWebImage/blob/master/LICENSE"
+        static let progressHudURL = "https://github.com/JonasGessner/JGProgressHUD/blob/master/LICENSE.txt"
+        static let faveButtonURL = "https://github.com/janselv/fave-button/blob/master/LICENSE"
+        static let easyTipViewURL = "https://github.com/teodorpatras/EasyTipView/blob/master/LICENSE"
+        static let swipeCellKitURL = "https://github.com/SwipeCellKit/SwipeCellKit/blob/develop/LICENSE"
+        static let swiftyJSONURL = "https://github.com/SwiftyJSON/SwiftyJSON/blob/master/LICENSE"
+    }
+
     struct Colors {
         static let kaki = "kaki"
         static let pink = "pink"
@@ -63,6 +76,7 @@ struct K {
         static let reloadSettings = "reloadSettings"
         static let homeVC = "homeVC"
         static let bookToResults = "bookToResults"
+        static let credits = "settingsToCredits"
     }
 
     struct Nibs {
@@ -85,6 +99,7 @@ struct K {
         static let bookshelfTitle = "bookshelfTitle"
         static let appSettingsTitle = "settings"
         static let radioButtonsTitle = "radioButtons"
+        static let creditsTitle = "creditsTitle"
     }
 
     struct LabelTexts {
