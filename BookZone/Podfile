@@ -19,5 +19,6 @@ target 'BookZone' do
    pod 'FaveButton'
    pod 'EasyTipView', '~> 2.0.4'
    pod 'SwipeCellKit'
+   pod 'SwiftyJSON', '~> 4.0'
 
 end

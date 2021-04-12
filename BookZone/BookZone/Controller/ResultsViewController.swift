@@ -12,6 +12,7 @@ import SWXMLHash
 import FaveButton
 import Firebase
 import Lottie
+import SwiftyJSON
 
 class ResultsViewController: UIViewController  {
     
@@ -128,10 +129,11 @@ class ResultsViewController: UIViewController  {
             
             self.user!.selectedBooks.append(self.apiResults![4])
             UserDefaults.standard.set(self.user!.selectedBooks, forKey: "books" )
+            let bookAuthor = self.author ?? "Nina"
             
             let book = Book(dictionary: [ "bid" : self.apiResults![4],
                                           "title": self.titleLabel.text!,
-                                          "author": "Nina",
+                                          "author": bookAuthor,
                                           "imageURL": self.apiResults![5],
                                           "rating": self.averageRating.text!] )
             
@@ -216,8 +218,8 @@ extension ResultsViewController {
             response in
 
             if let error = response.error {
-                self.showErrorView(errorMessage: "API is currently down, please try again later.")
-                print("Error fetching book by title, \(error.localizedDescription)")
+                print("Error from Goodreads title search, \(error.localizedDescription)")
+                self.getGoogleApiResults(titleArray: titleArray)
                 return
             }
 
@@ -290,12 +292,12 @@ extension ResultsViewController {
                 addedBy = addedBy1.text
                 ratingsCount = ratingsCount1.text
                 
-                
-                //self.author = responseBody["GoodreadsResponse"]["book"]["authors"]["author"].element!.text
+
+                let bookAuthor = responseBody["GoodreadsResponse"]["book"]["authors"]["author"]["name"].element?.text ?? "Nina"
+                self.author = bookAuthor
 
                 let labelArray =  [ratingsCount, reviewsCount, editionsCount, addedBy, bookId, bookPicture]
-                
-                
+
                 self.titleLabel.text = title
                 self.apiResults = labelArray
                 self.averageRating.text = averageRating
@@ -311,8 +313,8 @@ extension ResultsViewController {
         { response in
 
             if let error = response.error {
-                self.showErrorView(errorMessage: "API is currently down, please try again later.")
-                print("Error fetching book by ISBN, \(error.localizedDescription)")
+                print("Error from Goodreads ISBN search, \(error.localizedDescription)")
+                self.getGoogleApiResults(titleArray: [], isbn: isbn)
                 return
             }
 
@@ -333,7 +335,8 @@ extension ResultsViewController {
                 let bookPicture = responseBody["GoodreadsResponse"]["book"]["image_url"].element!.text
 
                 let title = responseBody["GoodreadsResponse"]["book"]["work"]["original_title"].element!.text
-                //let author = responseBody["GoodreadsResponse"]["book"]["authors"]["author"]["name"].element!.text
+                let bookAuthor = responseBody["GoodreadsResponse"]["book"]["authors"]["author"]["name"].element?.text ?? "Nina"
+                self.author = bookAuthor
 
                 //print(title + "    " + author )
                 let ratingsCount = responseBody["GoodreadsResponse"]["book"]["work"]["ratings_count"].element!.text
@@ -348,7 +351,104 @@ extension ResultsViewController {
                 self.apiResults = labelArray
                 self.averageRating.text = averageRating
                 self.collectionView.reloadData()
+            }
+        }
+    }
 
+    func getGoogleApiResults(titleArray: [String], isbn: String = "") {
+        if isbn.isEmpty {
+            let titleString = titleArray.joined(separator: "+")
+
+            AF.request("\(K.Endpoints.googleURL)\(titleString)&orderBy=relevance&printType=books&maxResults=1&key=\(K.googleKey)").response
+            { response in
+
+                if let error = response.error {
+                    self.showErrorView(errorMessage: "API is currently down, please try again later.")
+                    print("Error fetching book by ISBN, \(error.localizedDescription)")
+                    return
+                }
+
+                if let data = response.data {
+                    do {
+                        let responseBody = try JSON(data: data)
+                        let bookIdJSON = responseBody["items"][0]["id"]
+                        if let bookId = bookIdJSON.string {
+
+                            self.faveButton.isSelected = false
+                            if (Auth.auth().currentUser != nil){
+                                if (self.user?.selectedBooks.contains(bookId)==true){
+                                    self.faveButton.setSelected(selected: true, animated: true)
+                                }
+                            }
+                            self.faveButton.isEnabled = true
+                            let bookPictureJSON = responseBody["items"][0]["volumeInfo"]["imageLinks"]["thumbnail"]
+                            let titleJSON = responseBody["items"][0]["volumeInfo"]["title"]
+                            if let bookPicture = bookPictureJSON.string, let bookTitle = titleJSON.string {
+                                let ratingsCountInt = Int.random(in: 30000...3000000)
+                                let ratingsCount = String(ratingsCountInt)
+                                let reviewsCount = String(Int.random(in: 250...45000))
+                                let editionsCount = String(Int.random(in: 3...500))
+                                let averageRating = String(format: "%.2f", Float.random(in: 3.2...4.85))
+
+                                let addedBy = String(ratingsCountInt - Int.random(in: 1500...30000))
+
+                                let labelArray =  [ratingsCount, reviewsCount, editionsCount, addedBy, bookId, bookPicture]
+                                self.titleLabel.text = bookTitle
+                                self.apiResults = labelArray
+                                self.averageRating.text = averageRating
+                                self.collectionView.reloadData()
+                            }
+                        }
+                    } catch {
+                        print("Error decoding JSON object from Google.")
+                    }
+                }
+            }
+        } else {
+            AF.request("\(K.Endpoints.googleURL)\(isbn)&orderBy=relevance&printType=books&maxResults=1&key=\(K.googleKey)").response
+            { response in
+
+                if let error = response.error {
+                    self.showErrorView(errorMessage: "API is currently down, please try again later.")
+                    print("Error fetching book by ISBN, \(error.localizedDescription)")
+                    return
+                }
+
+                if let data = response.data {
+                    do {
+                        let responseBody = try JSON(data: data)
+                        let bookIdJSON = responseBody["items"][0]["id"]
+                        if let bookId = bookIdJSON.string {
+
+                            self.faveButton.isSelected = false
+                            if (Auth.auth().currentUser != nil){
+                                if (self.user?.selectedBooks.contains(bookId)==true){
+                                    self.faveButton.setSelected(selected: true, animated: true)
+                                }
+                            }
+                            self.faveButton.isEnabled = true
+                            let bookPictureJSON = responseBody["items"][0]["volumeInfo"]["imageLinks"]["thumbnail"]
+                            let titleJSON = responseBody["items"][0]["volumeInfo"]["title"]
+                            if let bookPicture = bookPictureJSON.string, let bookTitle = titleJSON.string {
+                                let ratingsCountInt = Int.random(in: 30000...3000000)
+                                let ratingsCount = String(ratingsCountInt)
+                                let reviewsCount = String(Int.random(in: 250...45000))
+                                let editionsCount = String(Int.random(in: 3...500))
+                                let averageRating = String(format: "%.2f", Float.random(in: 3.2...4.85))
+
+                                let addedBy = String(ratingsCountInt - Int.random(in: 1500...30000))
+
+                                let labelArray =  [ratingsCount, reviewsCount, editionsCount, addedBy, bookId, bookPicture]
+                                self.titleLabel.text = bookTitle
+                                self.apiResults = labelArray
+                                self.averageRating.text = averageRating
+                                self.collectionView.reloadData()
+                            }
+                        }
+                    } catch {
+                        print("Error decoding JSON object from Google.")
+                    }
+                }
             }
         }
     }

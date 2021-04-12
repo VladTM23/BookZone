@@ -344,6 +344,7 @@ PODS:
   - SDWebImage (4.4.8):
     - SDWebImage/Core (= 4.4.8)
   - SDWebImage/Core (4.4.8)
+  - SwiftyJSON (4.3.0)
   - SwipeCellKit (2.7.1)
   - SWXMLHash (5.0.1)
 
@@ -359,6 +360,7 @@ DEPENDENCIES:
   - JGProgressHUD (~> 2.0.3)
   - lottie-ios
   - SDWebImage (~> 4.4.2)
+  - SwiftyJSON (~> 4.0)
   - SwipeCellKit
   - SWXMLHash (~> 5.0.0)
 
@@ -389,6 +391,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SDWebImage
+    - SwiftyJSON
     - SwipeCellKit
     - SWXMLHash
 
@@ -418,9 +421,10 @@ SPEC CHECKSUMS:
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
   SWXMLHash: 9cc0c2e4807926c74377724aa8722ee5707a0485
 
-PODFILE CHECKSUM: 249c93b1b5f2099d5b5409fab0accecef551a031
+PODFILE CHECKSUM: 1fff238c631d7e15f6dd349501acc09ee646c77d
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

@@ -87,7 +87,7 @@ extension BookShelfViewController: UICollectionViewDataSource, UICollectionViewD
                 let bookID = cell.bookshelfCell.bookID.text!
                 let index1 = UserDefaults.standard.stringArray(forKey : "readBooks")!.firstIndex(of: bookID)
                 
-                if index1 == nil{
+                if index1 == nil {
                 if let index = UserDefaults.standard.stringArray(forKey : "books")!.firstIndex(of: bookID) {
                     self.user!.selectedBooks.remove(at: index)
                     
@@ -238,7 +238,7 @@ extension BookShelfViewController: UICollectionViewDataSource, UICollectionViewD
         
         
         cell.delegate = self
-        cell.bookshelfCell.bookAuthor.text = "Ale"
+        cell.bookshelfCell.bookAuthor.text = books?[indexPath.item].author
         cell.bookshelfCell.bookCover.sd_setImage(with: URL(string: (books?[indexPath.item].imageURL)!))
         cell.bookshelfCell.bookTitle.text = books?[indexPath.item].title
         cell.bookshelfCell.bookRating.text = books?[indexPath.item].rating

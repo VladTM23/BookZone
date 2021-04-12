@@ -16,6 +16,7 @@ let COLLECTION_BOOKS = Firestore.firestore().collection("books")
 struct K {
     static let key = "RNsVx8TWoCWvPVwuzzV4A"
     static let secret = "rBBSJQtj0PjyIZ4uTi33tESjTvRZ6EKYFkCnbBGiyg"
+    static let googleKey = "AIzaSyAPLl-ny-q-ePxYWxJS5m9suXfGKAgoafk"
 
     struct UserKeys {
         static let tutorialCompleted = "tutorialCompleted"
@@ -28,6 +29,7 @@ struct K {
     struct Endpoints {
         static let isbnURL = "https://www.goodreads.com/book/isbn/"
         static let titleURL = "https://www.goodreads.com/book/title.xml?"
+        static let googleURL = "https://www.googleapis.com/books/v1/volumes?q="
     }
 
     struct Colors {
