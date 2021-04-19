@@ -83,7 +83,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     @IBAction func mainCameraTapped(_ sender: Any) {
         present(imagePicker, animated: true, completion: nil)
-             }
+    }
 
     @IBAction func searchButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: K.Identifiers.searchVCIdentifier, sender: self)
@@ -98,19 +98,11 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
 
     @IBAction func settingsButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: K.Identifiers.goToSettings, sender: self)
+        performSegue(withIdentifier: K.Identifiers.goToMenu, sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == K.Identifiers.resultsVCIdentifier {
-            let resultsVC = segue.destination as! ResultsViewController
-            resultsVC.titleLabelVar = bookTitle
-            resultsVC.titleArray = bookTitleArray
-        }
-        
-        else if segue.identifier == K.Identifiers.radioButtonsIdentifier {
-            
+        if segue.identifier == K.Identifiers.radioButtonsIdentifier {
             let radioVC = segue.destination as! RadioButtonsViewController
             radioVC.titleArray = bookTitleArray
             radioVC.titleString = bookTitle

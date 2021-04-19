@@ -52,7 +52,6 @@ struct K {
     }
     
     struct Identifiers {
-        static let resultsVCIdentifier = "goToResults"
         static let infoVCIdentifier = "goToInfo"
         static let searchVCIdentifier = "goToSearch"
         static let resultVCIdentifierFromSearch = "goToResultFromSearch"
@@ -76,7 +75,8 @@ struct K {
         static let reloadSettings = "reloadSettings"
         static let homeVC = "homeVC"
         static let bookToResults = "bookToResults"
-        static let credits = "settingsToCredits"
+        static let goToCredits = "goToCredits"
+        static let goToMenu = "goToMenu"
     }
 
     struct Nibs {
@@ -100,6 +100,7 @@ struct K {
         static let appSettingsTitle = "settings"
         static let radioButtonsTitle = "radioButtons"
         static let creditsTitle = "creditsTitle"
+        static let menuTitle = "menuTitle"
     }
 
     struct LabelTexts {

@@ -14,10 +14,6 @@ class AppSettingsViewController: UIViewController {
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var languageDropdown: Dropdown!
     @IBOutlet weak var appPrefferedLanguageLabel: UILabel!
-    @IBOutlet weak var tutorialLabel: UILabel!
-    @IBOutlet weak var tutorialButton: UIButton!
-    @IBOutlet weak var creditsLabel: UILabel!
-    @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var doneToolbar: UIToolbar!
     @IBOutlet weak var userLanguagePicker: UIPickerView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -50,17 +46,8 @@ class AppSettingsViewController: UIViewController {
     }
 
     private func configureLabels() {
-        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-        let build = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as? String
-
         languageLabel.text = NSLocalizedString("language", comment: "")
         appPrefferedLanguageLabel.text = NSLocalizedString("prefLanguage", comment: "")
-        tutorialButton.setTitle(NSLocalizedString("goToTutorial", comment: ""), for: .normal)
-        creditsLabel.text = NSLocalizedString("credits", comment: "")
-        creditsLabel.isUserInteractionEnabled = true
-        versionLabel.text = "\(NSLocalizedString("versions", comment: "")) \(appVersion!) (\(build!))"
-
-        creditsAction()
     }
 
     private func configureDropdown() {
@@ -90,18 +77,7 @@ class AppSettingsViewController: UIViewController {
         self.userLanguagePicker.selectRow(userLanguageRow, inComponent: 0, animated: false)
     }
 
-    private func creditsAction() {
-        let creditsTap = UITapGestureRecognizer(target: self, action: #selector(creditsTapped))
-
-        creditsLabel.addGestureRecognizer(creditsTap)
-    }
-
     //MARK: - Actions
-
-    @objc func creditsTapped() {
-        performSegue(withIdentifier: K.Identifiers.credits, sender: self)
-    }
-
     @objc func userLanguageDropdownPressed() {
         configurePickerViews()
         doneToolbar.isHidden = !doneToolbar.isHidden
@@ -112,10 +88,6 @@ class AppSettingsViewController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
-    }
-
-    @IBAction func redoTutorial(_ sender: Any) {
-        performSegue(withIdentifier: K.Identifiers.redoTutorial, sender: self)
     }
 
     @IBAction func doneButtonPressed(_ sender: Any) {

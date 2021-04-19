@@ -18,13 +18,14 @@
 "bookshelfTitle" = "My bookshelf";
 "radioButtons" = "Confirm book title";
 "creditsTitle" = "Credits";
+"menuTitle" = "Main menu";
 
 //Labels
 
 "language" = "Language";
 "prefLanguage" = "Chose preffered application language";
 "credits" = "Credits";
-"versions" = "Version";
+"versions" = "Bookzone version";
 "noText" = "No text detected";
 "savingImage" = "Saving image";
 "savingData" = "Saving Your Data";
@@ -59,6 +60,11 @@
 "email" = "Email";
 "fullname" = "Full Name";
 "password" = "Password";
+
+//Menu
+
+"redoTutorial" = "Redo tutorial";
+"bookClubs" = "Book Clubs";
 
 //Errors
 

@@ -69,6 +69,8 @@
 		F59C592F25602C5D00D6D708 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C592E25602C5C00D6D708 /* SettingsViewController.swift */; };
 		F59C59DA2560466200D6D708 /* UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C59D92560466200D6D708 /* UIResponder.swift */; };
 		F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */; };
+		F5D72348262DDD3D00F58DD1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D72347262DDD3D00F58DD1 /* MenuViewController.swift */; };
+		F5D7234B262DF20700F58DD1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7234A262DF20700F58DD1 /* UIView.swift */; };
 		F5DEC1B32624A31E006A2C44 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEC1B22624A31E006A2C44 /* CreditsViewController.swift */; };
 		F5F9D2A124FB99B8002F4C1D /* 11793-books-stack.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F9D2A024FB99B8002F4C1D /* 11793-books-stack.json */; };
 /* End PBXBuildFile section */
@@ -149,6 +151,8 @@
 		F59C592E25602C5C00D6D708 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F59C59D92560466200D6D708 /* UIResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponder.swift; sourceTree = "<group>"; };
 		F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F5D72347262DDD3D00F58DD1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		F5D7234A262DF20700F58DD1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		F5DEC1B22624A31E006A2C44 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		F5F9D2A024FB99B8002F4C1D /* 11793-books-stack.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "11793-books-stack.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -281,6 +285,7 @@
 				718356B6256121BB000CC0DF /* BookShelfViewController.swift */,
 				F524A0382575321C0024E985 /* AppSettingsViewController.swift */,
 				F5DEC1B22624A31E006A2C44 /* CreditsViewController.swift */,
+				F5D72347262DDD3D00F58DD1 /* MenuViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 				F59C59D92560466200D6D708 /* UIResponder.swift */,
 				F524A0432575395D0024E985 /* Localization.swift */,
 				F524A08425754CC00024E985 /* ScrollView.swift */,
+				F5D7234A262DF20700F58DD1 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -542,6 +548,7 @@
 				71614A4D24FA4A4B0038A8B7 /* FirstPageScroll.swift in Sources */,
 				F59C5852255FD3E700D6D708 /* Service.swift in Sources */,
 				718356B7256121BB000CC0DF /* BookShelfViewController.swift in Sources */,
+				F5D72348262DDD3D00F58DD1 /* MenuViewController.swift in Sources */,
 				F59C592925602B6E00D6D708 /* SettingsFooter.swift in Sources */,
 				F59C582E255FCF0D00D6D708 /* AuthButton.swift in Sources */,
 				F57D29DE24E278400001D4C4 /* ResultsViewController.swift in Sources */,
@@ -553,6 +560,7 @@
 				F57D29DA24E278400001D4C4 /* AppDelegate.swift in Sources */,
 				F55CAABD25FB5E9200287FB9 /* ReachabilityManager.swift in Sources */,
 				F59C584F255FD38400D6D708 /* AuthService.swift in Sources */,
+				F5D7234B262DF20700F58DD1 /* UIView.swift in Sources */,
 				7106C77524E6E9C300D3D29C /* InfoViewController.swift in Sources */,
 				F524A0442575395D0024E985 /* Localization.swift in Sources */,
 				71E4321024EFC3840099312F /* SearchBar.swift in Sources */,
