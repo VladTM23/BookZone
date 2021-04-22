@@ -100,7 +100,6 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" name="kaki"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="d1B-HI-XLL" secondAttribute="trailing" id="8oE-4X-BgY"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="d1B-HI-XLL" secondAttribute="bottom" id="D4a-zf-TqA"/>
@@ -113,9 +112,6 @@
     </objects>
     <resources>
         <image name="backIcon" width="17" height="30"/>
-        <namedColor name="kaki">
-            <color red="0.51800000667572021" green="0.66299998760223389" blue="0.67500001192092896" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <namedColor name="pink">
             <color red="0.85100001096725464" green="0.67799997329711914" blue="0.67799997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

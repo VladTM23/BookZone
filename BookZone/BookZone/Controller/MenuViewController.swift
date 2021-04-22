@@ -62,6 +62,8 @@ class MenuViewController: UIViewController {
     }
 
     @IBAction func bookClubButtonPressed(_ sender: UIButton) {
-        sender.showAnimation {}
+        sender.showAnimation {
+            self.performSegue(withIdentifier: K.Identifiers.goToBookClubs, sender: self)
+        }
     }
 }

@@ -68,6 +68,9 @@
 		F59C592C25602BCB00D6D708 /* SettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C592B25602BCB00D6D708 /* SettingsHeader.swift */; };
 		F59C592F25602C5D00D6D708 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C592E25602C5C00D6D708 /* SettingsViewController.swift */; };
 		F59C59DA2560466200D6D708 /* UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C59D92560466200D6D708 /* UIResponder.swift */; };
+		F5C45CC22631E68300248F6E /* BookClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C45CC12631E68300248F6E /* BookClubViewController.swift */; };
+		F5C45CC62631E6A800248F6E /* ActiveBookClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C45CC52631E6A800248F6E /* ActiveBookClubsViewController.swift */; };
+		F5C45CC92631E6B400248F6E /* ExpiredBookClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C45CC82631E6B400248F6E /* ExpiredBookClubsViewController.swift */; };
 		F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */; };
 		F5D72348262DDD3D00F58DD1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D72347262DDD3D00F58DD1 /* MenuViewController.swift */; };
 		F5D7234B262DF20700F58DD1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7234A262DF20700F58DD1 /* UIView.swift */; };
@@ -150,6 +153,9 @@
 		F59C592B25602BCB00D6D708 /* SettingsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeader.swift; sourceTree = "<group>"; };
 		F59C592E25602C5C00D6D708 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F59C59D92560466200D6D708 /* UIResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponder.swift; sourceTree = "<group>"; };
+		F5C45CC12631E68300248F6E /* BookClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookClubViewController.swift; sourceTree = "<group>"; };
+		F5C45CC52631E6A800248F6E /* ActiveBookClubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveBookClubsViewController.swift; sourceTree = "<group>"; };
+		F5C45CC82631E6B400248F6E /* ExpiredBookClubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredBookClubsViewController.swift; sourceTree = "<group>"; };
 		F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F5D72347262DDD3D00F58DD1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F5D7234A262DF20700F58DD1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -274,6 +280,7 @@
 		F57D29F024E278690001D4C4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F5C45CC02631E67000248F6E /* BookClub */,
 				F59C5823255FCE0600D6D708 /* Authentication */,
 				F57D29DD24E278400001D4C4 /* ResultsViewController.swift */,
 				F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */,
@@ -412,6 +419,16 @@
 				F59C592B25602BCB00D6D708 /* SettingsHeader.swift */,
 			);
 			path = ProfileSettings;
+			sourceTree = "<group>";
+		};
+		F5C45CC02631E67000248F6E /* BookClub */ = {
+			isa = PBXGroup;
+			children = (
+				F5C45CC12631E68300248F6E /* BookClubViewController.swift */,
+				F5C45CC52631E6A800248F6E /* ActiveBookClubsViewController.swift */,
+				F5C45CC82631E6B400248F6E /* ExpiredBookClubsViewController.swift */,
+			);
+			path = BookClub;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -559,6 +576,7 @@
 				F547E44E25370AED002E6E21 /* LoginViewController.swift in Sources */,
 				F57D29DA24E278400001D4C4 /* AppDelegate.swift in Sources */,
 				F55CAABD25FB5E9200287FB9 /* ReachabilityManager.swift in Sources */,
+				F5C45CC62631E6A800248F6E /* ActiveBookClubsViewController.swift in Sources */,
 				F59C584F255FD38400D6D708 /* AuthService.swift in Sources */,
 				F5D7234B262DF20700F58DD1 /* UIView.swift in Sources */,
 				7106C77524E6E9C300D3D29C /* InfoViewController.swift in Sources */,
@@ -572,6 +590,7 @@
 				F57D29DC24E278400001D4C4 /* SceneDelegate.swift in Sources */,
 				F55CAAC125FB5FBD00287FB9 /* Reachability.swift in Sources */,
 				F59C5825255FCE5200D6D708 /* CustomTextField.swift in Sources */,
+				F5C45CC92631E6B400248F6E /* ExpiredBookClubsViewController.swift in Sources */,
 				F547E44B25370AD1002E6E21 /* RegisterViewController.swift in Sources */,
 				F59C592F25602C5D00D6D708 /* SettingsViewController.swift in Sources */,
 				71614A5324FA5CEA0038A8B7 /* SecondPageScroll.swift in Sources */,
@@ -587,6 +606,7 @@
 				7143BC5525602B1E0018CFAB /* BookShelfCell.swift in Sources */,
 				F59C59DA2560466200D6D708 /* UIResponder.swift in Sources */,
 				F524A0392575321C0024E985 /* AppSettingsViewController.swift in Sources */,
+				F5C45CC22631E68300248F6E /* BookClubViewController.swift in Sources */,
 				7191442D25627BED005EF4F1 /* Book.swift in Sources */,
 				F57D29F624E279C00001D4C4 /* AppleTextRecognizer.swift in Sources */,
 				F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */,

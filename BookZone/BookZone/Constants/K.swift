@@ -43,6 +43,7 @@ struct K {
         static let easyTipViewURL = "https://github.com/teodorpatras/EasyTipView/blob/master/LICENSE"
         static let swipeCellKitURL = "https://github.com/SwipeCellKit/SwipeCellKit/blob/develop/LICENSE"
         static let swiftyJSONURL = "https://github.com/SwiftyJSON/SwiftyJSON/blob/master/LICENSE"
+        static let parchmentURL = "https://github.com/rechsteiner/Parchment/blob/master/LICENSE"
     }
 
     struct Colors {
@@ -77,6 +78,7 @@ struct K {
         static let bookToResults = "bookToResults"
         static let goToCredits = "goToCredits"
         static let goToMenu = "goToMenu"
+        static let goToBookClubs = "goToBookClubs"
     }
 
     struct Nibs {
@@ -101,6 +103,7 @@ struct K {
         static let radioButtonsTitle = "radioButtons"
         static let creditsTitle = "creditsTitle"
         static let menuTitle = "menuTitle"
+        static let bookClubs = "bookClubs"
     }
 
     struct LabelTexts {
