@@ -27,7 +27,7 @@
             <objects>
                 <viewController storyboardIdentifier="resultsVC" id="BYZ-38-t0r" customClass="ResultsViewController" customModule="BookZone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeC-pJ-cLC" userLabel="NavBarView" customClass="NavbarView" customModule="BookZone" customModuleProvider="target">
@@ -37,7 +37,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAn-cc-Z8q" userLabel="GeneralView">
-                                <rect key="frame" x="0.0" y="137" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="137" width="375" height="587"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRx-HD-kFb" userLabel="ErrorView" customClass="AnimationView" customModule="Lottie">
                                         <rect key="frame" x="20" y="100" width="335" height="190"/>
@@ -67,7 +67,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrI-kO-53s">
-                                <rect key="frame" x="0.0" y="137" width="375" height="675"/>
+                                <rect key="frame" x="0.0" y="137" width="375" height="621"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRc-uN-94X" userLabel="ContainerScrollView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
@@ -482,22 +482,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXe-h8-BqQ" customClass="NavbarView" customModule="BookZone" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="-28" width="375" height="165"/>
+                                <rect key="frame" x="0.0" y="-2" width="375" height="165"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="165" id="q24-wV-g62"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5qX-AB-mpT" userLabel="ContentView">
+                                <rect key="frame" x="0.0" y="163" width="375" height="649"/>
+                            </view>
+                            <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EE1-Hr-knW" userLabel="Separator">
+                                <rect key="frame" x="0.0" y="138" width="375" height="3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="IYC-76-gpw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Ia-bt-esz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="kaki"/>
                         <constraints>
-                            <constraint firstItem="HXe-h8-BqQ" firstAttribute="top" secondItem="Bo4-5y-Fa0" secondAttribute="top" constant="-28" id="UuL-l2-pEJ"/>
+                            <constraint firstItem="EE1-Hr-knW" firstAttribute="leading" secondItem="5Ia-bt-esz" secondAttribute="leading" id="8uH-9M-DzL"/>
+                            <constraint firstItem="5qX-AB-mpT" firstAttribute="top" secondItem="HXe-h8-BqQ" secondAttribute="bottom" id="Hg3-eb-m5E"/>
+                            <constraint firstItem="5Ia-bt-esz" firstAttribute="trailing" secondItem="EE1-Hr-knW" secondAttribute="trailing" id="KrZ-DA-d0f"/>
+                            <constraint firstItem="5qX-AB-mpT" firstAttribute="leading" secondItem="5Ia-bt-esz" secondAttribute="leading" id="Ueq-9F-JlL"/>
+                            <constraint firstItem="HXe-h8-BqQ" firstAttribute="top" secondItem="Bo4-5y-Fa0" secondAttribute="top" constant="-2" id="UuL-l2-pEJ"/>
+                            <constraint firstItem="EE1-Hr-knW" firstAttribute="top" secondItem="5qX-AB-mpT" secondAttribute="top" constant="-25" id="V5h-vb-dfj"/>
                             <constraint firstItem="HXe-h8-BqQ" firstAttribute="trailing" secondItem="5Ia-bt-esz" secondAttribute="trailing" id="ZUF-Rg-gcw"/>
+                            <constraint firstItem="5Ia-bt-esz" firstAttribute="trailing" secondItem="5qX-AB-mpT" secondAttribute="trailing" id="hhF-ql-t5E"/>
                             <constraint firstItem="HXe-h8-BqQ" firstAttribute="leading" secondItem="5Ia-bt-esz" secondAttribute="leading" id="tL8-uy-l6B"/>
+                            <constraint firstAttribute="bottom" secondItem="5qX-AB-mpT" secondAttribute="bottom" id="zaG-KB-yn1"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="contentView" destination="5qX-AB-mpT" id="urT-3J-YaV"/>
                         <outlet property="navbarView" destination="HXe-h8-BqQ" id="OgG-rZ-Fev"/>
+                        <outlet property="separatorView" destination="EE1-Hr-knW" id="e52-tT-ihK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HEd-sn-BZe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -507,12 +526,12 @@
         <!--Active Book Clubs View Controller-->
         <scene sceneID="Odb-zc-Kvy">
             <objects>
-                <viewController id="CPh-LY-UpO" customClass="ActiveBookClubsViewController" customModule="BookZone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="activeBookClubs" id="CPh-LY-UpO" customClass="ActiveBookClubsViewController" customModule="BookZone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dtl-1n-4ib">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="56W-Nt-Kzc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="kaki"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxn-9o-y1E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -522,12 +541,12 @@
         <!--Expired Book Clubs View Controller-->
         <scene sceneID="wdV-aM-sIk">
             <objects>
-                <viewController id="jAC-r4-Y2A" customClass="ExpiredBookClubsViewController" customModule="BookZone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="expiredBookClubs" id="jAC-r4-Y2A" customClass="ExpiredBookClubsViewController" customModule="BookZone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="86F-H3-gfv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="AfU-MH-KwP"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="kaki"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z3U-Bg-M3m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1838,7 +1857,7 @@
         <segue reference="Jdr-OT-0Zz"/>
         <segue reference="vTQ-5G-ykn"/>
         <segue reference="13l-71-1Fs"/>
-        <segue reference="12h-vl-f4q"/>
+        <segue reference="gp2-u7-Y27"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BookZone" width="1325" height="903"/>

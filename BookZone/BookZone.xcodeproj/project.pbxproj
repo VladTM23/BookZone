@@ -44,6 +44,7 @@
 		F547E42C2536E188002E6E21 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547E42B2536E188002E6E21 /* WelcomeViewController.swift */; };
 		F547E44B25370AD1002E6E21 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547E44A25370AD1002E6E21 /* RegisterViewController.swift */; };
 		F547E44E25370AED002E6E21 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547E44D25370AED002E6E21 /* LoginViewController.swift */; };
+		F553F48026341957009C1195 /* CustomPagingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F553F47F26341957009C1195 /* CustomPagingIndicator.swift */; };
 		F55CAABD25FB5E9200287FB9 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55CAABC25FB5E9200287FB9 /* ReachabilityManager.swift */; };
 		F55CAAC125FB5FBD00287FB9 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55CAAC025FB5FBD00287FB9 /* Reachability.swift */; };
 		F55CAAC725FB75AE00287FB9 /* 38463-error.json in Resources */ = {isa = PBXBuildFile; fileRef = F55CAAC325FB6C7F00287FB9 /* 38463-error.json */; };
@@ -126,6 +127,7 @@
 		F547E42B2536E188002E6E21 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F547E44A25370AD1002E6E21 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F547E44D25370AED002E6E21 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F553F47F26341957009C1195 /* CustomPagingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPagingIndicator.swift; sourceTree = "<group>"; };
 		F55CAABC25FB5E9200287FB9 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		F55CAAC025FB5FBD00287FB9 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		F55CAAC325FB6C7F00287FB9 /* 38463-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "38463-error.json"; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 				7143BC5425602B1E0018CFAB /* BookShelfCell.swift */,
 				718356BE25613228000CC0DF /* BookShelfCollectionViewCell.swift */,
 				F524A03E257537EF0024E985 /* Dropdown.swift */,
+				F553F47F26341957009C1195 /* CustomPagingIndicator.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				7165F0F22565786600E21DDD /* Shared.swift in Sources */,
 				F59C5829255FCE8700D6D708 /* Constraints.swift in Sources */,
 				71B7836924F538D300E47CE2 /* RadioButtonsViewController.swift in Sources */,
+				F553F48026341957009C1195 /* CustomPagingIndicator.swift in Sources */,
 				71E4320824EABE060099312F /* ResultCardView.swift in Sources */,
 				F524A08525754CC00024E985 /* ScrollView.swift in Sources */,
 				71B7836724F5384300E47CE2 /* RadioButtonCollectionViewCell.swift in Sources */,
