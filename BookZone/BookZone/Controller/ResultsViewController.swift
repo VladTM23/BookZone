@@ -23,6 +23,7 @@ class ResultsViewController: UIViewController  {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var faveButton: FaveButton!
     @IBOutlet weak var addToBookshelfLabel: UILabel!
+    @IBOutlet weak var bookClubInviteButton: UIButton!
 
     @IBOutlet weak var generalErrorView: AnimationView!
     @IBOutlet weak var errorLabel: UILabel!
@@ -84,6 +85,7 @@ class ResultsViewController: UIViewController  {
         
         configureNavbar()
         configureErrorAnimation()
+        configureBookClubButton()
         if !ReachabilityManager.shared.hasConnectivity() {
             showErrorView(errorMessage: K.Errors.internetError)
         } else {
@@ -111,6 +113,12 @@ class ResultsViewController: UIViewController  {
         generalErrorView.isHidden = false
         errorLabel.isHidden = false
         errorLabel.text = NSLocalizedString(errorMessage, comment: "")
+    }
+
+    private func configureBookClubButton() {
+        bookClubInviteButton.setTitle(NSLocalizedString(K.ButtonTiles.createBookClubEvent, comment: ""), for: .normal)
+        bookClubInviteButton.layer.cornerRadius = bookClubInviteButton.frame.height / 2.0
+        bookClubInviteButton.clipsToBounds = true
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -200,6 +208,12 @@ class ResultsViewController: UIViewController  {
             if error != nil {
                 print("Error when adding bookId to user, \(error?.localizedDescription)")
             }
+        }
+    }
+
+    @IBAction func bookClubInviteButtonPressed(_ sender: UIButton) {
+        sender.showAnimation {
+            self.performSegue(withIdentifier: K.Identifiers.bookToInvite, sender: self)
         }
     }
 }

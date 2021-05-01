@@ -124,6 +124,10 @@ struct K {
         static let invalidISBNStringPlaceholder = "invalidISBN"
     }
 
+    struct ButtonTiles {
+        static let createBookClubEvent = "createBookClubEvent"
+    }
+
     struct ImageNames {
         static let yellowBackground = "yellowCardBackground"
         static let pinkBackground = "pinkCardBackground"
