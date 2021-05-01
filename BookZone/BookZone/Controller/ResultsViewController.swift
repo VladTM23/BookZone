@@ -96,6 +96,7 @@ class ResultsViewController: UIViewController  {
 
     func configureNavbar() {
         navbarView.titleLabelNavbar.text = NSLocalizedString(K.NavbarTitles.resultsTitle, comment: "")
+        navbarView.closeButton.isHidden = false
     }
 
     func configureErrorAnimation() {

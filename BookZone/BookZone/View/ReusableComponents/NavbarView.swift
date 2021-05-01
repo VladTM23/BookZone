@@ -15,7 +15,8 @@ class NavbarView: UIView {
     @IBOutlet weak var titleLabelNavbar: UILabel!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var countLabel: UILabel!
-    
+    @IBOutlet weak var closeButton: UIButton!
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
@@ -41,4 +42,16 @@ class NavbarView: UIView {
         guard let parentVC = self.getOwningViewController() else { return }
         parentVC.dismiss(animated: true, completion: nil)
     }
+
+    @IBAction func closeButtonPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let homeScreen = storyboard.instantiateViewController(withIdentifier:
+                                                                K.Identifiers.homeVC)
+        homeScreen.modalPresentationStyle = .fullScreen
+        UIApplication.shared.windows.first { $0.isKeyWindow }?.rootViewController =
+            storyboard.instantiateInitialViewController()
+        UIApplication.shared.windows.first { $0.isKeyWindow }?.rootViewController?.present(
+            homeScreen, animated: false, completion: nil)
+    }
+
 }

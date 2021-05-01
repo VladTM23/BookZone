@@ -44,6 +44,7 @@
 		F547E42C2536E188002E6E21 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547E42B2536E188002E6E21 /* WelcomeViewController.swift */; };
 		F547E44B25370AD1002E6E21 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547E44A25370AD1002E6E21 /* RegisterViewController.swift */; };
 		F547E44E25370AED002E6E21 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547E44D25370AED002E6E21 /* LoginViewController.swift */; };
+		F551085C263D2AFD00A0A21B /* BookClubInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F551085B263D2AFD00A0A21B /* BookClubInviteViewController.swift */; };
 		F553F48026341957009C1195 /* CustomPagingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F553F47F26341957009C1195 /* CustomPagingIndicator.swift */; };
 		F55CAABD25FB5E9200287FB9 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55CAABC25FB5E9200287FB9 /* ReachabilityManager.swift */; };
 		F55CAAC125FB5FBD00287FB9 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55CAAC025FB5FBD00287FB9 /* Reachability.swift */; };
@@ -127,6 +128,7 @@
 		F547E42B2536E188002E6E21 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F547E44A25370AD1002E6E21 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F547E44D25370AED002E6E21 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F551085B263D2AFD00A0A21B /* BookClubInviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookClubInviteViewController.swift; sourceTree = "<group>"; };
 		F553F47F26341957009C1195 /* CustomPagingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPagingIndicator.swift; sourceTree = "<group>"; };
 		F55CAABC25FB5E9200287FB9 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		F55CAAC025FB5FBD00287FB9 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				F5C45CC12631E68300248F6E /* BookClubViewController.swift */,
 				F5C45CC52631E6A800248F6E /* ActiveBookClubsViewController.swift */,
 				F5C45CC82631E6B400248F6E /* ExpiredBookClubsViewController.swift */,
+				F551085B263D2AFD00A0A21B /* BookClubInviteViewController.swift */,
 			);
 			path = BookClub;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				718356B7256121BB000CC0DF /* BookShelfViewController.swift in Sources */,
 				F5D72348262DDD3D00F58DD1 /* MenuViewController.swift in Sources */,
 				F59C592925602B6E00D6D708 /* SettingsFooter.swift in Sources */,
+				F551085C263D2AFD00A0A21B /* BookClubInviteViewController.swift in Sources */,
 				F59C582E255FCF0D00D6D708 /* AuthButton.swift in Sources */,
 				F57D29DE24E278400001D4C4 /* ResultsViewController.swift in Sources */,
 				F5DEC1B32624A31E006A2C44 /* CreditsViewController.swift in Sources */,

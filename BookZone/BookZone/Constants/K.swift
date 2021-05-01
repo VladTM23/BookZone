@@ -79,6 +79,7 @@ struct K {
         static let goToCredits = "goToCredits"
         static let goToMenu = "goToMenu"
         static let goToBookClubs = "goToBookClubs"
+        static let bookToInvite = "bookToInvite"
     }
 
     struct Nibs {
@@ -104,6 +105,7 @@ struct K {
         static let creditsTitle = "creditsTitle"
         static let menuTitle = "menuTitle"
         static let bookClubs = "bookClubs"
+        static let bookClubsInvite = "bookClubsInvite"
     }
 
     struct LabelTexts {

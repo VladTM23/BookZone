@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C5Y-gX-WDS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C5Y-gX-WDS">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -226,11 +226,43 @@
                         <outlet property="navbarView" destination="zeC-pJ-cLC" id="lo9-pS-W1B"/>
                         <outlet property="scrollView" destination="yrI-kO-53s" id="Y8d-wo-imd"/>
                         <outlet property="titleLabel" destination="wHh-91-tcE" id="AE4-Jh-slV"/>
+                        <segue destination="Hfd-oh-vdm" kind="presentation" identifier="bookToInvite" modalPresentationStyle="fullScreen" id="xPs-F8-VuD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-175" y="1631"/>
+        </scene>
+        <!--Book Club Invite View Controller-->
+        <scene sceneID="j52-pB-53T">
+            <objects>
+                <viewController storyboardIdentifier="bookClubInvite" id="Hfd-oh-vdm" customClass="BookClubInviteViewController" customModule="BookZone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="09J-tp-K60">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0U4-hI-fc6" customClass="NavbarView" customModule="BookZone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="-28" width="375" height="165"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="ZvA-QH-vxb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="icW-GY-lwd"/>
+                        <color key="backgroundColor" name="kaki"/>
+                        <constraints>
+                            <constraint firstItem="0U4-hI-fc6" firstAttribute="leading" secondItem="icW-GY-lwd" secondAttribute="leading" id="DjX-r6-tlz"/>
+                            <constraint firstItem="0U4-hI-fc6" firstAttribute="top" secondItem="09J-tp-K60" secondAttribute="top" constant="-28" id="jGB-nm-GeM"/>
+                            <constraint firstItem="0U4-hI-fc6" firstAttribute="trailing" secondItem="icW-GY-lwd" secondAttribute="trailing" id="oxd-Pf-OaB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navbarView" destination="0U4-hI-fc6" id="yRT-Lm-I7W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OuV-VN-PNX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1006" y="1631"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="edN-sG-fVQ">

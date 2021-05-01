@@ -9,5 +9,9 @@
 import UIKit
 
 class ExpiredBookClubsViewController: UIViewController {
-    
+
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
