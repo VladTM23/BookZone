@@ -206,4 +206,8 @@ extension AppSettingsViewController {
         UserDefaults.standard.set(shortLanguage, forKey: K.UserKeys.userShortLanguage)
         UserDefaults.standard.set(rowNumber, forKey: K.UserKeys.userLanguageRow)
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

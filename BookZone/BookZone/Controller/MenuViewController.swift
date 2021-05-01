@@ -66,4 +66,8 @@ class MenuViewController: UIViewController {
             self.performSegue(withIdentifier: K.Identifiers.goToBookClubs, sender: self)
         }
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

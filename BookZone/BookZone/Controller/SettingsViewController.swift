@@ -90,6 +90,10 @@ class SettingsViewController: UIViewController {
     func configureNavbar() {
         navbarView.titleLabelNavbar.text = NSLocalizedString(K.NavbarTitles.profileSettings, comment: "")
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
 //MARK: - UITableViewDataSource

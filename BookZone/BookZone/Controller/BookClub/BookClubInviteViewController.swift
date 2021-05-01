@@ -28,4 +28,8 @@ class BookClubInviteViewController: UIViewController {
         navbarView.titleLabelNavbar.text = NSLocalizedString(K.NavbarTitles.bookClubsInvite, comment: "")
         navbarView.closeButton.isHidden = false
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

@@ -113,6 +113,10 @@ class ResultsViewController: UIViewController  {
         errorLabel.text = NSLocalizedString(errorMessage, comment: "")
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     func fetchData() {
         if flag == false {
             getByTitle(titleArray: titleArray!, authorArray: [])
@@ -199,8 +203,6 @@ class ResultsViewController: UIViewController  {
         }
     }
 }
-
-
 
 
 //MARK: - API Extension GoodReads

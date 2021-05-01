@@ -90,6 +90,10 @@ class RadioButtonsViewController: UIViewController, UIImagePickerControllerDeleg
     @IBAction func retakePictureButtonPressed(_ sender: UIButton) {
         present(imagePicker, animated: true, completion: nil)
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
 //MARK: - UICollectionView

@@ -78,4 +78,8 @@ class BookClubViewController: UIViewController {
             pagingViewController.view.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -24)
         ])
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

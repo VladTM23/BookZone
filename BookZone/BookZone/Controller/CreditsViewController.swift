@@ -171,4 +171,8 @@ class CreditsViewController: UIViewController {
         let webVC = SFSafariViewController(url: URL(string: K.Documentation.parchmentURL)!)
         present(webVC, animated: true)
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

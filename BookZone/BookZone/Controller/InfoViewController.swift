@@ -44,4 +44,8 @@ class InfoViewController: UIViewController {
         UserDefaults.standard.set(true, forKey: K.UserKeys.tutorialCompleted)
         performSegue(withIdentifier: K.Identifiers.getStarted, sender: self)
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
