@@ -19,6 +19,7 @@
                 <outlet property="backButton" destination="reu-LG-EwW" id="X3G-Ls-dWi"/>
                 <outlet property="closeButton" destination="XZE-5T-b3F" id="efn-qo-ENw"/>
                 <outlet property="countLabel" destination="CoI-Yw-S88" id="Hrl-Gh-qPp"/>
+                <outlet property="subtitleLabel" destination="CoI-Yw-S88" id="YoR-yX-iUb"/>
                 <outlet property="titleLabelNavbar" destination="pIf-2Y-mbQ" id="pg5-MM-Psl"/>
             </connections>
         </placeholder>
@@ -70,9 +71,9 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoI-Yw-S88" userLabel="Subtitle">
-                                    <rect key="frame" x="186" y="136" width="42" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <rect key="frame" x="187.5" y="136" width="39.5" height="19"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                    <color key="textColor" name="darkGreen"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -81,7 +82,7 @@
                                 <constraint firstItem="pIf-2Y-mbQ" firstAttribute="centerY" secondItem="reu-LG-EwW" secondAttribute="centerY" id="Pcm-ou-NZq"/>
                                 <constraint firstAttribute="bottom" secondItem="reu-LG-EwW" secondAttribute="bottom" constant="42" id="UmV-ix-TeS"/>
                                 <constraint firstItem="XZE-5T-b3F" firstAttribute="centerY" secondItem="pIf-2Y-mbQ" secondAttribute="centerY" id="Ymi-oG-3yP"/>
-                                <constraint firstAttribute="bottom" secondItem="CoI-Yw-S88" secondAttribute="bottom" constant="8" id="htS-6T-CZw"/>
+                                <constraint firstAttribute="bottom" secondItem="CoI-Yw-S88" secondAttribute="bottom" constant="10" id="htS-6T-CZw"/>
                                 <constraint firstItem="pIf-2Y-mbQ" firstAttribute="centerX" secondItem="30K-Go-KC2" secondAttribute="centerX" id="i73-Bc-jsO"/>
                                 <constraint firstAttribute="trailing" secondItem="XZE-5T-b3F" secondAttribute="trailing" constant="27" id="jTZ-kb-ZCH"/>
                                 <constraint firstItem="CoI-Yw-S88" firstAttribute="centerX" secondItem="30K-Go-KC2" secondAttribute="centerX" id="oOi-He-QH8"/>
@@ -130,6 +131,9 @@
     <resources>
         <image name="backIcon" width="17" height="30"/>
         <image name="close" width="27" height="27"/>
+        <namedColor name="darkGreen">
+            <color red="0.32899999618530273" green="0.4309999942779541" blue="0.4779999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="pink">
             <color red="0.85100001096725464" green="0.67799997329711914" blue="0.67799997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

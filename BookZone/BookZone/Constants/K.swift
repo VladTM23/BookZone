@@ -80,6 +80,7 @@ struct K {
         static let goToMenu = "goToMenu"
         static let goToBookClubs = "goToBookClubs"
         static let bookToInvite = "bookToInvite"
+        static let inviteToBookInfo = "inviteToBookInfo"
     }
 
     struct Nibs {
@@ -126,6 +127,7 @@ struct K {
 
     struct ButtonTiles {
         static let createBookClubEvent = "createBookClubEvent"
+        static let finishEditing = "finishEditing"
     }
 
     struct ImageNames {

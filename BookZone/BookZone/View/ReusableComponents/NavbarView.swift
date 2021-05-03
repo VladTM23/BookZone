@@ -16,7 +16,8 @@ class NavbarView: UIView {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var closeButton: UIButton!
-
+    @IBOutlet weak var subtitleLabel: UILabel!
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()

@@ -216,6 +216,16 @@ class ResultsViewController: UIViewController  {
             self.performSegue(withIdentifier: K.Identifiers.bookToInvite, sender: self)
         }
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.Identifiers.bookToInvite {
+            let bookClubInviteVC = segue.destination as! BookClubInviteViewController
+            bookClubInviteVC.bookTitle = self.titleLabel.text ?? "No book title"
+            if let apiResults = self.apiResults {
+                bookClubInviteVC.bookCoverUrl = apiResults[5]
+            }
+        }
+    }
 }
 
 
