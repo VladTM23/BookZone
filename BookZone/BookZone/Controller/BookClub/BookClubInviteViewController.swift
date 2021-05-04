@@ -33,12 +33,25 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var setPlatformButton: UIButton!
     @IBOutlet weak var inviteLinkPlaceholder: UILabel!
     @IBOutlet weak var inviteLinkTextfield: UITextField!
+    @IBOutlet weak var eventDatePickerContainer: UIView!
+    @IBOutlet weak var eventDateDoneButton: UIButton!
+    @IBOutlet weak var eventDateSelectLabel: UILabel!
+    @IBOutlet weak var platformPickerContainer: UIView!
+    @IBOutlet weak var platformSelectDoneButton: UIButton!
+    @IBOutlet weak var platformSelectLabel: UILabel!
+    @IBOutlet weak var blurView: UIView!
 
     @IBOutlet weak var bookCoverBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var mainViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var platformPickerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var eventPickerBottomConstraint: NSLayoutConstraint!
 
     var bookTitle: String?
     var bookCoverUrl: String?
+
+    fileprivate var platformPicker: UIPickerView!
+    fileprivate var eventDatePicker: UIDatePicker!
+    private let platformsArray: [String] = Platforms.platformsArray
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -54,6 +67,7 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
         configureBookCover()
         configureBookCoverGesture()
         configureFinishEditingButton()
+        configurePickers()
     }
 
     private func configureNavbar() {
@@ -78,6 +92,24 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
         finishEditingButton.setTitle(NSLocalizedString(K.ButtonTiles.finishEditing, comment: ""), for: .normal)
         finishEditingButton.layer.cornerRadius = finishEditingButton.frame.height / 2.0
         finishEditingButton.clipsToBounds = true
+    }
+
+    private func configurePickers() {
+        // make sure there are no duplicate overlaping pickers
+        platformPicker?.removeFromSuperview()
+        eventDatePicker?.removeFromSuperview()
+        // create and pin pickers
+        platformPicker = UIPickerView(frame: .zero)
+        platformPicker.delegate = self
+        platformPicker.dataSource = self
+        pin(picker: platformPicker, inParent: platformPickerContainer, chainToButton: platformSelectDoneButton)
+        eventDatePicker = UIDatePicker(frame: .zero)
+        eventDatePicker.minimumDate = Date()
+        eventDatePicker.date = Date()
+        pin(picker: eventDatePicker, inParent: eventDatePickerContainer, chainToButton: eventDateDoneButton)
+        if #available(iOS 13.4, *) {
+            eventDatePicker.preferredDatePickerStyle = .wheels
+        }
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -105,9 +137,24 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func setDateButtonPressed(_ sender: UIButton) {
+        view.endEditing(true)
+        showPicker(fromContainer: eventDatePickerContainer, bottomConstraint: eventPickerBottomConstraint)
+    }
+
+    @IBAction func selectDateDonePressed(_ sender: UIButton) {
+        hidePicker(fromContainer: eventDatePickerContainer, bottomConstraint: eventPickerBottomConstraint)
     }
 
     @IBAction func setPlatformButtonPressed(_ sender: Any) {
+        view.endEditing(true)
+        showPicker(fromContainer: platformPickerContainer, bottomConstraint: platformPickerBottomConstraint)
+//        let currentlySelectedCountryIndex = countries.firstIndex(where: { $0.countryCode == self.holiday?.countryCode }) ?? 0
+//        countryPicker.selectRow(currentlySelectedCountryIndex, inComponent: 0, animated: false)
+    }
+
+    @IBAction func selectPlatformDonePressed(_ sender: UIButton) {
+        let selectedRow = platformPicker.selectedRow(inComponent: 0)
+        hidePicker(fromContainer: platformPickerContainer, bottomConstraint: platformPickerBottomConstraint)
     }
 
     // MARK: - Helpers
@@ -143,6 +190,51 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
             bookClubName.textColor = .white
             bookClubName.tintColor = .white
         }
+        inviteLinkTextfield.placeholder = "Copy & paste the event link here"
+    }
+
+    // MARK: Picker
+
+    override func touchesBegan(_: Set<UITouch>, with _: UIEvent?) {
+        if blurView.isHidden {
+            view.endEditing(true)
+        } else {
+            if !platformPickerContainer.isHidden {
+                setPlatformButtonPressed(self)
+            }
+        }
+    }
+
+    private func showPicker(fromContainer container: UIView, bottomConstraint: NSLayoutConstraint) {
+        blurView.isHidden = false
+        container.isHidden = false
+        bottomConstraint.constant = 0
+        UIView.animate(withDuration: 0.3) {
+            self.blurView.alpha = 1
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    private func hidePicker(fromContainer container: UIView, bottomConstraint: NSLayoutConstraint) {
+        bottomConstraint.constant = -container.frame.height
+        UIView.animate(withDuration: 0.3, animations: {
+            self.blurView.alpha = 0
+            self.view.layoutIfNeeded()
+        }, completion: { _ in
+            self.blurView.isHidden = true
+            container.isHidden = true
+        })
+    }
+
+    private func pin(picker: UIView, inParent parentView: UIView, chainToButton button: UIButton) {
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        parentView.addSubview(picker)
+        NSLayoutConstraint.activate([
+            picker.leadingAnchor.constraint(equalTo: parentView.leadingAnchor),
+            picker.trailingAnchor.constraint(equalTo: parentView.trailingAnchor),
+            picker.bottomAnchor.constraint(equalTo: parentView.bottomAnchor),
+            picker.topAnchor.constraint(equalTo: button.bottomAnchor)
+        ])
     }
 
     //MARK: - Segue
@@ -155,4 +247,18 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
          resultsVC.titleArray = safeBookTitle.components(separatedBy: " ")
      }
  }
+}
+
+extension BookClubInviteViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in _: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent _: Int) -> Int {
+        return platformsArray.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent _: Int) -> String? {
+        return platformsArray[row]
+    }
 }

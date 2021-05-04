@@ -74,6 +74,7 @@
 		F5C45CC62631E6A800248F6E /* ActiveBookClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C45CC52631E6A800248F6E /* ActiveBookClubsViewController.swift */; };
 		F5C45CC92631E6B400248F6E /* ExpiredBookClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C45CC82631E6B400248F6E /* ExpiredBookClubsViewController.swift */; };
 		F5D3FAB924E6911600A8FF80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */; };
+		F5D54CAE2641A9D500544608 /* Platforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D54CAD2641A9D500544608 /* Platforms.swift */; };
 		F5D72348262DDD3D00F58DD1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D72347262DDD3D00F58DD1 /* MenuViewController.swift */; };
 		F5D7234B262DF20700F58DD1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7234A262DF20700F58DD1 /* UIView.swift */; };
 		F5DEC1B32624A31E006A2C44 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEC1B22624A31E006A2C44 /* CreditsViewController.swift */; };
@@ -161,6 +162,7 @@
 		F5C45CC52631E6A800248F6E /* ActiveBookClubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveBookClubsViewController.swift; sourceTree = "<group>"; };
 		F5C45CC82631E6B400248F6E /* ExpiredBookClubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredBookClubsViewController.swift; sourceTree = "<group>"; };
 		F5D3FAB824E6911600A8FF80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F5D54CAD2641A9D500544608 /* Platforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platforms.swift; sourceTree = "<group>"; };
 		F5D72347262DDD3D00F58DD1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F5D7234A262DF20700F58DD1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		F5DEC1B22624A31E006A2C44 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				F5349EB124E44456009C96BD /* K.swift */,
+				F5D54CAD2641A9D500544608 /* Platforms.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				F59C5829255FCE8700D6D708 /* Constraints.swift in Sources */,
 				71B7836924F538D300E47CE2 /* RadioButtonsViewController.swift in Sources */,
 				F553F48026341957009C1195 /* CustomPagingIndicator.swift in Sources */,
+				F5D54CAE2641A9D500544608 /* Platforms.swift in Sources */,
 				71E4320824EABE060099312F /* ResultCardView.swift in Sources */,
 				F524A08525754CC00024E985 /* ScrollView.swift in Sources */,
 				71B7836724F5384300E47CE2 /* RadioButtonCollectionViewCell.swift in Sources */,
