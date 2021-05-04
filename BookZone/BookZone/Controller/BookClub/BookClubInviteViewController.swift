@@ -19,10 +19,23 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var bookClubName: UITextField!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var finishEditingButton: UIButton!
-    @IBOutlet weak var bookCoverBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var mainViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var guestViewContainer: UIView!
     @IBOutlet weak var editorView: UIView!
+    @IBOutlet weak var eventDatePlaceholder: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var eventPlatformPlaceholder: UILabel!
+    @IBOutlet weak var platformLabel: UILabel!
+    @IBOutlet weak var platformImage: UIImageView!
+    @IBOutlet weak var inviteLinkButton: UIButton!
+    @IBOutlet weak var eventDatePlaceholderEditMode: UILabel!
+    @IBOutlet weak var setDateButton: UIButton!
+    @IBOutlet weak var eventPlatformPlaceholderEditMode: UILabel!
+    @IBOutlet weak var setPlatformButton: UIButton!
+    @IBOutlet weak var inviteLinkPlaceholder: UILabel!
+    @IBOutlet weak var inviteLinkTextfield: UITextField!
+
+    @IBOutlet weak var bookCoverBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var mainViewBottomConstraint: NSLayoutConstraint!
 
     var bookTitle: String?
     var bookCoverUrl: String?
@@ -32,6 +45,7 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         configureUI()
         bookClubName.delegate = self
+        inviteLinkTextfield.delegate = self
     }
 
     // MARK: - UI
@@ -87,6 +101,15 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    @IBAction func inviteLinkButtonPressed(_ sender: UIButton) {
+    }
+
+    @IBAction func setDateButtonPressed(_ sender: UIButton) {
+    }
+
+    @IBAction func setPlatformButtonPressed(_ sender: Any) {
+    }
+
     // MARK: - Helpers
 
     private func toggleEditing(editMode: Bool) {
@@ -109,9 +132,10 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
         if editMode {
             bookClubName.isEnabled = true
             bookClubName.borderStyle = .roundedRect
-            bookClubName.backgroundColor = .white.withAlphaComponent(0.85)
-            bookClubName.textColor = UIColor(named: "darkGreen") ?? .green
-            bookClubName.tintColor = UIColor(named: "darkGreen") ?? .green
+            bookClubName.layer.borderWidth = 0
+            bookClubName.backgroundColor = UIColor(named: "pink")?.withAlphaComponent(0.85)
+            bookClubName.textColor = .white
+            bookClubName.tintColor = .white
         } else {
             bookClubName.isEnabled = false
             bookClubName.borderStyle = .none
