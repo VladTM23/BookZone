@@ -224,6 +224,7 @@ class ResultsViewController: UIViewController  {
             if let apiResults = self.apiResults {
                 bookClubInviteVC.bookCoverUrl = apiResults[5]
             }
+            bookClubInviteVC.createMode = true
         }
     }
 }

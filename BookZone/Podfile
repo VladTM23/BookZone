@@ -14,6 +14,7 @@ target 'BookZone' do
    pod 'Firebase/Firestore'
    pod 'Firebase/Storage'
    pod 'Firebase/Core'
+   pod 'FirebaseFirestoreSwift'
    pod 'SDWebImage','~>4.4.2'
    pod 'JGProgressHUD','~>2.0.3'
    pod 'FaveButton'

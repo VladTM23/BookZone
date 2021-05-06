@@ -43,6 +43,13 @@
 "age" = "Vârstă";
 "favBook" = "Cartea favorită";
 "enter" = "Introduceți";
+"eventDate" = "Data evenimentului";
+"eventPlatform" = "Platforma evenimentului";
+"inviteLink" = "Invitația";
+"pleaseSetDate" = "Selectați data evenimentului";
+"pleaseSelectPlatform" = "Selectați platforma pentru eveniment";
+"inviteLinkPlaceholder" = "Adăugați link-ul pentru invitație";
+"noBookFound" = "Nici o carte găsită";
 
 // Buttons
 
@@ -57,6 +64,8 @@
 "selectPhoto" = "Selectați poza";
 "createBookClubEvent" = "Formează un club de lectură";
 "finishEditing" = "Salvează schimbările";
+"done" = "Gata";
+"start" = "Start";
 
 //Placeholders
 

@@ -45,14 +45,7 @@ class NavbarView: UIView {
     }
 
     @IBAction func closeButtonPressed(_ sender: UIButton) {
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let homeScreen = storyboard.instantiateViewController(withIdentifier:
-                                                                K.Identifiers.homeVC)
-        homeScreen.modalPresentationStyle = .fullScreen
-        UIApplication.shared.windows.first { $0.isKeyWindow }?.rootViewController =
-            storyboard.instantiateInitialViewController()
-        UIApplication.shared.windows.first { $0.isKeyWindow }?.rootViewController?.present(
-            homeScreen, animated: false, completion: nil)
+        AppNavigationHelper.sharedInstance.navigateToMainPage()
     }
 
 }

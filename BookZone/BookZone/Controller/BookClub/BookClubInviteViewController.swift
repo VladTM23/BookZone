@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import Firebase
 
 class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
 
@@ -40,6 +41,7 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var platformSelectDoneButton: UIButton!
     @IBOutlet weak var platformSelectLabel: UILabel!
     @IBOutlet weak var blurView: UIView!
+    @IBOutlet weak var createBookClubButton: UIButton!
 
     @IBOutlet weak var bookCoverBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var mainViewBottomConstraint: NSLayoutConstraint!
@@ -48,6 +50,8 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
 
     var bookTitle: String?
     var bookCoverUrl: String?
+    var createMode: Bool? 
+    var bookClubModel: BookClub?
 
     fileprivate var platformPicker: UIPickerView!
     fileprivate var eventDatePicker: UIDatePicker!
@@ -56,6 +60,7 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureBookClubModel()
         configureUI()
         bookClubName.delegate = self
         inviteLinkTextfield.delegate = self
@@ -68,6 +73,8 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
         configureBookCoverGesture()
         configureFinishEditingButton()
         configurePickers()
+        setStrings()
+        configureAfterBookClub()
     }
 
     private func configureNavbar() {
@@ -94,6 +101,12 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
         finishEditingButton.clipsToBounds = true
     }
 
+    private func configureCreateBookClubButton() {
+        createBookClubButton.setTitle(NSLocalizedString(K.ButtonTiles.done, comment: ""), for: .normal)
+        createBookClubButton.layer.cornerRadius = finishEditingButton.frame.height / 2.0
+        createBookClubButton.clipsToBounds = true
+    }
+
     private func configurePickers() {
         // make sure there are no duplicate overlaping pickers
         platformPicker?.removeFromSuperview()
@@ -109,6 +122,34 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
         pin(picker: eventDatePicker, inParent: eventDatePickerContainer, chainToButton: eventDateDoneButton)
         if #available(iOS 13.4, *) {
             eventDatePicker.preferredDatePickerStyle = .wheels
+        }
+    }
+
+    private func setStrings() {
+        // Picker texts
+        platformSelectLabel.text = K.LabelTexts.pleaseSelectPlatform
+        eventDateSelectLabel.text = K.LabelTexts.pleaseSetDate
+        platformSelectDoneButton.setTitle(NSLocalizedString(K.ButtonTiles.done, comment: ""), for: .normal)
+        setDateButton.setTitle(NSLocalizedString(K.ButtonTiles.done, comment: ""), for: .normal)
+
+        // Edit view texts
+        eventDatePlaceholderEditMode.text = NSLocalizedString(K.LabelTexts.eventDate, comment: "")
+        eventPlatformPlaceholderEditMode.text =
+            NSLocalizedString(K.LabelTexts.eventPlatform, comment: "")
+        inviteLinkPlaceholder.text = NSLocalizedString(K.LabelTexts.inviteLink, comment: "")
+
+        // Guest view texts
+        eventDatePlaceholder.text = NSLocalizedString(K.LabelTexts.eventDate, comment: "")
+        eventPlatformPlaceholder.text =
+            NSLocalizedString(K.LabelTexts.eventPlatform, comment: "")
+        dateLabel.text = ""
+        platformLabel.text = ""
+        inviteLinkButton.setTitle(NSLocalizedString(K.LabelTexts.editions, comment: ""), for: .normal)
+    }
+
+    private func configureAfterBookClub() {
+        if createMode == true {
+            // Setup everything here
         }
     }
 
@@ -129,12 +170,20 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func finishEditingButtonPressed(_ sender: UIButton) {
         sender.showAnimation {
+            self.view.endEditing(true)
             self.toggleEditing(editMode: false)
         }
     }
 
     @IBAction func inviteLinkButtonPressed(_ sender: UIButton) {
     }
+
+    @IBAction func createBookClubPressed(_ sender: UIButton) {
+        sender.showAnimation {
+            self.createBookClub()
+        }
+    }
+
 
     @IBAction func setDateButtonPressed(_ sender: UIButton) {
         view.endEditing(true)
@@ -148,8 +197,8 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
     @IBAction func setPlatformButtonPressed(_ sender: Any) {
         view.endEditing(true)
         showPicker(fromContainer: platformPickerContainer, bottomConstraint: platformPickerBottomConstraint)
-//        let currentlySelectedCountryIndex = countries.firstIndex(where: { $0.countryCode == self.holiday?.countryCode }) ?? 0
-//        countryPicker.selectRow(currentlySelectedCountryIndex, inComponent: 0, animated: false)
+        //        let currentlySelectedCountryIndex = countries.firstIndex(where: { $0.countryCode == self.holiday?.countryCode }) ?? 0
+        //        countryPicker.selectRow(currentlySelectedCountryIndex, inComponent: 0, animated: false)
     }
 
     @IBAction func selectPlatformDonePressed(_ sender: UIButton) {
@@ -158,6 +207,12 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
     }
 
     // MARK: - Helpers
+
+    private func configureBookClubModel() {
+        if createMode == true {
+            self.bookClubModel = BookClubService.shared.getDefaultBookClub()
+        }
+    }
 
     private func toggleEditing(editMode: Bool) {
         // Show finish editing button
@@ -190,7 +245,26 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
             bookClubName.textColor = .white
             bookClubName.tintColor = .white
         }
-        inviteLinkTextfield.placeholder = "Copy & paste the event link here"
+        inviteLinkTextfield.placeholder = NSLocalizedString(K.LabelTexts.inviteLinkPlaceholder, comment: "")
+    }
+
+    private func createBookClub() {
+        guard let safeBookClubModel = bookClubModel else { return }
+        safeBookClubModel.bookClubName = bookClubName.text ?? ""
+        safeBookClubModel.bookTitle = bookTitle ?? "Povestea mea"
+        safeBookClubModel.eventURL = inviteLinkTextfield.text ?? ""
+        safeBookClubModel.owner = Auth.auth().currentUser?.uid ?? ""
+        safeBookClubModel.eventInviteList = []
+        safeBookClubModel.eventGuests = []
+        safeBookClubModel.eventDate = eventDatePicker.date
+        safeBookClubModel.eventPlatform = Platforms.platformsArray[platformPicker.selectedRow(inComponent: 0)]
+
+        BookClubService.shared.createBookClub(bookClub: bookClubModel!) { result, error in
+            if let error = error {
+                print("Error creating book club, \(error.localizedDescription)")
+            }
+            AppNavigationHelper.sharedInstance.navigateToMainPage()
+        }
     }
 
     // MARK: Picker
@@ -239,14 +313,14 @@ class BookClubInviteViewController: UIViewController, UITextFieldDelegate {
 
     //MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     if segue.identifier == K.Identifiers.inviteToBookInfo {
-         let resultsVC = segue.destination as! ResultsViewController
-         resultsVC.flag = false
-         let safeBookTitle: String = bookTitle ?? "No book found"
-         resultsVC.titleLabelVar = safeBookTitle
-         resultsVC.titleArray = safeBookTitle.components(separatedBy: " ")
-     }
- }
+        if segue.identifier == K.Identifiers.inviteToBookInfo {
+            let resultsVC = segue.destination as! ResultsViewController
+            resultsVC.flag = false
+            let safeBookTitle: String = bookTitle ?? NSLocalizedString(K.LabelTexts.noBookFound, comment: "")
+            resultsVC.titleLabelVar = safeBookTitle
+            resultsVC.titleArray = safeBookTitle.components(separatedBy: " ")
+        }
+    }
 }
 
 extension BookClubInviteViewController: UIPickerViewDataSource, UIPickerViewDelegate {

@@ -12,6 +12,7 @@ import FirebaseFirestore
 
 let COLLECTION_USERS = Firestore.firestore().collection("users")
 let COLLECTION_BOOKS = Firestore.firestore().collection("books")
+let COLLECTION_BOOKCLUBS = Firestore.firestore().collection("bookClubs")
 
 struct K {
     static let key = "RNsVx8TWoCWvPVwuzzV4A"
@@ -123,11 +124,19 @@ struct K {
         static let searchByTitle = "titleSearch"
         static let emptyStringPlaceholder = "emptyPlaceholder"
         static let invalidISBNStringPlaceholder = "invalidISBN"
+        static let eventDate = "eventDate"
+        static let eventPlatform = "eventPlatform"
+        static let inviteLink = "inviteLink"
+        static let pleaseSetDate = "pleaseSetDate"
+        static let pleaseSelectPlatform = "pleaseSelectPlatform"
+        static let inviteLinkPlaceholder = "inviteLinkPlaceholder"
+        static let noBookFound = "noBookFound"
     }
 
     struct ButtonTiles {
         static let createBookClubEvent = "createBookClubEvent"
         static let finishEditing = "finishEditing"
+        static let done = "done"
     }
 
     struct ImageNames {

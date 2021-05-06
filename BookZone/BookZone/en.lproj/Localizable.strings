@@ -43,6 +43,13 @@
 "age" = "Age";
 "favBook" = "Favorite Book";
 "enter" = "Enter";
+"eventDate" = "Event date";
+"eventPlatform" = "Event platform";
+"inviteLink" = "Invite link";
+"pleaseSetDate" = "Please set your event date";
+"pleaseSelectPlatform" = "Please select your event platform";
+"inviteLinkPlaceholder" = "Copy & paste the event link here";
+"noBookFound" = "No book found";
 
 //Buttons
 
@@ -57,6 +64,8 @@
 "selectPhoto" = "Select Photo";
 "createBookClubEvent" = "Create book club event";
 "finishEditing" = "Save changes";
+"done" = "Done";
+"start" = "Start";
 
 //Placeholders
 
