@@ -1,5 +1,5 @@
 //
-//  UserSuggestionsTableViewCell.swift
+//  InvitedUsersTableViewCell.swift
 //  BookZone
 //
 //  Created by Paianu Vlad-Valentin on 08.05.2021.
@@ -9,9 +9,8 @@
 import UIKit
 import SDWebImage
 
-class UserSuggestionsTableViewCell: UITableViewCell {
-    @IBOutlet weak var userPhoto: UIImageView!
-    @IBOutlet weak var userName: UILabel!
+class InvitedUsersTableViewCell: UITableViewCell {
+
 
     var userEmail: String?
     var userImageUrl: String?

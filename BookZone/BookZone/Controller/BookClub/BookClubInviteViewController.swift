@@ -60,6 +60,7 @@ class BookClubInviteViewController: UIViewController {
     var createMode: Bool? 
     var bookClubModel: BookClub?
     var usersArray: [User]?
+    var filteredUsers: [User]?
     var invitedUsersArray: [User]?
 
     fileprivate var platformPicker: UIPickerView!
@@ -69,19 +70,30 @@ class BookClubInviteViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        bookClubName.delegate = self
-        inviteLinkTextfield.delegate = self
-        configureTableViews()
+        fetchUsers()
+        fetchInvitedUsers()
         initUI()
         configureBookClubModel() {
             self.updateUI()
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        registerNotifications()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        scrollView.contentInset.bottom = 0
+    }
+
     // MARK: - UI
 
     private func initUI() {
         configureNavbar()
+        configureTextfields()
+        configureTableViews()
         configureBookCover()
         configureBookCoverGesture()
         configureFinishEditingButton()
@@ -179,17 +191,28 @@ class BookClubInviteViewController: UIViewController {
         mainView.layer.cornerRadius = 2
     }
 
+    private func configureTextfields() {
+        bookClubName.delegate = self
+        inviteLinkTextfield.delegate = self
+        eventGuestsTextfield.delegate = self
+        eventGuestsTextfield.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+    }
+
     private func configureTableViews() {
         userSuggestionsTableView.delegate = self
         userSuggestionsTableView.dataSource = self
         eventGuestsTableView.delegate = self
         eventGuestsTableView.dataSource = self
 
-//        userSuggestionsTableView.register(TopDestinationsSuggestionsCell.self, forCellReuseIdentifier: "topDestinationSuggestionCell")
-        userSuggestionsTableView.rowHeight = UITableView.automaticDimension
-        userSuggestionsTableView.estimatedRowHeight = 40.0
-        userSuggestionsTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0.001))
+        eventGuestsTableView.register(InvitedUsersCell.self, forCellReuseIdentifier: "invitedUserCell")
+        eventGuestsTableView.rowHeight = UITableView.automaticDimension
+        eventGuestsTableView.estimatedRowHeight = 50.0
+
+        userSuggestionsTableView.register(UserSuggestionsTableViewCell.self, forCellReuseIdentifier: "userSuggestionsCell")
         userSuggestionsTableView.addTableHeaderViewSeparator()
+        userSuggestionsTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height:  CGFloat.leastNonzeroMagnitude))
+        userSuggestionsTableView.rowHeight = UITableView.automaticDimension
+        userSuggestionsTableView.estimatedRowHeight = 50.0
     }
 
     private func configureAfterBookClub() {
@@ -366,9 +389,10 @@ class BookClubInviteViewController: UIViewController {
         safeBookClubModel.bookClubName = bookClubName.text ?? ""
         safeBookClubModel.bookTitle = bookTitle ?? "Povestea mea"
         safeBookClubModel.eventURL = inviteLinkTextfield.text ?? ""
+        safeBookClubModel.bookCoverURL = bookCoverUrl ?? ""
         safeBookClubModel.owner = Auth.auth().currentUser?.uid ?? ""
-        safeBookClubModel.eventInviteList = []
-        safeBookClubModel.eventGuests = []
+        safeBookClubModel.eventInviteList = getGuestsStringArray()
+        safeBookClubModel.eventGuests = getGuestsStringArray()
         safeBookClubModel.eventDate = eventDatePicker.date
         safeBookClubModel.eventPlatform = Platforms.platformsArray[platformPicker.selectedRow(inComponent: 0)]
 
@@ -378,6 +402,53 @@ class BookClubInviteViewController: UIViewController {
             }
             AppNavigationHelper.sharedInstance.navigateToMainPage()
         }
+    }
+
+    private func fetchUsers() {
+        Service.fetchUsers { users in
+            self.usersArray = users
+        }
+    }
+
+    private func fetchInvitedUsers() {
+        self.invitedUsersArray = [User]()
+    }
+
+    private func getUserSuggestions(for filterName: String, from usersArray: [User]) {
+        filteredUsers = [User]()
+
+        for user in usersArray {
+            if user.name.lowercased().contains(filterName.lowercased()) {
+                filteredUsers?.append(user)
+            }
+        }
+        userSuggestionsTableView.tableHeaderView?.isHidden = filteredUsers?.isEmpty == true
+    }
+
+    private func getGuestsStringArray() -> [String] {
+        guard let safeInvitedUsersArray = invitedUsersArray else { return [] }
+        var userIdsArray = [String]()
+        for user in safeInvitedUsersArray {
+            userIdsArray.append(user.uid)
+        }
+        return userIdsArray
+    }
+
+    private func selectedSuggestion(for suggestionCell: UserSuggestionsTableViewCell) {
+        userSuggestionsTableView.isHidden = true
+        eventGuestsTableView.isHidden = false
+        if let safeInvitedUsersArray = invitedUsersArray {
+            for invitedUser in safeInvitedUsersArray {
+                if invitedUser.uid == suggestionCell.userModel?.uid {
+                    return
+                }
+            }
+            if let safeUserModel = suggestionCell.userModel {
+                invitedUsersArray?.append(safeUserModel)
+                eventGuestsTableView.reloadData()
+            }
+        }
+
     }
 
     // MARK: Picker
@@ -422,6 +493,20 @@ class BookClubInviteViewController: UIViewController {
             picker.bottomAnchor.constraint(equalTo: parentView.bottomAnchor),
             picker.topAnchor.constraint(equalTo: button.bottomAnchor)
         ])
+    }
+
+    private func registerNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    @objc private func keyboardWillShow(notification: NSNotification){
+        guard let keyboardFrame = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        scrollView.contentInset.bottom = view.convert(keyboardFrame.cgRectValue, from: nil).size.height
+    }
+
+    @objc private func keyboardWillHide(notification: NSNotification){
+        scrollView.contentInset.bottom = 0
     }
 
     //MARK: - Segue
@@ -473,6 +558,19 @@ extension BookClubInviteViewController: UITextFieldDelegate {
         // Do not add a line break
         return false
     }
+
+    @objc private func textFieldDidChange(textField: UITextField) {
+        guard let safeUserText = textField.text, let safeUsers = usersArray else { return }
+        // Start suggestions only after at least 3 characters
+        if safeUserText.count > 2 {
+            getUserSuggestions(for: safeUserText, from: safeUsers)
+            userSuggestionsTableView.isHidden = false
+            userSuggestionsTableView.reloadData()
+            eventGuestsTableView.isHidden = true
+        } else {
+            userSuggestionsTableView.isHidden = true
+        }
+    }
 }
 
 // MARK: - TableViews
@@ -483,27 +581,49 @@ extension BookClubInviteViewController: UITableViewDataSource, UITableViewDelega
         case eventGuestsTableView:
             return invitedUsersArray?.count ?? 0
         case userSuggestionsTableView:
-            return usersArray?.count ?? 0
+            return filteredUsers?.count ?? 0
         default:
             return 0
         }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        switch tableView {
+        case eventGuestsTableView:
+            return UITableView.automaticDimension
+        case userSuggestionsTableView:
+            return UITableView.automaticDimension
+        default:
+            return UITableView.automaticDimension
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let safeFilteredTopDestinations = filteredTopDestinations else { return UITableViewCell.init(frame: .zero) }
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "topDestinationSuggestionCell", for: indexPath as IndexPath) as!
-//            TopDestinationsSuggestionsCell
-//        cell.configureCell(with: safeFilteredTopDestinations[indexPath.row])
-//        return cell
-        return UITableViewCell.init()
+        switch tableView {
+        case userSuggestionsTableView:
+            guard let safeFilteredUsers = filteredUsers else { return UITableViewCell.init(frame: .zero) }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "userSuggestionsCell", for: indexPath as IndexPath) as!
+                UserSuggestionsTableViewCell
+            cell.configureCell(with: safeFilteredUsers[indexPath.row])
+            return cell
+        case eventGuestsTableView:
+            guard let safeInvitedUsers = invitedUsersArray else { return UITableViewCell.init(frame: .zero) }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "invitedUserCell", for: indexPath as IndexPath) as!
+                InvitedUsersCell
+            cell.configureCell(with: safeInvitedUsers[indexPath.row])
+            return cell
+        default:
+            return UITableViewCell.init(frame: .zero)
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let suggestionCell = tableView.cellForRow(at: indexPath) as! TopDestinationsSuggestionsCell
-//        selectedSuggestion(for: suggestionCell)
+        switch tableView {
+        case userSuggestionsTableView:
+            let suggestionCell = tableView.cellForRow(at: indexPath) as! UserSuggestionsTableViewCell
+            selectedSuggestion(for: suggestionCell)
+        default:
+            print("You should not be here")
+        }
     }
 }

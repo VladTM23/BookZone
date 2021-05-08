@@ -1,5 +1,5 @@
 //
-//  UserSuggestionsTableViewCell.swift
+//  InvitedUserCell.swift
 //  BookZone
 //
 //  Created by Paianu Vlad-Valentin on 08.05.2021.
@@ -9,9 +9,11 @@
 import UIKit
 import SDWebImage
 
-class UserSuggestionsTableViewCell: UITableViewCell {
+class InvitedUsersCell: UITableViewCell {
+
     @IBOutlet weak var userPhoto: UIImageView!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var removeUserButton: UIButton!
 
     var userEmail: String?
     var userImageUrl: String?
@@ -35,7 +37,7 @@ class UserSuggestionsTableViewCell: UITableViewCell {
 
     func loadViewFromNib() -> UITableViewCell? {
         let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: "UserSuggestionsCell", bundle: bundle)
+        let nib = UINib(nibName: "InvitedUserCell", bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as? UITableViewCell
     }
 
@@ -46,5 +48,8 @@ class UserSuggestionsTableViewCell: UITableViewCell {
         SDWebImageManager.shared().loadImage(with: imageURL, options: .continueInBackground, progress: nil) { (image, _, _, _, _, _) in
             self.userPhoto.image = image
             }
+    }
+    
+    @IBAction func removeUserButtonPressed(_ sender: UIButton) {
     }
 }

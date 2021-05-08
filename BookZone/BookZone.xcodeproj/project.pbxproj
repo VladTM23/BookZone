@@ -27,6 +27,8 @@
 		71E4320E24EFBE1A0099312F /* SearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E4320D24EFBE1A0099312F /* SearchBar.xib */; };
 		71E4321024EFC3840099312F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4320F24EFC3840099312F /* SearchBar.swift */; };
 		DF68B3E844A40D4C35F2072E /* Pods_BookZone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631142FF12AC485DD45BB5F7 /* Pods_BookZone.framework */; };
+		F50696F12647157B005D1620 /* InvitedUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F50696F02647157B005D1620 /* InvitedUserCell.xib */; };
+		F50696F3264717B5005D1620 /* InvitedUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50696F2264717B5005D1620 /* InvitedUserCell.swift */; };
 		F524A0392575321C0024E985 /* AppSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524A0382575321C0024E985 /* AppSettingsViewController.swift */; };
 		F524A03C257537D30024E985 /* Dropdown.xib in Resources */ = {isa = PBXBuildFile; fileRef = F524A03B257537D30024E985 /* Dropdown.xib */; };
 		F524A03F257537EF0024E985 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524A03E257537EF0024E985 /* Dropdown.swift */; };
@@ -111,6 +113,8 @@
 		71E4320D24EFBE1A0099312F /* SearchBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBar.xib; sourceTree = "<group>"; };
 		71E4320F24EFC3840099312F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		E4466345ABFD86AAD0C0A744 /* Pods-BookZone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookZone.release.xcconfig"; path = "Target Support Files/Pods-BookZone/Pods-BookZone.release.xcconfig"; sourceTree = "<group>"; };
+		F50696F02647157B005D1620 /* InvitedUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvitedUserCell.xib; sourceTree = "<group>"; };
+		F50696F2264717B5005D1620 /* InvitedUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitedUserCell.swift; sourceTree = "<group>"; };
 		F524A0382575321C0024E985 /* AppSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsViewController.swift; sourceTree = "<group>"; };
 		F524A03B257537D30024E985 /* Dropdown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Dropdown.xib; sourceTree = "<group>"; };
 		F524A03E257537EF0024E985 /* Dropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
@@ -370,6 +374,7 @@
 				F553F47F26341957009C1195 /* CustomPagingIndicator.swift */,
 				F541D78E26469A630078C5CB /* UserSuggestionsTableView.swift */,
 				F541D7902646A6B40078C5CB /* UserSuggestionsTableViewCell.swift */,
+				F50696F2264717B5005D1620 /* InvitedUserCell.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 				F524A17E257681EF0024E985 /* SecondPageScroll.xib */,
 				7143BC5225602AFB0018CFAB /* BookShelfCell.xib */,
 				F541D7942646A7EC0078C5CB /* UserSuggestionsCell.xib */,
+				F50696F02647157B005D1620 /* InvitedUserCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -530,6 +536,7 @@
 				F5349EC124E45282009C96BD /* Montserrat-Regular.ttf in Resources */,
 				71E4320E24EFBE1A0099312F /* SearchBar.xib in Resources */,
 				F591010D24E7B2370042EB6F /* Navbar.xib in Resources */,
+				F50696F12647157B005D1620 /* InvitedUserCell.xib in Resources */,
 				F57D29E624E278410001D4C4 /* LaunchScreen.storyboard in Resources */,
 				F524A172257681D50024E985 /* FirstPageScroll.xib in Resources */,
 				F57D29E124E278400001D4C4 /* Main.storyboard in Resources */,
@@ -640,6 +647,7 @@
 				F547E42C2536E188002E6E21 /* WelcomeViewController.swift in Sources */,
 				F541D7912646A6B40078C5CB /* UserSuggestionsTableViewCell.swift in Sources */,
 				71E4320C24ED6A060099312F /* ResultCardCollectionViewCell.swift in Sources */,
+				F50696F3264717B5005D1620 /* InvitedUserCell.swift in Sources */,
 				7146F8F52563EF260086A52F /* G.swift in Sources */,
 				7143BC5525602B1E0018CFAB /* BookShelfCell.swift in Sources */,
 				F59C59DA2560466200D6D708 /* UIResponder.swift in Sources */,

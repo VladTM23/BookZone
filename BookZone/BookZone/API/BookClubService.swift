@@ -70,6 +70,7 @@ class BookClubService {
             "eventDate": Date(timeIntervalSinceNow: 86400.0 * 7.0),
             "eventPlatform": Platforms.platformsArray[0],
             "eventURL": "",
+            "bookCoverURL": "",
             "eventGuests": [],
             "eventInviteList": []
         ])

@@ -17,6 +17,7 @@ class BookClub: Codable {
     var eventDate: Date = Date()
     var eventPlatform: String = ""
     var eventURL: String = ""
+    var bookCoverURL: String = ""
     var eventGuests: [String] = [String]()
     var eventInviteList: [String] = [String]()
 
@@ -29,6 +30,7 @@ class BookClub: Codable {
         self.eventDate = firebaseTimestamp.dateValue()
         self.eventPlatform = dictionary["eventPlatform"] as? String ?? ""
         self.eventURL = dictionary["eventURL"] as? String ?? ""
+        self.bookCoverURL = dictionary["bookCoverURL"] as? String ?? ""
         self.eventGuests = dictionary["eventGuests"] as? [String] ?? [String]()
         self.eventInviteList = dictionary["eventInviteList"] as? [String] ?? [String]()
     }
@@ -40,6 +42,7 @@ class BookClub: Codable {
         case eventDate
         case eventPlatform
         case eventURL
+        case bookCoverURL
         case eventGuests
         case eventInviteList
     }
