@@ -40,6 +40,10 @@
 		F5349EBF24E45169009C96BD /* Sacramento-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */; };
 		F5349EC124E45282009C96BD /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */; };
 		F5349EC324E45300009C96BD /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EC224E452FD009C96BD /* Montserrat-Bold.ttf */; };
+		F541D78D264687CD0078C5CB /* DateFormatterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F541D78C264687CD0078C5CB /* DateFormatterHelper.swift */; };
+		F541D78F26469A630078C5CB /* UserSuggestionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F541D78E26469A630078C5CB /* UserSuggestionsTableView.swift */; };
+		F541D7912646A6B40078C5CB /* UserSuggestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F541D7902646A6B40078C5CB /* UserSuggestionsTableViewCell.swift */; };
+		F541D7952646A7EC0078C5CB /* UserSuggestionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F541D7942646A7EC0078C5CB /* UserSuggestionsCell.xib */; };
 		F547E4142536DA91002E6E21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F547E4132536DA91002E6E21 /* GoogleService-Info.plist */; };
 		F547E42C2536E188002E6E21 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547E42B2536E188002E6E21 /* WelcomeViewController.swift */; };
 		F547E44B25370AD1002E6E21 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547E44A25370AD1002E6E21 /* RegisterViewController.swift */; };
@@ -128,6 +132,10 @@
 		F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sacramento-Regular.ttf"; sourceTree = "<group>"; };
 		F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		F5349EC224E452FD009C96BD /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		F541D78C264687CD0078C5CB /* DateFormatterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterHelper.swift; sourceTree = "<group>"; };
+		F541D78E26469A630078C5CB /* UserSuggestionsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSuggestionsTableView.swift; sourceTree = "<group>"; };
+		F541D7902646A6B40078C5CB /* UserSuggestionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSuggestionsTableViewCell.swift; sourceTree = "<group>"; };
+		F541D7942646A7EC0078C5CB /* UserSuggestionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserSuggestionsCell.xib; sourceTree = "<group>"; };
 		F547E4132536DA91002E6E21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F547E42B2536E188002E6E21 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F547E44A25370AD1002E6E21 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -329,6 +337,7 @@
 				7165F0F12565786600E21DDD /* Shared.swift */,
 				F55CAAC025FB5FBD00287FB9 /* Reachability.swift */,
 				F5DDA362264458B9000D2B4D /* AppNavigationHelper.swift */,
+				F541D78C264687CD0078C5CB /* DateFormatterHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -359,6 +368,8 @@
 				718356BE25613228000CC0DF /* BookShelfCollectionViewCell.swift */,
 				F524A03E257537EF0024E985 /* Dropdown.swift */,
 				F553F47F26341957009C1195 /* CustomPagingIndicator.swift */,
+				F541D78E26469A630078C5CB /* UserSuggestionsTableView.swift */,
+				F541D7902646A6B40078C5CB /* UserSuggestionsTableViewCell.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -414,6 +425,7 @@
 				F524A174257681D50024E985 /* FirstPageScroll.xib */,
 				F524A17E257681EF0024E985 /* SecondPageScroll.xib */,
 				7143BC5225602AFB0018CFAB /* BookShelfCell.xib */,
+				F541D7942646A7EC0078C5CB /* UserSuggestionsCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -512,6 +524,7 @@
 			files = (
 				F547E4142536DA91002E6E21 /* GoogleService-Info.plist in Resources */,
 				F55CAAC725FB75AE00287FB9 /* 38463-error.json in Resources */,
+				F541D7952646A7EC0078C5CB /* UserSuggestionsCell.xib in Resources */,
 				71E4320624EABDA20099312F /* ResultCard.xib in Resources */,
 				71614A4F24FA5C710038A8B7 /* Assets.xcassets in Resources */,
 				F5349EC124E45282009C96BD /* Montserrat-Regular.ttf in Resources */,
@@ -591,6 +604,7 @@
 				F5DEC1B32624A31E006A2C44 /* CreditsViewController.swift in Sources */,
 				F59C592C25602BCB00D6D708 /* SettingsHeader.swift in Sources */,
 				F5349EB224E44456009C96BD /* K.swift in Sources */,
+				F541D78F26469A630078C5CB /* UserSuggestionsTableView.swift in Sources */,
 				7106C77724E6E9F200D3D29C /* SearchViewController.swift in Sources */,
 				F547E44E25370AED002E6E21 /* LoginViewController.swift in Sources */,
 				F57D29DA24E278400001D4C4 /* AppDelegate.swift in Sources */,
@@ -607,6 +621,7 @@
 				F591010F24E7B25D0042EB6F /* NavbarView.swift in Sources */,
 				718356BF25613228000CC0DF /* BookShelfCollectionViewCell.swift in Sources */,
 				F59C592625602B0B00D6D708 /* SettingsCell.swift in Sources */,
+				F541D78D264687CD0078C5CB /* DateFormatterHelper.swift in Sources */,
 				F57D29DC24E278400001D4C4 /* SceneDelegate.swift in Sources */,
 				F55CAAC125FB5FBD00287FB9 /* Reachability.swift in Sources */,
 				F59C5825255FCE5200D6D708 /* CustomTextField.swift in Sources */,
@@ -623,6 +638,7 @@
 				F524A08525754CC00024E985 /* ScrollView.swift in Sources */,
 				71B7836724F5384300E47CE2 /* RadioButtonCollectionViewCell.swift in Sources */,
 				F547E42C2536E188002E6E21 /* WelcomeViewController.swift in Sources */,
+				F541D7912646A6B40078C5CB /* UserSuggestionsTableViewCell.swift in Sources */,
 				71E4320C24ED6A060099312F /* ResultCardCollectionViewCell.swift in Sources */,
 				7146F8F52563EF260086A52F /* G.swift in Sources */,
 				7143BC5525602B1E0018CFAB /* BookShelfCell.swift in Sources */,

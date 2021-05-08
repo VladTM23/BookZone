@@ -66,12 +66,16 @@
 "finishEditing" = "Save changes";
 "done" = "Done";
 "start" = "Start";
+"noInternetTitle" = "No internet connection";
+"noEventLink" = "The owner has not yet provided the event link.";
+"startMeeting" = "Start meeting";
 
 //Placeholders
 
 "email" = "Email";
 "fullname" = "Full Name";
 "password" = "Password";
+"insertBookClubName" = "Insert book club name";
 
 //Menu
 

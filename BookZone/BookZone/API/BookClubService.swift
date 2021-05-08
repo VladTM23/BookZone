@@ -63,7 +63,7 @@ class BookClubService {
     func getDefaultBookClub() -> BookClub {
         let userId = Auth.auth().currentUser?.uid ?? ""
         let bookClubDefaultModel = BookClub(dictionary: [
-            "bookClubName": "Book Club name",
+            "bookClubName": NSLocalizedString(K.LabelTexts.insertBookClubName, comment: ""),
             "bookTitle": "Povestea mea",
             "owner": userId,
             "bookClubID": "",

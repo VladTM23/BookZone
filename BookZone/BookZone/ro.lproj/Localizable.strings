@@ -66,12 +66,16 @@
 "finishEditing" = "Salvează schimbările";
 "done" = "Gata";
 "start" = "Start";
+"noInternetTitle" = "Lipsă conexiune la internet";
+"noEventLink" = "Gazda evenimentului nu a adăugat încă un link.";
+"startMeeting" = "Start";
 
 //Placeholders
 
 "email" = "Email";
 "fullname" = "Nume complet";
 "password" = "Parolă";
+"insertBookClubName" = "Setați numele clubului";
 
 //Menu
 

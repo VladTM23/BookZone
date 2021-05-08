@@ -131,12 +131,16 @@ struct K {
         static let pleaseSelectPlatform = "pleaseSelectPlatform"
         static let inviteLinkPlaceholder = "inviteLinkPlaceholder"
         static let noBookFound = "noBookFound"
+        static let insertBookClubName = "insertBookClubName"
     }
 
     struct ButtonTiles {
         static let createBookClubEvent = "createBookClubEvent"
         static let finishEditing = "finishEditing"
         static let done = "done"
+        static let noInternetTitle = "noInternetTitle"
+        static let noEventLink = "noEventLink"
+        static let startMeeting = "startMeeting"
     }
 
     struct ImageNames {

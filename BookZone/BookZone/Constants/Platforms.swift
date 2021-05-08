@@ -9,5 +9,6 @@
 import Foundation
 
 class Platforms {
-    static let platformsArray: [String] = ["Zoom", "Cisco WebEx", "Jitsi", "Google Meets"]
+    static let platformsArray: [String] = ["Zoom", "Cisco Webex", "Jitsi Meet", "Google Meets", "Microsoft Teams"]
+    static let platformsImages: [String] = ["zoomLogo", "ciscoWebex", "jitsi", "googleMeets", "microsoftTeams"]
 }

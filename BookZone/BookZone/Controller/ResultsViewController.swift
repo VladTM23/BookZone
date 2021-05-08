@@ -213,14 +213,21 @@ class ResultsViewController: UIViewController  {
 
     @IBAction func bookClubInviteButtonPressed(_ sender: UIButton) {
         sender.showAnimation {
-            self.performSegue(withIdentifier: K.Identifiers.bookToInvite, sender: self)
+            if !ReachabilityManager.shared.hasConnectivity() {
+                let alert = UIAlertController(title: NSLocalizedString(K.ButtonTiles.noInternetTitle, comment: ""), message: NSLocalizedString(K.Errors.internetError, comment: "") , preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            } else {
+                self.performSegue(withIdentifier: K.Identifiers.bookToInvite, sender: self)
+            }
         }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.Identifiers.bookToInvite {
             let bookClubInviteVC = segue.destination as! BookClubInviteViewController
-            bookClubInviteVC.bookTitle = self.titleLabel.text ?? "No book title"
+            bookClubInviteVC.bookTitle = self.titleLabel.text ?? K.LabelTexts.noBookFound
             if let apiResults = self.apiResults {
                 bookClubInviteVC.bookCoverUrl = apiResults[5]
             }
