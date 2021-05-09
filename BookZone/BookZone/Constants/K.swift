@@ -141,6 +141,15 @@ struct K {
         static let noInternetTitle = "noInternetTitle"
         static let noEventLink = "noEventLink"
         static let startMeeting = "startMeeting"
+        static let editBookClub = "editBookClub";
+        static let leaveBookClub = "leaveBookClub";
+        static let deleteBookClub = "deleteBookClub";
+        static let cancel = "cancel";
+        static let confirm = "confirm";
+        static let deleteBookClubAlertTitle = "deleteBookClubAlertTitle";
+        static let deleteBookClubAlertMessage = "deleteBookClubAlertMessage";
+        static let leaveBookClubAlertTitle = "leaveBookClubAlertTitle";
+        static let leaveBookClubAlertMessage = "leaveBookClubAlertMessage";
     }
 
     struct ImageNames {

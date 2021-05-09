@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 import Firebase
 import SafariServices
+import SwipeCellKit
 
 class BookClubInviteViewController: UIViewController {
 
@@ -49,11 +50,15 @@ class BookClubInviteViewController: UIViewController {
     @IBOutlet weak var eventGuestsTextfield: UITextField!
     @IBOutlet weak var eventGuestsTableView: UITableView!
     @IBOutlet weak var userSuggestionsTableView: UserSuggestionsTableView!
-    
+    @IBOutlet weak var editBookClubButton: UIButton!
+    @IBOutlet weak var leaveBookClubButton: UIButton!
+    @IBOutlet weak var deleteBookClubButton: UIButton!
+
     @IBOutlet weak var bookCoverBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var mainViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var platformPickerBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var eventPickerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
 
     var bookTitle: String?
     var bookCoverUrl: String?
@@ -62,6 +67,9 @@ class BookClubInviteViewController: UIViewController {
     var usersArray: [User]?
     var filteredUsers: [User]?
     var invitedUsersArray: [User]?
+    var isOwner = false
+    var buttonStyle: ButtonStyle = .circular
+    var buttonDisplayMode: ButtonDisplayMode = .imageOnly
 
     fileprivate var platformPicker: UIPickerView!
     fileprivate var eventDatePicker: UIDatePicker!
@@ -70,6 +78,7 @@ class BookClubInviteViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        isOwner = false
         fetchUsers()
         fetchInvitedUsers()
         initUI()
@@ -106,6 +115,8 @@ class BookClubInviteViewController: UIViewController {
         configurePickers()
         configureAfterBookClub()
         configurePlatformImage()
+        setupOwnerMode()
+        fetchInvitedUsers()
     }
 
     private func configureNavbar() {
@@ -133,12 +144,22 @@ class BookClubInviteViewController: UIViewController {
     }
 
     private func configureCreateBookClubButton() {
-        createBookClubButton.setTitle(NSLocalizedString(K.ButtonTiles.done, comment: ""), for: .normal)
-        createBookClubButton.layer.cornerRadius = finishEditingButton.frame.height / 2.0
+        createBookClubButton.setTitle(NSLocalizedString(K.ButtonTiles.createBookClubEvent, comment: ""), for: .normal)
+        createBookClubButton.layer.cornerRadius = createBookClubButton.frame.height / 2.0
         createBookClubButton.clipsToBounds = true
 
         inviteLinkButton.layer.cornerRadius = inviteLinkButton.frame.height / 2.0
         inviteLinkButton.clipsToBounds = true
+
+        editBookClubButton.setTitle(NSLocalizedString(K.ButtonTiles.editBookClub, comment: ""), for: .normal)
+        editBookClubButton.layer.cornerRadius = editBookClubButton.frame.height / 2.0
+        editBookClubButton.clipsToBounds = true
+        deleteBookClubButton.setTitle(NSLocalizedString(K.ButtonTiles.deleteBookClub, comment: ""), for: .normal)
+        deleteBookClubButton.layer.cornerRadius = deleteBookClubButton.frame.height / 2.0
+        deleteBookClubButton.clipsToBounds = true
+        leaveBookClubButton.setTitle(NSLocalizedString(K.ButtonTiles.leaveBookClub, comment: ""), for: .normal)
+        leaveBookClubButton.layer.cornerRadius = leaveBookClubButton.frame.height / 2.0
+        leaveBookClubButton.clipsToBounds = true
     }
 
     private func configurePickers() {
@@ -205,8 +226,8 @@ class BookClubInviteViewController: UIViewController {
         eventGuestsTableView.dataSource = self
 
         eventGuestsTableView.register(InvitedUsersCell.self, forCellReuseIdentifier: "invitedUserCell")
-        eventGuestsTableView.rowHeight = UITableView.automaticDimension
-        eventGuestsTableView.estimatedRowHeight = 50.0
+        eventGuestsTableView.sectionFooterHeight = 1.0;
+        userSuggestionsTableView.estimatedRowHeight = 60.0
 
         userSuggestionsTableView.register(UserSuggestionsTableViewCell.self, forCellReuseIdentifier: "userSuggestionsCell")
         userSuggestionsTableView.addTableHeaderViewSeparator()
@@ -291,8 +312,8 @@ class BookClubInviteViewController: UIViewController {
 
     private func showBrokenLinkAlert() {
         let alert = UIAlertController(title: "", message: NSLocalizedString(K.ButtonTiles.noEventLink, comment: "") , preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     @IBAction func createBookClubPressed(_ sender: UIButton) {
@@ -337,6 +358,64 @@ class BookClubInviteViewController: UIViewController {
         platformLabel.text = bookClubModel?.eventPlatform
         platformImage.image = UIImage(named: Platforms.platformsImages[selectedRow])
         hidePicker(fromContainer: platformPickerContainer, bottomConstraint: platformPickerBottomConstraint)
+    }
+
+    @IBAction func editBookClubButtonPressed(_ sender: UIButton) {
+        sender.showAnimation {
+            if !ReachabilityManager.shared.hasConnectivity() {
+                let alert = UIAlertController(title: NSLocalizedString(K.ButtonTiles.noInternetTitle, comment: ""), message: NSLocalizedString(K.Errors.internetError, comment: "") , preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            } else {
+                print("Edit...")
+            }
+        }
+    }
+
+    @IBAction func leaveBookClubButtonPressed(_ sender: UIButton) {
+        sender.showAnimation {
+            if !ReachabilityManager.shared.hasConnectivity() {
+                let alert = UIAlertController(title: NSLocalizedString(K.ButtonTiles.noInternetTitle, comment: ""), message: NSLocalizedString(K.Errors.internetError, comment: "") , preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            } else {
+                let userId = Auth.auth().currentUser?.uid
+                let alert = UIAlertController(title: NSLocalizedString(K.ButtonTiles.leaveBookClubAlertTitle, comment: ""), message: NSLocalizedString(K.ButtonTiles.leaveBookClubAlertMessage, comment: "") , preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString(K.ButtonTiles.cancel, comment: ""), style: UIAlertAction.Style.cancel, handler: { _ in alert.dismiss(animated: true, completion: nil)}))
+                alert.addAction(UIAlertAction(title: NSLocalizedString(K.ButtonTiles.confirm, comment: ""), style: UIAlertAction.Style.destructive, handler: { _ in}))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+
+    @IBAction func deleteBookClubButtonPressed(_ sender: UIButton) {
+        sender.showAnimation {
+            if !ReachabilityManager.shared.hasConnectivity() {
+                let alert = UIAlertController(title: NSLocalizedString(K.ButtonTiles.noInternetTitle, comment: ""), message: NSLocalizedString(K.Errors.internetError, comment: "") , preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            } else {
+                let alert = UIAlertController(title: NSLocalizedString(K.ButtonTiles.deleteBookClubAlertTitle, comment: ""), message: NSLocalizedString(K.ButtonTiles.deleteBookClubAlertMessage, comment: "") , preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString(K.ButtonTiles.cancel, comment: ""), style: UIAlertAction.Style.cancel, handler: { _ in alert.dismiss(animated: true, completion: nil)}))
+                alert.addAction(UIAlertAction(title: NSLocalizedString(K.ButtonTiles.confirm, comment: ""), style: UIAlertAction.Style.destructive, handler: { _ in
+                                                if let safeBookClubModel = self.bookClubModel {
+                                                    BookClubService.shared.deleteBookClub(bookClubID: safeBookClubModel.bookClubID) { error in
+                                                        if let error = error {
+                                                            print("Error")
+                                                            alert.dismiss(animated: true, completion: nil)
+                                                        } else {
+                                                            AppNavigationHelper.sharedInstance.navigateToMainPage()
+                                                        }
+                                                    }
+                                                } else {
+                                                    alert.dismiss(animated: true, completion: nil)
+                                                }}))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
 
     // MARK: - Helpers
@@ -384,6 +463,37 @@ class BookClubInviteViewController: UIViewController {
         inviteLinkTextfield.placeholder = NSLocalizedString(K.LabelTexts.inviteLinkPlaceholder, comment: "")
     }
 
+    private func setupOwnerMode() {
+        guard let safeBookClubModel = bookClubModel else { return }
+        if safeBookClubModel.owner == Auth.auth().currentUser?.uid {
+            editButton.isHidden = false
+            eventGuestsTextfield.isHidden = false
+            tableViewTopConstraint.constant = 70
+            createBookClubButton.isHidden = false
+            isOwner = true
+            if createMode == true {
+                deleteBookClubButton.isHidden = true
+                editBookClubButton.isHidden = true
+                createBookClubButton.isHidden = false
+            } else {
+                deleteBookClubButton.isHidden = false
+                editBookClubButton.isHidden = false
+                createBookClubButton.isHidden = true
+            }
+        } else {
+            editButton.isHidden = true
+            eventGuestsTextfield.isHidden = true
+            tableViewTopConstraint.constant = 20
+            createBookClubButton.isHidden = true
+            isOwner = false
+            if createMode == true {
+                leaveBookClubButton.isHidden = true
+            } else {
+                leaveBookClubButton.isHidden = false
+            }
+        }
+    }
+
     private func createBookClub() {
         guard let safeBookClubModel = bookClubModel else { return }
         safeBookClubModel.bookClubName = bookClubName.text ?? ""
@@ -411,7 +521,18 @@ class BookClubInviteViewController: UIViewController {
     }
 
     private func fetchInvitedUsers() {
-        self.invitedUsersArray = [User]()
+        if createMode == true {
+            self.invitedUsersArray = [User]()
+        } else {
+            if let safeBookClubModel = bookClubModel {
+                Service.fetchUsersWithIds(userIds: safeBookClubModel.eventGuests) { invitedUsersArray in
+                    self.invitedUsersArray = invitedUsersArray
+                    self.eventGuestsTableView.reloadData()
+                }
+            } else {
+                self.invitedUsersArray = [User]()
+            }
+        }
     }
 
     private func getUserSuggestions(for filterName: String, from usersArray: [User]) {
@@ -497,7 +618,7 @@ class BookClubInviteViewController: UIViewController {
 
     private func registerNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
     @objc private func keyboardWillShow(notification: NSNotification){
@@ -575,7 +696,7 @@ extension BookClubInviteViewController: UITextFieldDelegate {
 
 // MARK: - TableViews
 
-extension BookClubInviteViewController: UITableViewDataSource, UITableViewDelegate {
+extension BookClubInviteViewController: UITableViewDataSource, UITableViewDelegate, SwipeTableViewCellDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case eventGuestsTableView:
@@ -590,11 +711,11 @@ extension BookClubInviteViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch tableView {
         case eventGuestsTableView:
-            return UITableView.automaticDimension
+            return 60
         case userSuggestionsTableView:
             return UITableView.automaticDimension
         default:
-            return UITableView.automaticDimension
+            return 60
         }
     }
 
@@ -610,7 +731,9 @@ extension BookClubInviteViewController: UITableViewDataSource, UITableViewDelega
             guard let safeInvitedUsers = invitedUsersArray else { return UITableViewCell.init(frame: .zero) }
             let cell = tableView.dequeueReusableCell(withIdentifier: "invitedUserCell", for: indexPath as IndexPath) as!
                 InvitedUsersCell
+            cell.delegate = self
             cell.configureCell(with: safeInvitedUsers[indexPath.row])
+            cell.layoutIfNeeded()
             return cell
         default:
             return UITableViewCell.init(frame: .zero)
@@ -624,6 +747,48 @@ extension BookClubInviteViewController: UITableViewDataSource, UITableViewDelega
             selectedSuggestion(for: suggestionCell)
         default:
             print("You should not be here")
+        }
+    }
+
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        switch tableView {
+        case eventGuestsTableView:
+
+            let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+                if indexPath.row == 0 {
+                    self.invitedUsersArray?.remove(at: 0)
+                } else {
+                    self.invitedUsersArray?.remove(at: indexPath.row)
+                }
+            }
+
+            configure(action: deleteAction, with: .trash)
+            return [deleteAction]
+        default:
+            return nil
+        }
+    }
+
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        options.transitionStyle = .border
+        return options
+    }
+
+    func configure(action: SwipeAction, with descriptor: ActionDescriptor) {
+        action.title = descriptor.title(forDisplayMode: buttonDisplayMode)
+        action.image = descriptor.image(forStyle: buttonStyle, displayMode: buttonDisplayMode)
+
+        switch buttonStyle {
+        case .backgroundColor:
+            action.backgroundColor = descriptor.color(forStyle: buttonStyle)
+        case .circular:
+            action.backgroundColor = .white
+            action.textColor = .white
+            action.font = .systemFont(ofSize: 13)
+            action.transitionDelegate = ScaleTransition.default
         }
     }
 }

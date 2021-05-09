@@ -8,8 +8,9 @@
 
 import UIKit
 import SDWebImage
+import SwipeCellKit
 
-class InvitedUsersCell: UITableViewCell {
+class InvitedUsersCell: SwipeTableViewCell {
 
     @IBOutlet weak var userPhoto: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -32,6 +33,8 @@ class InvitedUsersCell: UITableViewCell {
     func commonInit() {
         guard let view = loadViewFromNib() else { return }
         view.frame = self.bounds
+        self.contentView.autoresizingMask = .flexibleHeight
+        self.layoutIfNeeded()
         self.addSubview(view)
     }
 

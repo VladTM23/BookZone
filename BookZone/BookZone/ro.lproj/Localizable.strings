@@ -69,6 +69,15 @@
 "noInternetTitle" = "Lipsă conexiune la internet";
 "noEventLink" = "Gazda evenimentului nu a adăugat încă un link.";
 "startMeeting" = "Start";
+"editBookClub" = "Editează";
+"leaveBookClub" = "Părăsește clubul";
+"deleteBookClub" = "Șterge";
+"cancel" = "Renunță";
+"confirm" = "Confirmă";
+"deleteBookClubAlertTitle" = "Ștergea clubului de lectură";
+"deleteBookClubAlertMessage" = "Ești sigur că vrei să ștergi clubul de lectură? Toate datele vor fi pierdute.";
+"leaveBookClubAlertTitle" = "Părăsiți clubul de lectură";
+"leaveBookClubAlertMessage" = "Ești sigur că vrei să părăseșți clubul de lectură?";
 
 //Placeholders
 
