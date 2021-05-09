@@ -10,6 +10,5 @@ import UIKit
 import SwipeCellKit
 
 class BookShelfCollectionViewCell: SwipeCollectionViewCell {
-    
     @IBOutlet weak var bookshelfCell: BookShelfCell!
 }

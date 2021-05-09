@@ -85,6 +85,7 @@
 "fullname" = "Nume complet";
 "password" = "Parolă";
 "insertBookClubName" = "Setați numele clubului";
+"host" = "Gazda";
 
 //Menu
 

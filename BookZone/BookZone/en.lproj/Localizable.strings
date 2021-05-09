@@ -85,6 +85,7 @@
 "fullname" = "Full Name";
 "password" = "Password";
 "insertBookClubName" = "Insert book club name";
+"host" = "Host";
 
 //Menu
 

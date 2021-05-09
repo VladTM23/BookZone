@@ -407,7 +407,7 @@ class BookClubInviteViewController: UIViewController {
                                                             print("Error")
                                                             alert.dismiss(animated: true, completion: nil)
                                                         } else {
-                                                            AppNavigationHelper.sharedInstance.navigateToMainPage()
+                                                            self.dismiss(animated: true, completion: nil)
                                                         }
                                                     }
                                                 } else {

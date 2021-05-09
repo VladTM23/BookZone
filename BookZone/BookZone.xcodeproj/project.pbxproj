@@ -29,6 +29,8 @@
 		DF68B3E844A40D4C35F2072E /* Pods_BookZone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631142FF12AC485DD45BB5F7 /* Pods_BookZone.framework */; };
 		F50696F12647157B005D1620 /* InvitedUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F50696F02647157B005D1620 /* InvitedUserCell.xib */; };
 		F50696F3264717B5005D1620 /* InvitedUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50696F2264717B5005D1620 /* InvitedUserCell.swift */; };
+		F50696F52647F94A005D1620 /* BookClubCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50696F42647F94A005D1620 /* BookClubCollectionViewCell.swift */; };
+		F50696F72647FB3D005D1620 /* BookClubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F50696F62647FB3D005D1620 /* BookClubCell.xib */; };
 		F524A0392575321C0024E985 /* AppSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524A0382575321C0024E985 /* AppSettingsViewController.swift */; };
 		F524A03C257537D30024E985 /* Dropdown.xib in Resources */ = {isa = PBXBuildFile; fileRef = F524A03B257537D30024E985 /* Dropdown.xib */; };
 		F524A03F257537EF0024E985 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524A03E257537EF0024E985 /* Dropdown.swift */; };
@@ -115,6 +117,8 @@
 		E4466345ABFD86AAD0C0A744 /* Pods-BookZone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookZone.release.xcconfig"; path = "Target Support Files/Pods-BookZone/Pods-BookZone.release.xcconfig"; sourceTree = "<group>"; };
 		F50696F02647157B005D1620 /* InvitedUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvitedUserCell.xib; sourceTree = "<group>"; };
 		F50696F2264717B5005D1620 /* InvitedUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitedUserCell.swift; sourceTree = "<group>"; };
+		F50696F42647F94A005D1620 /* BookClubCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookClubCollectionViewCell.swift; sourceTree = "<group>"; };
+		F50696F62647FB3D005D1620 /* BookClubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookClubCell.xib; sourceTree = "<group>"; };
 		F524A0382575321C0024E985 /* AppSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsViewController.swift; sourceTree = "<group>"; };
 		F524A03B257537D30024E985 /* Dropdown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Dropdown.xib; sourceTree = "<group>"; };
 		F524A03E257537EF0024E985 /* Dropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
@@ -375,6 +379,7 @@
 				F541D78E26469A630078C5CB /* UserSuggestionsTableView.swift */,
 				F541D7902646A6B40078C5CB /* UserSuggestionsTableViewCell.swift */,
 				F50696F2264717B5005D1620 /* InvitedUserCell.swift */,
+				F50696F42647F94A005D1620 /* BookClubCollectionViewCell.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				7143BC5225602AFB0018CFAB /* BookShelfCell.xib */,
 				F541D7942646A7EC0078C5CB /* UserSuggestionsCell.xib */,
 				F50696F02647157B005D1620 /* InvitedUserCell.xib */,
+				F50696F62647FB3D005D1620 /* BookClubCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -542,6 +548,7 @@
 				F57D29E124E278400001D4C4 /* Main.storyboard in Resources */,
 				7143BC5325602AFB0018CFAB /* BookShelfCell.xib in Resources */,
 				F524A17C257681EF0024E985 /* SecondPageScroll.xib in Resources */,
+				F50696F72647FB3D005D1620 /* BookClubCell.xib in Resources */,
 				F5F9D2A124FB99B8002F4C1D /* 11793-books-stack.json in Resources */,
 				F5349EBF24E45169009C96BD /* Sacramento-Regular.ttf in Resources */,
 				F524A14A257558C70024E985 /* Localizable.strings in Resources */,
@@ -619,6 +626,7 @@
 				F5C45CC62631E6A800248F6E /* ActiveBookClubsViewController.swift in Sources */,
 				F59C584F255FD38400D6D708 /* AuthService.swift in Sources */,
 				F5DDA36126444C09000D2B4D /* BookClubService.swift in Sources */,
+				F50696F52647F94A005D1620 /* BookClubCollectionViewCell.swift in Sources */,
 				F5D7234B262DF20700F58DD1 /* UIView.swift in Sources */,
 				7106C77524E6E9C300D3D29C /* InfoViewController.swift in Sources */,
 				F524A0442575395D0024E985 /* Localization.swift in Sources */,

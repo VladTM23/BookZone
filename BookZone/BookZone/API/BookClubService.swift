@@ -39,6 +39,41 @@ class BookClubService {
 //        }
     }
 
+    func fetchActiveBookClubsForCurrentUser(userId: String, completion: @escaping([BookClub], Error?) -> Void) {
+        var allBookClubs = [BookClub]()
+        var userBookClubs = [BookClub]()
+
+        COLLECTION_BOOKCLUBS.getDocuments { dataSnapshot, error in
+            if let error = error {
+                print("Error getting documents, \(error.localizedDescription)")
+                completion([],error)
+            } else {
+                if let safeData = dataSnapshot {
+                    for document in safeData.documents {
+                        allBookClubs.append(BookClub(bookClubID: document.documentID, dictionary: document.data()))
+                    }
+                    if allBookClubs.isEmpty {
+                        completion([],nil)
+                    } else {
+                        for bookClub in allBookClubs {
+                            // Search for the events where the user is the owner first
+                            if bookClub.owner == userId {
+                                userBookClubs.append(bookClub)
+                            } else {
+                                for guest in bookClub.eventGuests {
+                                    if guest == userId {
+                                        userBookClubs.append(bookClub)
+                                    }
+                                }
+                            }
+                        }
+                        completion(userBookClubs,nil)
+                    }
+                }
+            }
+        }
+    }
+
     func createBookClub(bookClub: BookClub, completion: @escaping(Bool, Error?) -> Void) {
         let randomDocumentId = COLLECTION_BOOKCLUBS.document().documentID
         do {

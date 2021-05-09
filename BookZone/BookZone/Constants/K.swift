@@ -82,6 +82,8 @@ struct K {
         static let goToBookClubs = "goToBookClubs"
         static let bookToInvite = "bookToInvite"
         static let inviteToBookInfo = "inviteToBookInfo"
+        static let activeToInvite = "activeToInvite"
+        static let expiredToInvite = "expiredToInvite"
     }
 
     struct Nibs {
@@ -132,6 +134,7 @@ struct K {
         static let inviteLinkPlaceholder = "inviteLinkPlaceholder"
         static let noBookFound = "noBookFound"
         static let insertBookClubName = "insertBookClubName"
+        static let host = "host"
     }
 
     struct ButtonTiles {
