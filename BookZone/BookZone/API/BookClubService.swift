@@ -66,6 +66,23 @@ class BookClubService {
         }
     }
 
+    func editBookClub(bookClubID: String, bookClub: BookClub, completion: @escaping(Bool, Error?) -> Void) {
+        do {
+            try COLLECTION_BOOKCLUBS.document(bookClubID).setData(from: bookClub) { err in
+                if let err = err {
+                    print("Error editing document: \(err)")
+                    completion(false, err)
+                } else {
+                    print("Book Club with \(bookClubID) edited successfully.")
+                    completion(true, nil)
+                }
+            }
+        } catch let error {
+            print("Error editing book club: \(error.localizedDescription)")
+            completion(false, error)
+        }
+    }
+
     func deleteBookClub(bookClubID: String, completion: @escaping(Error?) -> Void) {
         COLLECTION_BOOKCLUBS.document(bookClubID).delete()
         completion(nil)

@@ -151,7 +151,7 @@ class BookClubInviteViewController: UIViewController {
         inviteLinkButton.layer.cornerRadius = inviteLinkButton.frame.height / 2.0
         inviteLinkButton.clipsToBounds = true
 
-        editBookClubButton.setTitle(NSLocalizedString(K.ButtonTiles.editBookClub, comment: ""), for: .normal)
+        editBookClubButton.setTitle(NSLocalizedString(K.ButtonTiles.finishEditing, comment: ""), for: .normal)
         editBookClubButton.layer.cornerRadius = editBookClubButton.frame.height / 2.0
         editBookClubButton.clipsToBounds = true
         deleteBookClubButton.setTitle(NSLocalizedString(K.ButtonTiles.deleteBookClub, comment: ""), for: .normal)
@@ -368,7 +368,7 @@ class BookClubInviteViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
                 return
             } else {
-                print("Edit...")
+                self.editBookClub()
             }
         }
     }
@@ -381,10 +381,13 @@ class BookClubInviteViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
                 return
             } else {
-                let userId = Auth.auth().currentUser?.uid
+                guard let userId = Auth.auth().currentUser?.uid else { return }
                 let alert = UIAlertController(title: NSLocalizedString(K.ButtonTiles.leaveBookClubAlertTitle, comment: ""), message: NSLocalizedString(K.ButtonTiles.leaveBookClubAlertMessage, comment: "") , preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString(K.ButtonTiles.cancel, comment: ""), style: UIAlertAction.Style.cancel, handler: { _ in alert.dismiss(animated: true, completion: nil)}))
-                alert.addAction(UIAlertAction(title: NSLocalizedString(K.ButtonTiles.confirm, comment: ""), style: UIAlertAction.Style.destructive, handler: { _ in}))
+                alert.addAction(UIAlertAction(title: NSLocalizedString(K.ButtonTiles.confirm, comment: ""), style: UIAlertAction.Style.destructive, handler: { _ in
+                    self.invitedUsersArray = self.invitedUsersArray?.filter { $0.uid != userId }
+                    self.editBookClub()
+                }))
                 self.present(alert, animated: true, completion: nil)
             }
         }
@@ -511,6 +514,25 @@ class BookClubInviteViewController: UIViewController {
                 print("Error creating book club, \(error.localizedDescription)")
             }
             AppNavigationHelper.sharedInstance.navigateToMainPage()
+        }
+    }
+
+    private func editBookClub() {
+        guard let safeBookClubModel = bookClubModel else { return }
+        safeBookClubModel.bookClubName = bookClubName.text ?? ""
+        safeBookClubModel.bookTitle = bookTitle ?? "Povestea mea"
+        safeBookClubModel.eventURL = inviteLinkTextfield.text ?? ""
+        safeBookClubModel.bookCoverURL = bookCoverUrl ?? ""
+        safeBookClubModel.eventInviteList = getGuestsStringArray()
+        safeBookClubModel.eventGuests = getGuestsStringArray()
+        safeBookClubModel.eventDate = eventDatePicker.date
+        safeBookClubModel.eventPlatform = Platforms.platformsArray[platformPicker.selectedRow(inComponent: 0)]
+
+        BookClubService.shared.editBookClub(bookClubID: safeBookClubModel.bookClubID, bookClub: bookClubModel!) { result, error in
+            if let error = error {
+                print("Error creating book club, \(error.localizedDescription)")
+            }
+            self.dismiss(animated: true, completion: nil)
         }
     }
 
