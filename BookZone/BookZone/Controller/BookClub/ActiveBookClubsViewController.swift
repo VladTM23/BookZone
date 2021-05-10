@@ -22,6 +22,10 @@ class ActiveBookClubsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchUserBookClubEvents()
     }
 
@@ -39,7 +43,7 @@ class ActiveBookClubsViewController: UIViewController {
         self.bookClubsArray = [BookClub]()
         guard let userId = Auth.auth().currentUser?.uid else { return }
         activityIndicator.startAnimating()
-        BookClubService.shared.fetchActiveBookClubsForCurrentUser(userId: userId) { bookClubsArray, error in
+        BookClubsManager.shared.getActiveBookClubEvents(userId: userId) { bookClubsArray, error in
             if let error = error {
                 print("Error fetching user book club events, \(error.localizedDescription)")
                 self.activityIndicator.stopAnimating()
@@ -53,7 +57,7 @@ class ActiveBookClubsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.Identifiers.activeToInvite {
             let bookClubInviteVC = segue.destination as! BookClubInviteViewController
-            bookClubInviteVC.bookTitle = selectedBookClubModel?.bookClubName ?? ""
+            bookClubInviteVC.bookTitle = selectedBookClubModel?.bookTitle ?? ""
             bookClubInviteVC.bookCoverUrl = selectedBookClubModel?.bookCoverURL ?? ""
             bookClubInviteVC.createMode = false
             bookClubInviteVC.bookClubModel = selectedBookClubModel

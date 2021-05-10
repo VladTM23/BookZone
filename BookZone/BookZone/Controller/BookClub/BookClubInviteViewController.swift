@@ -403,12 +403,12 @@ class BookClubInviteViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: NSLocalizedString(K.ButtonTiles.confirm, comment: ""), style: UIAlertAction.Style.destructive, handler: { _ in
                                                 if let safeBookClubModel = self.bookClubModel {
                                                     BookClubService.shared.deleteBookClub(bookClubID: safeBookClubModel.bookClubID) { error in
-                                                        if let error = error {
-                                                            print("Error")
+                                                        if error != nil {
+                                                            print("Error, \(error?.localizedDescription)")
                                                             alert.dismiss(animated: true, completion: nil)
-                                                        } else {
-                                                            self.dismiss(animated: true, completion: nil)
+                                                            return
                                                         }
+                                                        self.dismiss(animated: true, completion: nil)
                                                     }
                                                 } else {
                                                     alert.dismiss(animated: true, completion: nil)

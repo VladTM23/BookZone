@@ -37,6 +37,7 @@ class BookClub: Codable {
 
     enum CodingKeys: String, CodingKey {
         case bookClubName
+        case bookTitle
         case owner
         case bookClubID
         case eventDate

@@ -31,6 +31,7 @@
 		F50696F3264717B5005D1620 /* InvitedUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50696F2264717B5005D1620 /* InvitedUserCell.swift */; };
 		F50696F52647F94A005D1620 /* BookClubCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50696F42647F94A005D1620 /* BookClubCollectionViewCell.swift */; };
 		F50696F72647FB3D005D1620 /* BookClubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F50696F62647FB3D005D1620 /* BookClubCell.xib */; };
+		F50696F92649364A005D1620 /* BookClubsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50696F82649364A005D1620 /* BookClubsManager.swift */; };
 		F524A0392575321C0024E985 /* AppSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524A0382575321C0024E985 /* AppSettingsViewController.swift */; };
 		F524A03C257537D30024E985 /* Dropdown.xib in Resources */ = {isa = PBXBuildFile; fileRef = F524A03B257537D30024E985 /* Dropdown.xib */; };
 		F524A03F257537EF0024E985 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524A03E257537EF0024E985 /* Dropdown.swift */; };
@@ -119,6 +120,7 @@
 		F50696F2264717B5005D1620 /* InvitedUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitedUserCell.swift; sourceTree = "<group>"; };
 		F50696F42647F94A005D1620 /* BookClubCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookClubCollectionViewCell.swift; sourceTree = "<group>"; };
 		F50696F62647FB3D005D1620 /* BookClubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookClubCell.xib; sourceTree = "<group>"; };
+		F50696F82649364A005D1620 /* BookClubsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookClubsManager.swift; sourceTree = "<group>"; };
 		F524A0382575321C0024E985 /* AppSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsViewController.swift; sourceTree = "<group>"; };
 		F524A03B257537D30024E985 /* Dropdown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Dropdown.xib; sourceTree = "<group>"; };
 		F524A03E257537EF0024E985 /* Dropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				F55CAABC25FB5E9200287FB9 /* ReachabilityManager.swift */,
+				F50696F82649364A005D1620 /* BookClubsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				F5D7234B262DF20700F58DD1 /* UIView.swift in Sources */,
 				7106C77524E6E9C300D3D29C /* InfoViewController.swift in Sources */,
 				F524A0442575395D0024E985 /* Localization.swift in Sources */,
+				F50696F92649364A005D1620 /* BookClubsManager.swift in Sources */,
 				71E4321024EFC3840099312F /* SearchBar.swift in Sources */,
 				F59C581D255FCD6300D6D708 /* User.swift in Sources */,
 				F59C5821255FCD9900D6D708 /* AuthenticationViewModel.swift in Sources */,

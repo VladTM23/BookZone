@@ -1174,10 +1174,37 @@
                     <view key="view" contentMode="scaleToFill" id="86F-H3-gfv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e0s-Wk-ebq">
+                                <rect key="frame" x="20" y="64" width="335" height="694"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VNh-o6-aeM">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="0qq-FI-iLG">
+                                <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
+                                <color key="color" name="pink"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="AfU-MH-KwP"/>
                         <color key="backgroundColor" name="kaki"/>
+                        <constraints>
+                            <constraint firstItem="0qq-FI-iLG" firstAttribute="centerX" secondItem="86F-H3-gfv" secondAttribute="centerX" id="Y6b-D3-hM6"/>
+                            <constraint firstItem="e0s-Wk-ebq" firstAttribute="leading" secondItem="AfU-MH-KwP" secondAttribute="leading" constant="20" id="cHe-61-0ZH"/>
+                            <constraint firstItem="AfU-MH-KwP" firstAttribute="trailing" secondItem="e0s-Wk-ebq" secondAttribute="trailing" constant="20" id="dGh-7Q-efC"/>
+                            <constraint firstItem="0qq-FI-iLG" firstAttribute="centerY" secondItem="86F-H3-gfv" secondAttribute="centerY" id="fOZ-Wl-6MV"/>
+                            <constraint firstItem="e0s-Wk-ebq" firstAttribute="top" secondItem="AfU-MH-KwP" secondAttribute="top" constant="20" id="gbJ-jF-Fl7"/>
+                            <constraint firstItem="AfU-MH-KwP" firstAttribute="bottom" secondItem="e0s-Wk-ebq" secondAttribute="bottom" constant="20" id="gm1-33-WX9"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="0qq-FI-iLG" id="pjC-D1-MIq"/>
+                        <outlet property="collectionView" destination="e0s-Wk-ebq" id="8Vo-Jf-IxB"/>
                         <segue destination="Hfd-oh-vdm" kind="presentation" identifier="expiredToInvite" modalPresentationStyle="fullScreen" id="45Y-3P-4kW"/>
                     </connections>
                 </viewController>
