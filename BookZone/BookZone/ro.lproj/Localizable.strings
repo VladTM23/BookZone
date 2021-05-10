@@ -21,6 +21,19 @@
 "menuTitle" = "Meniul principal";
 "bookClubsInvite" = "Invitația la clubul de lectură";
 
+// Achievements
+
+"achOneLocked" = "Revizitează pagina de tutorial pentru a debloca acest trofeu!";
+"achTwoLocked" = "Colectează 5 cărți în raftul de lectură pentru a debloca acest trofeu!";
+"achThreeLocked" = "Colectează 25 cărți în raftul de lectură pentru a debloca acest trofeu!";
+"achFourLocked" = "Colectează 100 cărți în raftul de lectură pentru a debloca acest trofeu!";
+"achFiveLocked" = "Creează primul tău club de lectură pentru a debloca acest trofeu!";
+"achOneUnlocked" = "Felicitări, ai revizitat pagina de tutorial!";
+"achTwoUnlocked" = "Felicitări, deți 5 cărți în raftul de lectură!";
+"achThreeUnlocked" = "Felicitări, deți 5 cărți în raftul de lectură!";
+"achFourUnlocked" = "Felicitări, deți 5 cărți în raftul de lectură!";
+"achFiveUnlocked" = "Felicitări, ai creat primul tău club de lectură!";
+
 // Labels
 
 "language" = "Limbă";

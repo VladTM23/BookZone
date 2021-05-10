@@ -219,6 +219,18 @@ class ResultsViewController: UIViewController  {
                 self.present(alert, animated: true, completion: nil)
                 return
             } else {
+                let userHasCreatedBookClubInvite = UserDefaults.standard.bool(forKey : "achievement5")
+                if !userHasCreatedBookClubInvite {
+                    UserDefaults.standard.set(true, forKey: "achievement5")
+                    self.user?.achievementsArray[4] = true
+                    if let user = self.user {
+                        Service.saveUserData(user: user) { (error) in
+                            if error != nil {
+                                print("Error when adding bookId to user, \(error?.localizedDescription)")
+                            }
+                        }
+                    }
+                }
                 self.performSegue(withIdentifier: K.Identifiers.bookToInvite, sender: self)
             }
         }

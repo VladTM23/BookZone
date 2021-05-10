@@ -112,6 +112,19 @@ struct K {
         static let bookClubsInvite = "bookClubsInvite"
     }
 
+    struct Achievements {
+        static let achOneLocked = "achOneLocked"
+        static let achTwoLocked = "achTwoLocked"
+        static let achThreeLocked = "achThreeLocked"
+        static let achFourLocked = "achFourLocked"
+        static let achFiveLocked = "achFiveLocked"
+        static let achOneUnlocked = "achOneUnlocked"
+        static let achTwoUnlocked = "achTwoUnlocked"
+        static let achThreeUnlocked = "achThreeUnlocked"
+        static let achFourUnlocked = "achFourUnlocked"
+        static let achFiveUnlocked = "achFiveUnlocked"
+    }
+
     struct LabelTexts {
         static let ratings = "ratings"
         static let reviews = "reviews"

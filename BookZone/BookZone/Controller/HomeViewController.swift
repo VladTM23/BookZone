@@ -118,6 +118,11 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             let bookshelfVC = segue.destination as! BookShelfViewController
             bookshelfVC.user = user
         }
+
+        else if segue.identifier == K.Identifiers.goToMenu {
+            let menuVC = segue.destination as! MenuViewController
+            menuVC.user = user
+        }
     }
 }
 

@@ -21,6 +21,19 @@
 "menuTitle" = "Main menu";
 "bookClubsInvite" = "Book club invite";
 
+// Achievements
+
+"achOneLocked" = "Revisit the tutorial page to unlock this achievement!";
+"achTwoLocked" = "Collect 5 books on your bookshelf to unlock this achievement!";
+"achThreeLocked" = "Collect 25 books on your bookshelf to unlock this achievement!";
+"achFourLocked" = "Collect 100 books on your bookshelf to unlock this achievement!";
+"achFiveLocked" = "Congrats, you have created your first book club event!";
+"achOneUnlocked" = "Congrats, you have revisited the tutorial page!";
+"achTwoUnlocked" = "Congrats, you have 5 books on your bookshelf!";
+"achThreeUnlocked" = "Congrats, you have 25 books on your bookshelf!";
+"achFourUnlocked" = "Congrats, you have 100 books on your bookshelf!";
+"achFiveUnlocked" = "Create your first book club event to unlock this achievement.";
+
 //Labels
 
 "language" = "Language";

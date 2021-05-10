@@ -16,6 +16,8 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var selectLanguageButton: UIButton!
     @IBOutlet weak var bookClubsButton: UIButton!
 
+    var user: User?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -51,6 +53,18 @@ class MenuViewController: UIViewController {
 
     @IBAction func redoTutorialPressed(_ sender: UIButton) {
         sender.showAnimation {
+            let userHasRevisitedTutorial = UserDefaults.standard.bool(forKey : "achievement1")
+            if !userHasRevisitedTutorial {
+                UserDefaults.standard.set(true, forKey: "achievement1")
+                self.user?.achievementsArray[0] = true
+                if let user = self.user {
+                    Service.saveUserData(user: user) { (error) in
+                        if error != nil {
+                            print("Error when adding bookId to user, \(error?.localizedDescription)")
+                        }
+                    }
+                }
+            }
             self.performSegue(withIdentifier: K.Identifiers.redoTutorial, sender: self)
         }
     }
