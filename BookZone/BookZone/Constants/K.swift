@@ -135,6 +135,8 @@ struct K {
         static let noBookFound = "noBookFound"
         static let insertBookClubName = "insertBookClubName"
         static let host = "host"
+        static let emptyEvents = "emptyEvents"
+        static let emptyExpiredEvent = "emptyExpiredEvents"
     }
 
     struct ButtonTiles {

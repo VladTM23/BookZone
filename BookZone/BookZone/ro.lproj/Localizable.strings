@@ -86,6 +86,8 @@
 "password" = "Parolă";
 "insertBookClubName" = "Setați numele clubului";
 "host" = "Gazda";
+"emptyEvents" = "Ce mai aștepti? Du-te și creează primul tău club de lectură!";
+"emptyExpiredEvents" = "Nu ai participat la niciun club de lectură in trecut.";
 
 //Menu
 

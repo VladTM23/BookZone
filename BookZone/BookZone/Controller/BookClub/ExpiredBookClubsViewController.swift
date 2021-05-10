@@ -8,11 +8,16 @@
 
 import UIKit
 import Firebase
+import Lottie
 
 class ExpiredBookClubsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var errorView: AnimationView!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var emptyView: AnimationView!
+    @IBOutlet weak var emptyLabel: UILabel!
 
     var bookClubsArray: [BookClub]?
     var selectedBookClubId: String = ""
@@ -22,11 +27,19 @@ class ExpiredBookClubsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()
+        configureErrorAnimation()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchUserBookClubEvents()
+        if !ReachabilityManager.shared.hasConnectivity() {
+            showErrorView(errorMessage: K.Errors.internetError)
+        } else {
+            errorLabel.isHidden = true
+            errorView.isHidden = true
+            collectionView.isHidden = false
+            fetchUserBookClubEvents()
+        }
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -39,6 +52,28 @@ class ExpiredBookClubsViewController: UIViewController {
         collectionView.register(BookClubCollectionViewCell.self, forCellWithReuseIdentifier: "bookClubCell")
     }
 
+    private func configureErrorAnimation() {
+        errorView.contentMode = .scaleAspectFit
+        errorView.loopMode = .loop
+        errorView.animationSpeed = 0.5
+        errorView.play()
+
+        emptyView.contentMode = .scaleAspectFit
+        emptyView.loopMode = .loop
+        emptyView.animationSpeed = 0.5
+        emptyView.play()
+    }
+
+    private func showErrorView(errorMessage: String) {
+        collectionView.isHidden = true
+        activityIndicator.isHidden = true
+        emptyView.isHidden = true
+        emptyLabel.isHidden = true
+        errorView.isHidden = false
+        errorLabel.isHidden = false
+        errorLabel.text = NSLocalizedString(errorMessage, comment: "")
+    }
+
     private func fetchUserBookClubEvents() {
         self.bookClubsArray = [BookClub]()
         guard let userId = Auth.auth().currentUser?.uid else { return }
@@ -49,9 +84,19 @@ class ExpiredBookClubsViewController: UIViewController {
                 self.activityIndicator.stopAnimating()
             }
             self.bookClubsArray = bookClubsArray
+            self.toggleEmptyView(bookClubEventsArray: bookClubsArray)
             self.activityIndicator.stopAnimating()
             self.collectionView.reloadData()
         }
+    }
+
+    private func toggleEmptyView(bookClubEventsArray: [BookClub]) {
+        let shouldShowEmptyView = bookClubEventsArray.isEmpty
+        collectionView.isHidden = shouldShowEmptyView
+        activityIndicator.isHidden = shouldShowEmptyView
+        emptyView.isHidden = !shouldShowEmptyView
+        emptyLabel.isHidden = !shouldShowEmptyView
+        emptyLabel.text = NSLocalizedString(K.LabelTexts.emptyExpiredEvent, comment: "")
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

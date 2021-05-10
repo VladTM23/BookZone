@@ -86,6 +86,8 @@
 "password" = "Password";
 "insertBookClubName" = "Insert book club name";
 "host" = "Host";
+"emptyEvents" = "Go ahead and create your first book club";
+"emptyExpiredEvents" = "No events attended in the past";
 
 //Menu
 
