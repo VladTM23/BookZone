@@ -150,6 +150,7 @@ struct K {
         static let host = "host"
         static let emptyEvents = "emptyEvents"
         static let emptyExpiredEvent = "emptyExpiredEvents"
+        static let bookClubNotificationText = "bookClubNotificationText"
     }
 
     struct ButtonTiles {

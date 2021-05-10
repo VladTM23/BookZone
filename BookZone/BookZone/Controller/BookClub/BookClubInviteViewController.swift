@@ -85,6 +85,7 @@ class BookClubInviteViewController: UIViewController {
         configureBookClubModel() {
             self.updateUI()
         }
+        scheduleNotification()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -422,6 +423,33 @@ class BookClubInviteViewController: UIViewController {
     }
 
     // MARK: - Helpers
+
+    private func scheduleNotification() {
+        if createMode == true {
+            return
+        } else {
+            guard let safeBookClubModel = bookClubModel else { return }
+            if safeBookClubModel.eventDate > Date() {
+                var hasReminderSet = false
+                var reminder = UIApplication.shared.scheduledLocalNotifications?.first(where: { ($0.userInfo?["bookClubEventId"] as? String) == safeBookClubModel.bookClubID })
+                if reminder != nil {
+                    hasReminderSet = true
+                }
+                if !hasReminderSet {
+                    UIApplication.shared.scheduleLocalNotification(for: safeBookClubModel)
+                }
+            } else {
+                var hasReminderSet = false
+                var reminder = UIApplication.shared.scheduledLocalNotifications?.first(where: { ($0.userInfo?["bookClubEventId"] as? String) == safeBookClubModel.bookClubID })
+                if reminder != nil {
+                    hasReminderSet = true
+                }
+                if hasReminderSet {
+                    UIApplication.shared.cancelLocalNotification(for: safeBookClubModel)
+                }
+            }
+        }
+    }
 
     private func configureBookClubModel(completion: (() -> Void)? = nil) {
         if createMode == true {

@@ -41,6 +41,7 @@
 		F524A14A257558C70024E985 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F524A14C257558C70024E985 /* Localizable.strings */; };
 		F524A172257681D50024E985 /* FirstPageScroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = F524A174257681D50024E985 /* FirstPageScroll.xib */; };
 		F524A17C257681EF0024E985 /* SecondPageScroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = F524A17E257681EF0024E985 /* SecondPageScroll.xib */; };
+		F525F99B2649A5A7001096B3 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F525F99A2649A5A7001096B3 /* UIApplicationExtension.swift */; };
 		F527CBA126497CD8002D9FD4 /* emptyBoo.json in Resources */ = {isa = PBXBuildFile; fileRef = F527CBA026497CD8002D9FD4 /* emptyBoo.json */; };
 		F5349EB224E44456009C96BD /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5349EB124E44456009C96BD /* K.swift */; };
 		F5349EBF24E45169009C96BD /* Sacramento-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */; };
@@ -139,6 +140,7 @@
 		F524A17D257681EF0024E985 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SecondPageScroll.xib; sourceTree = "<group>"; };
 		F524A181257681F30024E985 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SecondPageScroll.strings; sourceTree = "<group>"; };
 		F524A183257681F50024E985 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/SecondPageScroll.strings; sourceTree = "<group>"; };
+		F525F99A2649A5A7001096B3 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		F527CBA026497CD8002D9FD4 /* emptyBoo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emptyBoo.json; sourceTree = "<group>"; };
 		F5349EB124E44456009C96BD /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sacramento-Regular.ttf"; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 				F524A0432575395D0024E985 /* Localization.swift */,
 				F524A08425754CC00024E985 /* ScrollView.swift */,
 				F5D7234A262DF20700F58DD1 /* UIView.swift */,
+				F525F99A2649A5A7001096B3 /* UIApplicationExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				F59C584F255FD38400D6D708 /* AuthService.swift in Sources */,
 				F5DDA36126444C09000D2B4D /* BookClubService.swift in Sources */,
 				F50696F52647F94A005D1620 /* BookClubCollectionViewCell.swift in Sources */,
+				F525F99B2649A5A7001096B3 /* UIApplicationExtension.swift in Sources */,
 				F5D7234B262DF20700F58DD1 /* UIView.swift in Sources */,
 				7106C77524E6E9C300D3D29C /* InfoViewController.swift in Sources */,
 				F524A0442575395D0024E985 /* Localization.swift in Sources */,

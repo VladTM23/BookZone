@@ -63,6 +63,7 @@
 "pleaseSelectPlatform" = "Please select your event platform";
 "inviteLinkPlaceholder" = "Copy & paste the event link here";
 "noBookFound" = "No book found";
+"bookClubNotificationText" = "You have an upcoming book club event.";
 
 //Buttons
 
