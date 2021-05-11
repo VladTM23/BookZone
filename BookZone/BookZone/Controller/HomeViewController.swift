@@ -38,8 +38,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
-
-        print("*************",UIApplication.shared.scheduledLocalNotifications?.count)
+//        print("*************",UIApplication.shared.scheduledLocalNotifications?.count)
     }
 
     // MARK: - User Interface

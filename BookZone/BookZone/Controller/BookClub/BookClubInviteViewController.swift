@@ -589,7 +589,7 @@ class BookClubInviteViewController: UIViewController {
         filteredUsers = [User]()
 
         for user in usersArray {
-            if user.name.lowercased().contains(filterName.lowercased()) {
+            if user.name.lowercased().contains(filterName.lowercased()) && user.uid != Auth.auth().currentUser?.uid {
                 filteredUsers?.append(user)
             }
         }
@@ -802,6 +802,9 @@ extension BookClubInviteViewController: UITableViewDataSource, UITableViewDelega
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
+        if bookClubModel?.owner != Auth.auth().currentUser?.uid {
+            return nil
+        }
         switch tableView {
         case eventGuestsTableView:
 
