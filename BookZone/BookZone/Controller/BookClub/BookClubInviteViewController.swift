@@ -369,6 +369,7 @@ class BookClubInviteViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
                 return
             } else {
+                self.rescheduleNotification()
                 self.editBookClub()
             }
         }
@@ -446,6 +447,26 @@ class BookClubInviteViewController: UIViewController {
                 }
                 if hasReminderSet {
                     UIApplication.shared.cancelLocalNotification(for: safeBookClubModel)
+                }
+            }
+        }
+    }
+
+    private func rescheduleNotification() {
+        if createMode == true {
+            return
+        } else {
+            guard let safeBookClubModel = bookClubModel else { return }
+            if safeBookClubModel.eventDate > Date() {
+                var hasReminderSet = false
+                var reminder = UIApplication.shared.scheduledLocalNotifications?.first(where: { ($0.userInfo?["bookClubEventId"] as? String) == safeBookClubModel.bookClubID })
+                if reminder != nil {
+                    hasReminderSet = true
+                    UIApplication.shared.cancelLocalNotification(for: safeBookClubModel)
+                    UIApplication.shared.scheduleLocalNotification(for: safeBookClubModel)
+                }
+                if !hasReminderSet {
+                    UIApplication.shared.scheduleLocalNotification(for: safeBookClubModel)
                 }
             }
         }
