@@ -24,6 +24,7 @@ class CreditsViewController: UIViewController {
     @IBOutlet weak var easyTipViewLabel: UILabel!
     @IBOutlet weak var swipeCellKitLabel: UILabel!
     @IBOutlet weak var swiftyJsonLabel: UILabel!
+    @IBOutlet weak var parchmentLabel: UILabel!
 
     // MARK: - Lifecycle
 
@@ -56,6 +57,7 @@ class CreditsViewController: UIViewController {
         easyTipViewAction()
         swipeCellAction()
         swiftyJsonAction()
+        parchmentAction()
     }
 
     private func alamofireAction() {
@@ -108,6 +110,11 @@ class CreditsViewController: UIViewController {
         swiftyJsonLabel.addGestureRecognizer(creditsTap)
     }
 
+    private func parchmentAction() {
+        let creditsTap = UITapGestureRecognizer(target: self, action: #selector(parchmentLabelTapped))
+        parchmentLabel.addGestureRecognizer(creditsTap)
+    }
+
     // MARK: - Actions
 
     @objc func alamofireLabelTapped() {
@@ -158,5 +165,14 @@ class CreditsViewController: UIViewController {
     @objc func swiftyJsonLabelTapped() {
         let webVC = SFSafariViewController(url: URL(string: K.Documentation.swiftyJSONURL)!)
         present(webVC, animated: true)
+    }
+
+    @objc func parchmentLabelTapped() {
+        let webVC = SFSafariViewController(url: URL(string: K.Documentation.parchmentURL)!)
+        present(webVC, animated: true)
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }

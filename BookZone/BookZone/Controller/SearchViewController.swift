@@ -95,6 +95,10 @@ class SearchViewController: UIViewController {
         searchBar.searchView.layer.cornerRadius = 15
         searchBar.searchImageView.layer.cornerRadius = 15
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 // MARK: - SearchBar
 

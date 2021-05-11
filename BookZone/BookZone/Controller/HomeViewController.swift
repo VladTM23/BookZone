@@ -38,6 +38,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
+//        print("*************",UIApplication.shared.scheduledLocalNotifications?.count)
     }
 
     // MARK: - User Interface
@@ -117,6 +118,11 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         else if segue.identifier == K.Identifiers.goToBookshelf {
             let bookshelfVC = segue.destination as! BookShelfViewController
             bookshelfVC.user = user
+        }
+
+        else if segue.identifier == K.Identifiers.goToMenu {
+            let menuVC = segue.destination as! MenuViewController
+            menuVC.user = user
         }
     }
 }

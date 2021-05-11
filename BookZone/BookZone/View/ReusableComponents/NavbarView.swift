@@ -15,6 +15,8 @@ class NavbarView: UIView {
     @IBOutlet weak var titleLabelNavbar: UILabel!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var subtitleLabel: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -41,4 +43,9 @@ class NavbarView: UIView {
         guard let parentVC = self.getOwningViewController() else { return }
         parentVC.dismiss(animated: true, completion: nil)
     }
+
+    @IBAction func closeButtonPressed(_ sender: UIButton) {
+        AppNavigationHelper.sharedInstance.navigateToMainPage()
+    }
+
 }

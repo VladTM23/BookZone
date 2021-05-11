@@ -36,6 +36,31 @@ struct Service {
             })
         }
     }
+
+    static func fetchUsersWithIds(userIds: [String], completion: @escaping([User]) -> Void) {
+        var allUsers = [User]()
+        var filteredUsers = [User]()
+
+        COLLECTION_USERS.getDocuments { (snapshot, error) in
+            snapshot?.documents.forEach({ document in
+                let dictionary = document.data()
+                let user = User(dictionary: dictionary)
+
+                allUsers.append(user)
+
+                if allUsers.count == snapshot?.documents.count {
+                    for userId in userIds {
+                        for user in allUsers {
+                            if user.uid == userId {
+                                filteredUsers.append(user)
+                            }
+                        }
+                    }
+                    completion(filteredUsers)
+                }
+            })
+        }
+    }
     
     static func fetchUserBooks(withArray arr : [String], completion: @escaping([Book]) -> Void) {
         var books = [Book]()

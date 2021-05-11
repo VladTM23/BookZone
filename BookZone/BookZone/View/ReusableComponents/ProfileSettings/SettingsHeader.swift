@@ -25,9 +25,11 @@ class SettingsHeader: UIView {
     lazy var button1 = createButton(0)
     lazy var preferences = createTipPreferences()
     var tipView : EasyTipView!
+    var starButton = 0
     var medalButton = 0
     var shieldButton = 0
     var findButton = 0
+    var chatButton = 0
     var oneIsOpen = 0
     
     
@@ -156,8 +158,30 @@ class SettingsHeader: UIView {
         
         switch title {
         case "stars.png" : text = "Star"
+            text = UserDefaults.standard.bool(forKey : "achievement1") ? NSLocalizedString(K.Achievements.achOneUnlocked, comment: "")  : NSLocalizedString(K.Achievements.achOneLocked, comment: "")
+
+            if starButton == 0 && oneIsOpen == 0 {
+                tipView = EasyTipView(text: text, preferences: preferences)
+                tipView.show(animated: true, forView: sender, withinSuperview: self)
+                starButton = 1
+                oneIsOpen = 1
+            }
+
+            else {
+                sender.isUserInteractionEnabled = false
+                tipView.dismiss()
+                // when spamming the info button, the info view would open and take up the whole screen
+                // as a fix, the button is disabled after the second tap (the one which should close the view)
+                // the button is enabled after 700ms
+                let delayTime = DispatchTime.now() + Double(Int64(0.7 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+                DispatchQueue.main.asyncAfter(deadline: delayTime) {
+                    sender.isUserInteractionEnabled = true
+                }
+                starButton = 0
+                oneIsOpen = 0
+            }
         case "medal.png" :
-            text = UserDefaults.standard.bool(forKey : "achievement2") ? "Congrats, you have 5 books on your bookshelf!" :"Collect 5 books on your bookshelf to unlock this achievement!"
+            text = UserDefaults.standard.bool(forKey : "achievement2") ? NSLocalizedString(K.Achievements.achTwoUnlocked, comment: "")  : NSLocalizedString(K.Achievements.achTwoLocked, comment: "")
            
             if medalButton == 0 && oneIsOpen == 0 {
                 tipView = EasyTipView(text: text, preferences: preferences)
@@ -180,7 +204,7 @@ class SettingsHeader: UIView {
                 oneIsOpen = 0
             }
         case "shield.png":
-            text = UserDefaults.standard.bool(forKey : "achievement3") ? "Congrats, you have 25 books on your bookshelf!" :"Collect 25 books on your bookshelf to unlock this achievement!"
+            text = UserDefaults.standard.bool(forKey : "achievement3") ? NSLocalizedString(K.Achievements.achThreeUnlocked, comment: "")  : NSLocalizedString(K.Achievements.achThreeLocked, comment: "")
            
             if shieldButton == 0 && oneIsOpen == 0 {
                 tipView = EasyTipView(text: text, preferences: preferences)
@@ -203,7 +227,7 @@ class SettingsHeader: UIView {
                 oneIsOpen = 0
             }
         case "find.png"  :
-            text = UserDefaults.standard.bool(forKey : "achievement4") ? "Congrats, you have 100 books on your bookshelf!" :"Collect 100 books on your bookshelf to unlock this achievement!"
+            text = UserDefaults.standard.bool(forKey : "achievement4") ? NSLocalizedString(K.Achievements.achFourUnlocked, comment: "")  : NSLocalizedString(K.Achievements.achFourLocked, comment: "")
            
             if findButton == 0 && oneIsOpen == 0 {
                 tipView = EasyTipView(text: text, preferences: preferences)
@@ -226,6 +250,28 @@ class SettingsHeader: UIView {
                 oneIsOpen = 0
             }
         case "chat.png"  : text = "Chat"
+            text = UserDefaults.standard.bool(forKey : "achievement5") ? NSLocalizedString(K.Achievements.achFiveUnlocked, comment: "")  : NSLocalizedString(K.Achievements.achFiveLocked, comment: "")
+
+            if chatButton == 0 && oneIsOpen == 0 {
+                tipView = EasyTipView(text: text, preferences: preferences)
+                tipView.show(animated: true, forView: sender, withinSuperview: self)
+                chatButton = 1
+                oneIsOpen = 1
+            }
+
+            else {
+                sender.isUserInteractionEnabled = false
+                tipView.dismiss()
+                // when spamming the info button, the info view would open and take up the whole screen
+                // as a fix, the button is disabled after the second tap (the one which should close the view)
+                // the button is enabled after 700ms
+                let delayTime = DispatchTime.now() + Double(Int64(0.7 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+                DispatchQueue.main.asyncAfter(deadline: delayTime) {
+                    sender.isUserInteractionEnabled = true
+                }
+                chatButton = 0
+                oneIsOpen = 0
+            }
         default:
             text = "No achievement found"
         }

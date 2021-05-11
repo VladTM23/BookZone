@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InvitedUsersCell" customModule="BookZone" customModuleProvider="target">
+            <connections>
+                <outlet property="removeUserButton" destination="9fl-lX-KQp" id="BQM-4M-jCs"/>
+                <outlet property="userName" destination="gjd-i0-P2z" id="gsn-iy-pnd"/>
+                <outlet property="userPhoto" destination="VKq-9N-zia" id="QSG-em-aEP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="invitedUserCell" rowHeight="60" id="r1B-BA-I5F" userLabel="invitedUserCell">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r1B-BA-I5F" id="Y6T-x2-Ilk">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VKq-9N-zia">
+                        <rect key="frame" x="10" y="11" width="38" height="38"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="38" id="bA4-xi-Zq5"/>
+                            <constraint firstAttribute="width" constant="38" id="fBP-Ir-L7e"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="19"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjd-i0-P2z">
+                        <rect key="frame" x="58" y="20.5" width="39.5" height="19"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                        <color key="textColor" name="darkGreen"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fl-lX-KQp">
+                        <rect key="frame" x="375" y="18" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="4Z6-xy-amc"/>
+                            <constraint firstAttribute="height" constant="24" id="UNM-dq-7wh"/>
+                        </constraints>
+                        <state key="normal" image="jg_hud_error.png"/>
+                        <connections>
+                            <action selector="removeUserButtonPressed:" destination="-1" eventType="touchUpInside" id="wx4-Bg-R1i"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="VKq-9N-zia" firstAttribute="centerY" secondItem="Y6T-x2-Ilk" secondAttribute="centerY" id="5aa-kJ-kQ0"/>
+                    <constraint firstItem="gjd-i0-P2z" firstAttribute="centerY" secondItem="VKq-9N-zia" secondAttribute="centerY" id="77q-gJ-sl9"/>
+                    <constraint firstItem="9fl-lX-KQp" firstAttribute="centerY" secondItem="VKq-9N-zia" secondAttribute="centerY" id="8ze-Ks-VvN"/>
+                    <constraint firstAttribute="trailing" secondItem="9fl-lX-KQp" secondAttribute="trailing" constant="15" id="bNR-pC-rWK"/>
+                    <constraint firstItem="gjd-i0-P2z" firstAttribute="leading" secondItem="VKq-9N-zia" secondAttribute="trailing" constant="10" id="mmy-y3-w3U"/>
+                    <constraint firstItem="VKq-9N-zia" firstAttribute="leading" secondItem="Y6T-x2-Ilk" secondAttribute="leading" constant="10" id="oyV-fj-hLz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <point key="canvasLocation" x="-307" y="66"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="jg_hud_error.png" width="33" height="33"/>
+        <namedColor name="darkGreen">
+            <color red="0.32899999618530273" green="0.4309999942779541" blue="0.4779999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

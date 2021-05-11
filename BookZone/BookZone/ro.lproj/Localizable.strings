@@ -19,6 +19,20 @@
 "radioButtons" = "Confirmați titlul cărții";
 "creditsTitle" = "Credite";
 "menuTitle" = "Meniul principal";
+"bookClubsInvite" = "Invitația la clubul de lectură";
+
+// Achievements
+
+"achOneLocked" = "Revizitează pagina de tutorial pentru a debloca acest trofeu!";
+"achTwoLocked" = "Colectează 5 cărți în raftul de lectură pentru a debloca acest trofeu!";
+"achThreeLocked" = "Colectează 25 cărți în raftul de lectură pentru a debloca acest trofeu!";
+"achFourLocked" = "Colectează 100 cărți în raftul de lectură pentru a debloca acest trofeu!";
+"achFiveLocked" = "Creează primul tău club de lectură pentru a debloca acest trofeu!";
+"achOneUnlocked" = "Felicitări, ai revizitat pagina de tutorial!";
+"achTwoUnlocked" = "Felicitări, deți 5 cărți în raftul de lectură!";
+"achThreeUnlocked" = "Felicitări, deți 5 cărți în raftul de lectură!";
+"achFourUnlocked" = "Felicitări, deți 5 cărți în raftul de lectură!";
+"achFiveUnlocked" = "Felicitări, ai creat primul tău club de lectură!";
 
 // Labels
 
@@ -42,6 +56,13 @@
 "age" = "Vârstă";
 "favBook" = "Cartea favorită";
 "enter" = "Introduceți";
+"eventDate" = "Data evenimentului";
+"eventPlatform" = "Platforma evenimentului";
+"inviteLink" = "Invitația";
+"pleaseSetDate" = "Selectați data evenimentului";
+"pleaseSelectPlatform" = "Selectați platforma pentru eveniment";
+"inviteLinkPlaceholder" = "Adăugați link-ul pentru invitație";
+"noBookFound" = "Nici o carte găsită";
 
 // Buttons
 
@@ -54,12 +75,32 @@
 "logout" = "Deconectare";
 "saveChanges" = "Salvați modificările";
 "selectPhoto" = "Selectați poza";
+"createBookClubEvent" = "Formează un club de lectură";
+"finishEditing" = "Salvează schimbările";
+"done" = "Gata";
+"start" = "Start";
+"noInternetTitle" = "Lipsă conexiune la internet";
+"noEventLink" = "Gazda evenimentului nu a adăugat încă un link.";
+"startMeeting" = "Start";
+"editBookClub" = "Editează";
+"leaveBookClub" = "Părăsește clubul";
+"deleteBookClub" = "Șterge";
+"cancel" = "Renunță";
+"confirm" = "Confirmă";
+"deleteBookClubAlertTitle" = "Ștergea clubului de lectură";
+"deleteBookClubAlertMessage" = "Ești sigur că vrei să ștergi clubul de lectură? Toate datele vor fi pierdute.";
+"leaveBookClubAlertTitle" = "Părăsiți clubul de lectură";
+"leaveBookClubAlertMessage" = "Ești sigur că vrei să părăseșți clubul de lectură?";
 
 //Placeholders
 
 "email" = "Email";
 "fullname" = "Nume complet";
 "password" = "Parolă";
+"insertBookClubName" = "Setați numele clubului";
+"host" = "Gazda";
+"emptyEvents" = "Ce mai aștepti? Du-te și creează primul tău club de lectură!";
+"emptyExpiredEvents" = "Nu ai participat la niciun club de lectură in trecut.";
 
 //Menu
 

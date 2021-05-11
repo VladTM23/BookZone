@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavbarView" customModule="BookZone" customModuleProvider="target">
             <connections>
                 <outlet property="backButton" destination="reu-LG-EwW" id="X3G-Ls-dWi"/>
+                <outlet property="closeButton" destination="XZE-5T-b3F" id="efn-qo-ENw"/>
                 <outlet property="countLabel" destination="CoI-Yw-S88" id="Hrl-Gh-qPp"/>
+                <outlet property="subtitleLabel" destination="CoI-Yw-S88" id="YoR-yX-iUb"/>
                 <outlet property="titleLabelNavbar" destination="pIf-2Y-mbQ" id="pg5-MM-Psl"/>
             </connections>
         </placeholder>
@@ -32,7 +34,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30K-Go-KC2" userLabel="ContainerView">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="165"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reu-LG-EwW">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reu-LG-EwW" userLabel="Back">
                                     <rect key="frame" x="27" y="88" width="35" height="35"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="35" id="RyV-6b-Cmt"/>
@@ -45,7 +47,21 @@
                                         <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="qfj-EN-Cmz"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIf-2Y-mbQ">
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZE-5T-b3F" userLabel="Close">
+                                    <rect key="frame" x="352" y="88" width="35" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="35" id="Nfn-F0-cMZ"/>
+                                        <constraint firstAttribute="height" constant="35" id="aUN-rq-u4H"/>
+                                    </constraints>
+                                    <state key="normal" image="close">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="WHe-i9-5bE"/>
+                                        <action selector="closeButtonPressed:" destination="-1" eventType="touchUpInside" id="ayE-WB-j0v"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIf-2Y-mbQ" userLabel="Title">
                                     <rect key="frame" x="182.5" y="91.5" width="49" height="28"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="Kxm-7B-MaN"/>
@@ -54,10 +70,10 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoI-Yw-S88">
-                                    <rect key="frame" x="186" y="136" width="42" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoI-Yw-S88" userLabel="Subtitle">
+                                    <rect key="frame" x="187.5" y="136" width="39.5" height="19"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                    <color key="textColor" name="darkGreen"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -65,8 +81,10 @@
                             <constraints>
                                 <constraint firstItem="pIf-2Y-mbQ" firstAttribute="centerY" secondItem="reu-LG-EwW" secondAttribute="centerY" id="Pcm-ou-NZq"/>
                                 <constraint firstAttribute="bottom" secondItem="reu-LG-EwW" secondAttribute="bottom" constant="42" id="UmV-ix-TeS"/>
-                                <constraint firstAttribute="bottom" secondItem="CoI-Yw-S88" secondAttribute="bottom" constant="8" id="htS-6T-CZw"/>
+                                <constraint firstItem="XZE-5T-b3F" firstAttribute="centerY" secondItem="pIf-2Y-mbQ" secondAttribute="centerY" id="Ymi-oG-3yP"/>
+                                <constraint firstAttribute="bottom" secondItem="CoI-Yw-S88" secondAttribute="bottom" constant="10" id="htS-6T-CZw"/>
                                 <constraint firstItem="pIf-2Y-mbQ" firstAttribute="centerX" secondItem="30K-Go-KC2" secondAttribute="centerX" id="i73-Bc-jsO"/>
+                                <constraint firstAttribute="trailing" secondItem="XZE-5T-b3F" secondAttribute="trailing" constant="27" id="jTZ-kb-ZCH"/>
                                 <constraint firstItem="CoI-Yw-S88" firstAttribute="centerX" secondItem="30K-Go-KC2" secondAttribute="centerX" id="oOi-He-QH8"/>
                                 <constraint firstItem="reu-LG-EwW" firstAttribute="leading" secondItem="30K-Go-KC2" secondAttribute="leading" constant="27" id="oeI-89-Vdo"/>
                             </constraints>
@@ -100,7 +118,6 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" name="kaki"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="d1B-HI-XLL" secondAttribute="trailing" id="8oE-4X-BgY"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="d1B-HI-XLL" secondAttribute="bottom" id="D4a-zf-TqA"/>
@@ -113,8 +130,9 @@
     </objects>
     <resources>
         <image name="backIcon" width="17" height="30"/>
-        <namedColor name="kaki">
-            <color red="0.51800000667572021" green="0.66299998760223389" blue="0.67500001192092896" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <image name="close" width="27" height="27"/>
+        <namedColor name="darkGreen">
+            <color red="0.32899999618530273" green="0.4309999942779541" blue="0.4779999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="pink">
             <color red="0.85100001096725464" green="0.67799997329711914" blue="0.67799997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

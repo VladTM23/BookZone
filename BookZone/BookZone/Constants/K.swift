@@ -12,6 +12,7 @@ import FirebaseFirestore
 
 let COLLECTION_USERS = Firestore.firestore().collection("users")
 let COLLECTION_BOOKS = Firestore.firestore().collection("books")
+let COLLECTION_BOOKCLUBS = Firestore.firestore().collection("bookClubs")
 
 struct K {
     static let key = "RNsVx8TWoCWvPVwuzzV4A"
@@ -43,6 +44,7 @@ struct K {
         static let easyTipViewURL = "https://github.com/teodorpatras/EasyTipView/blob/master/LICENSE"
         static let swipeCellKitURL = "https://github.com/SwipeCellKit/SwipeCellKit/blob/develop/LICENSE"
         static let swiftyJSONURL = "https://github.com/SwiftyJSON/SwiftyJSON/blob/master/LICENSE"
+        static let parchmentURL = "https://github.com/rechsteiner/Parchment/blob/master/LICENSE"
     }
 
     struct Colors {
@@ -77,6 +79,11 @@ struct K {
         static let bookToResults = "bookToResults"
         static let goToCredits = "goToCredits"
         static let goToMenu = "goToMenu"
+        static let goToBookClubs = "goToBookClubs"
+        static let bookToInvite = "bookToInvite"
+        static let inviteToBookInfo = "inviteToBookInfo"
+        static let activeToInvite = "activeToInvite"
+        static let expiredToInvite = "expiredToInvite"
     }
 
     struct Nibs {
@@ -101,6 +108,21 @@ struct K {
         static let radioButtonsTitle = "radioButtons"
         static let creditsTitle = "creditsTitle"
         static let menuTitle = "menuTitle"
+        static let bookClubs = "bookClubs"
+        static let bookClubsInvite = "bookClubsInvite"
+    }
+
+    struct Achievements {
+        static let achOneLocked = "achOneLocked"
+        static let achTwoLocked = "achTwoLocked"
+        static let achThreeLocked = "achThreeLocked"
+        static let achFourLocked = "achFourLocked"
+        static let achFiveLocked = "achFiveLocked"
+        static let achOneUnlocked = "achOneUnlocked"
+        static let achTwoUnlocked = "achTwoUnlocked"
+        static let achThreeUnlocked = "achThreeUnlocked"
+        static let achFourUnlocked = "achFourUnlocked"
+        static let achFiveUnlocked = "achFiveUnlocked"
     }
 
     struct LabelTexts {
@@ -117,6 +139,36 @@ struct K {
         static let searchByTitle = "titleSearch"
         static let emptyStringPlaceholder = "emptyPlaceholder"
         static let invalidISBNStringPlaceholder = "invalidISBN"
+        static let eventDate = "eventDate"
+        static let eventPlatform = "eventPlatform"
+        static let inviteLink = "inviteLink"
+        static let pleaseSetDate = "pleaseSetDate"
+        static let pleaseSelectPlatform = "pleaseSelectPlatform"
+        static let inviteLinkPlaceholder = "inviteLinkPlaceholder"
+        static let noBookFound = "noBookFound"
+        static let insertBookClubName = "insertBookClubName"
+        static let host = "host"
+        static let emptyEvents = "emptyEvents"
+        static let emptyExpiredEvent = "emptyExpiredEvents"
+        static let bookClubNotificationText = "bookClubNotificationText"
+    }
+
+    struct ButtonTiles {
+        static let createBookClubEvent = "createBookClubEvent"
+        static let finishEditing = "finishEditing"
+        static let done = "done"
+        static let noInternetTitle = "noInternetTitle"
+        static let noEventLink = "noEventLink"
+        static let startMeeting = "startMeeting"
+        static let editBookClub = "editBookClub";
+        static let leaveBookClub = "leaveBookClub";
+        static let deleteBookClub = "deleteBookClub";
+        static let cancel = "cancel";
+        static let confirm = "confirm";
+        static let deleteBookClubAlertTitle = "deleteBookClubAlertTitle";
+        static let deleteBookClubAlertMessage = "deleteBookClubAlertMessage";
+        static let leaveBookClubAlertTitle = "leaveBookClubAlertTitle";
+        static let leaveBookClubAlertMessage = "leaveBookClubAlertMessage";
     }
 
     struct ImageNames {

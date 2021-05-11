@@ -23,6 +23,7 @@ class ResultsViewController: UIViewController  {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var faveButton: FaveButton!
     @IBOutlet weak var addToBookshelfLabel: UILabel!
+    @IBOutlet weak var bookClubInviteButton: UIButton!
 
     @IBOutlet weak var generalErrorView: AnimationView!
     @IBOutlet weak var errorLabel: UILabel!
@@ -84,6 +85,7 @@ class ResultsViewController: UIViewController  {
         
         configureNavbar()
         configureErrorAnimation()
+        configureBookClubButton()
         if !ReachabilityManager.shared.hasConnectivity() {
             showErrorView(errorMessage: K.Errors.internetError)
         } else {
@@ -96,6 +98,7 @@ class ResultsViewController: UIViewController  {
 
     func configureNavbar() {
         navbarView.titleLabelNavbar.text = NSLocalizedString(K.NavbarTitles.resultsTitle, comment: "")
+        navbarView.closeButton.isHidden = false
     }
 
     func configureErrorAnimation() {
@@ -110,6 +113,16 @@ class ResultsViewController: UIViewController  {
         generalErrorView.isHidden = false
         errorLabel.isHidden = false
         errorLabel.text = NSLocalizedString(errorMessage, comment: "")
+    }
+
+    private func configureBookClubButton() {
+        bookClubInviteButton.setTitle(NSLocalizedString(K.ButtonTiles.createBookClubEvent, comment: ""), for: .normal)
+        bookClubInviteButton.layer.cornerRadius = bookClubInviteButton.frame.height / 2.0
+        bookClubInviteButton.clipsToBounds = true
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
     func fetchData() {
@@ -197,9 +210,43 @@ class ResultsViewController: UIViewController  {
             }
         }
     }
+
+    @IBAction func bookClubInviteButtonPressed(_ sender: UIButton) {
+        sender.showAnimation {
+            if !ReachabilityManager.shared.hasConnectivity() {
+                let alert = UIAlertController(title: NSLocalizedString(K.ButtonTiles.noInternetTitle, comment: ""), message: NSLocalizedString(K.Errors.internetError, comment: "") , preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            } else {
+                let userHasCreatedBookClubInvite = UserDefaults.standard.bool(forKey : "achievement5")
+                if !userHasCreatedBookClubInvite {
+                    UserDefaults.standard.set(true, forKey: "achievement5")
+                    self.user?.achievementsArray[4] = true
+                    if let user = self.user {
+                        Service.saveUserData(user: user) { (error) in
+                            if error != nil {
+                                print("Error when adding bookId to user, \(error?.localizedDescription)")
+                            }
+                        }
+                    }
+                }
+                self.performSegue(withIdentifier: K.Identifiers.bookToInvite, sender: self)
+            }
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.Identifiers.bookToInvite {
+            let bookClubInviteVC = segue.destination as! BookClubInviteViewController
+            bookClubInviteVC.bookTitle = self.titleLabel.text ?? K.LabelTexts.noBookFound
+            if let apiResults = self.apiResults {
+                bookClubInviteVC.bookCoverUrl = apiResults[5]
+            }
+            bookClubInviteVC.createMode = true
+        }
+    }
 }
-
-
 
 
 //MARK: - API Extension GoodReads

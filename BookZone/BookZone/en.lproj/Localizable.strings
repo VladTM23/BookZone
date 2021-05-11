@@ -19,6 +19,20 @@
 "radioButtons" = "Confirm book title";
 "creditsTitle" = "Credits";
 "menuTitle" = "Main menu";
+"bookClubsInvite" = "Book club invite";
+
+// Achievements
+
+"achOneLocked" = "Revisit the tutorial page to unlock this achievement!";
+"achTwoLocked" = "Collect 5 books on your bookshelf to unlock this achievement!";
+"achThreeLocked" = "Collect 25 books on your bookshelf to unlock this achievement!";
+"achFourLocked" = "Collect 100 books on your bookshelf to unlock this achievement!";
+"achFiveLocked" = "Congrats, you have created your first book club event!";
+"achOneUnlocked" = "Congrats, you have revisited the tutorial page!";
+"achTwoUnlocked" = "Congrats, you have 5 books on your bookshelf!";
+"achThreeUnlocked" = "Congrats, you have 25 books on your bookshelf!";
+"achFourUnlocked" = "Congrats, you have 100 books on your bookshelf!";
+"achFiveUnlocked" = "Create your first book club event to unlock this achievement.";
 
 //Labels
 
@@ -42,6 +56,14 @@
 "age" = "Age";
 "favBook" = "Favorite Book";
 "enter" = "Enter";
+"eventDate" = "Event date";
+"eventPlatform" = "Event platform";
+"inviteLink" = "Invite link";
+"pleaseSetDate" = "Please set your event date";
+"pleaseSelectPlatform" = "Please select your event platform";
+"inviteLinkPlaceholder" = "Copy & paste the event link here";
+"noBookFound" = "No book found";
+"bookClubNotificationText" = "You have an upcoming book club event.";
 
 //Buttons
 
@@ -54,12 +76,32 @@
 "logout" = "Logout";
 "saveChanges" = "Save changes";
 "selectPhoto" = "Select Photo";
+"createBookClubEvent" = "Create book club event";
+"finishEditing" = "Save changes";
+"done" = "Done";
+"start" = "Start";
+"noInternetTitle" = "No internet connection";
+"noEventLink" = "The owner has not yet provided the event link.";
+"startMeeting" = "Start meeting";
+"editBookClub" = "Edit";
+"leaveBookClub" = "Leave book club";
+"deleteBookClub" = "Delete club";
+"cancel" = "Cancel";
+"confirm" = "Confirm";
+"deleteBookClubAlertTitle" = "Book club deletion";
+"deleteBookClubAlertMessage" = "Are you sure you want to delete this book club? All data will be lost.";
+"leaveBookClubAlertTitle" = "Leaving this book club";
+"leaveBookClubAlertMessage" = "Are you sure you want to leave this book club?";
 
 //Placeholders
 
 "email" = "Email";
 "fullname" = "Full Name";
 "password" = "Password";
+"insertBookClubName" = "Insert book club name";
+"host" = "Host";
+"emptyEvents" = "Go ahead and create your first book club";
+"emptyExpiredEvents" = "No events attended in the past";
 
 //Menu
 

@@ -13,7 +13,6 @@ class InfoViewController: UIViewController {
 
     //MARK: - IBOutlets
     @IBOutlet weak var navBarView: NavbarView!
-    @IBOutlet weak var resultCardView: ResultCardView!
     @IBOutlet weak var animationView: AnimationView!
 
     override func viewDidLoad() {
@@ -31,6 +30,7 @@ class InfoViewController: UIViewController {
     func configureNavBar() {
         navBarView.titleLabelNavbar.text = NSLocalizedString(K.NavbarTitles.infoTitle, comment: "")
         navBarView.backButton.isHidden = true
+        navBarView.closeButton.isHidden = false
     }
 
     func configureAnimation() {
@@ -43,5 +43,9 @@ class InfoViewController: UIViewController {
     @IBAction func getStartedButtonPressed(_ sender: UIButton) {
         UserDefaults.standard.set(true, forKey: K.UserKeys.tutorialCompleted)
         performSegue(withIdentifier: K.Identifiers.getStarted, sender: self)
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }

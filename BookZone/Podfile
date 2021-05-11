@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+ platform :ios, '11.0'
 
 target 'BookZone' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -14,11 +14,13 @@ target 'BookZone' do
    pod 'Firebase/Firestore'
    pod 'Firebase/Storage'
    pod 'Firebase/Core'
+   pod 'FirebaseFirestoreSwift'
    pod 'SDWebImage','~>4.4.2'
    pod 'JGProgressHUD','~>2.0.3'
    pod 'FaveButton'
    pod 'EasyTipView', '~> 2.0.4'
    pod 'SwipeCellKit'
    pod 'SwiftyJSON', '~> 4.0'
+   pod 'Parchment', '~> 3.0'
 
 end

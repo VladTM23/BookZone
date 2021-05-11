@@ -295,6 +295,10 @@ extension BookShelfViewController: UICollectionViewDataSource, UICollectionViewD
             action.transitionDelegate = ScaleTransition.default
         }
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
 }
 
