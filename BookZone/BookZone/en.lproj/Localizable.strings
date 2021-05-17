@@ -20,6 +20,7 @@
 "creditsTitle" = "Credits";
 "menuTitle" = "Main menu";
 "bookClubsInvite" = "Book club invite";
+"recommendations" = "Recommendations";
 
 // Achievements
 
@@ -64,6 +65,7 @@
 "inviteLinkPlaceholder" = "Copy & paste the event link here";
 "noBookFound" = "No book found";
 "bookClubNotificationText" = "You have an upcoming book club event.";
+"lookingForInspiration" = "Looking for inspiration?";
 
 //Buttons
 
@@ -92,6 +94,7 @@
 "deleteBookClubAlertMessage" = "Are you sure you want to delete this book club? All data will be lost.";
 "leaveBookClubAlertTitle" = "Leaving this book club";
 "leaveBookClubAlertMessage" = "Are you sure you want to leave this book club?";
+"getRecommendations" = "Get recommendations";
 
 //Placeholders
 

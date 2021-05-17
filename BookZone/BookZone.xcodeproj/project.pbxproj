@@ -47,6 +47,7 @@
 		F5349EBF24E45169009C96BD /* Sacramento-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */; };
 		F5349EC124E45282009C96BD /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */; };
 		F5349EC324E45300009C96BD /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5349EC224E452FD009C96BD /* Montserrat-Bold.ttf */; };
+		F5395158265291DC00BBAC6B /* RecommendationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5395157265291DC00BBAC6B /* RecommendationsViewController.swift */; };
 		F541D78D264687CD0078C5CB /* DateFormatterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F541D78C264687CD0078C5CB /* DateFormatterHelper.swift */; };
 		F541D78F26469A630078C5CB /* UserSuggestionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F541D78E26469A630078C5CB /* UserSuggestionsTableView.swift */; };
 		F541D7912646A6B40078C5CB /* UserSuggestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F541D7902646A6B40078C5CB /* UserSuggestionsTableViewCell.swift */; };
@@ -146,6 +147,7 @@
 		F5349EBE24E4514E009C96BD /* Sacramento-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sacramento-Regular.ttf"; sourceTree = "<group>"; };
 		F5349EC024E45280009C96BD /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		F5349EC224E452FD009C96BD /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		F5395157265291DC00BBAC6B /* RecommendationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsViewController.swift; sourceTree = "<group>"; };
 		F541D78C264687CD0078C5CB /* DateFormatterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterHelper.swift; sourceTree = "<group>"; };
 		F541D78E26469A630078C5CB /* UserSuggestionsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSuggestionsTableView.swift; sourceTree = "<group>"; };
 		F541D7902646A6B40078C5CB /* UserSuggestionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSuggestionsTableViewCell.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				F524A0382575321C0024E985 /* AppSettingsViewController.swift */,
 				F5DEC1B22624A31E006A2C44 /* CreditsViewController.swift */,
 				F5D72347262DDD3D00F58DD1 /* MenuViewController.swift */,
+				F5395157265291DC00BBAC6B /* RecommendationsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				F547E42C2536E188002E6E21 /* WelcomeViewController.swift in Sources */,
 				F541D7912646A6B40078C5CB /* UserSuggestionsTableViewCell.swift in Sources */,
 				71E4320C24ED6A060099312F /* ResultCardCollectionViewCell.swift in Sources */,
+				F5395158265291DC00BBAC6B /* RecommendationsViewController.swift in Sources */,
 				F50696F3264717B5005D1620 /* InvitedUserCell.swift in Sources */,
 				7146F8F52563EF260086A52F /* G.swift in Sources */,
 				7143BC5525602B1E0018CFAB /* BookShelfCell.swift in Sources */,

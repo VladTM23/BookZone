@@ -84,6 +84,8 @@ struct K {
         static let inviteToBookInfo = "inviteToBookInfo"
         static let activeToInvite = "activeToInvite"
         static let expiredToInvite = "expiredToInvite"
+        static let searchToRecommendations = "searchToRecommendations"
+        static let recommendationToResults = "recommendationToResults"
     }
 
     struct Nibs {
@@ -110,6 +112,7 @@ struct K {
         static let menuTitle = "menuTitle"
         static let bookClubs = "bookClubs"
         static let bookClubsInvite = "bookClubsInvite"
+        static let recommendations = "recommendations"
     }
 
     struct Achievements {
@@ -151,6 +154,7 @@ struct K {
         static let emptyEvents = "emptyEvents"
         static let emptyExpiredEvent = "emptyExpiredEvents"
         static let bookClubNotificationText = "bookClubNotificationText"
+        static let lookingForInspiration = "lookingForInspiration"
     }
 
     struct ButtonTiles {
@@ -169,6 +173,7 @@ struct K {
         static let deleteBookClubAlertMessage = "deleteBookClubAlertMessage";
         static let leaveBookClubAlertTitle = "leaveBookClubAlertTitle";
         static let leaveBookClubAlertMessage = "leaveBookClubAlertMessage";
+        static let getRecommendations = "getRecommendations";
     }
 
     struct ImageNames {

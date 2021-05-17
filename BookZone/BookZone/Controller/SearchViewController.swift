@@ -24,9 +24,10 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var titleSwitchLabel: UILabel!
     @IBOutlet weak var isbnSwitchLabel: UILabel!
     @IBOutlet weak var searchSwitch: UISwitch!
-    
+    @IBOutlet weak var getRecommendationsButton: UIButton!
+    @IBOutlet weak var inspirationLabel: UILabel!
+
     @IBAction func switchToggled(_ sender: UISwitch) {
-        
         if(sender.isOn){
             titleSwitchLabel.alpha = CGFloat(0.5)
             isbnSwitchLabel.alpha = CGFloat(1)
@@ -35,7 +36,6 @@ class SearchViewController: UIViewController {
             searchBar.searchImageView.image = UIImage(named: K.ImageNames.pinkBackground)
             flag = true
         }
-        
         else {
             titleSwitchLabel.alpha = CGFloat(1)
             isbnSwitchLabel.alpha = CGFloat(0.5)
@@ -48,10 +48,8 @@ class SearchViewController: UIViewController {
             searchBar.buttonImageView.image = UIImage(named: K.ImageNames.yellowBackground)
             flag = false
         }
-        
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,27 +63,26 @@ class SearchViewController: UIViewController {
     }
 
     // MARK: - User interface
-
-    func configureUI() {
+    private func configureUI() {
         configureNavBar()
         configureSearchBar()
         configureSwitchAndLabels()
+        configureInspirationLabel()
+        configureRecommendationsButton()
     }
     
-    func configureSwitchAndLabels() {
-        
+    private func configureSwitchAndLabels() {
         isbnSwitchLabel.alpha = CGFloat(0.5)
         searchSwitch.setOn(false, animated: true)
         searchSwitch.isOn = false
         switchToggled(searchSwitch)
     }
 
-    func configureNavBar() {
+    private func configureNavBar() {
         navBarView.titleLabelNavbar.text = NSLocalizedString(K.NavbarTitles.searchTitle, comment: "")
     }
     
-    func configureSearchBar(){
-        
+    private func configureSearchBar(){
         searchBar.buttonView.layer.borderColor = UIColor(named: K.Colors.kaki)?.cgColor
         searchBar.buttonView.layer.borderWidth = 3
         searchBar.buttonView.layer.cornerRadius = 15
@@ -96,21 +93,36 @@ class SearchViewController: UIViewController {
         searchBar.searchImageView.layer.cornerRadius = 15
     }
 
+    private func configureRecommendationsButton() {
+        getRecommendationsButton.setTitle(NSLocalizedString(K.ButtonTiles.getRecommendations, comment: ""), for: .normal)
+        getRecommendationsButton.layer.cornerRadius = getRecommendationsButton.frame.height / 2.0
+        getRecommendationsButton.clipsToBounds = true
+    }
+
+    private func configureInspirationLabel() {
+        inspirationLabel.text = NSLocalizedString(K.LabelTexts.lookingForInspiration, comment: "")
+    }
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+
+    @IBAction func recommendationButtonPressed(_ sender: UIButton) {
+        sender.showAnimation {
+            self.performSegue(withIdentifier: K.Identifiers.searchToRecommendations, sender: self)
+        }
+    }
+
 }
 // MARK: - SearchBar
 
 extension SearchViewController: UITextFieldDelegate {
-
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchBar.searchTextField.endEditing(true)
         return true
     }
     
     func addSearchFunctionalityForButton() {
-        
         searchBar.searchButton.addTarget(self, action: #selector(searchButtonReleased), for: .touchUpInside)
         searchBar.searchButton.addTarget(self, action: #selector(searchButtonReleased), for: .touchDragExit)
         searchBar.searchButton.addTarget(self, action: #selector(searchButtonPressed), for: .touchDown)
@@ -145,7 +157,6 @@ extension SearchViewController: UITextFieldDelegate {
             self.bookTitleArray = bookTitle.components(separatedBy: " ")
         }
 
-        
         if searchBar.searchTextField.text != "" {
             if flag == true {
                 if searchBar.searchTextField.text?.count == 13 || searchBar.searchTextField.text?.count == 10 {
@@ -163,9 +174,6 @@ extension SearchViewController: UITextFieldDelegate {
         else {
             searchBar.searchTextField.placeholder = NSLocalizedString(K.LabelTexts.emptyStringPlaceholder, comment: "")
         }
-        
-
-        print("pressed")
     }
 
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
@@ -176,11 +184,8 @@ extension SearchViewController: UITextFieldDelegate {
         searchBar.searchTextField.endEditing(true)
         print(textField.text!)
     }
-    
-    // moving the keyboard
-    
+
     @objc func keyboardWillShow(notification: NSNotification) {
-        
         guard let userInfo = notification.userInfo else {return}
         guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
         let keyboardFrame = keyboardSize.cgRectValue

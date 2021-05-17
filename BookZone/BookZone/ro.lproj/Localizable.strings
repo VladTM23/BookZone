@@ -20,6 +20,7 @@
 "creditsTitle" = "Credite";
 "menuTitle" = "Meniul principal";
 "bookClubsInvite" = "Invitația la clubul de lectură";
+"recommendations" = "Recomandări";
 
 // Achievements
 
@@ -30,8 +31,8 @@
 "achFiveLocked" = "Creează primul tău club de lectură pentru a debloca acest trofeu!";
 "achOneUnlocked" = "Felicitări, ai revizitat pagina de tutorial!";
 "achTwoUnlocked" = "Felicitări, deți 5 cărți în raftul de lectură!";
-"achThreeUnlocked" = "Felicitări, deți 5 cărți în raftul de lectură!";
-"achFourUnlocked" = "Felicitări, deți 5 cărți în raftul de lectură!";
+"achThreeUnlocked" = "Felicitări, deți 25 cărți în raftul de lectură!";
+"achFourUnlocked" = "Felicitări, deți 100 cărți în raftul de lectură!";
 "achFiveUnlocked" = "Felicitări, ai creat primul tău club de lectură!";
 
 // Labels
@@ -63,6 +64,7 @@
 "pleaseSelectPlatform" = "Selectați platforma pentru eveniment";
 "inviteLinkPlaceholder" = "Adăugați link-ul pentru invitație";
 "noBookFound" = "Nici o carte găsită";
+"lookingForInspiration" = "Cauți inspirație?";
 
 // Buttons
 
@@ -91,6 +93,7 @@
 "deleteBookClubAlertMessage" = "Ești sigur că vrei să ștergi clubul de lectură? Toate datele vor fi pierdute.";
 "leaveBookClubAlertTitle" = "Părăsiți clubul de lectură";
 "leaveBookClubAlertMessage" = "Ești sigur că vrei să părăseșți clubul de lectură?";
+"getRecommendations" = "Primește recomandări";
 
 //Placeholders
 
