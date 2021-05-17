@@ -174,6 +174,8 @@ struct K {
         static let leaveBookClubAlertTitle = "leaveBookClubAlertTitle";
         static let leaveBookClubAlertMessage = "leaveBookClubAlertMessage";
         static let getRecommendations = "getRecommendations";
+        static let seeMoreInfo = "seeMoreInfo";
+        static let tryAgain = "tryAgain";
     }
 
     struct ImageNames {

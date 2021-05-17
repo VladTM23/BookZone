@@ -40,7 +40,7 @@
                                 <rect key="frame" x="0.0" y="137" width="375" height="675"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4XK-Xb-NCo" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603.66666666666663"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e6u-Z2-HWO">
                                                 <rect key="frame" x="67.666666666666686" y="45" width="240" height="320"/>
@@ -58,14 +58,73 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" clipsSubviews="YES" alpha="0.85000002384185791" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="QuL-Sv-gfi" userLabel="SeeMoreInfo">
+                                                <rect key="frame" x="30" y="438.66666666666663" width="315" height="60"/>
+                                                <color key="backgroundColor" name="pink"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Mbt-8f-Srs"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="16"/>
+                                                <state key="normal" title="See more book info">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="bookClubButtonPressed:" destination="0NF-JU-Bx4" eventType="touchUpInside" id="yuN-jH-tlL"/>
+                                                    <action selector="bookClubInviteButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dvp-8t-XxR"/>
+                                                    <action selector="recommendationButtonPressed:" destination="Kin-Q5-hwT" eventType="touchUpInside" id="tGT-M2-I5Y"/>
+                                                    <action selector="seeMoreInfoButtonPressed:" destination="992-R3-LvZ" eventType="touchUpInside" id="UuU-2z-nIu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" alpha="0.85000002384185791" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="shI-dK-6gj">
+                                                <rect key="frame" x="30" y="518.66666666666663" width="315" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="TUc-Jh-2WI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="16"/>
+                                                <state key="normal" title="Try again">
+                                                    <color key="titleColor" name="darkGreen"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="bookClubButtonPressed:" destination="0NF-JU-Bx4" eventType="touchUpInside" id="aPV-hc-3pR"/>
+                                                    <action selector="bookClubInviteButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zBR-c9-mcT"/>
+                                                    <action selector="recommendationButtonPressed:" destination="Kin-Q5-hwT" eventType="touchUpInside" id="XE2-3I-JG7"/>
+                                                    <action selector="tryAgainButtonPressed:" destination="992-R3-LvZ" eventType="touchUpInside" id="SIF-w9-d9E"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookBadge" translatesAutoresizingMaskIntoConstraints="NO" id="B6O-wJ-5g3">
+                                                <rect key="frame" x="293" y="452.66666666666663" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="TPa-cO-VbH"/>
+                                                    <constraint firstAttribute="width" constant="32" id="uWB-BM-uWh"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tryAgain" translatesAutoresizingMaskIntoConstraints="NO" id="bAz-dh-bB9" userLabel="tryAgain">
+                                                <rect key="frame" x="293" y="532.66666666666663" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="32" id="jcU-Pj-uCC"/>
+                                                    <constraint firstAttribute="height" constant="32" id="wYU-hX-KR7"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="bAz-dh-bB9" firstAttribute="centerY" secondItem="shI-dK-6gj" secondAttribute="centerY" id="0az-jL-gQQ"/>
                                             <constraint firstItem="ys9-xU-xjT" firstAttribute="centerX" secondItem="4XK-Xb-NCo" secondAttribute="centerX" id="2oo-ga-KDM"/>
                                             <constraint firstItem="ys9-xU-xjT" firstAttribute="top" secondItem="e6u-Z2-HWO" secondAttribute="bottom" constant="25" id="6m3-0k-c6j"/>
                                             <constraint firstItem="e6u-Z2-HWO" firstAttribute="centerX" secondItem="4XK-Xb-NCo" secondAttribute="centerX" id="9Ak-B4-aHN"/>
+                                            <constraint firstItem="bAz-dh-bB9" firstAttribute="trailing" secondItem="shI-dK-6gj" secondAttribute="trailing" constant="-20" id="CGO-BV-LXM"/>
                                             <constraint firstItem="e6u-Z2-HWO" firstAttribute="top" secondItem="4XK-Xb-NCo" secondAttribute="top" constant="45" id="DkR-qw-d05"/>
-                                            <constraint firstAttribute="height" constant="800" id="dWT-3S-gOa"/>
+                                            <constraint firstAttribute="trailing" secondItem="shI-dK-6gj" secondAttribute="trailing" constant="30" id="GTD-KL-yOS"/>
+                                            <constraint firstItem="shI-dK-6gj" firstAttribute="top" secondItem="QuL-Sv-gfi" secondAttribute="bottom" constant="20" id="HJ8-1m-nT8"/>
+                                            <constraint firstItem="shI-dK-6gj" firstAttribute="leading" secondItem="4XK-Xb-NCo" secondAttribute="leading" constant="30" id="HR8-JR-IzV"/>
+                                            <constraint firstItem="B6O-wJ-5g3" firstAttribute="trailing" secondItem="QuL-Sv-gfi" secondAttribute="trailing" constant="-20" id="OBe-cc-w2Z"/>
+                                            <constraint firstItem="QuL-Sv-gfi" firstAttribute="top" secondItem="ys9-xU-xjT" secondAttribute="bottom" constant="30" id="RU3-n1-yXs"/>
+                                            <constraint firstAttribute="bottom" secondItem="shI-dK-6gj" secondAttribute="bottom" constant="25" id="WUp-pI-NV3"/>
+                                            <constraint firstItem="QuL-Sv-gfi" firstAttribute="leading" secondItem="4XK-Xb-NCo" secondAttribute="leading" constant="30" id="c2Q-fv-TWe"/>
+                                            <constraint firstItem="QuL-Sv-gfi" firstAttribute="centerX" secondItem="4XK-Xb-NCo" secondAttribute="centerX" id="caE-tN-VAw"/>
+                                            <constraint firstItem="B6O-wJ-5g3" firstAttribute="centerY" secondItem="QuL-Sv-gfi" secondAttribute="centerY" id="z0e-8X-9eg"/>
+                                            <constraint firstAttribute="trailing" secondItem="QuL-Sv-gfi" secondAttribute="trailing" constant="30" id="zCW-3k-dnd"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -93,7 +152,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bookCoverImage" destination="e6u-Z2-HWO" id="oAA-hs-nRf"/>
+                        <outlet property="bookTitleLabel" destination="ys9-xU-xjT" id="QUG-XR-f6D"/>
+                        <outlet property="contentView" destination="4XK-Xb-NCo" id="sLl-9b-hA5"/>
                         <outlet property="navbarView" destination="P52-dl-wNH" id="6pp-w4-G1T"/>
+                        <outlet property="scrollView" destination="PsE-8F-NwT" id="Gqa-BY-FjT"/>
+                        <outlet property="seeMoreInfoButton" destination="QuL-Sv-gfi" id="YIK-3e-Tun"/>
+                        <outlet property="tryAgainButton" destination="shI-dK-6gj" id="IeI-3d-kIj"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="recommendationToResults" modalPresentationStyle="fullScreen" id="L6v-yj-Cwa"/>
                     </connections>
                 </viewController>
@@ -2820,7 +2885,7 @@
         <segue reference="vTQ-5G-ykn"/>
         <segue reference="13l-71-1Fs"/>
         <segue reference="xPs-F8-VuD"/>
-        <segue reference="L6v-yj-Cwa"/>
+        <segue reference="12h-vl-f4q"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BookZone" width="1325" height="903"/>
@@ -2844,6 +2909,7 @@
         <image name="pencil" width="21.333333969116211" height="21.333333969116211"/>
         <image name="settingsGrey" width="40" height="40"/>
         <image name="ticked" width="66.666664123535156" height="66.666664123535156"/>
+        <image name="tryAgain" width="16.666666030883789" height="16.666666030883789"/>
         <namedColor name="dark20">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.20000000298023224" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -11,6 +11,12 @@ import UIKit
 class RecommendationsViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var navbarView: NavbarView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var bookCoverImage: UIImageView!
+    @IBOutlet weak var bookTitleLabel: UILabel!
+    @IBOutlet weak var seeMoreInfoButton: UIButton!
+    @IBOutlet weak var tryAgainButton: UIButton!
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -26,4 +32,46 @@ class RecommendationsViewController: UIViewController {
     private func configureNavbar() {
         navbarView.titleLabelNavbar.text = NSLocalizedString(K.NavbarTitles.recommendations, comment: "")
     }
+
+    private func configureButtons() {
+        seeMoreInfoButton.setTitle(NSLocalizedString(K.ButtonTiles.seeMoreInfo, comment: ""), for: .normal)
+        seeMoreInfoButton.layer.cornerRadius = seeMoreInfoButton.frame.height / 2.0
+        seeMoreInfoButton.clipsToBounds = true
+        tryAgainButton.setTitle(NSLocalizedString(K.ButtonTiles.tryAgain, comment: ""), for: .normal)
+        tryAgainButton.layer.cornerRadius = tryAgainButton.frame.height / 2.0
+        tryAgainButton.clipsToBounds = true
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.Identifiers.recommendationToResults {
+            let resultsVC = segue.destination as! ResultsViewController
+            resultsVC.flag = false
+            let safeBookTitle: String = "Book title" ?? NSLocalizedString(K.LabelTexts.noBookFound, comment: "")
+            resultsVC.titleLabelVar = safeBookTitle
+            resultsVC.titleArray = safeBookTitle.components(separatedBy: " ")
+        }
+    }
+
+    // MARK: - Actions
+
+    @IBAction func seeMoreInfoButtonPressed(_ sender: UIButton) {
+        sender.showAnimation {
+            if !ReachabilityManager.shared.hasConnectivity() {
+                let alert = UIAlertController(title: NSLocalizedString(K.ButtonTiles.noInternetTitle, comment: ""), message: NSLocalizedString(K.Errors.internetError, comment: "") , preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            } else {
+                self.performSegue(withIdentifier: K.Identifiers.recommendationToResults, sender: self)
+            }
+        }
+    }
+
+
+    @IBAction func tryAgainButtonPressed(_ sender: UIButton) {
+        sender.showAnimation {
+            print("Try again")
+        }
+    }
+
 }

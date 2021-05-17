@@ -109,7 +109,14 @@ class SearchViewController: UIViewController {
 
     @IBAction func recommendationButtonPressed(_ sender: UIButton) {
         sender.showAnimation {
-            self.performSegue(withIdentifier: K.Identifiers.searchToRecommendations, sender: self)
+            if !ReachabilityManager.shared.hasConnectivity() {
+                let alert = UIAlertController(title: NSLocalizedString(K.ButtonTiles.noInternetTitle, comment: ""), message: NSLocalizedString(K.Errors.internetError, comment: "") , preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            } else {
+                self.performSegue(withIdentifier: K.Identifiers.searchToRecommendations, sender: self)
+            }
         }
     }
 

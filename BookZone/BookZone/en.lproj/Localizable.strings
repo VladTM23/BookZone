@@ -95,6 +95,8 @@
 "leaveBookClubAlertTitle" = "Leaving this book club";
 "leaveBookClubAlertMessage" = "Are you sure you want to leave this book club?";
 "getRecommendations" = "Get recommendations";
+"tryAgain" = "Try again";
+"seeMoreInfo" = "See more info";
 
 //Placeholders
 
