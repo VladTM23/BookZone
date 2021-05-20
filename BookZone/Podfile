@@ -13,6 +13,7 @@ target 'BookZone' do
    pod 'Firebase/Auth'
    pod 'Firebase/Firestore'
    pod 'Firebase/Storage'
+   pod 'Firebase/Performance'
    pod 'Firebase/Core'
    pod 'FirebaseFirestoreSwift'
    pod 'SDWebImage','~>4.4.2'
