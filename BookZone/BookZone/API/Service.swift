@@ -69,17 +69,19 @@ struct Service {
                 COLLECTION_BOOKS.document(id).getDocument { (snapshot, error) in
                     guard let dictionary = snapshot?.data() else { return }
                     let book = Book(dictionary: dictionary)
-                   
                     books.append(book)
-                    
-                    
                     completion(books)
-                    
             }
         }
-        
     }
-    
+
+    static func fetchBook(withId id: String, completion: @escaping(Book?) -> Void) {
+        COLLECTION_BOOKS.document(id).getDocument { (snapshot, error) in
+            guard let dictionary = snapshot?.data() else { return }
+            let book = Book(dictionary: dictionary)
+            completion(book)
+        }
+    }
 
 
     static func saveUserData(user: User, completion: @escaping(Error?) -> Void) {

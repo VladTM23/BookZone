@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class RecommendationsViewController: UIViewController {
     // MARK: - Properties
@@ -18,10 +19,13 @@ class RecommendationsViewController: UIViewController {
     @IBOutlet weak var seeMoreInfoButton: UIButton!
     @IBOutlet weak var tryAgainButton: UIButton!
 
+    private var recommendedBook: Book?
+
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        getRecommendation()
     }
 
     // MARK: - UI
@@ -42,13 +46,30 @@ class RecommendationsViewController: UIViewController {
         tryAgainButton.clipsToBounds = true
     }
 
+    private func setupBookUI() {
+        guard let safeBook = recommendedBook else { return }
+        bookTitleLabel.text = safeBook.title
+        bookCoverImage.sd_setImage(with: URL(string: safeBook.imageURL))
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.Identifiers.recommendationToResults {
             let resultsVC = segue.destination as! ResultsViewController
             resultsVC.flag = false
-            let safeBookTitle: String = "Book title" ?? NSLocalizedString(K.LabelTexts.noBookFound, comment: "")
+            let safeBookTitle: String = recommendedBook?.title ?? NSLocalizedString(K.LabelTexts.noBookFound, comment: "")
             resultsVC.titleLabelVar = safeBookTitle
             resultsVC.titleArray = safeBookTitle.components(separatedBy: " ")
+        }
+    }
+
+    // MARK: - Helper
+
+    private func getRecommendation() {
+        RecommenderManager.shared.getBookRecommendation { book in
+            if let safeBook = book {
+                self.recommendedBook = safeBook
+                self.setupBookUI()
+            }
         }
     }
 
@@ -70,7 +91,7 @@ class RecommendationsViewController: UIViewController {
 
     @IBAction func tryAgainButtonPressed(_ sender: UIButton) {
         sender.showAnimation {
-            print("Try again")
+            self.getRecommendation()
         }
     }
 

@@ -61,6 +61,7 @@
 		F55CAABD25FB5E9200287FB9 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55CAABC25FB5E9200287FB9 /* ReachabilityManager.swift */; };
 		F55CAAC125FB5FBD00287FB9 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55CAAC025FB5FBD00287FB9 /* Reachability.swift */; };
 		F55CAAC725FB75AE00287FB9 /* 38463-error.json in Resources */ = {isa = PBXBuildFile; fileRef = F55CAAC325FB6C7F00287FB9 /* 38463-error.json */; };
+		F5672FD426590443003E5973 /* RecommenderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5672FD326590443003E5973 /* RecommenderManager.swift */; };
 		F57D29DA24E278400001D4C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29D924E278400001D4C4 /* AppDelegate.swift */; };
 		F57D29DC24E278400001D4C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29DB24E278400001D4C4 /* SceneDelegate.swift */; };
 		F57D29DE24E278400001D4C4 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D29DD24E278400001D4C4 /* ResultsViewController.swift */; };
@@ -161,6 +162,7 @@
 		F55CAABC25FB5E9200287FB9 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		F55CAAC025FB5FBD00287FB9 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		F55CAAC325FB6C7F00287FB9 /* 38463-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "38463-error.json"; sourceTree = "<group>"; };
+		F5672FD326590443003E5973 /* RecommenderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommenderManager.swift; sourceTree = "<group>"; };
 		F57D29D624E278400001D4C4 /* BookZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookZone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F57D29D924E278400001D4C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F57D29DB24E278400001D4C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 				F59C584E255FD38400D6D708 /* AuthService.swift */,
 				F59C5851255FD3E700D6D708 /* Service.swift */,
 				F5DDA36026444C09000D2B4D /* BookClubService.swift */,
+				F5672FD326590443003E5973 /* RecommenderManager.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				F524A0442575395D0024E985 /* Localization.swift in Sources */,
 				F50696F92649364A005D1620 /* BookClubsManager.swift in Sources */,
 				71E4321024EFC3840099312F /* SearchBar.swift in Sources */,
+				F5672FD426590443003E5973 /* RecommenderManager.swift in Sources */,
 				F59C581D255FCD6300D6D708 /* User.swift in Sources */,
 				F59C5821255FCD9900D6D708 /* AuthenticationViewModel.swift in Sources */,
 				F591010F24E7B25D0042EB6F /* NavbarView.swift in Sources */,

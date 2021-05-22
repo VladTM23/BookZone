@@ -137,7 +137,7 @@ class RegisterViewController: UIViewController {
         let alert = UIAlertController(title: "Missing information!", message: "You must complete all the fields in order to register.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         
-        guard let email = emailTextField.text else { self.present(alert, animated: true, completion: nil);return }
+        guard let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { self.present(alert, animated: true, completion: nil);return }
         guard let fullName = fullNameTextField.text else { self.present(alert, animated: true, completion: nil)
             return }
         guard let password = passwordTextField.text else { self.present(alert, animated: true, completion: nil)
