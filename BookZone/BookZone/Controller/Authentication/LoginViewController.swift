@@ -47,6 +47,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         configureUI()
         configureTextFieldObservers()
     }
@@ -159,5 +161,16 @@ class LoginViewController: UIViewController {
 
     @objc func handleShowRegistration() {
         performSegue(withIdentifier: K.Identifiers.loginToRegister, sender: self)
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        view.endEditing(true)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
 }
