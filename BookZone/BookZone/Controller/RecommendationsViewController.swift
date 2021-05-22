@@ -31,6 +31,7 @@ class RecommendationsViewController: UIViewController {
     // MARK: - UI
     private func configureUI() {
         configureNavbar()
+        configureButtons()
     }
 
     private func configureNavbar() {
