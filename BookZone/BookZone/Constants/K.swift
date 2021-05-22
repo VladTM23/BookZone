@@ -280,7 +280,7 @@ struct K {
                               "bid": "13335037",
                               "imageURL": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1588455221l/13335037._SX98_.jpg",
                               "rating": "4.19",
-                              "title": "Diverget"]),
+                              "title": "Divergent"]),
             Book(dictionary: ["author": "Stephen King",
                               "bid": "11588",
                               "imageURL": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353277730l/11588._SX98_.jpg",
